@@ -591,7 +591,7 @@
       </div>
       <div class="foot-col">
         <span class="k">Contatti</span>
-        <a href="mailto:ciao@lookingupstudio.com" data-cursor>ciao@lookingupstudio.com</a>
+        <a href="mailto:lookingupstudio@gmail.com" data-cursor>lookingupstudio@gmail.com</a>
         <a href="https://www.instagram.com/lookingupstudio/" target="_blank" rel="noopener" data-cursor>Instagram, @lookingupstudio</a>
       </div>
       <div class="foot-col">
@@ -858,14 +858,26 @@
     if(!day||!time){err.textContent="Scegli un giorno e un orario.";return;}
     if(!inputs[0].value.trim()||!inputs[1].value.trim()||!inputs[2].value.trim()){err.textContent="Lascia nome, telefono e il brand di cui parliamo.";return;}
     err.textContent="";btn.classList.add("loading");
-    setTimeout(function(){
+    fetch("https://formsubmit.co/ajax/lookingupstudio@gmail.com",{
+      method:"POST",
+      headers:{"Content-Type":"application/json","Accept":"application/json"},
+      body:JSON.stringify({
+        _subject:"Richiesta chiamata — "+inputs[2].value.trim(),
+        _template:"table",
+        _captcha:"false",
+        Nome:inputs[0].value.trim(),
+        Telefono:inputs[1].value.trim(),
+        Brand:inputs[2].value.trim(),
+        Quando:day.dataset.label+" alle "+time.dataset.time
+      })
+    }).then(function(r){return r.json();}).then(function(){
       document.getElementById("confirmLine").textContent="Perfetto, "+inputs[0].value.trim().split(" ")[0]+". Ti chiamo io "+day.dataset.label+" alle "+time.dataset.time+".";
       document.getElementById("panel").classList.add("done");
       document.getElementById("confirm").classList.add("show");
-      var subj=encodeURIComponent("Richiesta chiamata \u2014 "+inputs[2].value.trim());
-      var body=encodeURIComponent("Nome: "+inputs[0].value.trim()+"\nTelefono: "+inputs[1].value.trim()+"\nBrand: "+inputs[2].value.trim()+"\nQuando: "+day.dataset.label+" alle "+time.dataset.time);
-      window.location.href="mailto:ciao@lookingupstudio.com?subject="+subj+"&body="+body;
-    },750);
+    }).catch(function(){
+      btn.classList.remove("loading");
+      err.textContent="Invio non riuscito. Scrivimi a lookingupstudio@gmail.com";
+    });
   });
 })();
 
