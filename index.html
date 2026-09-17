@@ -17,7 +17,9 @@
   <meta name="twitter:description" content="Un ufficio marketing a disposizione del tuo brand premium. Foto, video, social e siti web, sotto un'unica regia. Nautica, automotive.">
   <meta name="twitter:image" content="https://www.lookingupstudio.com/assets/og.jpg">
   <meta name="theme-color" content="#0B0B0D">
-  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
+  <link rel="icon" type="image/png" sizes="512x512" href="assets/favicon-512.png">
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Archivo:wght@400;500;600;700&display=swap">
@@ -169,7 +171,8 @@
   .cue .track::after{content:"";position:absolute;left:0;top:-50%;width:100%;height:50%;background:var(--accent);animation:drop 2.2s cubic-bezier(.7,0,.3,1) infinite}
   @keyframes drop{0%{top:-50%}60%,100%{top:100%}}
   @media(max-width:860px){.cue{left:50%;right:auto;transform:translateX(-50%);bottom:16px;flex-direction:column-reverse;gap:8px}
-    .cue .track{height:30px}}
+    .cue .track{height:30px}
+    .hero{padding-bottom:96px}}
 
   /* marquee */
   .marquee{border-block:1px solid var(--line);padding-block:1.1rem;overflow:hidden;white-space:nowrap;
@@ -347,7 +350,7 @@
 
 <div class="loader" id="loader" aria-hidden="true">
   <div class="loader-logo-wrap" id="loaderMark">
-    <img class="loader-logo" src="assets/logo-mark.svg" alt="" onerror="this.style.display='none';document.getElementById('loaderMark').classList.add('no-logo')">
+    <img class="loader-logo" src="assets/logo-mark-white.png" alt="" onerror="this.style.display='none';document.getElementById('loaderMark').classList.add('no-logo')">
     <div class="loader-mark">looking&nbsp;up<span class="dot">.</span></div>
   </div>
   <div class="loader-bar"><i id="loaderBar"></i></div>
@@ -375,7 +378,7 @@
         <span class="line"><span>Una <em>sola</em> regia.</span></span>
       </h1>
       <div class="hero-row">
-        <p class="hero-sub">Un team marketing a disposizione del tuo brand. Tutto ci&ograve; che mostri, sotto un'unica regia.</p>
+        <p class="hero-sub">Un team marketing a disposizione del tuo brand.</p>
         <div class="hero-meta">
           <span class="status"><span class="dot"></span>Settembre 2026 &middot; Un solo posto</span>
           <a href="#contatto" class="btn btn-glass" data-cursor><span>Prenota una chiamata</span><span class="ar" aria-hidden="true">&#8599;</span></a>
