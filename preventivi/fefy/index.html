@@ -19,6 +19,14 @@
   a.cta:hover{color:var(--accent)}
   a.cta-solid:hover{opacity:0.88}
   ul{margin:0;padding:0;list-style:none}
+  html{overflow-x:hidden}
+  .pkg-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px}
+  .cond-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px 48px}
+  @media(max-width:760px){
+    .pkg-grid{grid-template-columns:1fr}
+    .cond-grid{grid-template-columns:1fr;gap:16px}
+    h1{font-size:2.6rem!important}
+  }
 </style>
 </head>
 <body>
@@ -49,7 +57,7 @@
     <div style="display: flex; flex-direction: column; gap: 28px;">
       <h2 style="font-size: 30px; color: #ECECE8;">I pacchetti</h2>
 
-      <div style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px;">
+      <div class="pkg-grid">
 
         <!-- START -->
         <div style="display: flex; flex-direction: column; gap: 26px; background: #101015; border: 1px solid #22232B; border-radius: 20px; padding: 36px 30px;">
@@ -149,7 +157,7 @@
     <!-- condizioni -->
     <div style="display: flex; flex-direction: column; gap: 24px;">
       <h2 style="font-size: 30px; color: #ECECE8;">Condizioni</h2>
-      <div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px 48px;">
+      <div class="cond-grid">
         <div style="display: flex; justify-content: space-between; border-bottom: 1px solid #22232B; padding-bottom: 14px; font-size: 17px;">
           <span style="color: #A9ACB4;">Validità offerta</span><span style="color: #ECECE8;">7 giorni</span>
         </div>
