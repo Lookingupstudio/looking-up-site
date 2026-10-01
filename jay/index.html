@@ -101,6 +101,7 @@
     position:absolute;bottom:28px;right:40px;z-index:2;color:#fff;
     writing-mode:vertical-rl;font-size:11px;letter-spacing:0.14em;
     display:flex;align-items:center;gap:10px;opacity:.75;
+    pointer-events:none;
   }
   .scroll-cue::after{content:'';width:1px;height:38px;background:rgba(255,255,255,0.6);}
 
@@ -209,11 +210,16 @@
   .studio-content{position:relative;z-index:2;color:var(--ink);max-width:620px;padding:0 40px;}
   .studio-content .eyebrow{color:var(--accent-deep);}
   blockquote{
-    font-family:'Fraunces',serif;font-style:italic;
-    font-size:clamp(22px,2.6vw,30px);line-height:1.5;margin:18px 0 22px;
-    font-weight:300;color:var(--ink);
+    font-family:'Fraunces',serif;font-style:normal;font-weight:500;
+    font-size:clamp(24px,2.9vw,34px);line-height:1.35;margin:4px 0 24px;
+    letter-spacing:-0.01em;color:var(--ink);
   }
-  .studio-content cite{font-style:normal;font-size:13px;color:var(--muted);letter-spacing:0.04em;}
+  blockquote::before{
+    content:'\201C';display:block;
+    font-family:'Fraunces',serif;font-weight:500;font-style:normal;
+    font-size:64px;line-height:0.6;color:var(--accent);margin-bottom:10px;
+  }
+  .studio-content cite{font-style:normal;font-size:12.5px;color:var(--muted);letter-spacing:0.1em;text-transform:uppercase;}
 
   /* MOSTRE / CV */
   .mostre{background:var(--paper);}
@@ -268,6 +274,9 @@
     nav.scrolled{padding:12px 22px;}
     .nav-links{display:none;}
     section{padding:80px 0;}
+    .hero img{object-position:62% 18%;}
+    .hero-content{padding:0 22px 56px;}
+    .scroll-cue{display:none;}
     .bio-grid{grid-template-columns:1fr;gap:36px;}
     .bio-grid img{height:380px;}
     .gallery{gap:14px;}
@@ -427,7 +436,7 @@
   <img src="images/studio-finestra.jpg" alt="Lo studio di Alessandro Pizzuti">
   <div class="studio-content">
     <span class="eyebrow">Testo curatoriale</span>
-    <blockquote>"Alessandro Pizzuti costruisce mondi unici in cui l'ordinario e il meraviglioso si intersecano senza spiegazioni logiche né razionali. La sua chiarezza formale, l'uso della distanza emotiva, il linguaggio preciso ma carico di significati e l'atmosfera di oppressione psicologica rendono il suo stile originale e imprevedibile, sempre pronto a lambire la soglia dell'invisibile."</blockquote>
+    <blockquote>Alessandro Pizzuti costruisce mondi unici in cui l'ordinario e il meraviglioso si intersecano senza spiegazioni logiche né razionali. La sua chiarezza formale, l'uso della distanza emotiva, il linguaggio preciso ma carico di significati e l'atmosfera di oppressione psicologica rendono il suo stile originale e imprevedibile, sempre pronto a lambire la soglia dell'invisibile.</blockquote>
     <cite>— Domenico de Chirico</cite>
   </div>
 </section>
