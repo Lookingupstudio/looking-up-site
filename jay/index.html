@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Alessandro Pizzuti — Pittura, Pittura Murale, Scultura</title>
+<meta name="description" content="Alessandro Pizzuti (1997, Macerata) — artista visivo. Pittura, pittura murale, scultura. Vive e lavora a Firenze.">
+<meta name="robots" content="noindex, nofollow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;1,9..144,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#1b1a17;
+    --paper:#ffffff;
+    --paper-2:#f6f4ef;
+    --accent:#4fa8e0;
+    --accent-deep:#2f7ab8;
+    --line: rgba(27,26,23,0.12);
+    --muted: rgba(27,26,23,0.6);
+    --dark:#ffffff;
+    --dark-2:#f6f4ef;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    background:var(--paper);
+    color:var(--ink);
+    font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;
+    font-weight:300;
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+  h1,h2,h3,.serif{font-family:'Fraunces',serif;font-weight:400;}
+  img{display:block;max-width:100%;}
+  a{color:inherit;text-decoration:none;}
+  .wrap{max-width:1280px;margin:0 auto;padding:0 40px;}
+  .eyebrow{
+    text-transform:uppercase;
+    letter-spacing:0.18em;
+    font-size:11px;
+    color:var(--muted);
+    font-weight:500;
+  }
+
+  /* NAV */
+  nav{
+    position:fixed;top:0;left:0;right:0;z-index:100;
+    display:flex;align-items:center;justify-content:space-between;
+    padding:22px 40px;
+    transition:background .35s ease, padding .35s ease, box-shadow .35s ease;
+  }
+  nav.scrolled{
+    background:rgba(255,255,255,0.92);
+    backdrop-filter:blur(10px);
+    padding:14px 40px;
+    box-shadow:0 1px 0 var(--line);
+  }
+  .nav-name{
+    font-family:'Fraunces',serif;font-size:18px;letter-spacing:0.02em;
+    color:var(--paper);
+    transition:color .35s ease;
+  }
+  nav.scrolled .nav-name{color:var(--ink);}
+  .nav-links{display:flex;gap:34px;}
+  .nav-links a{
+    font-size:12px;letter-spacing:0.12em;text-transform:uppercase;
+    color:var(--paper);opacity:.85;
+    transition:color .35s ease, opacity .2s ease;
+  }
+  nav.scrolled .nav-links a{color:var(--ink);opacity:.72;}
+  .nav-links a:hover{opacity:1;}
+  .nav-toggle{display:none;}
+
+  /* HERO */
+  .hero{
+    position:relative;height:100vh;min-height:620px;
+    display:flex;align-items:flex-end;
+    overflow:hidden;
+  }
+  .hero img{
+    position:absolute;inset:0;width:100%;height:100%;object-fit:cover;
+    object-position:center 22%;
+  }
+  .hero::after{
+    content:'';position:absolute;inset:0;
+    background:linear-gradient(180deg, rgba(10,10,10,0.08) 0%, rgba(10,10,10,0.1) 45%, rgba(10,10,10,0.72) 100%);
+  }
+  .hero-content{position:relative;z-index:2;color:#fff;padding:0 40px 72px;width:100%;}
+  .hero-content .eyebrow{color:rgba(255,255,255,0.78);}
+  .hero-content h1{
+    font-size:clamp(44px,8vw,96px);
+    line-height:0.98;
+    margin:10px 0 18px;
+    font-weight:400;
+  }
+  .hero-content p{
+    max-width:460px;color:rgba(255,255,255,0.86);font-size:15px;font-weight:300;
+  }
+  .scroll-cue{
+    position:absolute;bottom:28px;right:40px;z-index:2;color:#fff;
+    writing-mode:vertical-rl;font-size:11px;letter-spacing:0.14em;
+    display:flex;align-items:center;gap:10px;opacity:.75;
+  }
+  .scroll-cue::after{content:'';width:1px;height:38px;background:rgba(255,255,255,0.6);}
+
+  /* SECTION GENERIC */
+  section{padding:120px 0;}
+  .section-head{max-width:640px;margin-bottom:56px;}
+  .section-head h2{font-size:clamp(30px,4vw,46px);margin-top:10px;}
+  .section-head p{color:var(--muted);margin-top:16px;font-size:15.5px;max-width:560px;}
+
+  /* BIO */
+  .bio{background:var(--paper);}
+  .bio-grid{display:grid;grid-template-columns:0.85fr 1.15fr;gap:72px;align-items:start;}
+  .bio-grid img{width:100%;height:620px;object-fit:cover;object-position:top center;}
+  .bio-text p{margin-bottom:20px;font-size:16px;color:#2a2823;}
+  .bio-text p.lede{font-family:'Fraunces',serif;font-size:23px;line-height:1.45;color:var(--ink);font-style:italic;margin-bottom:30px;}
+  .bio-meta{display:flex;gap:40px;margin-top:40px;padding-top:28px;border-top:1px solid var(--line);}
+  .bio-meta div span{display:block;}
+  .bio-meta .eyebrow{margin-bottom:6px;}
+  .bio-meta .val{font-size:14.5px;}
+
+  /* OPERE */
+  .opere{background:var(--paper-2);}
+  .series-nav{
+    display:flex;gap:10px;flex-wrap:wrap;margin-bottom:70px;
+  }
+  .series-nav a{
+    font-size:11.5px;letter-spacing:0.1em;text-transform:uppercase;
+    padding:10px 18px;border:1px solid var(--line);border-radius:999px;
+    color:var(--muted);transition:all .25s ease;
+  }
+  .series-nav a:hover{border-color:var(--accent);color:var(--accent-deep);}
+
+  .series-block{margin-bottom:110px;scroll-margin-top:110px;}
+  .series-block:last-child{margin-bottom:0;}
+  .series-title{
+    display:flex;align-items:baseline;gap:18px;margin-bottom:8px;flex-wrap:wrap;
+  }
+  .series-title h3{font-size:clamp(26px,3.4vw,38px);}
+  .series-title .eyebrow{color:var(--accent-deep);}
+  .series-intro{color:var(--muted);max-width:620px;margin-bottom:38px;font-size:15px;}
+
+  .gallery{
+    display:grid;grid-template-columns:repeat(12,1fr);gap:22px;
+  }
+  .gallery figure{position:relative;overflow:hidden;cursor:zoom-in;background:#e4ddcd;}
+  .gallery figure img{
+    width:100%;height:100%;object-fit:cover;
+    transition:transform .6s cubic-bezier(.2,.7,.2,1);
+  }
+  .gallery figure:hover img{transform:scale(1.045);}
+  .gallery figcaption{
+    margin-top:12px;font-size:12.5px;color:var(--muted);line-height:1.5;
+  }
+  .gallery figcaption b{color:var(--ink);font-weight:500;display:block;font-size:13.5px;margin-bottom:2px;}
+
+  .gallery.ritratti figure:nth-child(1){grid-column:span 5;aspect-ratio:4/5;}
+  .gallery.ritratti figure:nth-child(2){grid-column:span 7;aspect-ratio:4/3.1;}
+  .gallery.ritratti figure:nth-child(3){grid-column:span 4;aspect-ratio:4/5;}
+  .gallery.ritratti figure:nth-child(4){grid-column:span 4;aspect-ratio:4/5;}
+  .gallery.ritratti figure:nth-child(5){grid-column:span 4;aspect-ratio:4/5;}
+  .gallery.ritratti figure:nth-child(6){grid-column:span 12;aspect-ratio:16/8;}
+
+  .gallery.pappa figure{grid-column:span 4;aspect-ratio:1/1;}
+
+  .gallery.cavalli figure:nth-child(1){grid-column:span 6;aspect-ratio:4/5;}
+  .gallery.cavalli figure:nth-child(2){grid-column:span 6;aspect-ratio:4/5;}
+  .gallery.cavalli figure:nth-child(3){grid-column:span 5;aspect-ratio:4/5;}
+  .gallery.cavalli figure:nth-child(4){grid-column:span 7;aspect-ratio:5/4;}
+
+  .gallery.plainair figure:nth-child(1){grid-column:span 7;aspect-ratio:5/4;}
+  .gallery.plainair figure:nth-child(2){grid-column:span 5;aspect-ratio:4/5;}
+  .gallery.plainair figure:nth-child(3){grid-column:span 5;aspect-ratio:4/4.3;}
+  .gallery.plainair figure:nth-child(4){grid-column:span 7;aspect-ratio:6/5;}
+
+  .gallery.altri figure{grid-column:span 3;aspect-ratio:4/5;}
+
+  /* MURALES */
+  .murales{background:var(--dark);color:var(--ink);border-top:1px solid var(--line);border-bottom:1px solid var(--line);}
+  .murales .eyebrow{color:var(--accent-deep);}
+  .murales .section-head p{color:var(--muted);}
+  .murales .gallery figcaption{color:var(--muted);}
+  .murales .gallery figcaption b{color:var(--ink);}
+  .murales .gallery figure{background:#eeece5;}
+
+  .gallery.murales-grid figure:nth-child(1){grid-column:span 8;aspect-ratio:16/10;}
+  .gallery.murales-grid figure:nth-child(2){grid-column:span 4;aspect-ratio:3/4;}
+  .gallery.murales-grid figure:nth-child(3){grid-column:span 4;aspect-ratio:3/4;}
+  .gallery.murales-grid figure:nth-child(4){grid-column:span 4;aspect-ratio:3/4;}
+  .gallery.murales-grid figure:nth-child(5){grid-column:span 4;aspect-ratio:3/4;}
+  .gallery.murales-grid figure:nth-child(6){grid-column:span 6;aspect-ratio:4/5;}
+  .gallery.murales-grid figure:nth-child(7){grid-column:span 6;aspect-ratio:4/5;}
+  .gallery.murales-grid figure:nth-child(8){grid-column:span 7;aspect-ratio:16/10;}
+  .gallery.murales-grid figure:nth-child(9){grid-column:span 5;aspect-ratio:3/4;}
+  .gallery.murales-grid figure:nth-child(10){grid-column:span 12;aspect-ratio:21/9;}
+
+  .murale-tag{
+    display:inline-flex;align-items:center;gap:8px;
+    margin-top:22px;font-size:12.5px;color:var(--muted);
+  }
+  .murale-tag .dot{width:6px;height:6px;border-radius:50%;background:var(--accent);}
+
+  /* STUDIO / QUOTE */
+  .studio{position:relative;min-height:88vh;display:flex;align-items:center;}
+  .studio img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;}
+  .studio::after{content:'';position:absolute;inset:0;background:linear-gradient(90deg, rgba(255,255,255,0.96) 0%, rgba(255,255,255,0.82) 42%, rgba(255,255,255,0.3) 75%, rgba(255,255,255,0.05) 100%);}
+  .studio-content{position:relative;z-index:2;color:var(--ink);max-width:620px;padding:0 40px;}
+  .studio-content .eyebrow{color:var(--accent-deep);}
+  blockquote{
+    font-family:'Fraunces',serif;font-style:italic;
+    font-size:clamp(22px,2.6vw,30px);line-height:1.5;margin:18px 0 22px;
+    font-weight:300;color:var(--ink);
+  }
+  .studio-content cite{font-style:normal;font-size:13px;color:var(--muted);letter-spacing:0.04em;}
+
+  /* MOSTRE / CV */
+  .mostre{background:var(--paper);}
+  .timeline{max-width:780px;}
+  .tl-year{
+    display:grid;grid-template-columns:90px 1fr;gap:28px;
+    padding:26px 0;border-top:1px solid var(--line);
+  }
+  .tl-year:last-child{border-bottom:1px solid var(--line);}
+  .tl-year .y{font-family:'Fraunces',serif;font-size:22px;color:var(--accent-deep);}
+  .tl-entry{margin-bottom:12px;font-size:14.5px;}
+  .tl-entry:last-child{margin-bottom:0;}
+  .tl-entry .d{color:var(--muted);font-size:12.5px;display:block;margin-bottom:3px;letter-spacing:0.02em;}
+
+  /* CONTACT */
+  .contact{background:var(--dark-2);color:var(--ink);border-top:1px solid var(--line);}
+  .contact-wrap{
+    display:grid;grid-template-columns:1.1fr 0.9fr;gap:60px;align-items:end;
+  }
+  .contact h2{font-size:clamp(34px,5vw,58px);line-height:1.05;}
+  .contact-links{display:flex;flex-direction:column;gap:14px;align-items:flex-end;}
+  .contact-links a{
+    font-size:17px;padding-bottom:4px;border-bottom:1px solid var(--line);
+    transition:border-color .2s ease, color .2s ease;
+  }
+  .contact-links a:hover{border-color:var(--accent);color:var(--accent-deep);}
+  footer{
+    margin-top:90px;padding-top:28px;border-top:1px solid var(--line);
+    display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:14px;
+  }
+  footer img{height:30px;width:auto;opacity:.95;}
+  footer .credit{font-size:11.5px;color:var(--muted);}
+
+  /* LIGHTBOX */
+  .lightbox{
+    position:fixed;inset:0;background:rgba(10,10,10,0.94);z-index:1000;
+    display:none;align-items:center;justify-content:center;padding:50px;
+    flex-direction:column;
+  }
+  .lightbox.open{display:flex;}
+  .lightbox img{max-width:100%;max-height:78vh;object-fit:contain;}
+  .lightbox .lb-cap{color:#efe9dc;text-align:center;margin-top:18px;font-size:13.5px;max-width:600px;}
+  .lightbox .lb-cap b{display:block;font-size:15px;margin-bottom:4px;}
+  .lb-close{
+    position:absolute;top:28px;right:40px;color:#efe9dc;font-size:14px;letter-spacing:0.1em;
+    cursor:pointer;text-transform:uppercase;
+  }
+
+  @media (max-width: 900px){
+    .wrap{padding:0 22px;}
+    nav{padding:18px 22px;}
+    nav.scrolled{padding:12px 22px;}
+    .nav-links{display:none;}
+    section{padding:80px 0;}
+    .bio-grid{grid-template-columns:1fr;gap:36px;}
+    .bio-grid img{height:380px;}
+    .gallery{gap:14px;}
+    .gallery.ritratti figure,.gallery.cavalli figure,.gallery.plainair figure,.gallery.murales-grid figure{grid-column:span 12 !important;aspect-ratio:4/3.4 !important;}
+    .gallery.pappa figure{grid-column:span 6;}
+    .gallery.altri figure{grid-column:span 6;}
+    .contact-wrap{grid-template-columns:1fr;gap:32px;}
+    .contact-links{align-items:flex-start;}
+    footer{flex-direction:column;align-items:flex-start;}
+  }
+</style>
+</head>
+<body>
+
+<nav id="nav">
+  <a href="#top" class="nav-name">Alessandro Pizzuti</a>
+  <div class="nav-links">
+    <a href="#bio">Bio</a>
+    <a href="#opere">Opere</a>
+    <a href="#murales">Murales</a>
+    <a href="#mostre">Mostre</a>
+    <a href="#contatti">Contatti</a>
+  </div>
+</nav>
+
+<header class="hero" id="top">
+  <img src="images/artista-ritratto-1.jpg" alt="Alessandro Pizzuti nel suo studio">
+  <div class="hero-content">
+    <span class="eyebrow">Firenze — n. 1997, Macerata</span>
+    <h1>Alessandro<br>Pizzuti</h1>
+    <p>Pittura, pittura murale, scultura. Un lavoro che mette in dialogo la tradizione rinascimentale e manierista con la cultura visiva contemporanea.</p>
+  </div>
+  <div class="scroll-cue">SCROLL</div>
+</header>
+
+<section class="bio" id="bio">
+  <div class="wrap">
+    <div class="bio-grid">
+      <img src="images/artista-dipinge.jpg" alt="Alessandro Pizzuti al lavoro, en plein air">
+      <div class="bio-text">
+        <span class="eyebrow">Bio &amp; Statement</span>
+        <p class="lede">«La mimesi non è l'obiettivo della sua ricerca: la realtà è un oceano pronto a essere esplorato, sentito.»</p>
+        <p>Alessandro Pizzuti (n. 1997, Macerata) è un artista visivo che opera attraverso la pittura, la pittura murale e la scultura. Vive e lavora a Firenze. Dopo il diploma in Architettura al Liceo Artistico "G. Cantalamessa" di Macerata, nel 2017 si trasferisce a Milano, dove studia Product Design all'Accademia di Belle Arti di Brera, diplomandosi nel 2021. Dal 2018, in parallelo agli studi, inizia a dedicarsi alla pittura figurativa da autodidatta, approfondendo la tradizione rinascimentale e manierista e mettendola in dialogo con le avanguardie del Novecento e la cultura visiva contemporanea.</p>
+        <p>La sua pratica è caratterizzata dalla continua sperimentazione di tecniche e linguaggi, con la pittura a olio come medium principale, affiancata da tecniche miste, disegno e scultura. La ricerca si concentra sul rapporto tra realtà e immaginazione, sulla percezione e sulla trasformazione — un'altra componente del processo riguarda l'osservazione della società contemporanea, attraverso oggetti e momenti di vita quotidiana legati al consumo e ai modelli di produzione. Dal 2021 sviluppa parallelamente la pittura murale, realizzando interventi pubblici e privati, tra cui un murale commissionato dalla Commissione Europea — Rappresentanza in Italia, a Sestri Levante.</p>
+        <div class="bio-meta">
+          <div><span class="eyebrow">Medium</span><span class="val">Olio, tecnica mista, murale, scultura</span></div>
+          <div><span class="eyebrow">Base</span><span class="val">Firenze, Italia</span></div>
+          <div><span class="eyebrow">Formazione</span><span class="val">Accademia di Belle Arti di Brera, 2021</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="opere" id="opere">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Corpo delle opere</span>
+      <h2>Opere</h2>
+      <p>Una selezione per serie — dai ritratti a olio alla critica dei modelli di consumo contemporanei, fino allo studio dal vero.</p>
+    </div>
+
+    <div class="series-nav">
+      <a href="#ritratti">Ritratti</a>
+      <a href="#la-pappa">La Pappa</a>
+      <a href="#cavalli">Cavalli</a>
+      <a href="#en-plain-air">En Plain Air</a>
+      <a href="#altri-lavori">Altri lavori</a>
+    </div>
+
+    <div class="series-block" id="ritratti">
+      <div class="series-title"><span class="eyebrow">01</span><h3 class="serif">Ritratti</h3></div>
+      <p class="series-intro">Olio su tela e tavola. Autoritratti, figure e studi dal vero, nei quali osservazione e immaginazione si incontrano.</p>
+      <div class="gallery ritratti">
+        <figure data-cap="Ritratto a Nonno, 2025|Olio su tela, 70×60 cm"><img src="images/ritratto-nonno.jpg" alt="Ritratto a Nonno"></figure>
+        <figure data-cap="Autoritratto con pennelli|Olio su tela"><img src="images/ritratto-autoritratto-pennelli.jpg" alt="Autoritratto con pennelli"></figure>
+        <figure data-cap="Ritratto|Olio su tavola"><img src="images/ritratto-autoritratto-scatola.jpg" alt="Ritratto"></figure>
+        <figure data-cap="Autoritratto|Olio su tela"><img src="images/ritratto-autoritratto-profilo.jpg" alt="Autoritratto"></figure>
+        <figure data-cap="Studio nudo di donna|Olio su tela"><img src="images/ritratto-nudo-scatola.jpg" alt="Studio nudo di donna"></figure>
+        <figure data-cap="Ritratto|Olio su tela"><img src="images/ritratto-anziano-finestra.jpg" alt="Ritratto"></figure>
+      </div>
+    </div>
+
+    <div class="series-block" id="la-pappa">
+      <div class="series-title"><span class="eyebrow">02</span><h3 class="serif">La Pappa</h3></div>
+      <p class="series-intro">Nature morte iperrealistiche sui banchi del supermercato — carne, pesce e verdure sottovuoto — su tela, con cornice in legno e specchi. Una riflessione sui modelli di consumo e produzione contemporanei.</p>
+      <div class="gallery pappa">
+        <figure data-cap="Natura morta, banco carne|Olio su tela, cornice legno e specchi"><img src="images/pappa-1.jpg" alt="Natura morta, banco carne"></figure>
+        <figure data-cap="Natura morta, banco carne|Olio su tela, cornice legno e specchi"><img src="images/pappa-2.jpg" alt="Natura morta, banco carne"></figure>
+        <figure data-cap="Natura morta, banco carne|Olio su tela, cornice legno e specchi"><img src="images/pappa-3.jpg" alt="Natura morta, banco carne"></figure>
+        <figure data-cap="Natura morta, offerta|Olio su tela, cornice legno e specchi"><img src="images/pappa-4.jpg" alt="Natura morta, offerta"></figure>
+        <figure data-cap="Natura morta, con banane|Olio su tela, cornice legno e specchi"><img src="images/pappa-5.jpg" alt="Natura morta, con banane"></figure>
+        <figure data-cap="Natura morta, con verdure|Olio su tela, cornice legno e specchi"><img src="images/pappa-6.jpg" alt="Natura morta, con verdure"></figure>
+      </div>
+    </div>
+
+    <div class="series-block" id="cavalli">
+      <div class="series-title"><span class="eyebrow">03</span><h3 class="serif">Cavalli</h3></div>
+      <p class="series-intro">Figure equine cariche di energia e colore, tra realismo sensibile e suggestione metafisica.</p>
+      <div class="gallery cavalli">
+        <figure data-cap="Cavallo Giallo, 2026|Olio su tela, 70×60 cm"><img src="images/cavallo-3.jpg" alt="Cavallo Giallo"></figure>
+        <figure data-cap="Preludio all'attacco, cavallo ardente, 2026|Olio su tela, 60×80 cm"><img src="images/cavallo-4.jpg" alt="Preludio all'attacco, cavallo ardente"></figure>
+        <figure data-cap="Cavallo|Olio su tela"><img src="images/cavallo-1.jpg" alt="Cavallo"></figure>
+        <figure data-cap="Cavallo|Olio su tela"><img src="images/cavallo-2.jpg" alt="Cavallo"></figure>
+      </div>
+    </div>
+
+    <div class="series-block" id="en-plain-air">
+      <div class="series-title"><span class="eyebrow">04</span><h3 class="serif">En Plain Air</h3></div>
+      <p class="series-intro">Studi dal vero tra i Monti Sibillini e i paesaggi marchigiani — osservazione diretta, luce, materia.</p>
+      <div class="gallery plainair">
+        <figure data-cap="Studio dal vero|Olio su tela"><img src="images/plainair-cascata.jpg" alt="Studio dal vero, cascata"></figure>
+        <figure data-cap="Sibillini, 2025|Olio su tela, 40×40 cm"><img src="images/plainair-monte-1.jpg" alt="Sibillini"></figure>
+        <figure data-cap="Sagro, 2026|Olio su lino, 40×40 cm"><img src="images/plainair-monte-2.jpg" alt="Sagro"></figure>
+        <figure data-cap="En Plain Air|Olio su tavola"><img src="images/plainair-monte-piccolo.jpg" alt="En Plain Air, studio di montagna"></figure>
+      </div>
+    </div>
+
+    <div class="series-block" id="altri-lavori">
+      <div class="series-title"><span class="eyebrow">05</span><h3 class="serif">Altri lavori</h3></div>
+      <p class="series-intro">Citofono Blu, Gatti e altri episodi pittorici — oggetti e momenti del quotidiano osservati da vicino.</p>
+      <div class="gallery altri">
+        <figure data-cap="Citofono Blu, 2024|Olio su tavola, 80×40 cm"><img src="images/citofono-1.jpg" alt="Citofono Blu"></figure>
+        <figure data-cap="Citofono Blu, 2024|Olio su tavola, 80×40 cm"><img src="images/citofono-2.jpg" alt="Citofono Blu"></figure>
+        <figure data-cap="Gatti, 2026|Olio su tela, 70×50 cm"><img src="images/gatti-1.jpg" alt="Gatti"></figure>
+        <figure data-cap="Gatti, 2026|Olio su tela, 70×50 cm"><img src="images/gatti-2.jpg" alt="Gatti"></figure>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section class="murales" id="murales">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Interventi pubblici e privati</span>
+      <h2>Murales</h2>
+      <p>Dal 2021 Pizzuti sviluppa parallelamente la pittura murale — tra cui un intervento commissionato dalla Commissione Europea, Rappresentanza in Italia, a Sestri Levante.</p>
+    </div>
+    <div class="gallery murales-grid">
+      <figure data-cap="Mare Nostrum, 2024|Smalto all'acqua, 6,5×18 m — Sestri Levante, commissione Europea"><img src="images/murale-mare-nostrum-1.jpg" alt="Mare Nostrum"></figure>
+      <figure data-cap="Mare Nostrum, 2024|Smalto all'acqua — Sestri Levante"><img src="images/murale-mare-nostrum-2.jpg" alt="Mare Nostrum, dettaglio"></figure>
+      <figure data-cap="Mare Nostrum, 2024|Smalto all'acqua — Sestri Levante"><img src="images/murale-mare-nostrum-3.jpg" alt="Mare Nostrum, dettaglio"></figure>
+      <figure data-cap="La tana del lupo, 2026|Smalto all'acqua, 220 mq"><img src="images/murale-tana-lupo-1.jpg" alt="La tana del lupo"></figure>
+      <figure data-cap="La tana del lupo, 2026|Smalto all'acqua, 220 mq"><img src="images/murale-tana-lupo-2.jpg" alt="La tana del lupo, dettaglio"></figure>
+      <figure data-cap="Pittura murale|Smalto all'acqua"><img src="images/murale-orche.jpg" alt="Murale, orche"></figure>
+      <figure data-cap="Pittura murale|Smalto all'acqua"><img src="images/murale-mosaico.jpg" alt="Murale, pattern geometrico"></figure>
+      <figure data-cap="La tana del lupo, 2026|Smalto all'acqua, 220 mq"><img src="images/murale-tana-lupo-3.jpg" alt="La tana del lupo, dettaglio"></figure>
+      <figure data-cap="Pittura murale|Smalto all'acqua"><img src="images/murale-silhouette.jpg" alt="Murale, dettaglio"></figure>
+      <figure data-cap="Pittura murale, panoramica|Smalto all'acqua"><img src="images/murale-panorama.jpg" alt="Murale, veduta panoramica"></figure>
+    </div>
+    <div class="murale-tag"><span class="dot"></span> Commissionato da: Commissione Europea · Comune di Civitanova Marche · Comune di Montegranaro</div>
+  </div>
+</section>
+
+<section class="studio" id="studio">
+  <img src="images/studio-finestra.jpg" alt="Lo studio di Alessandro Pizzuti">
+  <div class="studio-content">
+    <span class="eyebrow">Testo curatoriale</span>
+    <blockquote>"Alessandro Pizzuti costruisce mondi unici in cui l'ordinario e il meraviglioso si intersecano senza spiegazioni logiche né razionali. La sua chiarezza formale, l'uso della distanza emotiva, il linguaggio preciso ma carico di significati e l'atmosfera di oppressione psicologica rendono il suo stile originale e imprevedibile, sempre pronto a lambire la soglia dell'invisibile."</blockquote>
+    <cite>— Domenico de Chirico</cite>
+  </div>
+</section>
+
+<section class="mostre" id="mostre">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Curriculum</span>
+      <h2>Mostre &amp; Progetti</h2>
+    </div>
+    <div class="timeline">
+
+      <div class="tl-year">
+        <div class="y">2025</div>
+        <div>
+          <div class="tl-entry"><span class="d">07–08/02</span>Mostra collettiva "iperSupermarkette", Artcity Bologna — curata da Mariano Franzetti, supervisione Nicolas Ballario. Palazzo Hercolani-Bonora, Bologna.</div>
+          <div class="tl-entry"><span class="d">11–16/02</span>Mostra collettiva "Conflicting Feeling" — curata da Domenico De Chirico. Galleria Contemporary Clauster, Roma.</div>
+          <div class="tl-entry"><span class="d">10/08</span>Mostra collettiva "Cripta Galassia" — curata da Caterina Angelucci. Grottammare (AP).</div>
+          <div class="tl-entry"><span class="d">20/10</span>Mostra collettiva "Vanitas — From the Deceit of Time to the Reflection of Beyond" — curata da Maurizio Vanni. Ulsan, Corea del Sud.</div>
+        </div>
+      </div>
+
+      <div class="tl-year">
+        <div class="y">2024</div>
+        <div>
+          <div class="tl-entry"><span class="d">02/06</span>Murale commissionato dalla Commissione Europea Italiana, Sestri Levante (Liguria).</div>
+          <div class="tl-entry"><span class="d">18/06</span>Mostra "Supermarkette", in collaborazione con Maurizio Tentella — curata da Mariano Franzetti. Galleria Lampo, Ex Scalo Farini, Milano.</div>
+        </div>
+      </div>
+
+      <div class="tl-year">
+        <div class="y">2023</div>
+        <div>
+          <div class="tl-entry"><span class="d">21/10</span>Murale commissionato dal Comune di Montegranaro.</div>
+          <div class="tl-entry"><span class="d">23/12</span>Targa commemorativa per "Pasqualina Pezzola", commissionata dal Comune di Civitanova Marche.</div>
+        </div>
+      </div>
+
+      <div class="tl-year">
+        <div class="y">2022</div>
+        <div>
+          <div class="tl-entry"><span class="d">Los Angeles</span>Assistente per la mostra di Fidia Falaschetti "Loss Angeles" — 1313 Palmetto St, LA. Collaborazione proseguita fino al 06/2024.</div>
+        </div>
+      </div>
+
+      <div class="tl-year">
+        <div class="y">2021</div>
+        <div>
+          <div class="tl-entry"><span class="d">29/03</span>Diploma in Design del Prodotto, Accademia di Belle Arti di Brera.</div>
+          <div class="tl-entry"><span class="d">Giu–Ott</span>Quattro murales commissionati dal Comune di Civitanova Marche, in collaborazione con il Museo di Arte Urbana "Vedo a Colori".</div>
+        </div>
+      </div>
+
+      <div class="tl-year">
+        <div class="y">2017–20</div>
+        <div>
+          <div class="tl-entry">Milano — assistente dell'artista Mariano Franzetti, pittore, scultore e art director.</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section class="contact" id="contatti">
+  <div class="wrap">
+    <div class="contact-wrap">
+      <h2 class="serif">Per mostre,<br>commissioni e<br>collaborazioni.</h2>
+      <div class="contact-links">
+        <a href="mailto:alessandro.pizzuti@hotmail.it">alessandro.pizzuti@hotmail.it</a>
+        <a href="tel:+393341823794">+39 334 182 3794</a>
+        <a href="https://instagram.com/alessandropizzuti_" target="_blank" rel="noopener">@alessandropizzuti_</a>
+      </div>
+    </div>
+    <footer>
+      <img src="images/firma.png" alt="Alessandro Pizzuti">
+      <span class="credit">© 2026 Alessandro Pizzuti — Firenze, Italia</span>
+    </footer>
+  </div>
+</section>
+
+<div class="lightbox" id="lightbox">
+  <span class="lb-close" id="lbClose">Chiudi ✕</span>
+  <img id="lbImg" src="" alt="">
+  <div class="lb-cap" id="lbCap"></div>
+</div>
+
+<script>
+  const nav = document.getElementById('nav');
+  window.addEventListener('scroll', () => {
+    nav.classList.toggle('scrolled', window.scrollY > 60);
+  });
+
+  const lightbox = document.getElementById('lightbox');
+  const lbImg = document.getElementById('lbImg');
+  const lbCap = document.getElementById('lbCap');
+
+  document.querySelectorAll('.gallery figure').forEach(fig => {
+    fig.addEventListener('click', () => {
+      const img = fig.querySelector('img');
+      const [title, meta] = (fig.dataset.cap || '').split('|');
+      lbImg.src = img.src;
+      lbImg.alt = img.alt;
+      lbCap.innerHTML = (title ? '<b>' + title + '</b>' : '') + (meta || '');
+      lightbox.classList.add('open');
+    });
+  });
+
+  function closeLb(){ lightbox.classList.remove('open'); lbImg.src=''; }
+  document.getElementById('lbClose').addEventListener('click', closeLb);
+  lightbox.addEventListener('click', (e) => { if(e.target === lightbox) closeLb(); });
+  document.addEventListener('keydown', (e) => { if(e.key === 'Escape') closeLb(); });
+</script>
+
+</body>
+</html>
