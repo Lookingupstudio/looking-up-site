@@ -12,7 +12,10 @@
 
 <nav>
   <a href="index.html" class="nav-logo"><img src="images/firma.png" alt="Alessandro Pizzuti"></a>
-  <div class="nav-links">
+  <button class="nav-toggle" id="navToggle" aria-label="Menu" type="button">
+    <span></span><span></span><span></span>
+  </button>
+  <div class="nav-links" id="navLinks">
     <div class="nav-dropdown">
       <a href="studio.html" class="dd-trigger current">Works <span class="dd-arrow">▾</span></a>
       <div class="dd-menu">
@@ -31,38 +34,12 @@
   </div>
 </header>
 
+<section class="studio-banner">
+  <img src="images/studio-mostra.jpg" alt="Alessandro Pizzuti, allestimento mostra">
+</section>
+
 <section>
   <div class="wrap">
-
-    <div class="series-block" id="ritratti">
-      <div class="series-title"><h3 class="serif">Ritratti</h3></div>
-      <div class="art-grid">
-        <figure class="art-card" data-title="Ritratto a Nonno" data-tech="Olio su tela" data-dim="70×60 cm, 2025">
-          <div class="art-ph"><img src="images/ritratto-nonno.jpg" alt="Ritratto a Nonno"></div>
-          <figcaption class="art-cap"><b>Ritratto a Nonno</b><span>Olio su tela, 70×60 cm</span></figcaption>
-        </figure>
-        <figure class="art-card" data-title="Autoritratto con pennelli" data-tech="Olio su tela" data-dim="cm su richiesta">
-          <div class="art-ph"><img src="images/ritratto-autoritratto-pennelli.jpg" alt="Autoritratto con pennelli"></div>
-          <figcaption class="art-cap"><b>Autoritratto con pennelli</b><span>Olio su tela</span></figcaption>
-        </figure>
-        <figure class="art-card" data-title="Ritratto" data-tech="Olio su tavola" data-dim="cm su richiesta">
-          <div class="art-ph"><img src="images/ritratto-autoritratto-scatola.jpg" alt="Ritratto"></div>
-          <figcaption class="art-cap"><b>Ritratto</b><span>Olio su tavola</span></figcaption>
-        </figure>
-        <figure class="art-card" data-title="Autoritratto" data-tech="Olio su tela" data-dim="cm su richiesta">
-          <div class="art-ph"><img src="images/ritratto-autoritratto-profilo.jpg" alt="Autoritratto"></div>
-          <figcaption class="art-cap"><b>Autoritratto</b><span>Olio su tela</span></figcaption>
-        </figure>
-        <figure class="art-card" data-title="Studio nudo di donna" data-tech="Olio su tela" data-dim="cm su richiesta">
-          <div class="art-ph"><img src="images/ritratto-nudo-scatola.jpg" alt="Studio nudo di donna"></div>
-          <figcaption class="art-cap"><b>Studio nudo di donna</b><span>Olio su tela</span></figcaption>
-        </figure>
-        <figure class="art-card" data-title="Ritratto" data-tech="Olio su tela" data-dim="cm su richiesta">
-          <div class="art-ph"><img src="images/ritratto-anziano-finestra.jpg" alt="Ritratto"></div>
-          <figcaption class="art-cap"><b>Ritratto</b><span>Olio su tela</span></figcaption>
-        </figure>
-      </div>
-    </div>
 
     <div class="series-block" id="la-pappa">
       <div class="series-title"><h3 class="serif">La Pappa</h3></div>
@@ -90,6 +67,36 @@
         <figure class="art-card" data-title="Natura morta, con verdure" data-tech="Olio su tela, cornice legno e specchi" data-dim="60×60 cm">
           <div class="art-ph"><img src="images/pappa-6.jpg" alt="Natura morta, con verdure"></div>
           <figcaption class="art-cap"><b>Natura morta, con verdure</b><span>Olio su tela, cornice legno e specchi</span></figcaption>
+        </figure>
+      </div>
+    </div>
+
+    <div class="series-block" id="ritratti">
+      <div class="series-title"><h3 class="serif">Ritratti</h3></div>
+      <div class="art-grid">
+        <figure class="art-card" data-title="Ritratto a Nonno" data-tech="Olio su tela" data-dim="70×60 cm, 2025">
+          <div class="art-ph"><img src="images/ritratto-nonno.jpg" alt="Ritratto a Nonno"></div>
+          <figcaption class="art-cap"><b>Ritratto a Nonno</b><span>Olio su tela, 70×60 cm</span></figcaption>
+        </figure>
+        <figure class="art-card" data-title="Autoritratto con pennelli" data-tech="Olio su tela" data-dim="cm su richiesta">
+          <div class="art-ph"><img src="images/ritratto-autoritratto-pennelli.jpg" alt="Autoritratto con pennelli"></div>
+          <figcaption class="art-cap"><b>Autoritratto con pennelli</b><span>Olio su tela</span></figcaption>
+        </figure>
+        <figure class="art-card" data-title="Ritratto" data-tech="Olio su tavola" data-dim="cm su richiesta">
+          <div class="art-ph"><img src="images/ritratto-autoritratto-scatola.jpg" alt="Ritratto"></div>
+          <figcaption class="art-cap"><b>Ritratto</b><span>Olio su tavola</span></figcaption>
+        </figure>
+        <figure class="art-card" data-title="Autoritratto" data-tech="Olio su tela" data-dim="cm su richiesta">
+          <div class="art-ph"><img src="images/ritratto-autoritratto-profilo.jpg" alt="Autoritratto"></div>
+          <figcaption class="art-cap"><b>Autoritratto</b><span>Olio su tela</span></figcaption>
+        </figure>
+        <figure class="art-card" data-title="Studio nudo di donna" data-tech="Olio su tela" data-dim="cm su richiesta">
+          <div class="art-ph"><img src="images/ritratto-nudo-scatola.jpg" alt="Studio nudo di donna"></div>
+          <figcaption class="art-cap"><b>Studio nudo di donna</b><span>Olio su tela</span></figcaption>
+        </figure>
+        <figure class="art-card" data-title="Ritratto" data-tech="Olio su tela" data-dim="cm su richiesta">
+          <div class="art-ph"><img src="images/ritratto-anziano-finestra.jpg" alt="Ritratto"></div>
+          <figcaption class="art-cap"><b>Ritratto</b><span>Olio su tela</span></figcaption>
         </figure>
       </div>
     </div>

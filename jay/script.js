@@ -76,4 +76,38 @@ function initArtLightbox(){
   });
 }
 
-document.addEventListener('DOMContentLoaded', initArtLightbox);
+// Menu hamburger da mobile (sfondo bianco, sottomenu Works a tendina sul tap).
+function initMobileNav(){
+  const toggle = document.getElementById('navToggle');
+  const links = document.getElementById('navLinks');
+  if (!toggle || !links) return;
+
+  toggle.addEventListener('click', () => {
+    toggle.classList.toggle('active');
+    links.classList.toggle('open');
+  });
+
+  document.querySelectorAll('.nav-links a:not(.dd-trigger)').forEach(a => {
+    a.addEventListener('click', () => {
+      toggle.classList.remove('active');
+      links.classList.remove('open');
+    });
+  });
+
+  const dropdown = document.querySelector('.nav-dropdown');
+  const arrow = document.querySelector('.dd-arrow');
+  if (dropdown && arrow) {
+    arrow.addEventListener('click', (e) => {
+      if (window.matchMedia('(max-width: 900px)').matches) {
+        e.preventDefault();
+        e.stopPropagation();
+        dropdown.classList.toggle('open');
+      }
+    });
+  }
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+  initArtLightbox();
+  initMobileNav();
+});
