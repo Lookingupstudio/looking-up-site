@@ -95,12 +95,11 @@ function initMobileNav(){
   });
 
   const dropdown = document.querySelector('.nav-dropdown');
-  const arrow = document.querySelector('.dd-arrow');
-  if (dropdown && arrow) {
-    arrow.addEventListener('click', (e) => {
+  const trigger = document.querySelector('.dd-trigger');
+  if (dropdown && trigger) {
+    trigger.addEventListener('click', (e) => {
       if (window.matchMedia('(max-width: 900px)').matches) {
         e.preventDefault();
-        e.stopPropagation();
         dropdown.classList.toggle('open');
       }
     });
