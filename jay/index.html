@@ -97,18 +97,22 @@
   .bio-grid img{width:100%;height:620px;object-fit:cover;object-position:top center;}
   .bio-text p{margin-bottom:20px;font-size:16px;color:#2a2823;}
 
-  .cv-block{margin-top:96px;padding-top:56px;border-top:1px solid var(--line);}
-  .cv-block > .eyebrow{display:block;margin-bottom:28px;}
-  .timeline{max-width:780px;}
-  .tl-year{
-    display:grid;grid-template-columns:90px 1fr;gap:28px;
-    padding:26px 0;border-top:1px solid var(--line);
+  .cv-block{
+    width:100vw;position:relative;left:50%;right:50%;margin-left:-50vw;margin-right:-50vw;
+    margin-top:96px;padding:64px 0;
+    background:var(--paper-2);
   }
-  .tl-year:last-child{border-bottom:1px solid var(--line);}
-  .tl-year .y{font-family:'Fraunces',serif;font-size:22px;color:var(--accent-deep);}
-  .tl-entry{margin-bottom:12px;font-size:14.5px;}
-  .tl-entry:last-child{margin-bottom:0;}
-  .tl-entry .d{color:var(--muted);font-size:12.5px;display:block;margin-bottom:3px;letter-spacing:0.02em;}
+  .cv-block .wrap{padding:0 40px;}
+  .cv-block .section-head{margin-bottom:40px;}
+  .cv-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:48px 60px;max-width:900px;}
+  .cv-cat b{
+    display:block;font-family:'Fraunces',serif;font-size:15px;font-weight:500;
+    margin-bottom:14px;
+  }
+  .cv-cat p{font-size:14px;color:#2a2823;margin-bottom:8px;line-height:1.55;}
+  .cv-cat p:last-child{margin-bottom:0;}
+  .cv-cat p i{font-style:italic;color:var(--ink);}
+  .cv-cat p .y{color:var(--accent-deep);font-weight:500;}
 
   /* ART WORKS */
   .opere{background:var(--paper-2);}
@@ -139,48 +143,34 @@
   .series-title .eyebrow{color:var(--accent-deep);}
   .series-intro{color:var(--muted);max-width:620px;margin-bottom:38px;font-size:15px;}
 
+  /* Masonry a colonne, proporzioni naturali (rif. paulrog.com) */
   .gallery{
-    display:grid;grid-template-columns:repeat(12,1fr);gap:22px;
+    columns:3 240px;column-gap:26px;
   }
-  .gallery figure{position:relative;overflow:hidden;cursor:zoom-in;background:#e4ddcd;}
+  .gallery figure{
+    position:relative;break-inside:avoid;
+    margin:0 0 34px;background:#e4ddcd;cursor:zoom-in;
+  }
+  .gallery figure .img-wrap{overflow:hidden;}
   .gallery figure img{
-    width:100%;height:100%;object-fit:cover;
+    width:100%;height:auto;display:block;
     transition:transform .6s cubic-bezier(.2,.7,.2,1);
   }
-  .gallery figure:hover img{transform:scale(1.045);}
-
-  .gallery.ritratti figure:nth-child(1){grid-column:span 5;aspect-ratio:4/5;}
-  .gallery.ritratti figure:nth-child(2){grid-column:span 7;aspect-ratio:4/3.1;}
-  .gallery.ritratti figure:nth-child(3){grid-column:span 4;aspect-ratio:4/5;}
-  .gallery.ritratti figure:nth-child(4){grid-column:span 4;aspect-ratio:4/5;}
-  .gallery.ritratti figure:nth-child(5){grid-column:span 4;aspect-ratio:4/5;}
-  .gallery.ritratti figure:nth-child(6){grid-column:span 12;aspect-ratio:16/8;}
-
-  .gallery.pappa figure{grid-column:span 4;aspect-ratio:1/1;}
-
-  .gallery.altri figure{grid-column:span 3;aspect-ratio:4/5;}
-
-  .gallery.plainair figure:nth-child(1){grid-column:span 7;aspect-ratio:5/4;}
-  .gallery.plainair figure:nth-child(2){grid-column:span 5;aspect-ratio:4/5;}
-  .gallery.plainair figure:nth-child(3){grid-column:span 5;aspect-ratio:4/4.3;}
-  .gallery.plainair figure:nth-child(4){grid-column:span 7;aspect-ratio:6/5;}
+  .gallery figure:hover img{transform:scale(1.035);}
+  .gallery figcaption{margin-top:12px;}
+  .gallery figcaption b{
+    display:block;font-family:'Fraunces',serif;font-size:15px;font-weight:400;
+    color:var(--ink);margin-bottom:3px;
+  }
+  .gallery figcaption span{display:block;font-size:12.5px;color:var(--muted);}
 
   /* MURALES */
   .murales{background:var(--dark);color:var(--ink);border-top:1px solid var(--line);border-bottom:1px solid var(--line);scroll-margin-top:90px;}
   .murales .eyebrow{color:var(--accent-deep);}
   .murales .section-head p{color:var(--muted);}
   .murales .gallery figure{background:#eeece5;}
-
-  .gallery.murales-grid figure:nth-child(1){grid-column:span 8;aspect-ratio:16/10;}
-  .gallery.murales-grid figure:nth-child(2){grid-column:span 4;aspect-ratio:3/4;}
-  .gallery.murales-grid figure:nth-child(3){grid-column:span 4;aspect-ratio:3/4;}
-  .gallery.murales-grid figure:nth-child(4){grid-column:span 4;aspect-ratio:3/4;}
-  .gallery.murales-grid figure:nth-child(5){grid-column:span 4;aspect-ratio:3/4;}
-  .gallery.murales-grid figure:nth-child(6){grid-column:span 6;aspect-ratio:4/5;}
-  .gallery.murales-grid figure:nth-child(7){grid-column:span 6;aspect-ratio:4/5;}
-  .gallery.murales-grid figure:nth-child(8){grid-column:span 7;aspect-ratio:16/10;}
-  .gallery.murales-grid figure:nth-child(9){grid-column:span 5;aspect-ratio:3/4;}
-  .gallery.murales-grid figure:nth-child(10){grid-column:span 12;aspect-ratio:21/9;}
+  .murales .gallery figcaption b{color:var(--ink);}
+  .murales .gallery figcaption span{color:var(--muted);}
 
   .murale-tag{
     display:inline-flex;align-items:center;gap:8px;
@@ -192,20 +182,25 @@
   .studio-banner{height:70vh;min-height:360px;position:relative;overflow:hidden;padding:0;}
   .studio-banner img{width:100%;height:100%;object-fit:cover;}
 
-  /* CONTACT */
-  .contact{background:var(--dark-2);color:var(--ink);border-top:1px solid var(--line);}
+  /* CONTACT — centrato, bottoni (rif. paulrog.com) */
+  .contact{background:var(--paper-2);color:var(--ink);border-top:1px solid var(--line);}
   .contact-wrap{
-    display:grid;grid-template-columns:1.1fr 0.9fr;gap:60px;align-items:end;
+    max-width:520px;margin:0 auto;text-align:center;
   }
-  .contact h2{font-size:clamp(34px,5vw,58px);line-height:1.05;}
-  .contact-links{display:flex;flex-direction:column;gap:14px;align-items:flex-end;}
-  .contact-links a{
-    font-size:17px;padding-bottom:4px;border-bottom:1px solid var(--line);
-    transition:border-color .2s ease, color .2s ease;
+  .contact h2{font-size:clamp(30px,4.2vw,42px);line-height:1.15;margin-bottom:36px;}
+  .contact-phone{display:block;margin-top:18px;font-size:14px;color:var(--muted);}
+  .btn{
+    display:inline-flex;align-items:center;justify-content:center;gap:10px;
+    padding:15px 34px;font-size:13px;letter-spacing:0.08em;text-transform:uppercase;
+    border-radius:999px;transition:all .2s ease;
   }
-  .contact-links a:hover{border-color:var(--accent);color:var(--accent-deep);}
+  .btn-fill{background:var(--ink);color:#fff;}
+  .btn-fill:hover{background:var(--accent-deep);}
+  .btn-outline{border:1px solid var(--line);color:var(--ink);margin-top:14px;}
+  .btn-outline:hover{border-color:var(--accent);color:var(--accent-deep);}
+  .btn-outline svg{width:15px;height:15px;}
   footer{
-    margin-top:90px;padding-top:28px;border-top:1px solid var(--line);
+    margin-top:70px;padding-top:28px;border-top:1px solid var(--line);
     display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:14px;
   }
   footer img{height:30px;width:auto;opacity:.95;}
@@ -248,13 +243,9 @@
     .bio-grid{grid-template-columns:1fr;gap:36px;}
     .bio-grid img{height:380px;}
     .cv-block{margin-top:64px;padding-top:40px;}
-    .gallery{gap:14px;}
-    .gallery.ritratti figure,.gallery.plainair figure,.gallery.murales-grid figure{grid-column:span 12 !important;aspect-ratio:4/3.4 !important;}
-    .gallery.pappa figure{grid-column:span 6;}
-    .gallery.altri figure{grid-column:span 6;}
+    .gallery{columns:2 160px;column-gap:16px;}
+    .gallery figure{margin-bottom:24px;}
     .studio-banner{height:46vh;}
-    .contact-wrap{grid-template-columns:1fr;gap:32px;}
-    .contact-links{align-items:flex-start;}
     footer{flex-direction:column;align-items:flex-start;}
     .lb-arrow{width:38px;height:38px;font-size:18px;}
     .lb-prev{left:8px;}
@@ -302,57 +293,42 @@
     </div>
 
     <div class="cv-block">
-      <span class="eyebrow">Curriculum</span>
-      <div class="timeline">
-
-        <div class="tl-year">
-          <div class="y">2025</div>
-          <div>
-            <div class="tl-entry"><span class="d">07–08/02</span>Mostra collettiva "iperSupermarkette", Artcity Bologna — curata da Mariano Franzetti, supervisione Nicolas Ballario. Palazzo Hercolani-Bonora, Bologna.</div>
-            <div class="tl-entry"><span class="d">11–16/02</span>Mostra collettiva "Conflicting Feeling" — curata da Domenico De Chirico. Galleria Contemporary Clauster, Roma.</div>
-            <div class="tl-entry"><span class="d">10/08</span>Mostra collettiva "Cripta Galassia" — curata da Caterina Angelucci. Grottammare (AP).</div>
-            <div class="tl-entry"><span class="d">20/10</span>Mostra collettiva "Vanitas — From the Deceit of Time to the Reflection of Beyond" — curata da Maurizio Vanni. Ulsan, Corea del Sud.</div>
-          </div>
+      <div class="wrap">
+        <div class="section-head">
+          <span class="eyebrow">Curriculum</span>
+          <h2>CV</h2>
         </div>
+        <div class="cv-grid">
 
-        <div class="tl-year">
-          <div class="y">2024</div>
-          <div>
-            <div class="tl-entry"><span class="d">02/06</span>Murale commissionato dalla Commissione Europea Italiana, Sestri Levante (Liguria).</div>
-            <div class="tl-entry"><span class="d">18/06</span>Mostra "Supermarkette", in collaborazione con Maurizio Tentella — curata da Mariano Franzetti. Galleria Lampo, Ex Scalo Farini, Milano.</div>
+          <div class="cv-cat">
+            <b>Mostre</b>
+            <p><span class="y">2025</span> — <i>iperSupermarkette</i>, Artcity Bologna, a cura di Mariano Franzetti, supervisione Nicolas Ballario. Palazzo Hercolani-Bonora, Bologna</p>
+            <p><span class="y">2025</span> — <i>Conflicting Feeling</i>, a cura di Domenico De Chirico. Galleria Contemporary Clauster, Roma</p>
+            <p><span class="y">2025</span> — <i>Cripta Galassia</i>, a cura di Caterina Angelucci. Grottammare (AP)</p>
+            <p><span class="y">2025</span> — <i>Vanitas — From the Deceit of Time to the Reflection of Beyond</i>, a cura di Maurizio Vanni. Ulsan, Corea del Sud</p>
+            <p><span class="y">2024</span> — <i>Supermarkette</i>, con Maurizio Tentella, a cura di Mariano Franzetti. Galleria Lampo, Ex Scalo Farini, Milano</p>
           </div>
-        </div>
 
-        <div class="tl-year">
-          <div class="y">2023</div>
-          <div>
-            <div class="tl-entry"><span class="d">21/10</span>Murale commissionato dal Comune di Montegranaro.</div>
-            <div class="tl-entry"><span class="d">23/12</span>Targa commemorativa per "Pasqualina Pezzola", commissionata dal Comune di Civitanova Marche.</div>
+          <div class="cv-cat">
+            <b>Interventi murali</b>
+            <p><span class="y">2024</span> — Murale commissionato dalla Commissione Europea Italiana. Sestri Levante (Liguria)</p>
+            <p><span class="y">2023</span> — Murale commissionato dal Comune di Montegranaro</p>
+            <p><span class="y">2023</span> — Targa commemorativa "Pasqualina Pezzola", commissionata dal Comune di Civitanova Marche</p>
+            <p><span class="y">2021</span> — Quattro murales commissionati dal Comune di Civitanova Marche, con il Museo di Arte Urbana "Vedo a Colori"</p>
           </div>
-        </div>
 
-        <div class="tl-year">
-          <div class="y">2022</div>
-          <div>
-            <div class="tl-entry"><span class="d">Los Angeles</span>Assistente per la mostra di Fidia Falaschetti "Loss Angeles" — 1313 Palmetto St, LA. Collaborazione proseguita fino al 06/2024.</div>
+          <div class="cv-cat">
+            <b>Formazione</b>
+            <p><span class="y">2021</span> — Diploma in Design del Prodotto, Accademia di Belle Arti di Brera</p>
           </div>
-        </div>
 
-        <div class="tl-year">
-          <div class="y">2021</div>
-          <div>
-            <div class="tl-entry"><span class="d">29/03</span>Diploma in Design del Prodotto, Accademia di Belle Arti di Brera.</div>
-            <div class="tl-entry"><span class="d">Giu–Ott</span>Quattro murales commissionati dal Comune di Civitanova Marche, in collaborazione con il Museo di Arte Urbana "Vedo a Colori".</div>
+          <div class="cv-cat">
+            <b>Collaborazioni</b>
+            <p><span class="y">2022–24</span> — Los Angeles, assistente per la mostra di Fidia Falaschetti <i>"Loss Angeles"</i></p>
+            <p><span class="y">2017–20</span> — Milano, assistente dell'artista Mariano Franzetti, pittore, scultore e art director</p>
           </div>
-        </div>
 
-        <div class="tl-year">
-          <div class="y">2017–20</div>
-          <div>
-            <div class="tl-entry">Milano — assistente dell'artista Mariano Franzetti, pittore, scultore e art director.</div>
-          </div>
         </div>
-
       </div>
     </div>
   </div>
@@ -383,12 +359,12 @@
         <div class="series-title"><span class="eyebrow">01</span><h3 class="serif">Ritratti</h3></div>
         <p class="series-intro">Olio su tela e tavola. Autoritratti, figure e studi dal vero, nei quali osservazione e immaginazione si incontrano.</p>
         <div class="gallery ritratti">
-          <figure data-title="Ritratto a Nonno" data-tech="Olio su tela" data-dim="70×60 cm, 2025"><img src="images/ritratto-nonno.jpg" alt="Ritratto a Nonno"></figure>
-          <figure data-title="Autoritratto con pennelli" data-tech="Olio su tela" data-dim="cm su richiesta"><img src="images/ritratto-autoritratto-pennelli.jpg" alt="Autoritratto con pennelli"></figure>
-          <figure data-title="Ritratto" data-tech="Olio su tavola" data-dim="cm su richiesta"><img src="images/ritratto-autoritratto-scatola.jpg" alt="Ritratto"></figure>
-          <figure data-title="Autoritratto" data-tech="Olio su tela" data-dim="cm su richiesta"><img src="images/ritratto-autoritratto-profilo.jpg" alt="Autoritratto"></figure>
-          <figure data-title="Studio nudo di donna" data-tech="Olio su tela" data-dim="cm su richiesta"><img src="images/ritratto-nudo-scatola.jpg" alt="Studio nudo di donna"></figure>
-          <figure data-title="Ritratto" data-tech="Olio su tela" data-dim="cm su richiesta"><img src="images/ritratto-anziano-finestra.jpg" alt="Ritratto"></figure>
+          <figure data-title="Ritratto a Nonno" data-tech="Olio su tela" data-dim="70×60 cm, 2025"><img src="images/ritratto-nonno.jpg" alt="Ritratto a Nonno"><figcaption><b>Ritratto a Nonno</b><span>Olio su tela, 70×60 cm, 2025</span></figcaption></figure>
+          <figure data-title="Autoritratto con pennelli" data-tech="Olio su tela" data-dim="cm su richiesta"><img src="images/ritratto-autoritratto-pennelli.jpg" alt="Autoritratto con pennelli"><figcaption><b>Autoritratto con pennelli</b><span>Olio su tela, cm su richiesta</span></figcaption></figure>
+          <figure data-title="Ritratto" data-tech="Olio su tavola" data-dim="cm su richiesta"><img src="images/ritratto-autoritratto-scatola.jpg" alt="Ritratto"><figcaption><b>Ritratto</b><span>Olio su tavola, cm su richiesta</span></figcaption></figure>
+          <figure data-title="Autoritratto" data-tech="Olio su tela" data-dim="cm su richiesta"><img src="images/ritratto-autoritratto-profilo.jpg" alt="Autoritratto"><figcaption><b>Autoritratto</b><span>Olio su tela, cm su richiesta</span></figcaption></figure>
+          <figure data-title="Studio nudo di donna" data-tech="Olio su tela" data-dim="cm su richiesta"><img src="images/ritratto-nudo-scatola.jpg" alt="Studio nudo di donna"><figcaption><b>Studio nudo di donna</b><span>Olio su tela, cm su richiesta</span></figcaption></figure>
+          <figure data-title="Ritratto" data-tech="Olio su tela" data-dim="cm su richiesta"><img src="images/ritratto-anziano-finestra.jpg" alt="Ritratto"><figcaption><b>Ritratto</b><span>Olio su tela, cm su richiesta</span></figcaption></figure>
         </div>
       </div>
 
@@ -396,12 +372,12 @@
         <div class="series-title"><span class="eyebrow">02</span><h3 class="serif">La Pappa</h3></div>
         <p class="series-intro">Nature morte iperrealistiche sui banchi del supermercato — carne, pesce e verdure sottovuoto — su tela, con cornice in legno e specchi. Una riflessione sui modelli di consumo e produzione contemporanei.</p>
         <div class="gallery pappa">
-          <figure data-title="Natura morta, banco carne" data-tech="Olio su tela, cornice legno e specchi" data-dim="100,5×100,2 cm"><img src="images/pappa-1.jpg" alt="Natura morta, banco carne"></figure>
-          <figure data-title="Natura morta, banco carne 2" data-tech="Olio su tela, cornice legno e specchi" data-dim="100,5×100,2 cm"><img src="images/pappa-2.jpg" alt="Natura morta, banco carne 2"></figure>
-          <figure data-title="Natura morta, banco carne" data-tech="Olio su tela, cornice legno e specchi" data-dim="100,5×100,2 cm"><img src="images/pappa-3.jpg" alt="Natura morta, banco carne"></figure>
-          <figure data-title="Natura morta, offerta" data-tech="Olio su tela, cornice legno e specchi" data-dim="cm su richiesta"><img src="images/pappa-4.jpg" alt="Natura morta, offerta"></figure>
-          <figure data-title="Natura morta, con banane" data-tech="Olio su tela, cornice legno e specchi" data-dim="80,5×80,7 cm"><img src="images/pappa-5.jpg" alt="Natura morta, con banane"></figure>
-          <figure data-title="Natura morta, con verdure" data-tech="Olio su tela, cornice legno e specchi" data-dim="60×60 cm"><img src="images/pappa-6.jpg" alt="Natura morta, con verdure"></figure>
+          <figure data-title="Natura morta, banco carne" data-tech="Olio su tela, cornice legno e specchi" data-dim="100,5×100,2 cm"><img src="images/pappa-1.jpg" alt="Natura morta, banco carne"><figcaption><b>Natura morta, banco carne</b><span>Olio su tela, cornice legno e specchi, 100,5×100,2 cm</span></figcaption></figure>
+          <figure data-title="Natura morta, banco carne 2" data-tech="Olio su tela, cornice legno e specchi" data-dim="100,5×100,2 cm"><img src="images/pappa-2.jpg" alt="Natura morta, banco carne 2"><figcaption><b>Natura morta, banco carne 2</b><span>Olio su tela, cornice legno e specchi, 100,5×100,2 cm</span></figcaption></figure>
+          <figure data-title="Natura morta, banco carne" data-tech="Olio su tela, cornice legno e specchi" data-dim="100,5×100,2 cm"><img src="images/pappa-3.jpg" alt="Natura morta, banco carne"><figcaption><b>Natura morta, banco carne</b><span>Olio su tela, cornice legno e specchi, 100,5×100,2 cm</span></figcaption></figure>
+          <figure data-title="Natura morta, offerta" data-tech="Olio su tela, cornice legno e specchi" data-dim="cm su richiesta"><img src="images/pappa-4.jpg" alt="Natura morta, offerta"><figcaption><b>Natura morta, offerta</b><span>Olio su tela, cornice legno e specchi, cm su richiesta</span></figcaption></figure>
+          <figure data-title="Natura morta, con banane" data-tech="Olio su tela, cornice legno e specchi" data-dim="80,5×80,7 cm"><img src="images/pappa-5.jpg" alt="Natura morta, con banane"><figcaption><b>Natura morta, con banane</b><span>Olio su tela, cornice legno e specchi, 80,5×80,7 cm</span></figcaption></figure>
+          <figure data-title="Natura morta, con verdure" data-tech="Olio su tela, cornice legno e specchi" data-dim="60×60 cm"><img src="images/pappa-6.jpg" alt="Natura morta, con verdure"><figcaption><b>Natura morta, con verdure</b><span>Olio su tela, cornice legno e specchi, 60×60 cm</span></figcaption></figure>
         </div>
       </div>
 
@@ -409,14 +385,14 @@
         <div class="series-title"><span class="eyebrow">03</span><h3 class="serif">Altri lavori</h3></div>
         <p class="series-intro">Cavalli, Citofono Blu, Gatti e altri episodi pittorici — energia, colore e oggetti del quotidiano osservati da vicino.</p>
         <div class="gallery altri">
-          <figure data-title="Cavallo Giallo" data-tech="Olio su tela" data-dim="70×60 cm, 2026"><img src="images/cavallo-3.jpg" alt="Cavallo Giallo"></figure>
-          <figure data-title="Preludio all'attacco, cavallo ardente" data-tech="Olio su tela" data-dim="60×80 cm, 2026"><img src="images/cavallo-4.jpg" alt="Preludio all'attacco, cavallo ardente"></figure>
-          <figure data-title="Cavallo" data-tech="Olio su tela" data-dim="cm su richiesta"><img src="images/cavallo-1.jpg" alt="Cavallo"></figure>
-          <figure data-title="Cavallo" data-tech="Olio su tela" data-dim="cm su richiesta"><img src="images/cavallo-2.jpg" alt="Cavallo"></figure>
-          <figure data-group="citofono-blu" data-title="Citofono Blu" data-tech="Olio su tavola" data-dim="80×40 cm, 2024"><img src="images/citofono-1.jpg" alt="Citofono Blu"></figure>
-          <figure data-group="citofono-blu" data-title="Citofono Blu" data-tech="Olio su tavola" data-dim="80×40 cm, 2024"><img src="images/citofono-2.jpg" alt="Citofono Blu, dettaglio"></figure>
-          <figure data-group="gatti" data-title="Gatti" data-tech="Olio su tela" data-dim="70×50 cm, 2026"><img src="images/gatti-1.jpg" alt="Gatti"></figure>
-          <figure data-group="gatti" data-title="Gatti" data-tech="Olio su tela" data-dim="70×50 cm, 2026"><img src="images/gatti-2.jpg" alt="Gatti, dettaglio"></figure>
+          <figure data-title="Cavallo Giallo" data-tech="Olio su tela" data-dim="70×60 cm, 2026"><img src="images/cavallo-3.jpg" alt="Cavallo Giallo"><figcaption><b>Cavallo Giallo</b><span>Olio su tela, 70×60 cm, 2026</span></figcaption></figure>
+          <figure data-title="Preludio all'attacco, cavallo ardente" data-tech="Olio su tela" data-dim="60×80 cm, 2026"><img src="images/cavallo-4.jpg" alt="Preludio all'attacco, cavallo ardente"><figcaption><b>Preludio all'attacco, cavallo ardente</b><span>Olio su tela, 60×80 cm, 2026</span></figcaption></figure>
+          <figure data-title="Cavallo" data-tech="Olio su tela" data-dim="cm su richiesta"><img src="images/cavallo-1.jpg" alt="Cavallo"><figcaption><b>Cavallo</b><span>Olio su tela, cm su richiesta</span></figcaption></figure>
+          <figure data-title="Cavallo" data-tech="Olio su tela" data-dim="cm su richiesta"><img src="images/cavallo-2.jpg" alt="Cavallo"><figcaption><b>Cavallo</b><span>Olio su tela, cm su richiesta</span></figcaption></figure>
+          <figure data-group="citofono-blu" data-title="Citofono Blu" data-tech="Olio su tavola" data-dim="80×40 cm, 2024"><img src="images/citofono-1.jpg" alt="Citofono Blu"><figcaption><b>Citofono Blu</b><span>Olio su tavola, 80×40 cm, 2024</span></figcaption></figure>
+          <figure data-group="citofono-blu" data-title="Citofono Blu" data-tech="Olio su tavola" data-dim="80×40 cm, 2024"><img src="images/citofono-2.jpg" alt="Citofono Blu, dettaglio"><figcaption><b>Citofono Blu</b><span>Olio su tavola, 80×40 cm, 2024</span></figcaption></figure>
+          <figure data-group="gatti" data-title="Gatti" data-tech="Olio su tela" data-dim="70×50 cm, 2026"><img src="images/gatti-1.jpg" alt="Gatti"><figcaption><b>Gatti</b><span>Olio su tela, 70×50 cm, 2026</span></figcaption></figure>
+          <figure data-group="gatti" data-title="Gatti" data-tech="Olio su tela" data-dim="70×50 cm, 2026"><img src="images/gatti-2.jpg" alt="Gatti, dettaglio"><figcaption><b>Gatti</b><span>Olio su tela, 70×50 cm, 2026</span></figcaption></figure>
         </div>
       </div>
 
@@ -424,10 +400,10 @@
         <div class="series-title"><span class="eyebrow">04</span><h3 class="serif">En Plein Air</h3></div>
         <p class="series-intro">Studi dal vero tra i Monti Sibillini e i paesaggi marchigiani — osservazione diretta, luce, materia.</p>
         <div class="gallery plainair">
-          <figure data-title="Studio dal vero" data-tech="Olio su tela" data-dim="cm su richiesta"><img src="images/plainair-cascata.jpg" alt="Studio dal vero, cascata"></figure>
-          <figure data-title="Sibillini" data-tech="Olio su tela" data-dim="40×40 cm, 2025"><img src="images/plainair-monte-1.jpg" alt="Sibillini"></figure>
-          <figure data-title="Sagro" data-tech="Olio su lino" data-dim="40×40 cm, 2026"><img src="images/plainair-monte-2.jpg" alt="Sagro"></figure>
-          <figure data-title="En Plein Air" data-tech="Olio su tavola" data-dim="cm su richiesta"><img src="images/plainair-monte-piccolo.jpg" alt="En Plein Air, studio di montagna"></figure>
+          <figure data-title="Studio dal vero" data-tech="Olio su tela" data-dim="cm su richiesta"><img src="images/plainair-cascata.jpg" alt="Studio dal vero, cascata"><figcaption><b>Studio dal vero</b><span>Olio su tela, cm su richiesta</span></figcaption></figure>
+          <figure data-title="Sibillini" data-tech="Olio su tela" data-dim="40×40 cm, 2025"><img src="images/plainair-monte-1.jpg" alt="Sibillini"><figcaption><b>Sibillini</b><span>Olio su tela, 40×40 cm, 2025</span></figcaption></figure>
+          <figure data-title="Sagro" data-tech="Olio su lino" data-dim="40×40 cm, 2026"><img src="images/plainair-monte-2.jpg" alt="Sagro"><figcaption><b>Sagro</b><span>Olio su lino, 40×40 cm, 2026</span></figcaption></figure>
+          <figure data-title="En Plein Air" data-tech="Olio su tavola" data-dim="cm su richiesta"><img src="images/plainair-monte-piccolo.jpg" alt="En Plein Air, studio di montagna"><figcaption><b>En Plein Air</b><span>Olio su tavola, cm su richiesta</span></figcaption></figure>
         </div>
       </div>
     </div>
@@ -443,16 +419,16 @@
       <p>Dal 2021 Pizzuti sviluppa parallelamente la pittura murale — tra cui un intervento commissionato dalla Commissione Europea, Rappresentanza in Italia, a Sestri Levante.</p>
     </div>
     <div class="gallery murales-grid">
-      <figure data-group="mare-nostrum" data-title="Mare Nostrum" data-tech="Smalto all'acqua" data-dim="6,5×18 m, 2024 — Sestri Levante, commissione Europea"><img src="images/murale-mare-nostrum-1.jpg" alt="Mare Nostrum"></figure>
-      <figure data-group="mare-nostrum" data-title="Mare Nostrum" data-tech="Smalto all'acqua" data-dim="6,5×18 m, 2024 — Sestri Levante, commissione Europea"><img src="images/murale-mare-nostrum-2.jpg" alt="Mare Nostrum, dettaglio"></figure>
-      <figure data-group="mare-nostrum" data-title="Mare Nostrum" data-tech="Smalto all'acqua" data-dim="6,5×18 m, 2024 — Sestri Levante, commissione Europea"><img src="images/murale-mare-nostrum-3.jpg" alt="Mare Nostrum, dettaglio"></figure>
-      <figure data-group="tana-lupo" data-title="La tana del lupo" data-tech="Smalto all'acqua" data-dim="220 mq, 2026"><img src="images/murale-tana-lupo-1.jpg" alt="La tana del lupo"></figure>
-      <figure data-group="tana-lupo" data-title="La tana del lupo" data-tech="Smalto all'acqua" data-dim="220 mq, 2026"><img src="images/murale-tana-lupo-2.jpg" alt="La tana del lupo, dettaglio"></figure>
-      <figure data-title="Pittura murale" data-tech="Smalto all'acqua" data-dim="dimensioni site-specific"><img src="images/murale-orche.jpg" alt="Murale, orche"></figure>
-      <figure data-title="Pittura murale" data-tech="Smalto all'acqua" data-dim="dimensioni site-specific"><img src="images/murale-mosaico.jpg" alt="Murale, pattern geometrico"></figure>
-      <figure data-group="tana-lupo" data-title="La tana del lupo" data-tech="Smalto all'acqua" data-dim="220 mq, 2026"><img src="images/murale-tana-lupo-3.jpg" alt="La tana del lupo, dettaglio"></figure>
-      <figure data-title="Pittura murale" data-tech="Smalto all'acqua" data-dim="dimensioni site-specific"><img src="images/murale-silhouette.jpg" alt="Murale, dettaglio"></figure>
-      <figure data-title="Pittura murale, veduta panoramica" data-tech="Smalto all'acqua" data-dim="dimensioni site-specific"><img src="images/murale-panorama.jpg" alt="Murale, veduta panoramica"></figure>
+      <figure data-group="mare-nostrum" data-title="Mare Nostrum" data-tech="Smalto all'acqua" data-dim="6,5×18 m, 2024 — Sestri Levante, commissione Europea"><img src="images/murale-mare-nostrum-1.jpg" alt="Mare Nostrum"><figcaption><b>Mare Nostrum</b><span>Smalto all'acqua, 6,5×18 m, 2024 — Sestri Levante, commissione Europea</span></figcaption></figure>
+      <figure data-group="mare-nostrum" data-title="Mare Nostrum" data-tech="Smalto all'acqua" data-dim="6,5×18 m, 2024 — Sestri Levante, commissione Europea"><img src="images/murale-mare-nostrum-2.jpg" alt="Mare Nostrum, dettaglio"><figcaption><b>Mare Nostrum</b><span>Smalto all'acqua, 6,5×18 m, 2024 — Sestri Levante, commissione Europea</span></figcaption></figure>
+      <figure data-group="mare-nostrum" data-title="Mare Nostrum" data-tech="Smalto all'acqua" data-dim="6,5×18 m, 2024 — Sestri Levante, commissione Europea"><img src="images/murale-mare-nostrum-3.jpg" alt="Mare Nostrum, dettaglio"><figcaption><b>Mare Nostrum</b><span>Smalto all'acqua, 6,5×18 m, 2024 — Sestri Levante, commissione Europea</span></figcaption></figure>
+      <figure data-group="tana-lupo" data-title="La tana del lupo" data-tech="Smalto all'acqua" data-dim="220 mq, 2026"><img src="images/murale-tana-lupo-1.jpg" alt="La tana del lupo"><figcaption><b>La tana del lupo</b><span>Smalto all'acqua, 220 mq, 2026</span></figcaption></figure>
+      <figure data-group="tana-lupo" data-title="La tana del lupo" data-tech="Smalto all'acqua" data-dim="220 mq, 2026"><img src="images/murale-tana-lupo-2.jpg" alt="La tana del lupo, dettaglio"><figcaption><b>La tana del lupo</b><span>Smalto all'acqua, 220 mq, 2026</span></figcaption></figure>
+      <figure data-title="Pittura murale" data-tech="Smalto all'acqua" data-dim="dimensioni site-specific"><img src="images/murale-orche.jpg" alt="Murale, orche"><figcaption><b>Pittura murale</b><span>Smalto all'acqua, dimensioni site-specific</span></figcaption></figure>
+      <figure data-title="Pittura murale" data-tech="Smalto all'acqua" data-dim="dimensioni site-specific"><img src="images/murale-mosaico.jpg" alt="Murale, pattern geometrico"><figcaption><b>Pittura murale</b><span>Smalto all'acqua, dimensioni site-specific</span></figcaption></figure>
+      <figure data-group="tana-lupo" data-title="La tana del lupo" data-tech="Smalto all'acqua" data-dim="220 mq, 2026"><img src="images/murale-tana-lupo-3.jpg" alt="La tana del lupo, dettaglio"><figcaption><b>La tana del lupo</b><span>Smalto all'acqua, 220 mq, 2026</span></figcaption></figure>
+      <figure data-title="Pittura murale" data-tech="Smalto all'acqua" data-dim="dimensioni site-specific"><img src="images/murale-silhouette.jpg" alt="Murale, dettaglio"><figcaption><b>Pittura murale</b><span>Smalto all'acqua, dimensioni site-specific</span></figcaption></figure>
+      <figure data-title="Pittura murale, veduta panoramica" data-tech="Smalto all'acqua" data-dim="dimensioni site-specific"><img src="images/murale-panorama.jpg" alt="Murale, veduta panoramica"><figcaption><b>Pittura murale, veduta panoramica</b><span>Smalto all'acqua, dimensioni site-specific</span></figcaption></figure>
     </div>
     <div class="murale-tag"><span class="dot"></span> Commissionato da: Commissione Europea · Comune di Civitanova Marche · Comune di Montegranaro</div>
   </div>
@@ -465,12 +441,14 @@
 <section class="contact" id="contatti">
   <div class="wrap">
     <div class="contact-wrap">
-      <h2 class="serif">Per mostre,<br>commissioni e<br>collaborazioni.</h2>
-      <div class="contact-links">
-        <a href="mailto:alessandro.pizzuti@hotmail.it">alessandro.pizzuti@hotmail.it</a>
-        <a href="tel:+393341823794">+39 334 182 3794</a>
-        <a href="https://instagram.com/alessandropizzuti_" target="_blank" rel="noopener">@alessandropizzuti_</a>
-      </div>
+      <h2 class="serif">Per mostre, commissioni e collaborazioni.</h2>
+      <a class="btn btn-fill" href="mailto:alessandro.pizzuti@hotmail.it">Scrivimi</a>
+      <br>
+      <a class="btn btn-outline" href="https://instagram.com/alessandropizzuti_" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="2.5" y="2.5" width="19" height="19" rx="5"/><circle cx="12" cy="12" r="4.6"/><circle cx="17.3" cy="6.7" r="1.1" fill="currentColor" stroke="none"/></svg>
+        Instagram
+      </a>
+      <span class="contact-phone">+39 334 182 3794 · alessandro.pizzuti@hotmail.it</span>
     </div>
     <footer>
       <img src="images/firma.png" alt="Alessandro Pizzuti">
