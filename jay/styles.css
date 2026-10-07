@@ -6,8 +6,8 @@
 :root{
   --ink:#1b1a17;
   --paper:#ffffff;
-  --accent:#b3382b;
-  --accent-deep:#8f2a20;
+  --accent:#1b1a17;
+  --accent-deep:#1b1a17;
   --line: rgba(27,26,23,0.12);
   --muted: rgba(27,26,23,0.6);
   --ph-bg:#f4f3f1;
