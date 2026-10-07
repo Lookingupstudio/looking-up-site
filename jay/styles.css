@@ -42,7 +42,7 @@ nav{
   font-family:'Fraunces',serif;font-size:16px;letter-spacing:0.02em;
   color:var(--ink);
 }
-.nav-links{display:flex;gap:30px;}
+.nav-links{display:flex;gap:30px;align-items:center;}
 .nav-links a{
   font-size:11.5px;letter-spacing:0.12em;text-transform:uppercase;
   color:var(--ink);opacity:.68;
@@ -50,6 +50,27 @@ nav{
 }
 .nav-links a:hover, .nav-links a.current{opacity:1;}
 .nav-toggle{display:none;}
+
+/* Dropdown "Art Works" -> Studio / Murales */
+.nav-dropdown{position:relative;display:flex;align-items:center;}
+.dd-trigger{display:inline-flex;align-items:center;gap:5px;}
+.dd-arrow{font-size:9px;display:inline-block;transition:transform .2s ease;opacity:.8;}
+.dd-menu{
+  position:absolute;top:100%;left:50%;
+  background:#fff;border:1px solid var(--line);min-width:150px;
+  padding:8px 0;margin-top:18px;
+  box-shadow:0 10px 24px rgba(0,0,0,0.06);
+  opacity:0;visibility:hidden;pointer-events:none;
+  transform:translate(-50%,-6px);
+  transition:opacity .2s ease, transform .2s ease, visibility .2s ease;
+}
+.nav-dropdown:hover .dd-menu{opacity:1;visibility:visible;pointer-events:auto;transform:translate(-50%,0);}
+.nav-dropdown:hover .dd-arrow{transform:rotate(180deg);}
+.dd-menu a{
+  display:block;padding:9px 20px;font-size:11px;letter-spacing:0.1em;text-transform:uppercase;
+  color:var(--ink);opacity:.65;white-space:nowrap;
+}
+.dd-menu a:hover, .dd-menu a.current{opacity:1;color:var(--accent-deep);}
 
 /* HERO — una sola immagine fissa, nessun testo */
 .hero{
@@ -96,21 +117,6 @@ section{padding:90px 0;}
 .cv-cat p i{font-style:italic;color:var(--ink);}
 .cv-cat p .y{color:var(--accent-deep);font-weight:500;}
 
-/* ART WORKS — pagina indice con due cartelle */
-.folders{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--line);border:1px solid var(--line);margin-top:20px;}
-.folder-card{
-  background:#fff;padding:64px 48px;
-  transition:background .2s ease;
-}
-.folder-card:hover{background:#fafaf9;}
-.folder-card .eyebrow{color:var(--accent-deep);}
-.folder-card h2{font-size:clamp(28px,4vw,44px);margin-top:14px;}
-.folder-card p{color:var(--muted);margin-top:16px;font-size:14.5px;max-width:360px;}
-.folder-card .go{
-  display:inline-block;margin-top:28px;font-size:12px;letter-spacing:0.1em;
-  text-transform:uppercase;border-bottom:1px solid var(--ink);padding-bottom:3px;
-}
-
 /* SERIES NAV (dentro Studio) */
 .series-nav{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:60px;}
 .series-nav a{
@@ -127,30 +133,28 @@ section{padding:90px 0;}
 .series-title .eyebrow{color:var(--accent-deep);}
 .series-intro{color:var(--muted);max-width:620px;margin-bottom:36px;font-size:15px;}
 
-/* GRIGLIA OPERE — stile e-commerce, celle uniformi, con placeholder */
+/* GRIGLIA OPERE — stile e-commerce, blocchi grandi, 3 per riga */
 .art-grid{
-  display:grid;grid-template-columns:repeat(auto-fill, minmax(220px,1fr));gap:28px 24px;
+  display:grid;grid-template-columns:repeat(3,1fr);gap:48px 32px;
 }
 .art-card{cursor:pointer;}
 .art-ph{
   position:relative;width:100%;aspect-ratio:4/5;overflow:hidden;
   background:var(--ph-bg);display:flex;align-items:center;justify-content:center;
-  transition:background .2s ease;
 }
 .art-grid.-wide .art-ph{aspect-ratio:4/3;}
-.art-card:hover .art-ph{background:#eeece7;}
 .art-ph svg{width:30px;height:30px;color:var(--ph-icon);}
-.art-ph img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;}
-.art-cap{margin-top:12px;}
+.art-ph img{
+  position:absolute;inset:0;width:100%;height:100%;object-fit:cover;
+  transition:transform .6s cubic-bezier(.2,.7,.2,1);
+}
+.art-card:hover .art-ph img{transform:scale(1.035);}
+.art-cap{margin-top:14px;}
 .art-cap b{
-  display:block;font-family:'Fraunces',serif;font-size:14.5px;font-weight:400;
+  display:block;font-family:'Fraunces',serif;font-size:16px;font-weight:400;
   color:var(--ink);margin-bottom:3px;
 }
-.art-cap span{display:block;font-size:12px;color:var(--muted);}
-
-/* STUDIO BANNER */
-.studio-banner{height:56vh;min-height:300px;position:relative;overflow:hidden;}
-.studio-banner img{width:100%;height:100%;object-fit:cover;}
+.art-cap span{display:block;font-size:12.5px;color:var(--muted);}
 
 /* CONTACT */
 .contact-wrap{max-width:520px;margin:0 auto;text-align:center;}
@@ -196,6 +200,20 @@ footer .credit{font-size:11.5px;color:var(--muted);}
   position:absolute;top:28px;right:40px;color:#efe9dc;font-size:14px;letter-spacing:0.1em;
   cursor:pointer;text-transform:uppercase;z-index:3;
 }
+.lb-arrow{
+  position:absolute;top:50%;transform:translateY(-50%);
+  width:46px;height:46px;border-radius:50%;border:1px solid rgba(239,233,220,0.3);
+  background:rgba(255,255,255,0.04);color:#efe9dc;font-size:22px;
+  display:none;align-items:center;justify-content:center;cursor:pointer;z-index:3;
+  transition:background .2s ease, border-color .2s ease;
+}
+.lb-arrow:hover{background:rgba(255,255,255,0.12);border-color:var(--accent);}
+.lb-prev{left:24px;}
+.lb-next{right:24px;}
+
+@media (max-width: 1000px){
+  .art-grid{grid-template-columns:repeat(2,1fr);gap:32px 22px;}
+}
 
 @media (max-width: 900px){
   .wrap{padding:0 22px;}
@@ -209,9 +227,12 @@ footer .credit{font-size:11.5px;color:var(--muted);}
   .bio-grid img{height:380px;}
   .cv-block{margin-top:56px;padding-top:36px;}
   .cv-grid{grid-template-columns:1fr;gap:36px;}
-  .folders{grid-template-columns:1fr;}
-  .folder-card{padding:44px 26px;}
-  .art-grid{grid-template-columns:repeat(2,1fr);gap:20px 14px;}
-  .studio-banner{height:38vh;}
   footer{flex-direction:column;align-items:flex-start;}
+}
+
+@media (max-width: 560px){
+  .art-grid{grid-template-columns:1fr;gap:28px;}
+  .lb-arrow{width:38px;height:38px;font-size:18px;}
+  .lb-prev{left:8px;}
+  .lb-next{right:8px;}
 }
