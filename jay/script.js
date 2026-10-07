@@ -37,9 +37,9 @@ function initArtLightbox(){
     const title = activeCard.dataset.title || '';
     const tech = activeCard.dataset.tech || '';
     const dim = activeCard.dataset.dim || '';
-    const meta = [tech, dim].filter(Boolean).join(' · ');
+    const meta = (tech ? '<span class="lb-meta">' + tech + '</span>' : '') + (dim ? '<span class="lb-meta">' + dim + '</span>' : '');
     const count = images.length > 1 ? '<span class="lb-note">' + (idx + 1) + ' / ' + images.length + '</span>' : '';
-    lbCap.innerHTML = (title ? '<b>' + title + '</b>' : '') + (meta ? '<span class="lb-meta">' + meta + '</span>' : '') + count;
+    lbCap.innerHTML = (title ? '<b>' + title + '</b>' : '') + meta + count;
   }
 
   function open(card){

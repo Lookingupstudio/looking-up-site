@@ -156,7 +156,7 @@ section{padding:90px 0;}
   display:block;font-family:'Gotham',sans-serif;font-size:15px;font-weight:500;
   color:var(--ink);margin-bottom:3px;
 }
-.art-cap span{display:block;font-size:12.5px;color:var(--muted);}
+.art-cap span{display:block;font-size:12.5px;color:var(--muted);line-height:1.5;}
 
 /* CONTACT */
 .contact-wrap{max-width:520px;margin:0 auto;text-align:center;}
