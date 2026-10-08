@@ -1,0 +1,630 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Studio Volatili</title>
+<meta name="description" content="Concept di restyling per lo Studio Tecnico Geometra Germano Volatili & Partners, Monte San Giusto (MC).">
+<meta name="robots" content="noindex, nofollow">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,300..700;1,400..600&family=Inter:wght@400;500;600;700&family=Caveat:wght@500;600;700&display=swap">
+<style>
+  :root{
+    --ink:#2B3A25;
+    --paper:#FBF8F1;
+    --mist:#F1ECDF;
+    --sage:#7E9471;
+    --sage-deep:#5C7050;
+    --honey:#C99A3E;
+    --serif: 'Fraunces', Georgia, serif;
+    --sans: 'Inter', -apple-system, sans-serif;
+    --script: 'Caveat', cursive;
+  }
+
+  *{box-sizing:border-box;}
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:var(--sans);
+    font-size:17.5px;
+    line-height:1.7;
+    -webkit-font-smoothing:antialiased;
+  }
+  img{max-width:100%;display:block;}
+  h1,h2,h3{font-family:var(--serif);font-weight:600;margin:0;text-wrap:balance;letter-spacing:-0.01em;}
+  p{margin:0;}
+  a{color:inherit;}
+  .wrap{max-width:1180px;margin:0 auto;padding-inline:28px;}
+  @media (max-width:640px){ .wrap{padding-inline:18px;} }
+
+  .eyebrow{
+    font-family:var(--serif);font-style:italic;font-weight:500;
+    font-size:16px;color:var(--sage-deep);
+  }
+  .script{font-family:var(--script);font-weight:600;}
+
+  .reveal{opacity:0;transform:translateY(16px);transition:opacity .7s ease, transform .7s ease;}
+  .reveal.is-visible{opacity:1;transform:none;}
+  @media (prefers-reduced-motion: reduce){ .reveal{opacity:1;transform:none;transition:none;} }
+
+
+  /* ---------- notice ---------- */
+  .notice{
+    background:var(--mist);color:var(--sage-deep);
+    font-family:var(--sans);font-size:12.5px;text-align:center;
+    padding:9px 16px;
+  }
+  .notice b{color:var(--honey);font-weight:600;}
+
+  /* ---------- header ---------- */
+  header.site{
+    position:sticky;top:0;
+    background:rgba(251,248,241,0.92);
+    backdrop-filter:blur(6px);
+    z-index:40;
+  }
+  .nav-row{ display:flex;align-items:center;justify-content:space-between;gap:20px;padding-block:18px; }
+  .brand{display:flex;align-items:center;gap:14px;text-decoration:none;color:var(--ink);}
+  .brand-sig{height:38px;width:auto;}
+  .brand-text{display:flex;flex-direction:column;line-height:1.2;}
+  .brand-text strong{font-family:var(--sans);font-size:13px;font-weight:600;}
+  .brand-text span{font-family:var(--sans);font-size:11.5px;color:var(--sage-deep);}
+
+  nav.links{display:flex;gap:30px;}
+  nav.links a{ font-size:15px;font-weight:500;text-decoration:none;color:var(--ink);opacity:.8; }
+  nav.links a:hover{opacity:1;color:var(--sage-deep);}
+
+  .menu-toggle{
+    display:none;position:relative;width:44px;height:44px;border-radius:999px;
+    border:none;background:var(--mist);cursor:pointer;flex:none;
+  }
+  .menu-toggle span{
+    position:absolute;left:13px;right:13px;height:2px;background:var(--ink);border-radius:2px;
+    transition:transform .25s ease, opacity .2s ease, top .25s ease;
+  }
+  .menu-toggle span:nth-child(1){top:16px;}
+  .menu-toggle span:nth-child(2){top:22px;}
+  .menu-toggle span:nth-child(3){top:28px;}
+  .menu-toggle.is-open span:nth-child(1){top:22px;transform:rotate(45deg);}
+  .menu-toggle.is-open span:nth-child(2){opacity:0;}
+  .menu-toggle.is-open span:nth-child(3){top:22px;transform:rotate(-45deg);}
+
+  .mobile-menu{
+    max-height:0;overflow:hidden;background:var(--sage-deep);
+    transition:max-height .32s ease;border-radius:0 0 28px 28px;
+  }
+  .mobile-menu.is-open{max-height:420px;}
+  .mobile-menu-inner{display:flex;flex-direction:column;padding:10px 28px 28px;gap:4px;}
+  .mobile-menu a{
+    color:#fff;text-decoration:none;font-size:18px;font-weight:500;
+    padding-block:12px;opacity:.92;
+  }
+  .mobile-menu a:hover{opacity:1;color:var(--honey);}
+  .mobile-menu .btn{margin-top:10px;align-self:flex-start;background:var(--honey);color:var(--ink);border-color:var(--honey);}
+
+  @media (max-width:920px){ .menu-toggle{display:block;} }
+
+  .btn{
+    display:inline-flex;align-items:center;gap:8px;
+    font-family:var(--sans);font-size:15px;font-weight:600;
+    text-decoration:none;white-space:nowrap;cursor:pointer;
+    padding:13px 26px;border-radius:999px;border:1.5px solid transparent;
+    transition:background .15s ease, color .15s ease, transform .15s ease;
+  }
+  .btn:hover{transform:translateY(-1px);}
+  .btn-solid{background:var(--sage-deep);color:#fff;}
+  .btn-solid:hover{background:var(--ink);}
+  .btn-outline{background:transparent;color:var(--ink);border-color:var(--ink);}
+  .btn-outline:hover{background:var(--ink);color:var(--paper);}
+  .btn-ghost{background:transparent;color:var(--sage-deep);padding-inline:6px;}
+  .btn-ghost:hover{color:var(--ink);}
+
+  @media (max-width: 920px){ nav.links{display:none;} .header-cta{display:none;} }
+
+  /* ---------- hero (video background) ---------- */
+  .hero{ position:relative;min-height:86vh;display:flex;align-items:center;overflow:hidden;background:var(--ink); }
+  .hero video{ position:absolute;inset:0;width:100%;height:100%;object-fit:cover; }
+  .hero::after{
+    content:"";position:absolute;inset:0;
+    background:linear-gradient(180deg, rgba(27,36,22,.76) 0%, rgba(27,36,22,.52) 45%, rgba(27,36,22,.86) 100%);
+  }
+  .hero-inner{position:relative;z-index:2;max-width:640px;padding-block:64px;}
+
+  .hero h1{ font-size:clamp(38px,6.8vw,78px); line-height:1.05; margin-block:16px 20px;color:#fff; }
+  .hero h1 em{font-style:italic;color:var(--honey);}
+  .hero-sub{ max-width:48ch;font-size:18px;color:#E4E9DD;margin-bottom:28px; }
+  .hero-ctas{display:flex;flex-wrap:wrap;align-items:center;gap:16px;margin-bottom:32px;}
+
+  @media (max-width:640px){
+    .hero{min-height:0;}
+    .hero-inner{padding-block:92px 44px;}
+  }
+  .hero .btn-outline{border-color:#fff;color:#fff;}
+  .hero .btn-outline:hover{background:#fff;color:var(--ink);}
+  .hero .btn-ghost{color:var(--honey);}
+  .hero .btn-ghost:hover{color:#fff;}
+
+  .hero-sign{display:flex;align-items:center;gap:16px;}
+  .hero-sign img{height:50px;width:auto;}
+  .hero-sign span{font-size:13.5px;color:#C6D4BF;}
+
+  .hero-art{position:relative;}
+  .hero-photo{position:relative;border-radius:36px;overflow:hidden;aspect-ratio:4/3;}
+  .hero-photo img{width:100%;height:100%;object-fit:cover;}
+
+  /* ---------- stats strip ---------- */
+  .stats{ padding-block:64px 48px; }
+  .stats-row{ display:flex;flex-wrap:wrap;gap:32px 48px;justify-content:space-between; }
+  .stat{ display:flex;align-items:flex-start;gap:14px;font-size:15px;color:#5A6854;max-width:230px; }
+  .stat svg{flex:none;margin-top:4px;color:var(--sage);}
+  .stat strong{display:block;font-family:var(--serif);font-size:20px;color:var(--ink);font-weight:600;margin-bottom:2px;}
+  @media (max-width:640px){ .stats{padding-block:44px 32px;} .stats-row{gap:24px 32px;} }
+
+  /* ---------- section shell ---------- */
+  section{padding-block:84px;}
+  .section-head{ margin-bottom:44px;max-width:60ch; }
+  .section-head h2{font-size:clamp(34px,4.4vw,54px);margin-top:10px;}
+  .section-note{font-size:16px;color:#6B7A64;margin-top:14px;}
+  @media (max-width:640px){
+    section{padding-block:52px;}
+    .section-head{margin-bottom:30px;}
+  }
+
+  .divider{display:flex;justify-content:center;padding-block:4px;opacity:.7;}
+
+  /* ---------- servizi: featured photo cards ---------- */
+  .svc-featured{ display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-bottom:28px; }
+  @media (max-width:860px){ .svc-featured{grid-template-columns:1fr;} }
+  @media (max-width:640px){ .svc-featured{gap:14px;margin-bottom:20px;} }
+  .svc-feat{ position:relative;border-radius:32px;overflow:hidden;cursor:pointer;background:var(--ink); }
+  .svc-feat .ph{aspect-ratio:4/3;position:relative;}
+  .svc-feat .ph img{width:100%;height:100%;object-fit:cover;opacity:0.85;transition:opacity .2s ease, transform .5s ease;}
+  .svc-feat:hover .ph img{opacity:0.95;transform:scale(1.05);}
+  .svc-feat .ph::after{
+    content:"";position:absolute;inset:0;
+    background:linear-gradient(0deg, rgba(43,58,37,0.9) 0%, rgba(43,58,37,0.2) 55%, rgba(43,58,37,0.02) 100%);
+  }
+  .svc-feat .cap{position:absolute;left:0;right:0;bottom:0;padding:22px;color:#fff;}
+  .svc-feat h3{font-size:22px;color:#fff;font-weight:600;}
+  .svc-feat .teaser{font-size:14.5px;color:#DCE3D6;margin-top:6px;max-width:34ch;}
+  .svc-feat .more-hint{
+    font-family:var(--script);font-size:18px;color:var(--honey);margin-top:10px;display:block;
+  }
+
+  /* ---------- servizi: soft accordion cards ---------- */
+  .svc-grid{ display:grid;grid-template-columns:repeat(4,1fr);gap:22px; }
+  @media (max-width:980px){ .svc-grid{grid-template-columns:repeat(2,1fr);} }
+  @media (max-width:560px){ .svc-grid{grid-template-columns:1fr;} }
+
+  details.svc-card{background:var(--mist);border-radius:28px;}
+  details.svc-card summary{
+    list-style:none;cursor:pointer;padding:28px 26px 24px;
+    display:flex;flex-direction:column;gap:14px;
+  }
+  details.svc-card summary::-webkit-details-marker{display:none;}
+  .svc-icon{color:var(--sage-deep);}
+  .svc-card h3{font-size:19px;font-weight:600;line-height:1.2;}
+  .svc-card .teaser{font-size:14.5px;color:#596653;}
+  .svc-toggle{
+    display:flex;align-items:center;gap:6px;font-family:var(--script);font-size:19px;color:var(--honey);margin-top:2px;
+  }
+  .svc-toggle svg{transition:transform .2s ease;width:13px;height:13px;}
+  details[open] .svc-toggle svg{transform:rotate(180deg);}
+  details[open] .svc-toggle .lbl-closed{display:none;}
+  .svc-toggle .lbl-open{display:none;}
+  details[open] .svc-toggle .lbl-open{display:inline;}
+  .svc-more{padding:0 26px 26px;font-size:14.5px;color:#596653;}
+  @media (max-width:640px){
+    .svc-grid{gap:14px;}
+    details.svc-card summary{padding:22px 20px 18px;gap:10px;}
+    .svc-more{padding:0 20px 20px;}
+  }
+
+  /* ---------- metodo ---------- */
+  .metodo{background:var(--ink);color:var(--paper);border-radius:48px;margin-inline:16px;}
+  @media (max-width:640px){ .metodo{border-radius:28px;margin-inline:0;} }
+  .metodo .eyebrow{color:#C9D4C2;}
+  .metodo h2{color:#fff;}
+  .metodo .section-note{color:#A9B6A1;}
+  .steps{display:grid;grid-template-columns:repeat(5,1fr);gap:28px;}
+  @media (max-width:860px){ .steps{grid-template-columns:repeat(2,1fr);} }
+  @media (max-width:560px){ .steps{grid-template-columns:1fr;gap:20px;} }
+  .step strong.script{font-size:30px;color:var(--honey);display:block;margin-bottom:6px;}
+  .step h3{font-size:18px;color:#fff;margin-bottom:8px;font-weight:600;}
+  .step p{font-size:14px;color:#B9C5B2;}
+
+  /* ---------- chi siamo ---------- */
+  .about-grid{display:grid;grid-template-columns:0.85fr 1.15fr;gap:60px;align-items:center;}
+  @media (max-width:860px){ .about-grid{grid-template-columns:1fr;gap:36px;} }
+  .about-body .lead{font-family:var(--serif);font-size:26px;font-weight:500;line-height:1.3;color:var(--ink);margin-bottom:18px;}
+  .about-body p{font-size:17px;color:#3C4836;margin-bottom:16px;max-width:60ch;}
+  .signature-img{height:84px;width:auto;margin-top:18px;}
+  .about-more{margin-top:14px;}
+  .about-more summary{
+    cursor:pointer;list-style:none;font-family:var(--script);font-size:19px;color:var(--honey);
+    display:flex;align-items:center;gap:6px;
+  }
+  .about-more summary::-webkit-details-marker{display:none;}
+  .about-more svg{transition:transform .2s ease;width:13px;height:13px;}
+  details[open].about-more svg{transform:rotate(180deg);}
+  .about-more p{margin-top:14px;}
+
+  /* ---------- galleria ---------- */
+  .gal-note{font-size:15px;color:#6B7A64;font-style:italic;margin-bottom:30px;max-width:56ch;}
+  .gal-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;}
+  @media (max-width:860px){ .gal-grid{grid-template-columns:repeat(2,1fr);} }
+  @media (max-width:640px){ .gal-grid{gap:12px;} .gal-note{margin-bottom:20px;} }
+  .gal-frame{ aspect-ratio:4/3;border-radius:28px;position:relative;overflow:hidden;background:var(--ink); }
+  .gal-frame img{width:100%;height:100%;object-fit:cover;transition:transform .5s ease;}
+  .gal-frame:hover img{transform:scale(1.07);}
+  .gal-frame .tag{
+    position:absolute;left:14px;bottom:14px;font-size:13px;font-weight:500;
+    color:#fff;background:rgba(43,58,37,0.55);backdrop-filter:blur(3px);
+    padding:6px 14px;border-radius:999px;
+  }
+
+  /* ---------- contatti ---------- */
+  .contact{background:var(--sage-deep);color:#fff;border-radius:48px;margin-inline:16px;}
+  @media (max-width:640px){ .contact{border-radius:28px;margin-inline:0;} }
+  .contact-grid{display:grid;grid-template-columns:1.1fr 0.9fr;gap:56px;align-items:center;}
+  @media (max-width:860px){ .contact-grid{grid-template-columns:1fr;} }
+  .contact .eyebrow{color:#D8E3D1;}
+  .contact h2{font-size:clamp(32px,4.4vw,48px);margin-bottom:20px;color:#fff;}
+  .contact-sub{font-size:17px;color:#E3EADD;max-width:46ch;margin-bottom:30px;}
+  .contact-ctas{display:flex;flex-wrap:wrap;gap:16px;}
+  .contact .btn-outline{border-color:#fff;color:#fff;}
+  .contact .btn-outline:hover{background:#fff;color:var(--sage-deep);}
+  .contact .btn-solid{background:var(--honey);color:var(--ink);}
+  .contact .btn-solid:hover{background:#fff;}
+
+  .info-list{display:flex;flex-direction:column;gap:18px;font-size:16px;}
+  .info-list span{display:block;font-size:13px;color:#C6D4BF;margin-bottom:2px;}
+  .info-list a{text-decoration:none;}
+  .info-list a:hover{color:var(--honey);}
+
+  /* ---------- footer ---------- */
+  footer{padding-block:40px;}
+  .footer-row{
+    display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;
+    font-size:13.5px;color:#7E8C78;
+  }
+  .footer-row a{text-decoration:none;color:#7E8C78;}
+  .footer-row a:hover{color:var(--sage-deep);}
+</style>
+</head>
+<body>
+
+<div class="notice">Concept di restyling &mdash; <b>proposta di design</b>, non il sito ufficiale. Foto e video: materiale stock dimostrativo.</div>
+
+<header class="site">
+  <div class="wrap nav-row">
+    <a class="brand" href="#top">
+      <img class="brand-sig" src="img/signature.png" alt="Firma di Germano Volatili">
+      <span class="brand-text">
+        <strong>Studio Tecnico</strong>
+        <span>dal 1981</span>
+      </span>
+    </a>
+    <nav class="links">
+      <a href="#servizi">Servizi</a>
+      <a href="#metodo">Metodo</a>
+      <a href="#chi-siamo">Chi siamo</a>
+      <a href="#galleria">Galleria</a>
+      <a href="#contatti">Contatti</a>
+    </nav>
+    <div class="header-cta">
+      <a class="btn btn-outline" href="tel:+393312710995">+39 331 271 0995</a>
+    </div>
+    <button class="menu-toggle" aria-label="Apri il menu" aria-expanded="false" onclick="
+      this.classList.toggle('is-open');
+      var open = this.classList.contains('is-open');
+      this.setAttribute('aria-expanded', open);
+      document.getElementById('mobileMenu').classList.toggle('is-open', open);
+    ">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+  <div class="mobile-menu" id="mobileMenu">
+    <nav class="mobile-menu-inner">
+      <a href="#servizi">Servizi</a>
+      <a href="#metodo">Metodo</a>
+      <a href="#chi-siamo">Chi siamo</a>
+      <a href="#galleria">Galleria</a>
+      <a href="#contatti">Contatti</a>
+      <a class="btn" href="tel:+393312710995">+39 331 271 0995</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+
+  <section class="hero">
+    <video autoplay muted loop playsinline aria-hidden="true">
+      <source src="img/bio.webm" type="video/webm">
+    </video>
+    <div class="wrap">
+      <div class="hero-inner reveal">
+        <span class="eyebrow" style="color:#D8E3D1;">Studio tecnico a Monte San Giusto</span>
+        <h1>Soluzioni abitative <em>innovative</em>,<br>pensate per durare.</h1>
+        <p class="hero-sub">Dal 1981 progettiamo bioedilizia ecosostenibile ed efficientamento energetico a norma NZEB e Case Green &mdash; per il comfort, il benessere e la salubrit&agrave; di chi costruisce con noi.</p>
+        <div class="hero-ctas">
+          <a class="btn btn-solid" href="mailto:info@geometragermanovolatili.it">Richiedi un sopralluogo</a>
+          <a class="btn btn-ghost" href="tel:+393312710995">o chiama &rarr; +39 331 271 0995</a>
+        </div>
+        <div class="hero-sign">
+          <img src="img/signature_light.png" alt="Firma di Germano Volatili">
+          <span>Geom. Germano Volatili &amp; Partners <span class="script" style="font-size:18px;color:var(--honey);">&middot; dal 1981</span></span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="stats">
+    <div class="wrap stats-row">
+      <div class="stat">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2C9 6 7 10 7 13a5 5 0 0 0 10 0c0-3-2-7-5-11Z"/></svg>
+        <div><strong>Oltre 40 anni</strong>di attivit&agrave; continuativa</div>
+      </div>
+      <div class="stat">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2C9 6 7 10 7 13a5 5 0 0 0 10 0c0-3-2-7-5-11Z"/></svg>
+        <div><strong>Case Green</strong>e normativa NZEB</div>
+      </div>
+      <div class="stat">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2C9 6 7 10 7 13a5 5 0 0 0 10 0c0-3-2-7-5-11Z"/></svg>
+        <div><strong>Rete qualificata</strong>di professionisti</div>
+      </div>
+      <div class="stat">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2C9 6 7 10 7 13a5 5 0 0 0 10 0c0-3-2-7-5-11Z"/></svg>
+        <div><strong>Made in Italy &amp; UE</strong>materiali e tecnologie certificate</div>
+      </div>
+    </div>
+  </section>
+
+  <section id="servizi">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <span class="eyebrow">Cosa facciamo</span>
+        <h2>Servizi</h2>
+        <p class="section-note">Otto aree di intervento. Tocca una scheda per saperne di pi&ugrave;.</p>
+      </div>
+
+      <div class="svc-featured reveal">
+        <div class="svc-feat" onclick="document.getElementById('d-edilizia').open=true; document.getElementById('d-edilizia').scrollIntoView({behavior:'smooth',block:'center'});">
+          <div class="ph"><img src="img/crane.jpg" alt="Cantiere edile con gru, immagine dimostrativa"></div>
+          <div class="cap">
+            <h3>Edilizia &amp; Costruzioni</h3>
+            <p class="teaser">Progettazione e direzione lavori fino all&rsquo;agibilit&agrave;.</p>
+            <span class="more-hint">scopri di pi&ugrave; &rarr;</span>
+          </div>
+        </div>
+        <div class="svc-feat" onclick="document.getElementById('d-bio').open=true; document.getElementById('d-bio').scrollIntoView({behavior:'smooth',block:'center'});">
+          <div class="ph"><img src="img/eco.jpg" alt="Casa in bioedilizia stampata in 3D con materiali naturali, immagine dimostrativa"></div>
+          <div class="cap">
+            <h3>Bioarchitettura</h3>
+            <p class="teaser">Case salubri con materiali naturali e tecniche a secco.</p>
+            <span class="more-hint">scopri di pi&ugrave; &rarr;</span>
+          </div>
+        </div>
+        <div class="svc-feat" onclick="document.getElementById('d-energie').open=true; document.getElementById('d-energie').scrollIntoView({behavior:'smooth',block:'center'});">
+          <div class="ph"><img src="img/solar.jpg" alt="Pannelli fotovoltaici su tetto in tegole, immagine dimostrativa"></div>
+          <div class="cap">
+            <h3>Energie Rinnovabili</h3>
+            <p class="teaser">Fotovoltaico per coperture industriali e terreni agricoli.</p>
+            <span class="more-hint">scopri di pi&ugrave; &rarr;</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="svc-grid reveal">
+        <details class="svc-card" id="d-edilizia">
+          <summary>
+            <svg class="svc-icon" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 21V9l8-5 8 5v12"/><path d="M9 21v-7h6v7"/></svg>
+            <h3>Edilizia &amp; Costruzioni</h3>
+            <p class="teaser">Progettazione e direzione lavori per interventi civili, commerciali e industriali.</p>
+            <span class="svc-toggle"><span class="lbl-closed">leggi di pi&ugrave;</span><span class="lbl-open">chiudi</span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
+            </span>
+          </summary>
+          <div class="svc-more">Progettazione architettonica, capitolato d&rsquo;appalto, computi metrici e gestione completa del cantiere, fino al rilascio del certificato di agibilit&agrave;, in collaborazione con architetti, ingegneri e geologi.</div>
+        </details>
+
+        <details class="svc-card" id="d-bio">
+          <summary>
+            <svg class="svc-icon" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 3c3 4 4 7 4 10a4 4 0 0 1-8 0c0-3 1-6 4-10Z"/><path d="M12 13v8"/></svg>
+            <h3>Bioarchitettura</h3>
+            <p class="teaser">Case salubri su misura, con materiali naturali e tecniche a secco.</p>
+            <span class="svc-toggle"><span class="lbl-closed">leggi di pi&ugrave;</span><span class="lbl-open">chiudi</span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
+            </span>
+          </summary>
+          <div class="svc-more">Progetti personalizzati con tecniche di bioarchitettura e bioclimatica, impianti alimentati da energie rinnovabili e materiali naturali riciclabili a fine vita: una casa sicura, sostenibile, silenziosa e semplice da vivere.</div>
+        </details>
+
+        <details class="svc-card">
+          <summary>
+            <svg class="svc-icon" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 12c2-3 4 3 6 0s4 3 6 0 4 3 6 0"/><path d="M3 18c2-3 4 3 6 0s4 3 6 0 4 3 6 0"/></svg>
+            <h3>Isolamento Termico &amp; Acustico</h3>
+            <p class="teaser">Micro cappotto con nanotecnologie ceramiche, spessori minimi.</p>
+            <span class="svc-toggle"><span class="lbl-closed">leggi di pi&ugrave;</span><span class="lbl-open">chiudi</span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
+            </span>
+          </summary>
+          <div class="svc-more">La soluzione Mantic Ceramic (partner Savenergy, Milano) corregge in modo uniforme i ponti termici con pochi millimetri di spessore: posa rapida, atossica, ignifuga e senza manutenzione nel tempo.</div>
+        </details>
+
+        <details class="svc-card" id="d-energie">
+          <summary>
+            <svg class="svc-icon" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="4"/><path d="M12 2v3M12 19v3M4.2 4.2l2.1 2.1M17.7 17.7l2.1 2.1M2 12h3M19 12h3M4.2 19.8l2.1-2.1M17.7 6.3l2.1-2.1"/></svg>
+            <h3>Energie Rinnovabili</h3>
+            <p class="teaser">Fotovoltaico per coperture industriali e terreni agricoli.</p>
+            <span class="svc-toggle"><span class="lbl-closed">leggi di pi&ugrave;</span><span class="lbl-open">chiudi</span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
+            </span>
+          </summary>
+          <div class="svc-more">Soluzioni per aziende ad alto consumo energetico, con formule a costo zero per gli investimenti su coperture industriali e terreni agricoli idonei, nel rispetto dei vincoli paesaggistici.</div>
+        </details>
+
+        <details class="svc-card">
+          <summary>
+            <svg class="svc-icon" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 2 5 12a7 7 0 1 0 14 0L12 2Z"/><path d="M4 20l16-16"/></svg>
+            <h3>Deumidificazione</h3>
+            <p class="teaser">Sistemi elettronici multifrequenza, senza opere murarie.</p>
+            <span class="svc-toggle"><span class="lbl-closed">leggi di pi&ugrave;</span><span class="lbl-open">chiudi</span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
+            </span>
+          </summary>
+          <div class="svc-more">Tecnologia Ecodray per l&rsquo;eliminazione dell&rsquo;umidit&agrave; di risalita tramite impulsi elettromagnetici a bassa frequenza: nessuna demolizione, nessuna manutenzione nel tempo.</div>
+        </details>
+
+        <details class="svc-card">
+          <summary>
+            <svg class="svc-icon" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 10 12 4l9 6"/><path d="M5 10v10h14V10"/><path d="M10 20v-6h4v6"/></svg>
+            <h3>Consulenza Immobiliare</h3>
+            <p class="teaser">Perizie, valutazioni e assistenza all&rsquo;acquisto.</p>
+            <span class="svc-toggle"><span class="lbl-closed">leggi di pi&ugrave;</span><span class="lbl-open">chiudi</span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
+            </span>
+          </summary>
+          <div class="svc-more">Consulenza e gestione immobiliare globale per immobili di ogni destinazione d&rsquo;uso, attraverso una rete di contatti professionali a livello nazionale e internazionale.</div>
+        </details>
+
+        <details class="svc-card">
+          <summary>
+            <svg class="svc-icon" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M6 3h9l5 5v13H6z"/><path d="M15 3v5h5"/><path d="M9 14l2 2 4-4"/></svg>
+            <h3>Certificazioni Energetiche</h3>
+            <p class="teaser">APE, certificazioni ambientali e pratiche catastali.</p>
+            <span class="svc-toggle"><span class="lbl-closed">leggi di pi&ugrave;</span><span class="lbl-open">chiudi</span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
+            </span>
+          </summary>
+          <div class="svc-more">Redazione di Attestati di Prestazione Energetica (APE) e Certificazioni Ambientali (CEA), aggiornamento delle pratiche catastali e supporto nell&rsquo;accesso a incentivi per l&rsquo;efficientamento energetico.</div>
+        </details>
+
+        <details class="svc-card">
+          <summary>
+            <svg class="svc-icon" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="8" cy="9" r="3"/><circle cx="17" cy="9" r="3"/><path d="M2 20c0-3 2.5-5 6-5s6 2 6 5"/><path d="M11 20c0-3 2.5-5 6-5s5 2 5 5"/></svg>
+            <h3>Cultura d&rsquo;Impresa</h3>
+            <p class="teaser">Eventi e conferenze per diffondere cultura tecnica.</p>
+            <span class="svc-toggle"><span class="lbl-closed">leggi di pi&ugrave;</span><span class="lbl-open">chiudi</span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
+            </span>
+          </summary>
+          <div class="svc-more">Organizzazione di conferenze ed eventi culturali con professionisti e aziende del settore, con attenzione alla qualit&agrave; del costruire e all&rsquo;artigianato legato all&rsquo;edilizia contemporanea.</div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <section id="metodo" class="metodo">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <span class="eyebrow">Come lavoriamo</span>
+        <h2>Metodo</h2>
+        <p class="section-note">Dal primo sopralluogo alla consegna: un percorso in cinque fasi.</p>
+      </div>
+      <div class="steps reveal">
+        <div class="step"><strong class="script">uno</strong><h3>Sopralluogo</h3><p>Analisi dello stato di fatto e ascolto delle esigenze.</p></div>
+        <div class="step"><strong class="script">due</strong><h3>Progetto</h3><p>Elaborazione architettonica e scelta delle soluzioni tecniche.</p></div>
+        <div class="step"><strong class="script">tre</strong><h3>Pratiche</h3><p>Permessi, computi metrici e capitolato lavori.</p></div>
+        <div class="step"><strong class="script">quattro</strong><h3>Cantiere</h3><p>Direzione lavori con imprese edili qualificate.</p></div>
+        <div class="step"><strong class="script">cinque</strong><h3>Agibilit&agrave;</h3><p>Collaudo finale e certificazione.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="chi-siamo">
+    <div class="wrap about-grid">
+      <div class="hero-art reveal">
+        <div class="hero-photo" style="aspect-ratio:3/4;">
+          <img src="img/eco.jpg" alt="Cantiere di bioedilizia, immagine dimostrativa">
+        </div>
+      </div>
+      <div class="about-body reveal">
+        <span class="eyebrow">Chi siamo</span>
+        <p class="lead" style="margin-top:14px;">Uno studio tecnico di progettazione e servizi integrati, a Monte San Giusto, nelle Marche.</p>
+        <p>Il Geom. Germano Volatili guida lo studio affiancando privati, aziende e istituzioni in interventi di edilizia, bioarchitettura ed efficientamento energetico, con un metodo che unisce esperienza pratica e aggiornamento costante.</p>
+        <details class="about-more">
+          <summary>continua a leggere
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
+          </summary>
+          <p>Dal 1981 lo studio lavora con un approccio di consulenza tecnica integrata, seguendo ogni intervento dalla progettazione fino alla certificazione finale. La collaborazione con architetti, ingegneri e geologi, e con aziende leader nel restauro e nella nuova costruzione, permette di coordinare competenze diverse su ogni cantiere, in Italia e all&rsquo;estero.</p>
+        </details>
+        <img class="signature-img" src="img/signature.png" alt="Firma di Germano Volatili">
+      </div>
+    </div>
+  </section>
+
+  <section id="galleria">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <span class="eyebrow">Portfolio</span>
+        <h2>Galleria</h2>
+      </div>
+      <p class="gal-note reveal">Le immagini qui sotto sono materiale stock, usate per mostrare formato e impaginazione &mdash; da sostituire con fotografie reali dei cantieri.</p>
+      <div class="gal-grid reveal">
+        <div class="gal-frame"><img src="img/crane.jpg" alt="Cantiere edile, immagine dimostrativa"><span class="tag">Cantiere</span></div>
+        <div class="gal-frame"><img src="img/eco.jpg" alt="Costruzione in bioedilizia, immagine dimostrativa"><span class="tag">Bioedilizia</span></div>
+        <div class="gal-frame"><img src="img/insulation.jpg" alt="Posa di isolamento termico, immagine dimostrativa"><span class="tag">Isolamento</span></div>
+        <div class="gal-frame"><img src="img/solar.jpg" alt="Impianto fotovoltaico su tetto, immagine dimostrativa"><span class="tag">Fotovoltaico</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contatti" class="contact">
+    <div class="wrap contact-grid">
+      <div class="reveal">
+        <span class="eyebrow">Contatti</span>
+        <h2>Parliamo del tuo progetto.</h2>
+        <p class="contact-sub">Un sopralluogo &egrave; il primo passo. Scrivi o chiama lo studio per fissare un appuntamento.</p>
+        <div class="contact-ctas">
+          <a class="btn btn-solid" href="mailto:info@geometragermanovolatili.it">Scrivi un&rsquo;email</a>
+          <a class="btn btn-outline" href="tel:+393312710995">Chiama ora</a>
+        </div>
+      </div>
+      <div class="info-list reveal">
+        <div><span>Studio</span>Geom. Germano Volatili &amp; Partners</div>
+        <div><span>Indirizzo</span>Monte San Giusto (MC), Marche</div>
+        <div><span>Telefono</span><a href="tel:+393312710995">+39 331 271 0995</a></div>
+        <div><span>Email</span><a href="mailto:info@geometragermanovolatili.it">info@geometragermanovolatili.it</a></div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap footer-row">
+    <span>&copy; 2026 Studio Tecnico Geometra Germano Volatili</span>
+    <span>Concept di restyling a cura di looking up</span>
+  </div>
+</footer>
+
+<script>
+  try{
+    var els = document.querySelectorAll('.reveal');
+    if('IntersectionObserver' in window){
+      var io = new IntersectionObserver(function(entries){
+        entries.forEach(function(e){
+          if(e.isIntersecting){ e.target.classList.add('is-visible'); io.unobserve(e.target); }
+        });
+      }, {threshold:0.12});
+      els.forEach(function(el){ io.observe(el); });
+    } else {
+      els.forEach(function(el){ el.classList.add('is-visible'); });
+    }
+  }catch(e){}
+
+  try{
+    var mm = document.getElementById('mobileMenu');
+    var mt = document.querySelector('.menu-toggle');
+    mm.querySelectorAll('a').forEach(function(a){
+      a.addEventListener('click', function(){
+        mm.classList.remove('is-open');
+        mt.classList.remove('is-open');
+        mt.setAttribute('aria-expanded', false);
+      });
+    });
+  }catch(e){}
+</script>
+</body>
+</html>
