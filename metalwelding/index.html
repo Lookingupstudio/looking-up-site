@@ -1,0 +1,759 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Metal Welding Srl | Carpenteria metallica e saldatura TIG MIG a Fermo</title>
+<meta name="description" content="Carpenteria metallica di precisione a Grottazzolina (FM), Marche. Lavorazioni conto terzi: saldatura TIG e MIG, acciaio inox in camera bianca, satinatura, lucidatura e decapaggio.">
+<meta name="robots" content="noindex, nofollow">
+<meta property="og:title" content="Metal Welding Srl | Carpenteria metallica di precisione">
+<meta property="og:description" content="Saldatura TIG e MIG, finitura superficiale e camera bianca inox per lavorazioni conto terzi.">
+<meta property="og:image" content="img/acciaio-satinato.jpg">
+<link rel="icon" href="img/logo.png">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+body { margin: 0; background: #07080A; }
+a { color: inherit; text-decoration: none; }
+a:hover { color: #FFFFFF; }
+h1, h2, h3 { font-family: 'Space Grotesk', sans-serif; margin: 0; }
+::selection { background: #D8DADD; color: #07080A; }
+
+@keyframes mwShimmer { 0% { background-position: 0% 0%; } 100% { background-position: -300% 0%; } }
+@keyframes mwMarquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+@keyframes mwLineUp { from { transform: translateY(110%); } to { transform: translateY(0); } }
+@keyframes mwFadeIn { from { opacity: 0; transform: translateY(18px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes mwPulse { 0%, 100% { transform: scale(1); opacity: 0.9; } 50% { transform: scale(1.35); opacity: 1; } }
+@keyframes mwScrollCue { 0% { transform: scaleY(0); transform-origin: top; } 50% { transform: scaleY(1); transform-origin: top; } 51% { transform: scaleY(1); transform-origin: bottom; } 100% { transform: scaleY(0); transform-origin: bottom; } }
+
+.mw-line { display: block; overflow: hidden; padding-bottom: 0.08em; margin-bottom: -0.08em; }
+.mw-line > span { display: inline-block; transform: translateY(110%); animation: mwLineUp 1.15s cubic-bezier(.16,1,.3,1) forwards; }
+.mw-in { opacity: 0; animation: mwFadeIn 1s cubic-bezier(.16,1,.3,1) forwards; }
+
+.mw-chrome-text { background: linear-gradient(110deg, #7C8288 0%, #F4F3F0 16%, #8E949B 32%, #FFFFFF 48%, #6E747C 64%, #D8DADD 82%, #7C8288 100%); background-size: 300% 100%; -webkit-background-clip: text; background-clip: text; color: transparent; animation: mwShimmer 8s linear infinite; }
+.mw-chrome { background: linear-gradient(120deg, #9AA0A8 0%, #F2F1EE 20%, #9AA0A8 40%, #F2F1EE 60%, #9AA0A8 80%, #F2F1EE 100%); background-size: 250% 100%; animation: mwShimmer 5s linear infinite; color: #0A0B0D; transition: box-shadow .35s ease, transform .35s ease; }
+.mw-chrome:hover { color: #0A0B0D; box-shadow: 0 0 0 1px rgba(242,241,238,0.5), 0 0 32px 4px rgba(220,230,240,0.28); transform: translateY(-1px); }
+.mw-ghost { transition: border-color .3s ease, background .3s ease; }
+.mw-ghost:hover { border-color: rgba(242,241,238,0.8) !important; background: rgba(242,241,238,0.06); }
+
+.mw-nav { transition: background .4s ease, border-color .4s ease; }
+.mw-nav.is-scrolled { background: rgba(7,8,10,0.82); -webkit-backdrop-filter: blur(14px); backdrop-filter: blur(14px); border-bottom-color: #1C1F24 !important; }
+.mw-navlink { position: relative; padding: 6px 0; }
+.mw-navlink::after { content: ""; position: absolute; left: 0; bottom: 0; height: 1px; width: 100%; background: #F2F1EE; transform: scaleX(0); transform-origin: right; transition: transform .45s cubic-bezier(.16,1,.3,1); }
+.mw-navlink:hover::after { transform: scaleX(1); transform-origin: left; }
+
+.mw-gridbg { background-image: linear-gradient(rgba(255,255,255,0.035) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.035) 1px, transparent 1px); background-size: 72px 72px; -webkit-mask-image: radial-gradient(ellipse 80% 70% at 70% 40%, #000 20%, transparent 75%); mask-image: radial-gradient(ellipse 80% 70% at 70% 40%, #000 20%, transparent 75%); }
+.mw-arclight { background: radial-gradient(560px circle at var(--lx, 70%) var(--ly, 80%), rgba(225,235,245,0.20), rgba(225,235,245,0.05) 35%, transparent 62%); mix-blend-mode: screen; opacity: var(--la, 0); }
+.mw-scrollcue { animation: mwScrollCue 2.4s cubic-bezier(.6,0,.2,1) infinite; }
+
+.mw-reveal { opacity: 0; transform: translateY(32px); transition: opacity 1s cubic-bezier(.16,1,.3,1), transform 1s cubic-bezier(.16,1,.3,1); }
+.mw-reveal.is-visible { opacity: 1; transform: translateY(0); }
+.mw-wipe { clip-path: inset(100% 0 0 0); transition: clip-path 1.3s cubic-bezier(.16,1,.3,1); }
+.mw-wipe.is-visible { clip-path: inset(0 0 0 0); }
+.mw-wipe img { transform: scale(1.2); transition: transform 1.8s cubic-bezier(.16,1,.3,1); }
+.mw-wipe.is-visible img { transform: scale(1); }
+.mw-tile:hover img { transform: scale(1.06); }
+.mw-tile .mw-cap { transform: translateY(8px); opacity: 0.85; transition: transform .5s cubic-bezier(.16,1,.3,1), opacity .5s ease; }
+.mw-tile:hover .mw-cap { transform: translateY(0); opacity: 1; }
+
+.mw-marquee { animation: mwMarquee 38s linear infinite; }
+.mw-outline { -webkit-text-stroke: 1px rgba(242,241,238,0.32); color: transparent; }
+
+.mw-card { overflow: hidden; transition: background .4s ease; }
+.mw-card::before { content: ""; position: absolute; inset: 0; background: radial-gradient(380px circle at var(--mx, 50%) var(--my, 50%), rgba(230,236,242,0.11), transparent 60%); opacity: 0; transition: opacity .4s ease; pointer-events: none; }
+.mw-card:hover::before { opacity: 1; }
+.mw-card:hover { background: #111316 !important; }
+.mw-weld { width: 0; transition: width 1s cubic-bezier(.16,1,.3,1); }
+.mw-card:hover .mw-weld { width: 100%; }
+
+.mw-bento { display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); grid-auto-rows: clamp(160px, 17vw, 250px); gap: 10px; }
+.mw-b1 { grid-column: 1 / 8; grid-row: span 2; }
+.mw-b2 { grid-column: 8 / 13; }
+.mw-b3 { grid-column: 8 / 13; }
+.mw-b4 { grid-column: 1 / 6; }
+.mw-b5 { grid-column: 6 / 13; }
+
+.mw-sticky { position: sticky; top: 120px; }
+.mw-step { opacity: 0.3; transition: opacity .7s ease; }
+.mw-step.is-active { opacity: 1; }
+.mw-step .mw-node { background: #07080A; border-color: #2B2F34 !important; transition: background .5s ease, border-color .5s ease, box-shadow .5s ease; }
+.mw-step.is-active .mw-node { background: #F2F1EE; border-color: #F2F1EE !important; box-shadow: 0 0 18px 3px rgba(225,235,245,0.45); }
+.mw-sparkdot { animation: mwPulse 0.9s ease-in-out infinite; }
+
+.mw-chip { cursor: pointer; transition: background .25s ease, color .25s ease, border-color .25s ease; }
+.mw-chip:hover { border-color: #9AA0A8 !important; }
+.mw-chip.is-on { background: #F2F1EE !important; color: #0A0B0D !important; border-color: #F2F1EE !important; }
+.mw-field { position: relative; }
+.mw-field input, .mw-field textarea { transition: border-color .25s ease, box-shadow .25s ease; outline: none; }
+.mw-field label { transition: top .2s ease, font-size .2s ease, color .2s ease; }
+.mw-field input:focus, .mw-field textarea:focus { border-color: #C9CDD3 !important; box-shadow: 0 0 0 3px rgba(201,205,211,0.12); }
+.mw-field input:focus + label, .mw-field input:not(:placeholder-shown) + label, .mw-field textarea:focus + label, .mw-field textarea:not(:placeholder-shown) + label { top: 7px; font-size: 11px; color: #C9CDD3; letter-spacing: 0.04em; }
+.mw-drop { transition: border-color .25s ease, background .25s ease; cursor: pointer; }
+.mw-drop:hover { border-color: #9AA0A8 !important; background: #14161A !important; }
+.mw-drop input { position: absolute; inset: 0; opacity: 0; cursor: pointer; }
+
+.mw-giant { -webkit-text-stroke: 1px rgba(242,241,238,0.2); color: transparent; transition: color .8s ease; }
+.mw-giant:hover { color: rgba(242,241,238,0.06); }
+
+@media (max-width: 860px) {
+  .mw-hide-sm { display: none !important; }
+  .mw-bento { grid-template-columns: minmax(0, 1fr); grid-auto-rows: 240px; }
+  .mw-bento > * { grid-column: auto !important; grid-row: auto !important; }
+  .mw-sticky { position: static; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .mw-line > span, .mw-in, .mw-chrome, .mw-chrome-text, .mw-marquee, .mw-scrollcue, .mw-sparkdot { animation: none !important; opacity: 1 !important; transform: none !important; }
+  .mw-reveal, .mw-wipe, .mw-wipe img { transition: none !important; opacity: 1 !important; transform: none !important; clip-path: none !important; }
+}
+</style>
+
+</head>
+<body>
+
+
+<div style="width: 100%; box-sizing: border-box; background: #07080A; color: #F2F1EE; font-family: 'IBM Plex Sans', sans-serif; overflow-x: hidden;">
+
+  <!-- NAV -->
+  <nav class="mw-nav" style="position: sticky; top: 0; z-index: 50; border-bottom: 1px solid transparent;">
+    <div style="display: flex; align-items: center; justify-content: space-between; gap: 20px; max-width: 1360px; margin: 0 auto; padding: 18px clamp(20px,4vw,56px); box-sizing: border-box;">
+      <a href="#top" style="display: flex; align-items: center; gap: 12px;">
+        <img src="img/logo.png" alt="Metal Welding" style="height: 34px; width: auto; display: block;">
+        <span style="font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 16px; letter-spacing: 0.06em; color: #F2F1EE;">METAL WELDING</span>
+      </a>
+      <div style="display: flex; align-items: center; gap: clamp(18px,2.6vw,36px); font-size: 14px; font-weight: 500; color: #C9CDD3;">
+        <a href="#servizi" class="mw-navlink mw-hide-sm">Servizi</a>
+        <a href="#lavori" class="mw-navlink mw-hide-sm">Lavori</a>
+        <a href="#processo" class="mw-navlink mw-hide-sm">Metodo</a>
+        <a href="#chi-siamo" class="mw-navlink mw-hide-sm">Chi siamo</a>
+        <a href="#contatti" class="mw-chrome" style="padding: 12px 22px; font-weight: 700; font-size: 13.5px; letter-spacing: 0.01em;">Richiedi un preventivo</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <header id="top" class="mw-hero" style="position: relative; margin-top: -71px; min-height: clamp(700px, 66vw, 920px); display: flex; flex-direction: column; justify-content: flex-end; overflow: hidden; background: #07080A;">
+    <img class="mw-hero-img" src="img/acciaio-satinato.jpg" alt="Acciaio satinato lavorato da Metal Welding" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 65% 45%; transform: scale(1.1); filter: grayscale(1) contrast(1.12) brightness(0.8); will-change: transform;">
+    <div aria-hidden="true" style="position: absolute; inset: 0; background: linear-gradient(90deg, rgba(7,8,10,0.96) 0%, rgba(7,8,10,0.78) 38%, rgba(7,8,10,0.35) 72%, rgba(7,8,10,0.2) 100%);"></div>
+    <div aria-hidden="true" style="position: absolute; inset: 0; background: linear-gradient(0deg, rgba(7,8,10,1) 0%, rgba(7,8,10,0) 40%), linear-gradient(180deg, rgba(7,8,10,0.85) 0%, rgba(7,8,10,0) 22%);"></div>
+    <div aria-hidden="true" class="mw-gridbg" style="position: absolute; inset: 0;"></div>
+    <div aria-hidden="true" class="mw-arclight" style="position: absolute; inset: 0; pointer-events: none;"></div>
+    <canvas class="mw-arc" aria-hidden="true" style="position: absolute; inset: 0; width: 100%; height: 100%; z-index: 3; pointer-events: none;"></canvas>
+
+    <div style="position: relative; z-index: 4; max-width: 1360px; width: 100%; margin: 0 auto; padding: 170px clamp(20px,4vw,56px) clamp(64px,7vw,104px); box-sizing: border-box; display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 40px;">
+      <div style="flex: 999 1 560px; min-width: 0;">
+        <div class="mw-in" style="display: inline-flex; align-items: center; gap: 12px; font-family: 'IBM Plex Mono', monospace; font-size: 12px; font-weight: 500; letter-spacing: 0.14em; color: #C9CDD3; margin-bottom: 28px; animation-delay: 0.05s;">
+          <span style="width: 28px; height: 1px; background: #C9CDD3;"></span>
+          CARPENTERIA METALLICA DI PRECISIONE
+        </div>
+        <h1 style="font-size: clamp(46px,7.4vw,116px); line-height: 0.98; font-weight: 700; letter-spacing: -0.03em; color: #F6F5F3;">
+          <span class="mw-line"><span style="animation-delay: 0.15s;">La precisione</span></span>
+          <span class="mw-line"><span style="animation-delay: 0.27s;">dell'acciaio,</span></span>
+          <span class="mw-line"><span style="animation-delay: 0.39s;"><span class="mw-chrome-text">lavorata su misura.</span></span></span>
+        </h1>
+        <p class="mw-in" style="font-size: clamp(16px,1.6vw,19px); line-height: 1.6; color: #C6C9CE; max-width: 540px; margin: 32px 0 0; animation-delay: 0.6s;">Lavorazioni conto terzi in saldatura TIG e MIG, finitura superficiale e assemblaggio, per aziende che non possono permettersi margini di errore.</p>
+        <div class="mw-in" style="display: flex; flex-wrap: wrap; gap: 14px; margin-top: 40px; animation-delay: 0.75s;">
+          <a href="#contatti" class="mw-chrome" style="display: inline-flex; align-items: center; gap: 12px; padding: 17px 30px; font-weight: 700; font-size: 15px;">
+            Richiedi un preventivo
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12H19M13 6L19 12L13 18" stroke="#0A0B0D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+          </a>
+          <a href="#lavori" class="mw-ghost" style="border: 1px solid rgba(242,241,238,0.32); color: #F2F1EE; padding: 17px 30px; font-weight: 600; font-size: 15px;">Guarda i lavori</a>
+        </div>
+      </div>
+      <div class="mw-in mw-hide-sm" style="flex: 0 0 auto; display: flex; flex-direction: column; align-items: flex-end; gap: 14px; font-family: 'IBM Plex Mono', monospace; font-size: 11.5px; letter-spacing: 0.12em; color: #8A9098; text-align: right; animation-delay: 1s;">
+        <span>GROTTAZZOLINA (FM)<br>MARCHE, ITALIA</span>
+        <span style="color: #6B7178;">43°06′N 13°36′E</span>
+        <span style="display: flex; align-items: center; gap: 10px; margin-top: 18px; color: #C9CDD3;">SCORRI <span style="position: relative; display: block; width: 1px; height: 44px; background: #2B2F34; overflow: hidden;"><span class="mw-scrollcue" style="position: absolute; inset: 0; display: block; background: #F2F1EE;"></span></span></span>
+      </div>
+    </div>
+
+    <div class="mw-strip" style="position: relative; z-index: 2; border-top: 1px solid #2B2F34; background: rgba(7,8,10,0.72); -webkit-backdrop-filter: blur(10px); backdrop-filter: blur(10px);">
+      <div style="max-width: 1360px; margin: 0 auto; padding: 26px clamp(20px,4vw,56px); box-sizing: border-box; display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 24px;">
+        <div>
+          <div style="font-family: 'Space Grotesk', sans-serif; font-size: clamp(26px,2.6vw,34px); font-weight: 700; color: #F2F1EE; letter-spacing: -0.01em;"><span data-count="1200" data-fmt="mq">1.200</span> <span style="font-size: 0.55em; color: #9AA0A8;">mq</span></div>
+          <div style="font-size: 13px; color: #9CA2AA; margin-top: 4px;">Officina produttiva</div>
+        </div>
+        <div>
+          <div style="font-family: 'Space Grotesk', sans-serif; font-size: clamp(26px,2.6vw,34px); font-weight: 700; color: #F2F1EE; letter-spacing: -0.01em;"><span style="font-size: 0.55em; color: #9AA0A8;">dal</span> <span data-count="2017" data-from="2000">2017</span></div>
+          <div style="font-size: 13px; color: #9CA2AA; margin-top: 4px;">Esperienza in crescita</div>
+        </div>
+        <div>
+          <div style="font-family: 'Space Grotesk', sans-serif; font-size: clamp(26px,2.6vw,34px); font-weight: 700; color: #F2F1EE; letter-spacing: -0.01em;">TÜV</div>
+          <div style="font-size: 13px; color: #9CA2AA; margin-top: 4px;">Operatori certificati</div>
+        </div>
+        <div>
+          <div style="font-family: 'Space Grotesk', sans-serif; font-size: clamp(26px,2.6vw,34px); font-weight: 700; color: #F2F1EE; letter-spacing: -0.01em;"><span data-count="4">4</span> <span style="font-size: 0.55em; color: #9AA0A8;">postazioni</span></div>
+          <div style="font-size: 13px; color: #9CA2AA; margin-top: 4px;">Camera bianca inox</div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- MARQUEE -->
+  <div aria-hidden="true" style="border-bottom: 1px solid #1C1F24; overflow: hidden; padding: 30px 0; background: #07080A;">
+    <div class="mw-marquee" style="display: flex; width: max-content; font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: clamp(34px,4.4vw,64px); letter-spacing: -0.02em; white-space: nowrap;">
+      <div style="display: flex; align-items: center; gap: 40px; padding-right: 40px;">
+        <span style="color: #F2F1EE;">Saldatura TIG</span><span style="color: #4A4F56;">✦</span>
+        <span class="mw-outline">Saldatura MIG</span><span style="color: #4A4F56;">✦</span>
+        <span style="color: #F2F1EE;">Acciaio inox</span><span style="color: #4A4F56;">✦</span>
+        <span class="mw-outline">Camera bianca</span><span style="color: #4A4F56;">✦</span>
+        <span style="color: #F2F1EE;">Satinatura</span><span style="color: #4A4F56;">✦</span>
+        <span class="mw-outline">Lucidatura</span><span style="color: #4A4F56;">✦</span>
+        <span style="color: #F2F1EE;">Conto terzi</span><span style="color: #4A4F56;">✦</span>
+      </div>
+      <div style="display: flex; align-items: center; gap: 40px; padding-right: 40px;">
+        <span style="color: #F2F1EE;">Saldatura TIG</span><span style="color: #4A4F56;">✦</span>
+        <span class="mw-outline">Saldatura MIG</span><span style="color: #4A4F56;">✦</span>
+        <span style="color: #F2F1EE;">Acciaio inox</span><span style="color: #4A4F56;">✦</span>
+        <span class="mw-outline">Camera bianca</span><span style="color: #4A4F56;">✦</span>
+        <span style="color: #F2F1EE;">Satinatura</span><span style="color: #4A4F56;">✦</span>
+        <span class="mw-outline">Lucidatura</span><span style="color: #4A4F56;">✦</span>
+        <span style="color: #F2F1EE;">Conto terzi</span><span style="color: #4A4F56;">✦</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- SERVIZI -->
+  <section id="servizi" style="max-width: 1360px; margin: 0 auto; padding: clamp(80px,10vw,140px) clamp(20px,4vw,56px); box-sizing: border-box;">
+    <div class="mw-reveal" style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-end; gap: 28px; margin-bottom: 56px;">
+      <div style="flex: 1 1 520px; min-width: 0;">
+        <div style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; letter-spacing: 0.14em; color: #C9CDD3; margin-bottom: 18px;">01 / SERVIZI</div>
+        <h2 style="font-size: clamp(32px,4.4vw,60px); line-height: 1.02; font-weight: 700; letter-spacing: -0.025em; color: #F6F5F3; max-width: 760px;">Dalla saldatura alla finitura, <span class="mw-chrome-text">tutto in un'unica officina.</span></h2>
+      </div>
+      <p style="flex: 0 1 360px; font-size: 15.5px; line-height: 1.65; color: #9CA2AA; margin: 0;">Adattiamo la struttura produttiva alle esigenze del cliente: dal singolo pezzo alla produzione in serie, ferro o acciaio inox.</p>
+    </div>
+
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1px; background: #1C1F24; border: 1px solid #1C1F24;">
+      <div class="mw-card mw-reveal" style="position: relative; background: #0C0D10; padding: 34px 28px 32px; min-height: 340px; display: flex; flex-direction: column; justify-content: space-between; gap: 32px;">
+        <span class="mw-weld" aria-hidden="true" style="position: absolute; top: 0; left: 0; height: 2px; background: linear-gradient(90deg, rgba(242,241,238,0), #FFFFFF); box-shadow: 0 0 14px 2px rgba(220,230,240,0.7);"></span>
+        <div style="display: flex; justify-content: space-between; align-items: flex-start;">
+          <svg width="34" height="34" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6 20L13 7" stroke="#C9CDD3" stroke-width="1.4" stroke-linecap="round"></path><path d="M13 7C13 7 17 5 19 7C21 9 18 12 18 12" stroke="#F2F1EE" stroke-width="1.4" stroke-linecap="round"></path><circle cx="6" cy="20" r="1.6" fill="#F2F1EE"></circle></svg>
+          <span style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: #6B7178;">01</span>
+        </div>
+        <div>
+          <h3 style="font-size: 22px; font-weight: 600; color: #F2F1EE; margin-bottom: 12px; letter-spacing: -0.01em;">Saldatura TIG e MIG</h3>
+          <p style="font-size: 14.5px; line-height: 1.6; color: #9CA2AA; margin: 0;">Carpenteria leggera e pesante, ferro e acciaio inox, su 7 postazioni dedicate.</p>
+        </div>
+      </div>
+      <div class="mw-card mw-reveal" style="position: relative; background: #0C0D10; padding: 34px 28px 32px; min-height: 340px; display: flex; flex-direction: column; justify-content: space-between; gap: 32px; transition-delay: 0.08s;">
+        <span class="mw-weld" aria-hidden="true" style="position: absolute; top: 0; left: 0; height: 2px; background: linear-gradient(90deg, rgba(242,241,238,0), #FFFFFF); box-shadow: 0 0 14px 2px rgba(220,230,240,0.7);"></span>
+        <div style="display: flex; justify-content: space-between; align-items: flex-start;">
+          <svg width="34" height="34" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="6.5" stroke="#C9CDD3" stroke-width="1.4"></circle><path d="M12 2.5V5.5M12 18.5V21.5M2.5 12H5.5M18.5 12H21.5" stroke="#F2F1EE" stroke-width="1.4" stroke-linecap="round"></path></svg>
+          <span style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: #6B7178;">02</span>
+        </div>
+        <div>
+          <h3 style="font-size: 22px; font-weight: 600; color: #F2F1EE; margin-bottom: 12px; letter-spacing: -0.01em;">Finitura superficiale</h3>
+          <p style="font-size: 14.5px; line-height: 1.6; color: #9CA2AA; margin: 0;">Smerigliatura, lucidatura, satinatura e decapaggio a specifica, anche su grandi lotti.</p>
+        </div>
+      </div>
+      <div class="mw-card mw-reveal" style="position: relative; background: #0C0D10; padding: 34px 28px 32px; min-height: 340px; display: flex; flex-direction: column; justify-content: space-between; gap: 32px; transition-delay: 0.16s;">
+        <span class="mw-weld" aria-hidden="true" style="position: absolute; top: 0; left: 0; height: 2px; background: linear-gradient(90deg, rgba(242,241,238,0), #FFFFFF); box-shadow: 0 0 14px 2px rgba(220,230,240,0.7);"></span>
+        <div style="display: flex; justify-content: space-between; align-items: flex-start;">
+          <svg width="34" height="34" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 3L19 7V17L12 21L5 17V7L12 3Z" stroke="#C9CDD3" stroke-width="1.4"></path><circle cx="12" cy="12" r="3" stroke="#F2F1EE" stroke-width="1.4"></circle></svg>
+          <span style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: #6B7178;">03</span>
+        </div>
+        <div>
+          <h3 style="font-size: 22px; font-weight: 600; color: #F2F1EE; margin-bottom: 12px; letter-spacing: -0.01em;">Lavorazioni complementari</h3>
+          <p style="font-size: 14.5px; line-height: 1.6; color: #9CA2AA; margin: 0;">Inserti filettati, inserti a scarica di condensatori e filettatura meccanica.</p>
+        </div>
+      </div>
+      <div class="mw-card mw-reveal" style="position: relative; background: #0C0D10; padding: 34px 28px 32px; min-height: 340px; display: flex; flex-direction: column; justify-content: space-between; gap: 32px; transition-delay: 0.24s;">
+        <span class="mw-weld" aria-hidden="true" style="position: absolute; top: 0; left: 0; height: 2px; background: linear-gradient(90deg, rgba(242,241,238,0), #FFFFFF); box-shadow: 0 0 14px 2px rgba(220,230,240,0.7);"></span>
+        <div style="display: flex; justify-content: space-between; align-items: flex-start;">
+          <svg width="34" height="34" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 3L20 6V12C20 17 16.5 19.8 12 21C7.5 19.8 4 17 4 12V6L12 3Z" stroke="#C9CDD3" stroke-width="1.4"></path><path d="M8.5 12L11 14.5L16 9" stroke="#F2F1EE" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+          <span style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: #6B7178;">04</span>
+        </div>
+        <div>
+          <h3 style="font-size: 22px; font-weight: 600; color: #F2F1EE; margin-bottom: 12px; letter-spacing: -0.01em;">Camera bianca inox</h3>
+          <p style="font-size: 14.5px; line-height: 1.6; color: #9CA2AA; margin: 0;">4 postazioni dedicate all'acciaio inossidabile, in ambiente controllato e separato.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- LAVORI -->
+  <section id="lavori" style="max-width: 1360px; margin: 0 auto; padding: 0 clamp(20px,4vw,56px) clamp(80px,10vw,140px); box-sizing: border-box;">
+    <div class="mw-reveal" style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-end; gap: 28px; margin-bottom: 44px;">
+      <div style="flex: 1 1 520px; min-width: 0;">
+        <div style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; letter-spacing: 0.14em; color: #C9CDD3; margin-bottom: 18px;">02 / LAVORI</div>
+        <h2 style="font-size: clamp(32px,4.4vw,60px); line-height: 1.02; font-weight: 700; letter-spacing: -0.025em; color: #F6F5F3; max-width: 760px;">Dalla carpenteria pesante al dettaglio di design.</h2>
+      </div>
+      <p style="flex: 0 1 320px; font-size: 15.5px; line-height: 1.65; color: #9CA2AA; margin: 0;">Pezzi reali, usciti dalla nostra officina di Grottazzolina.</p>
+    </div>
+
+    <div class="mw-bento">
+      <div class="mw-tile mw-wipe mw-b1" style="position: relative; overflow: hidden; background: #121316;">
+        <img src="img/acciaio-satinato.jpg" alt="Finitura satinata di precisione su acciaio" style="width: 100%; height: 100%; object-fit: cover; display: block;">
+        <div aria-hidden="true" style="position: absolute; inset: 0; background: linear-gradient(0deg, rgba(7,8,10,0.85) 0%, rgba(7,8,10,0) 50%);"></div>
+        <div class="mw-cap" style="position: absolute; left: 24px; right: 24px; bottom: 22px; display: flex; justify-content: space-between; align-items: flex-end; gap: 16px;">
+          <span style="font-family: 'Space Grotesk', sans-serif; font-size: clamp(18px,1.8vw,24px); font-weight: 600; color: #F6F5F3;">Finitura satinata di precisione</span>
+          <span style="font-family: 'IBM Plex Mono', monospace; font-size: 11.5px; color: #C9CDD3; letter-spacing: 0.1em;">01</span>
+        </div>
+      </div>
+      <div class="mw-tile mw-wipe mw-b2" style="position: relative; overflow: hidden; background: #121316; transition-delay: 0.1s;">
+        <img src="img/componenti-saldati.jpg" alt="Componenti saldati su misura" style="width: 100%; height: 100%; object-fit: cover; display: block;">
+        <div aria-hidden="true" style="position: absolute; inset: 0; background: linear-gradient(0deg, rgba(7,8,10,0.85) 0%, rgba(7,8,10,0) 55%);"></div>
+        <div class="mw-cap" style="position: absolute; left: 20px; right: 20px; bottom: 18px; display: flex; justify-content: space-between; align-items: flex-end; gap: 16px;">
+          <span style="font-size: 15px; font-weight: 600; color: #F6F5F3;">Componenti saldati su misura</span>
+          <span style="font-family: 'IBM Plex Mono', monospace; font-size: 11.5px; color: #C9CDD3; letter-spacing: 0.1em;">02</span>
+        </div>
+      </div>
+      <div class="mw-tile mw-wipe mw-b3" style="position: relative; overflow: hidden; background: #121316; transition-delay: 0.2s;">
+        <img src="img/raccordi-flange-inox.jpg" alt="Raccordi e flange in acciaio inox" style="width: 100%; height: 100%; object-fit: cover; display: block;">
+        <div aria-hidden="true" style="position: absolute; inset: 0; background: linear-gradient(0deg, rgba(7,8,10,0.85) 0%, rgba(7,8,10,0) 55%);"></div>
+        <div class="mw-cap" style="position: absolute; left: 20px; right: 20px; bottom: 18px; display: flex; justify-content: space-between; align-items: flex-end; gap: 16px;">
+          <span style="font-size: 15px; font-weight: 600; color: #F6F5F3;">Raccordi e flange in acciaio inox</span>
+          <span style="font-family: 'IBM Plex Mono', monospace; font-size: 11.5px; color: #C9CDD3; letter-spacing: 0.1em;">03</span>
+        </div>
+      </div>
+      <div class="mw-tile mw-wipe mw-b4" style="position: relative; overflow: hidden; background: #121316;">
+        <img src="img/carpenteria-pesante.jpg" alt="Carpenteria pesante conto terzi" style="width: 100%; height: 100%; object-fit: cover; display: block;">
+        <div aria-hidden="true" style="position: absolute; inset: 0; background: linear-gradient(0deg, rgba(7,8,10,0.85) 0%, rgba(7,8,10,0) 55%);"></div>
+        <div class="mw-cap" style="position: absolute; left: 20px; right: 20px; bottom: 18px; display: flex; justify-content: space-between; align-items: flex-end; gap: 16px;">
+          <span style="font-size: 15px; font-weight: 600; color: #F6F5F3;">Carpenteria pesante conto terzi</span>
+          <span style="font-family: 'IBM Plex Mono', monospace; font-size: 11.5px; color: #C9CDD3; letter-spacing: 0.1em;">04</span>
+        </div>
+      </div>
+      <div class="mw-tile mw-wipe mw-b5" style="position: relative; overflow: hidden; background: #121316; transition-delay: 0.1s;">
+        <img src="img/lavorazioni-precisione.jpg" alt="Lavorazioni di precisione su misura" style="width: 100%; height: 100%; object-fit: cover; display: block;">
+        <div aria-hidden="true" style="position: absolute; inset: 0; background: linear-gradient(0deg, rgba(7,8,10,0.85) 0%, rgba(7,8,10,0) 55%);"></div>
+        <div class="mw-cap" style="position: absolute; left: 20px; right: 20px; bottom: 18px; display: flex; justify-content: space-between; align-items: flex-end; gap: 16px;">
+          <span style="font-size: 15px; font-weight: 600; color: #F6F5F3;">Lavorazioni di precisione su misura</span>
+          <span style="font-family: 'IBM Plex Mono', monospace; font-size: 11.5px; color: #C9CDD3; letter-spacing: 0.1em;">05</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STRUTTURA -->
+  <section id="struttura" style="position: relative; overflow: hidden; border-top: 1px solid #1C1F24; border-bottom: 1px solid #1C1F24;">
+    <img src="img/carpenteria-pesante.jpg" alt="" aria-hidden="true" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; filter: grayscale(1) brightness(0.35) contrast(1.1);">
+    <div aria-hidden="true" style="position: absolute; inset: 0; background: linear-gradient(90deg, rgba(7,8,10,0.95) 0%, rgba(7,8,10,0.75) 50%, rgba(7,8,10,0.9) 100%);"></div>
+    <div style="position: relative; max-width: 1360px; margin: 0 auto; padding: clamp(80px,10vw,140px) clamp(20px,4vw,56px); box-sizing: border-box; display: flex; flex-wrap: wrap; gap: clamp(40px,6vw,96px); align-items: center;">
+      <div class="mw-reveal" style="flex: 1 1 380px; min-width: 0;">
+        <div style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; letter-spacing: 0.14em; color: #C9CDD3; margin-bottom: 18px;">03 / STRUTTURA PRODUTTIVA</div>
+        <h2 style="font-size: clamp(32px,4vw,54px); line-height: 1.04; font-weight: 700; letter-spacing: -0.025em; color: #F6F5F3; margin-bottom: 24px;">Pensata per rispondere alla grande azienda.</h2>
+        <p style="font-size: 16px; line-height: 1.7; color: #A6ACB4; max-width: 460px; margin: 0;">Lavoriamo per grandi aziende che richiedono continuità, precisione e rispetto dei tempi di consegna, adattando la struttura produttiva a ogni commessa.</p>
+        <div style="display: flex; flex-wrap: wrap; gap: 36px; margin-top: 40px;">
+          <div><div style="font-family: 'Space Grotesk', sans-serif; font-size: 28px; font-weight: 700; color: #F2F1EE;">1.200 mq</div><div style="font-size: 13px; color: #9CA2AA; margin-top: 4px;">Superficie officina</div></div>
+          <div><div style="font-family: 'Space Grotesk', sans-serif; font-size: 28px; font-weight: 700; color: #F2F1EE;">TÜV</div><div style="font-size: 13px; color: #9CA2AA; margin-top: 4px;">Certificazione operatori</div></div>
+        </div>
+      </div>
+      <div class="mw-reveal" style="flex: 1 1 440px; min-width: 0; display: flex; flex-direction: column; gap: 8px; transition-delay: 0.12s;">
+        <div style="display: flex; align-items: center; gap: clamp(20px,3vw,40px); border-bottom: 1px solid #2B2F34; padding-bottom: 16px;">
+          <span class="mw-chrome-text" style="font-family: 'Space Grotesk', sans-serif; font-size: clamp(110px,15vw,220px); line-height: 0.85; font-weight: 700; letter-spacing: -0.05em;">7</span>
+          <span style="font-size: clamp(16px,1.6vw,20px); line-height: 1.4; color: #C9CDD3; max-width: 220px;">postazioni di saldatura ferro</span>
+        </div>
+        <div style="display: flex; align-items: center; gap: clamp(20px,3vw,40px); padding-top: 16px;">
+          <span class="mw-chrome-text" style="font-family: 'Space Grotesk', sans-serif; font-size: clamp(110px,15vw,220px); line-height: 0.85; font-weight: 700; letter-spacing: -0.05em; animation-delay: -3s;">4</span>
+          <span style="font-size: clamp(16px,1.6vw,20px); line-height: 1.4; color: #C9CDD3; max-width: 220px;">postazioni in camera bianca inox</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CHI SIAMO -->
+  <section id="chi-siamo" style="max-width: 1360px; margin: 0 auto; padding: clamp(80px,10vw,140px) clamp(20px,4vw,56px); box-sizing: border-box; display: flex; flex-wrap: wrap; gap: clamp(40px,6vw,88px); align-items: center;">
+    <div class="mw-wipe" style="flex: 1 1 360px; min-width: 0; aspect-ratio: 4 / 5; position: relative; overflow: hidden; background: #121316;">
+      <img src="img/design-acciaio.jpg" alt="Prodotto di design in acciaio lucidato Metal Welding" style="width: 100%; height: 100%; object-fit: cover; display: block;">
+      <div aria-hidden="true" style="position: absolute; inset: 0; box-shadow: inset 0 0 0 1px rgba(242,241,238,0.1);"></div>
+      <div style="position: absolute; left: 20px; bottom: 20px; background: rgba(7,8,10,0.78); -webkit-backdrop-filter: blur(8px); backdrop-filter: blur(8px); border: 1px solid #2B2F34; padding: 12px 16px; font-family: 'IBM Plex Mono', monospace; font-size: 11.5px; letter-spacing: 0.12em; color: #D8DADD;">ARREDO INTERNO · ESTERNO · URBANO</div>
+    </div>
+    <div class="mw-reveal" style="flex: 999 1 460px; min-width: 0;">
+      <div style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; letter-spacing: 0.14em; color: #C9CDD3; margin-bottom: 18px;">04 / CHI SIAMO</div>
+      <h2 style="font-size: clamp(32px,4.4vw,60px); line-height: 1.02; font-weight: 700; letter-spacing: -0.025em; color: #F6F5F3; margin-bottom: 26px;">Un'azienda giovane, con l'ossessione <span class="mw-chrome-text">della qualità.</span></h2>
+      <p style="font-size: 16.5px; line-height: 1.7; color: #A6ACB4; max-width: 560px; margin: 0;">Nata nel 2017 a Grottazzolina, Metal Welding è specializzata nella carpenteria metallica conto terzi per grandi aziende. La stessa precisione la portiamo anche nel design.</p>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1px; background: #1C1F24; border: 1px solid #1C1F24; margin-top: 40px;">
+        <div style="background: #0C0D10; padding: 26px 24px;">
+          <div style="font-family: 'IBM Plex Mono', monospace; font-size: 11.5px; letter-spacing: 0.12em; color: #8A9098; margin-bottom: 14px;">INDUSTRIA</div>
+          <h3 style="font-size: 19px; font-weight: 600; color: #F2F1EE; margin-bottom: 8px;">Conto terzi</h3>
+          <p style="font-size: 14px; line-height: 1.6; color: #9CA2AA; margin: 0;">Dal singolo pezzo alla serie, con continuità e tempi rispettati.</p>
+        </div>
+        <div style="background: #0C0D10; padding: 26px 24px;">
+          <div style="font-family: 'IBM Plex Mono', monospace; font-size: 11.5px; letter-spacing: 0.12em; color: #8A9098; margin-bottom: 14px;">DESIGN</div>
+          <h3 style="font-size: 19px; font-weight: 600; color: #F2F1EE; margin-bottom: 8px;">Prodotti d'arredo</h3>
+          <p style="font-size: 14px; line-height: 1.6; color: #9CA2AA; margin: 0;">Interni, esterni e arredo urbano, dove la precisione diventa forma.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROCESSO -->
+  <section id="processo" style="border-top: 1px solid #1C1F24; background: #060708;">
+    <div style="max-width: 1360px; margin: 0 auto; padding: clamp(80px,10vw,140px) clamp(20px,4vw,56px); box-sizing: border-box; display: flex; flex-wrap: wrap; gap: clamp(40px,6vw,96px); align-items: flex-start;">
+      <div class="mw-sticky" style="flex: 1 1 340px; min-width: 0;">
+        <div style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; letter-spacing: 0.14em; color: #C9CDD3; margin-bottom: 18px;">05 / COME LAVORIAMO</div>
+        <h2 style="font-size: clamp(32px,4.4vw,60px); line-height: 1.02; font-weight: 700; letter-spacing: -0.025em; color: #F6F5F3; margin-bottom: 24px;">Dal disegno tecnico alla consegna.</h2>
+        <p style="font-size: 16px; line-height: 1.7; color: #A6ACB4; max-width: 400px; margin: 0;">Un processo lineare, come un cordone di saldatura: nessun passaggio lasciato al caso.</p>
+      </div>
+      <div class="mw-steps" style="flex: 1 1 460px; min-width: 0; position: relative; padding-left: 64px;">
+        <div aria-hidden="true" style="position: absolute; left: 15px; top: 8px; bottom: 8px; width: 2px; background: #1C1F24;"></div>
+        <div class="mw-steps-fill" aria-hidden="true" style="position: absolute; left: 15px; top: 8px; width: 2px; height: 0; background: linear-gradient(180deg, #6E747C, #F2F1EE); box-shadow: 0 0 10px 1px rgba(225,235,245,0.5);"></div>
+        <div class="mw-steps-dot" aria-hidden="true" style="position: absolute; left: 16px; top: 8px; width: 0; height: 0; opacity: 0;">
+          <span class="mw-sparkdot" style="position: absolute; left: -7px; top: -7px; width: 14px; height: 14px; border-radius: 50%; background: #FFFFFF; box-shadow: 0 0 16px 6px rgba(255,255,255,0.85), 0 0 48px 18px rgba(200,215,230,0.35);"></span>
+        </div>
+
+        <div class="mw-step" style="position: relative; min-height: clamp(200px,22vw,260px);">
+          <span class="mw-node" aria-hidden="true" style="position: absolute; left: -56px; top: 2px; width: 14px; height: 14px; border-radius: 50%; border: 2px solid #2B2F34;"></span>
+          <div style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; letter-spacing: 0.14em; color: #8A9098; margin-bottom: 14px;">FASE 01</div>
+          <h3 style="font-size: clamp(24px,2.4vw,32px); font-weight: 600; color: #F2F1EE; margin-bottom: 12px; letter-spacing: -0.015em;">Analisi del disegno</h3>
+          <p style="font-size: 15.5px; line-height: 1.65; color: #9CA2AA; margin: 0; max-width: 460px;">Valutiamo specifiche tecniche, materiali e tolleranze richieste.</p>
+        </div>
+        <div class="mw-step" style="position: relative; min-height: clamp(200px,22vw,260px);">
+          <span class="mw-node" aria-hidden="true" style="position: absolute; left: -56px; top: 2px; width: 14px; height: 14px; border-radius: 50%; border: 2px solid #2B2F34;"></span>
+          <div style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; letter-spacing: 0.14em; color: #8A9098; margin-bottom: 14px;">FASE 02</div>
+          <h3 style="font-size: clamp(24px,2.4vw,32px); font-weight: 600; color: #F2F1EE; margin-bottom: 12px; letter-spacing: -0.015em;">Preventivo e pianificazione</h3>
+          <p style="font-size: 15.5px; line-height: 1.65; color: #9CA2AA; margin: 0; max-width: 460px;">Definiamo i tempi di produzione e organizziamo le postazioni dedicate.</p>
+        </div>
+        <div class="mw-step" style="position: relative; min-height: clamp(200px,22vw,260px);">
+          <span class="mw-node" aria-hidden="true" style="position: absolute; left: -56px; top: 2px; width: 14px; height: 14px; border-radius: 50%; border: 2px solid #2B2F34;"></span>
+          <div style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; letter-spacing: 0.14em; color: #8A9098; margin-bottom: 14px;">FASE 03</div>
+          <h3 style="font-size: clamp(24px,2.4vw,32px); font-weight: 600; color: #F2F1EE; margin-bottom: 12px; letter-spacing: -0.015em;">Produzione e controllo</h3>
+          <p style="font-size: 15.5px; line-height: 1.65; color: #9CA2AA; margin: 0; max-width: 460px;">Saldatura e assemblaggio eseguiti da operatori certificati TÜV.</p>
+        </div>
+        <div class="mw-step" style="position: relative;">
+          <span class="mw-node" aria-hidden="true" style="position: absolute; left: -56px; top: 2px; width: 14px; height: 14px; border-radius: 50%; border: 2px solid #2B2F34;"></span>
+          <div style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; letter-spacing: 0.14em; color: #8A9098; margin-bottom: 14px;">FASE 04</div>
+          <h3 style="font-size: clamp(24px,2.4vw,32px); font-weight: 600; color: #F2F1EE; margin-bottom: 12px; letter-spacing: -0.015em;">Finitura e consegna</h3>
+          <p style="font-size: 15.5px; line-height: 1.65; color: #9CA2AA; margin: 0; max-width: 460px;">Smerigliatura, lucidatura o satinatura secondo specifica, pronti alla consegna.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTATTI -->
+  <section id="contatti" style="position: relative; border-top: 1px solid #1C1F24; background: #07080A; overflow: hidden;">
+    <div aria-hidden="true" style="position: absolute; right: -10%; top: -20%; width: 70%; height: 140%; background: radial-gradient(closest-side, rgba(200,210,220,0.07), transparent);"></div>
+    <div style="position: relative; max-width: 1360px; margin: 0 auto; padding: clamp(80px,10vw,140px) clamp(20px,4vw,56px); box-sizing: border-box; display: flex; flex-wrap: wrap; gap: clamp(40px,6vw,88px);">
+
+      <div class="mw-reveal" style="flex: 1 1 360px; min-width: 0;">
+        <div style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; letter-spacing: 0.14em; color: #C9CDD3; margin-bottom: 18px;">06 / CONTATTI</div>
+        <h2 style="font-size: clamp(34px,4.6vw,64px); line-height: 1.02; font-weight: 700; letter-spacing: -0.025em; color: #F6F5F3; margin-bottom: 22px;">Hai un disegno tecnico <span class="mw-chrome-text">da realizzare?</span></h2>
+        <p style="font-size: 16px; line-height: 1.7; color: #A6ACB4; max-width: 440px; margin: 0 0 40px;">Raccontaci il progetto: ti rispondiamo con una valutazione tecnica e i tempi di produzione entro 24 ore lavorative.</p>
+
+        <div style="display: flex; flex-direction: column; gap: 1px; background: #1C1F24; border: 1px solid #1C1F24; max-width: 460px;">
+          <a href="tel:0734278045" style="display: flex; align-items: center; justify-content: space-between; gap: 16px; background: #0C0D10; padding: 20px 22px;">
+            <span>
+              <span style="display: block; font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 0.12em; color: #8A9098; margin-bottom: 4px;">TELEFONO</span>
+              <span style="font-family: 'Space Grotesk', sans-serif; font-size: 19px; font-weight: 600; color: #F2F1EE;">0734 278045</span>
+            </span>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M7 17L17 7M9 7H17V15" stroke="#C9CDD3" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+          </a>
+          <a href="mailto:info@metalweldingsrl.com" style="display: flex; align-items: center; justify-content: space-between; gap: 16px; background: #0C0D10; padding: 20px 22px;">
+            <span style="min-width: 0;">
+              <span style="display: block; font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 0.12em; color: #8A9098; margin-bottom: 4px;">EMAIL</span>
+              <span style="font-family: 'Space Grotesk', sans-serif; font-size: 19px; font-weight: 600; color: #F2F1EE; word-break: break-all;">info@metalweldingsrl.com</span>
+            </span>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M7 17L17 7M9 7H17V15" stroke="#C9CDD3" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+          </a>
+          <div style="background: #0C0D10; padding: 20px 22px;">
+            <span style="display: block; font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 0.12em; color: #8A9098; margin-bottom: 4px;">OFFICINA</span>
+            <span style="font-family: 'Space Grotesk', sans-serif; font-size: 17px; font-weight: 600; color: #F2F1EE;">Strada Fermana 10/B, Grottazzolina (FM)</span>
+            <span style="display: block; font-size: 13.5px; color: #9CA2AA; margin-top: 6px;">Lun - Ven, 8:00 - 18:00</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="mw-reveal" style="flex: 1 1 420px; min-width: 0; background: rgba(14,15,17,0.9); border: 1px solid #202329; padding: clamp(28px,4vw,44px); box-sizing: border-box; transition-delay: 0.1s;">
+        <div id="mw-form-wrap">
+          <h3 style="font-size: 22px; font-weight: 600; color: #F2F1EE; margin-bottom: 6px;">Richiedi un preventivo</h3>
+          <p style="font-size: 14px; color: #8A9098; margin: 0 0 28px;">Tre campi e un disegno: al resto pensiamo noi.</p>
+          <form id="mw-form" style="display: flex; flex-direction: column; gap: 18px;">
+            <fieldset style="border: none; padding: 0; margin: 0;">
+              <legend style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 0.12em; color: #8A9098; margin-bottom: 12px; padding: 0;">TIPO DI RICHIESTA</legend>
+              <div style="display: flex; flex-wrap: wrap; gap: 8px;">
+                <button type="button" class="mw-chip is-on" aria-pressed="true" data-label="Preventivo conto terzi" style="background: transparent; border: 1px solid #2B2F34; color: #D3D6DA; font-family: 'IBM Plex Sans', sans-serif; font-size: 13.5px; font-weight: 500; padding: 11px 16px; min-height: 44px;">Preventivo conto terzi</button>
+                <button type="button" class="mw-chip " aria-pressed="false" data-label="Informazioni tecniche" style="background: transparent; border: 1px solid #2B2F34; color: #D3D6DA; font-family: 'IBM Plex Sans', sans-serif; font-size: 13.5px; font-weight: 500; padding: 11px 16px; min-height: 44px;">Informazioni tecniche</button>
+                <button type="button" class="mw-chip " aria-pressed="false" data-label="Prodotto di design" style="background: transparent; border: 1px solid #2B2F34; color: #D3D6DA; font-family: 'IBM Plex Sans', sans-serif; font-size: 13.5px; font-weight: 500; padding: 11px 16px; min-height: 44px;">Prodotto di design</button>
+                <button type="button" class="mw-chip " aria-pressed="false" data-label="Altro" style="background: transparent; border: 1px solid #2B2F34; color: #D3D6DA; font-family: 'IBM Plex Sans', sans-serif; font-size: 13.5px; font-weight: 500; padding: 11px 16px; min-height: 44px;">Altro</button>
+              </div>
+              <input type="hidden" name="tipo" id="mw-tipo" value="Preventivo conto terzi">
+            </fieldset>
+            <div class="mw-field">
+              <input type="text" id="mw-nome" name="nome" placeholder=" " required style="width: 100%; box-sizing: border-box; background: #121316; border: 1px solid #2B2F34; color: #F2F1EE; font-family: 'IBM Plex Sans', sans-serif; font-size: 15px; padding: 24px 16px 10px;">
+              <label for="mw-nome" style="position: absolute; left: 16px; top: 18px; font-size: 15px; color: #8A9098; pointer-events: none;">Nome e azienda</label>
+            </div>
+            <div style="display: flex; gap: 18px; flex-wrap: wrap;">
+              <div class="mw-field" style="flex: 1 1 200px;">
+                <input type="email" id="mw-email" name="email" placeholder=" " required style="width: 100%; box-sizing: border-box; background: #121316; border: 1px solid #2B2F34; color: #F2F1EE; font-family: 'IBM Plex Sans', sans-serif; font-size: 15px; padding: 24px 16px 10px;">
+                <label for="mw-email" style="position: absolute; left: 16px; top: 18px; font-size: 15px; color: #8A9098; pointer-events: none;">Email</label>
+              </div>
+              <div class="mw-field" style="flex: 1 1 160px;">
+                <input type="tel" id="mw-tel" name="telefono" placeholder=" " style="width: 100%; box-sizing: border-box; background: #121316; border: 1px solid #2B2F34; color: #F2F1EE; font-family: 'IBM Plex Sans', sans-serif; font-size: 15px; padding: 24px 16px 10px;">
+                <label for="mw-tel" style="position: absolute; left: 16px; top: 18px; font-size: 15px; color: #8A9098; pointer-events: none;">Telefono</label>
+              </div>
+            </div>
+            <div class="mw-field">
+              <textarea id="mw-msg" name="messaggio" placeholder=" " rows="4" style="width: 100%; box-sizing: border-box; background: #121316; border: 1px solid #2B2F34; color: #F2F1EE; font-family: 'IBM Plex Sans', sans-serif; font-size: 15px; padding: 24px 16px 10px; resize: vertical;"></textarea>
+              <label for="mw-msg" style="position: absolute; left: 16px; top: 18px; font-size: 15px; color: #8A9098; pointer-events: none;">Descrivi il progetto: materiale, quantità, tempi</label>
+            </div>
+            <label class="mw-drop" style="position: relative; display: flex; align-items: center; gap: 14px; border: 1px dashed #2B2F34; background: #0F1013; padding: 18px; min-height: 44px;">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 16V4M7 9L12 4L17 9M5 20H19" stroke="#C9CDD3" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+              <span style="display: flex; flex-direction: column; gap: 2px;">
+                <span style="font-size: 14.5px; font-weight: 600; color: #F2F1EE;">Allega il disegno tecnico</span>
+                <span style="font-size: 12.5px; color: #8A9098;">Facoltativo, PDF o immagine</span>
+              </span>
+              <input type="file" name="disegno" aria-label="Allega il disegno tecnico">
+            </label>
+            <button type="submit" class="mw-chrome" style="border: none; display: flex; align-items: center; justify-content: center; gap: 12px; padding: 18px 28px; font-family: 'IBM Plex Sans', sans-serif; font-weight: 700; font-size: 15.5px; cursor: pointer; margin-top: 4px;">
+              Invia richiesta
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12H19M13 6L19 12L13 18" stroke="#0A0B0D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+            </button>
+            <p style="font-size: 12.5px; color: #8A9098; margin: 0;">Risposta entro 24 ore lavorative.</p>
+          </form>
+        </div>
+        <div id="mw-done" hidden>
+          <div style="display: flex; flex-direction: column; align-items: flex-start; gap: 16px; padding: 28px 0;">
+            <div style="width: 56px; height: 56px; border-radius: 50%; background: #F2F1EE; display: flex; align-items: center; justify-content: center; box-shadow: 0 0 24px 4px rgba(225,235,245,0.35);">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 12L10 18L20 6" stroke="#0A0B0D" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+            </div>
+            <h3 style="font-size: 24px; font-weight: 600; color: #F2F1EE; margin: 0;">Richiesta inviata.</h3>
+            <p style="font-size: 15px; line-height: 1.6; color: #9CA2AA; margin: 0; max-width: 380px;">Grazie. Valutiamo il progetto e ti rispondiamo entro 24 ore lavorative.</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer style="background: #040506; color: #9CA2AA; border-top: 1px solid #1C1F24; overflow: hidden;">
+    <div style="max-width: 1360px; margin: 0 auto; padding: clamp(56px,7vw,96px) clamp(20px,4vw,56px) 0; box-sizing: border-box; display: flex; flex-wrap: wrap; gap: 48px; justify-content: space-between;">
+      <div style="flex: 1 1 280px; min-width: 0;">
+        <img src="img/logo-footer.png" alt="Metal Welding Srl" style="height: 88px; width: auto; display: block; margin-bottom: 18px;">
+        <p style="font-size: 14px; line-height: 1.65; margin: 0; max-width: 300px;">Carpenteria metallica e lavorazioni conto terzi a Grottazzolina, provincia di Fermo. Saldatura TIG e MIG, finitura e assemblaggio dal 2017.</p>
+      </div>
+      <div style="flex: 0 1 200px; min-width: 160px;">
+        <div style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 0.12em; color: #8A9098; margin-bottom: 16px;">AZIENDA</div>
+        <div style="display: flex; flex-direction: column; gap: 12px; font-size: 14.5px;">
+          <a href="#servizi">Servizi</a>
+          <a href="#lavori">Lavori</a>
+          <a href="#struttura">Struttura produttiva</a>
+          <a href="#processo">Come lavoriamo</a>
+          <a href="#chi-siamo">Chi siamo</a>
+        </div>
+      </div>
+      <div style="flex: 0 1 280px; min-width: 220px;">
+        <div style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 0.12em; color: #8A9098; margin-bottom: 16px;">CONTATTI</div>
+        <div style="display: flex; flex-direction: column; gap: 12px; font-size: 14.5px;">
+          <span>Strada Fermana 10/B, Grottazzolina (FM)</span>
+          <a href="tel:0734278045">0734 278045</a>
+          <a href="mailto:info@metalweldingsrl.com">info@metalweldingsrl.com</a>
+          <span>Lun - Ven, 8:00 - 18:00</span>
+        </div>
+      </div>
+    </div>
+    <div aria-hidden="true" class="mw-giant" style="font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: clamp(52px,14vw,210px); line-height: 0.82; letter-spacing: -0.045em; white-space: nowrap; text-align: center; padding: clamp(48px,6vw,80px) 0 0; margin-bottom: -0.1em;">METAL WELDING</div>
+    <div style="border-top: 1px solid #16181C;">
+      <div style="max-width: 1360px; margin: 0 auto; padding: 20px clamp(20px,4vw,56px); box-sizing: border-box; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px; font-size: 12.5px; color: #8A9098;">
+        <span>© 2026 Metal Welding Srl. P.IVA su richiesta.</span>
+        <span>Carpenteria metallica a Fermo, Marche</span>
+      </div>
+    </div>
+  </footer>
+
+</div>
+
+<script>
+(function () {
+  var reduce = !!(window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches);
+  var SPARKS = 1;
+
+  // Reveal allo scroll
+  var io = new IntersectionObserver(function (entries) {
+    entries.forEach(function (en) {
+      if (en.isIntersecting) { en.target.classList.add('is-visible'); io.unobserve(en.target); }
+    });
+  }, { threshold: 0.12, rootMargin: '0px 0px -60px 0px' });
+  document.querySelectorAll('.mw-reveal, .mw-wipe').forEach(function (el) { io.observe(el); });
+
+  // Contatori
+  var counters = document.querySelectorAll('[data-count]');
+  var fmt = function (n) { return n >= 1000 ? Math.floor(n / 1000) + '.' + String(n % 1000).padStart(3, '0') : String(n); };
+  if (!reduce) {
+    var start = performance.now() + 700, dur = 1900;
+    var tick = function (now) {
+      var t = Math.max(0, Math.min(1, (now - start) / dur));
+      var e = 1 - Math.pow(1 - t, 3);
+      counters.forEach(function (c) {
+        var to = +c.getAttribute('data-count'), from = +(c.getAttribute('data-from') || 0);
+        c.textContent = fmt(Math.round(from + (to - from) * e));
+      });
+      if (t < 1) requestAnimationFrame(tick);
+    };
+    requestAnimationFrame(tick);
+  }
+
+  // Luce sulle card servizi
+  document.querySelectorAll('.mw-card').forEach(function (card) {
+    card.addEventListener('pointermove', function (e) {
+      var r = card.getBoundingClientRect();
+      card.style.setProperty('--mx', (e.clientX - r.left) + 'px');
+      card.style.setProperty('--my', (e.clientY - r.top) + 'px');
+    });
+  });
+
+  // Scroll: nav, parallax, processo
+  var nav = document.querySelector('.mw-nav');
+  var heroImg = document.querySelector('.mw-hero-img');
+  var steps = document.querySelector('.mw-steps');
+  var fill = document.querySelector('.mw-steps-fill');
+  var dot = document.querySelector('.mw-steps-dot');
+  var stepEls = Array.prototype.slice.call(document.querySelectorAll('.mw-step'));
+  var ticking = false;
+  var update = function () {
+    ticking = false;
+    var y = window.scrollY || document.documentElement.scrollTop || 0;
+    if (nav) nav.classList.toggle('is-scrolled', y > 30);
+    if (heroImg && !reduce) heroImg.style.transform = 'translateY(' + Math.min(y * 0.2, 140) + 'px) scale(1.1)';
+    if (steps && fill && dot) {
+      var r = steps.getBoundingClientRect();
+      var vh = window.innerHeight || 800;
+      var total = Math.max(1, r.height - 16);
+      var p = Math.max(0, Math.min(1, (vh * 0.6 - r.top) / total));
+      var h = p * total;
+      fill.style.height = h + 'px';
+      dot.style.top = (8 + h) + 'px';
+      dot.style.opacity = p > 0.001 && p < 0.999 ? '1' : '0';
+      stepEls.forEach(function (s) { s.classList.toggle('is-active', s.offsetTop <= h + 12); });
+    }
+  };
+  var onScroll = function () { if (!ticking) { ticking = true; requestAnimationFrame(update); } };
+  window.addEventListener('scroll', onScroll, { passive: true });
+  window.addEventListener('resize', onScroll);
+  update();
+
+  // Form: scelta tipo richiesta e invio
+  var tipo = document.getElementById('mw-tipo');
+  document.querySelectorAll('.mw-chip').forEach(function (chip) {
+    chip.addEventListener('click', function () {
+      document.querySelectorAll('.mw-chip').forEach(function (c) { c.classList.remove('is-on'); c.setAttribute('aria-pressed', 'false'); });
+      chip.classList.add('is-on'); chip.setAttribute('aria-pressed', 'true');
+      if (tipo) tipo.value = chip.getAttribute('data-label');
+    });
+  });
+  var form = document.getElementById('mw-form');
+  if (form) {
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      // Proposta: il form non invia ancora email. Da collegare (es. Formspree o PHP) al momento della messa online definitiva.
+      document.getElementById('mw-form-wrap').hidden = true;
+      document.getElementById('mw-done').hidden = false;
+    });
+  }
+
+  // Arco di saldatura nell'hero
+  var hero = document.querySelector('.mw-hero');
+  var cv = document.querySelector('.mw-arc');
+  var strip = document.querySelector('.mw-strip');
+  if (!hero || !cv || !cv.getContext) return;
+  var ctx = cv.getContext('2d');
+  var W = 0, H = 0, seamY = 0;
+  var resize = function () {
+    var dpr = Math.min(window.devicePixelRatio || 1, 2);
+    W = hero.offsetWidth; H = hero.offsetHeight;
+    seamY = strip ? strip.offsetTop : H * 0.82;
+    cv.width = Math.max(1, Math.round(W * dpr));
+    cv.height = Math.max(1, Math.round(H * dpr));
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+  };
+  resize();
+  var drawStatic = function () {
+    ctx.clearRect(0, 0, W, H);
+    ctx.strokeStyle = 'rgba(170,178,186,0.6)'; ctx.lineWidth = 2;
+    ctx.beginPath(); ctx.moveTo(0, seamY); ctx.lineTo(W, seamY); ctx.stroke();
+  };
+  if (reduce) {
+    drawStatic();
+    window.addEventListener('resize', function () { resize(); drawStatic(); });
+    return;
+  }
+  if (typeof ResizeObserver !== 'undefined') new ResizeObserver(resize).observe(hero);
+  else window.addEventListener('resize', resize);
+
+  var sparks = [], bead = [], arc = { x: -20, y: seamY };
+  var follow = null, lastMove = 0, idleT = 0, prevPh = 0;
+  var PASS = 7.5, PAUSE = 1.8, last = performance.now(), visible = true;
+  hero.addEventListener('pointermove', function (e) {
+    var r = hero.getBoundingClientRect();
+    var x = e.clientX - r.left, y = e.clientY - r.top;
+    if (y > seamY - 4) { follow = null; return; }
+    follow = { x: x, y: y }; lastMove = performance.now();
+  });
+  hero.addEventListener('pointerleave', function () { follow = null; });
+  new IntersectionObserver(function (en) { visible = en[0] ? en[0].isIntersecting : true; }).observe(hero);
+  var mix = function (a, b, t) { return Math.round(a + (b - a) * t); };
+
+  var frame = function (now) {
+    requestAnimationFrame(frame);
+    if (!visible || document.hidden) { last = now; return; }
+    var dt = Math.min(0.05, (now - last) / 1000); last = now;
+    var k = SPARKS, welding = true, following = false, a;
+    if (follow && now - lastMove < 2600) {
+      following = true; a = Math.min(1, dt * 14);
+      arc.x += (follow.x - arc.x) * a; arc.y += (follow.y - arc.y) * a;
+    } else {
+      follow = null; idleT += dt;
+      var ph = idleT % (PASS + PAUSE);
+      if (ph < prevPh) { arc.x = W * -0.02; arc.y = seamY; bead.length = 0; }
+      prevPh = ph;
+      if (ph < PASS) {
+        var e = ph / PASS; a = Math.min(1, dt * 9);
+        arc.x += (W * (-0.02 + 1.04 * e) - arc.x) * a;
+        arc.y += (seamY + Math.sin(ph * 24) * 1.4 - arc.y) * a;
+      } else welding = false;
+    }
+    if (welding) {
+      var lb = bead[bead.length - 1];
+      if (!lb || Math.abs(lb.x - arc.x) + Math.abs(lb.y - arc.y) > 2) bead.push({ x: arc.x, y: arc.y, t: now, life: following ? 1.4 : 9.5 });
+      var n = Math.round((following ? 6 : 4) * k);
+      for (var i = 0; i < n && sparks.length < 520; i++) {
+        sparks.push({ x: arc.x, y: arc.y, vx: (Math.random() - 0.5) * 460, vy: -(Math.random() * 400 + 40), life: 0.35 + Math.random() * 1.05, age: 0 });
+      }
+    }
+    ctx.globalCompositeOperation = 'source-over';
+    ctx.clearRect(0, 0, W, H);
+    for (var j = bead.length - 1; j >= 0; j--) if ((now - bead[j].t) / 1000 > bead[j].life) bead.splice(j, 1);
+    ctx.lineCap = 'round';
+    for (var b = 1; b < bead.length; b++) {
+      var B = bead[b], P = bead[b - 1];
+      if (Math.abs(B.x - P.x) + Math.abs(B.y - P.y) > 60) continue;
+      var age = (now - B.t) / 1000, r, g, bl, al = 1;
+      if (age < 0.3) { r = g = bl = 255; ctx.lineWidth = 3.2 - age / 0.3; }
+      else if (age < 2) { var t2 = (age - 0.3) / 1.7; r = mix(255, 150, t2); g = mix(255, 158, t2); bl = mix(255, 168, t2); ctx.lineWidth = 2.2; }
+      else { r = 150; g = 158; bl = 168; al = 0.85; ctx.lineWidth = 2.2; }
+      var rem = B.life - age; if (rem < 1.4) al *= Math.max(0, rem / 1.4);
+      ctx.strokeStyle = 'rgba(' + r + ',' + g + ',' + bl + ',' + al.toFixed(3) + ')';
+      ctx.beginPath(); ctx.moveTo(P.x, P.y); ctx.lineTo(B.x, B.y); ctx.stroke();
+    }
+    ctx.globalCompositeOperation = 'lighter';
+    for (var s = sparks.length - 1; s >= 0; s--) {
+      var S = sparks[s]; S.age += dt;
+      if (S.age > S.life) { sparks.splice(s, 1); continue; }
+      S.vy += 980 * dt; S.vx *= 0.995; S.x += S.vx * dt; S.y += S.vy * dt;
+      if (S.y > H - 2) { S.y = H - 2; S.vy *= -0.32; S.vx *= 0.6; }
+      var heat = 1 - S.age / S.life, hh = heat / 0.55;
+      var sr = heat > 0.55 ? 255 : mix(165, 255, hh), sg = heat > 0.55 ? 255 : mix(180, 255, hh), sb = heat > 0.55 ? 255 : mix(198, 255, hh);
+      ctx.strokeStyle = 'rgba(' + sr + ',' + sg + ',' + sb + ',' + heat.toFixed(3) + ')';
+      ctx.lineWidth = 0.8 + heat * 1.1;
+      ctx.beginPath(); ctx.moveTo(S.x - S.vx * 0.016, S.y - S.vy * 0.016); ctx.lineTo(S.x, S.y); ctx.stroke();
+    }
+    var flick = 0;
+    if (welding) {
+      flick = 0.72 + Math.random() * 0.38;
+      var R = 110 * flick, gr = ctx.createRadialGradient(arc.x, arc.y, 0, arc.x, arc.y, R);
+      gr.addColorStop(0, 'rgba(255,255,255,0.95)'); gr.addColorStop(0.12, 'rgba(232,240,250,0.45)');
+      gr.addColorStop(0.45, 'rgba(200,215,230,0.10)'); gr.addColorStop(1, 'rgba(200,215,230,0)');
+      ctx.fillStyle = gr; ctx.beginPath(); ctx.arc(arc.x, arc.y, R, 0, Math.PI * 2); ctx.fill();
+      ctx.fillStyle = '#FFFFFF'; ctx.beginPath(); ctx.arc(arc.x, arc.y, 2.6 + Math.random() * 1.6, 0, Math.PI * 2); ctx.fill();
+    }
+    hero.style.setProperty('--lx', arc.x.toFixed(1) + 'px');
+    hero.style.setProperty('--ly', arc.y.toFixed(1) + 'px');
+    hero.style.setProperty('--la', (welding ? flick * Math.min(1, k + 0.2) : 0).toFixed(3));
+  };
+  requestAnimationFrame(frame);
+})();
+
+</script>
+</body>
+</html>
