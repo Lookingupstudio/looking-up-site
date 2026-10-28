@@ -14,6 +14,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="css/style.css">
+<meta name="emi-crm" content="https://emi-crm.onrender.com">
 </head>
 <body>
 
@@ -70,7 +71,7 @@
 
         <div class="specs reveal">
           <div class="spec"><b>3 h</b><span>live on Zoom</span></div>
-          <div class="spec"><b>€140</b><span>one price</span></div>
+          <div class="spec"><b data-crm-prezzo="online">€140</b><span>one price</span></div>
           <div class="spec"><b>~12</b><span>people per date</span></div>
         </div>
 
@@ -85,7 +86,7 @@
         <p class="muted reveal" style="font-size:15px">Includes the first month of the Academy, so you can keep going with the community. <span class="ph-tag">to confirm</span></p>
 
         <h3 class="small reveal" id="dates">Next dates</h3>
-        <div class="dates reveal">
+        <div class="dates reveal" data-crm-date="online">
           <div class="date-row">
             <div class="when">
               <b>Saturday 23 January 2027</b>
@@ -133,13 +134,13 @@
 
         <div class="specs reveal">
           <div class="spec"><b>1 day</b><span>walk + workshop</span></div>
-          <div class="spec"><b>€190</b><span>materials included</span></div>
+          <div class="spec"><b data-crm-prezzo="venezia">€190</b><span>materials included</span></div>
           <div class="spec"><b>~12</b><span>people</span></div>
         </div>
         <p class="muted reveal" style="font-size:15px">The venue changes with each edition and is shared after booking. <span class="ph-tag">to confirm</span></p>
 
         <h3 class="small reveal">Next dates</h3>
-        <div class="dates reveal">
+        <div class="dates reveal" data-crm-date="venezia">
           <div class="date-row">
             <div class="when">
               <b>June 2027</b>
@@ -264,5 +265,6 @@
 </footer>
 
 <script src="js/main.js"></script>
+<script src="js/crm.js"></script>
 </body>
 </html>

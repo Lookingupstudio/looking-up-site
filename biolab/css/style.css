@@ -375,3 +375,7 @@ h3.small{font-family:var(--mono);font-size:12px;letter-spacing:.12em;text-transf
   .spec{padding:14px 8px 14px 0;}
   .spec + .spec{padding-left:10px;}
 }
+
+/* Bottoni con il font del testo, non maiuscoli (richiesta di Mattia 28/10) */
+.btn,.text-link,.main-nav a,.mobile-nav a.btn,.anchor-nav a{font-family:var(--text);font-size:16px;letter-spacing:.01em;text-transform:none;font-weight:500;}
+.main-nav a{font-size:15px;}
