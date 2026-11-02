@@ -101,10 +101,10 @@ em,.italic{font-style:italic;}
 .text-link{font-family:var(--mono);font-size:13px;letter-spacing:.08em;text-transform:uppercase;text-decoration:none;border-bottom:1px solid var(--bronze);padding-bottom:3px;}
 
 /* segnaposto: tutto ciò che è da confermare o da collegare */
-.ph{position:relative;outline:1.5px dashed var(--bronze);outline-offset:4px;}
+.ph{position:relative;}
 .ph-tag{
   display:inline-block;font-family:var(--mono);font-size:10px;letter-spacing:.1em;text-transform:uppercase;
-  color:var(--bronze);border:1px dashed var(--bronze);border-radius:4px;padding:2px 6px;margin-left:8px;vertical-align:middle;white-space:nowrap;
+  color:var(--bronze);border:0;padding:0;margin-left:8px;vertical-align:middle;white-space:nowrap;
 }
 .draft-bar{
   background:var(--bronze);color:#fff;font-family:var(--mono);font-size:11px;letter-spacing:.08em;
@@ -379,3 +379,34 @@ h3.small{font-family:var(--mono);font-size:12px;letter-spacing:.12em;text-transf
 /* Bottoni con il font del testo, non maiuscoli (richiesta di Mattia 28/10) */
 .btn,.text-link,.main-nav a,.mobile-nav a.btn,.anchor-nav a{font-family:var(--text);font-size:16px;letter-spacing:.01em;text-transform:none;font-weight:500;}
 .main-nav a{font-size:15px;}
+
+/* Filo che si tesse lungo la pagina */
+.filo{position:absolute;top:0;left:0;pointer-events:none;z-index:30;overflow:visible;mix-blend-mode:multiply;}
+.filo-linea{fill:none;stroke:var(--teal);stroke-width:1.4;stroke-linecap:round;opacity:.55;}
+.filo-alone{fill:none;stroke:var(--mist);stroke-width:6;stroke-linecap:round;opacity:.55;}
+.filo-perla{fill:var(--shell);stroke:var(--teal);stroke-width:1.2;transition:opacity .4s;}
+.on-dark ~ .filo,.site-footer ~ .filo{mix-blend-mode:normal;}
+@media (max-width:699px){.filo-linea{stroke-width:1.1;opacity:.45}.filo-alone{stroke-width:4}}
+
+/* Numeri: font del testo con cifre "dritte" (richiesta di Mattia 28/10) */
+.fact b,.spec b,.date-row .when b{font-family:var(--text);font-weight:500;font-variant-numeric:lining-nums proportional-nums;letter-spacing:0;}
+.fact b{font-size:40px;}
+.spec b{font-size:24px;}
+.date-row .when b{font-size:21px;}
+body{font-variant-numeric:lining-nums;}
+
+/* Segnaposto senza bordi tratteggiati (richiesta di Mattia 28/10) */
+.ph{outline:none;}
+.ph-tag{border:0;padding:0;background:none;opacity:.75;}
+
+/* Tutti i numeri (prezzi, orari, date, anni, posti) col font dei pulsanti (richiesta di Mattia 2/11) */
+.path .price,.date-row .when span,.date-row .seats,.timeline .year,.academy-price{font-family:var(--text);font-variant-numeric:lining-nums;letter-spacing:.01em;text-transform:none;}
+.path .price{font-size:15px;font-weight:500;}
+.date-row .when span{font-size:14px;}
+.date-row .seats{font-size:13px;}
+.timeline .year{font-size:15px;font-weight:500;}
+.academy-price{font-size:16px;font-weight:500;}
+
+/* Niente bordi tratteggiati o a pallini da nessuna parte (richiesta di Mattia 2/11) */
+.ph,.ph *{outline:none !important;}
+.ph-tag,.draft-tag{border:0 !important;}
