@@ -1,0 +1,242 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>The Wake · Offroad Club Monaco</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --nero:#0f0e0c; --nero2:#171512; --oro:#c9a961; --oro-chiaro:#e3cf9f;
+  --crema:#f1ece2; --testo:#d8d2c6; --muto:#9a9285; --rosso:#b8323a;
+  --serif:'Cormorant Garamond', Georgia, 'Times New Roman', serif;
+  --sans:'Inter', 'Helvetica Neue', Arial, sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-snap-type:y mandatory;scroll-behavior:smooth}
+body{background:var(--nero);color:var(--testo);font-family:var(--sans);font-weight:300;line-height:1.55;-webkit-font-smoothing:antialiased}
+.slide{min-height:100vh;scroll-snap-align:start;display:flex;align-items:center;justify-content:center;padding:72px 6vw;position:relative;overflow:hidden}
+.slide.alt{background:var(--nero2)}
+.wrap{width:100%;max-width:1200px}
+.eyebrow{font-family:var(--sans);font-size:12px;letter-spacing:.32em;text-transform:uppercase;color:var(--oro);margin-bottom:22px}
+h1,h2,h3{font-family:var(--serif);font-weight:500;color:var(--crema);line-height:1.05}
+h1{font-size:clamp(56px,9vw,128px);letter-spacing:.01em}
+h2{font-size:clamp(38px,5vw,68px);margin-bottom:28px}
+h3{font-size:30px;margin-bottom:10px}
+p{font-size:18px;max-width:640px}
+.lead{font-family:var(--serif);font-style:italic;font-size:clamp(22px,2.4vw,30px);color:var(--oro-chiaro);max-width:760px}
+.rule{width:64px;height:1px;background:var(--oro);margin:34px 0}
+.num{position:absolute;bottom:28px;right:6vw;font-size:12px;letter-spacing:.2em;color:var(--muto)}
+.grid{display:grid;gap:28px}
+.g2{grid-template-columns:repeat(2,1fr)} .g3{grid-template-columns:repeat(3,1fr)} .g4{grid-template-columns:repeat(4,1fr)}
+.card{border-top:1px solid rgba(201,169,97,.45);padding-top:20px}
+.card p{font-size:16px;color:var(--testo)}
+.card .k{font-family:var(--sans);font-weight:300;font-size:34px;letter-spacing:.08em;font-variant-numeric:lining-nums tabular-nums;color:var(--oro);line-height:1;margin-bottom:14px}
+/* copertina */
+.cover{background:radial-gradient(ellipse at 70% 40%, #1d1a15 0%, var(--nero) 65%)}
+.cover .logo{width:132px;height:132px;border-radius:50%;object-fit:cover;margin-bottom:40px;box-shadow:0 0 0 1px rgba(201,169,97,.4)}
+.cover .x{font-size:13px;letter-spacing:.3em;text-transform:uppercase;color:var(--muto);margin-top:40px}
+/* video */
+.ex{display:grid;grid-template-columns:minmax(260px,380px) 1fr;gap:64px;align-items:center}
+.phone{aspect-ratio:9/16;width:100%;border-radius:18px;overflow:hidden;background:#000;box-shadow:0 30px 80px rgba(0,0,0,.6),0 0 0 1px rgba(201,169,97,.25)}
+.phone.wide{aspect-ratio:16/9}
+.phone video{width:100%;height:100%;object-fit:cover;display:block}
+.tag{display:inline-block;font-size:11px;letter-spacing:.24em;text-transform:uppercase;padding:7px 14px;border:1px solid var(--oro);color:var(--oro);border-radius:99px;margin-bottom:22px}
+.tag.real{border-color:var(--crema);color:var(--crema)}
+ul.clean{list-style:none;margin-top:22px}
+ul.clean li{padding:10px 0;border-bottom:1px solid rgba(255,255,255,.07);font-size:16px}
+ul.clean li b{color:var(--crema);font-weight:500}
+.note{font-size:13px;color:var(--muto);margin-top:18px;font-style:italic}
+/* ped */
+table{width:100%;border-collapse:collapse;font-size:15px}
+th{font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--oro);text-align:left;font-weight:400;padding:0 12px 14px 0;border-bottom:1px solid rgba(201,169,97,.45)}
+td{padding:14px 12px 14px 0;border-bottom:1px solid rgba(255,255,255,.07);vertical-align:top}
+td.d{font-family:var(--serif);font-size:20px;color:var(--crema);white-space:nowrap}
+.pill{font-size:11px;letter-spacing:.14em;text-transform:uppercase;padding:4px 10px;border-radius:99px;white-space:nowrap}
+.p-ai{border:1px solid var(--oro);color:var(--oro)}
+.p-ib{border:1px solid var(--oro-chiaro);color:var(--nero);background:var(--oro-chiaro)}
+.p-re{border:1px solid var(--crema);color:var(--crema)}
+.mix{display:flex;gap:28px;flex-wrap:wrap;margin-top:28px;font-size:14px;color:var(--muto)}
+/* statement */
+.statement{background:var(--oro)}
+.statement h2{color:var(--nero);font-size:clamp(44px,6.5vw,92px);max-width:1000px}
+.statement p{color:#2a2419}
+.statement .eyebrow{color:#3a3020}
+.steps{counter-reset:s}
+.steps .card .k::before{counter-increment:s;content:"0" counter(s)}
+.dots{position:fixed;right:18px;top:50%;transform:translateY(-50%);display:flex;flex-direction:column;gap:10px;z-index:9}
+.dots a{width:7px;height:7px;border-radius:50%;background:rgba(201,169,97,.3);display:block}
+.dots a.on{background:var(--oro)}
+@media (max-width:860px){
+  .slide{padding:64px 16px}
+  .g2,.g3,.g4,.ex{grid-template-columns:1fr}
+  .ex{gap:32px}
+  .phone{max-width:320px;margin:0 auto}
+  table{font-size:13px} td.d{font-size:16px}
+  .dots{display:none}
+  .hide-m{display:none}
+}
+.hint{font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--muto);margin-top:12px;text-align:center}
+.card .k.kw{font-family:var(--serif);font-weight:500;font-size:44px;letter-spacing:0}
+</style>
+</head>
+<body>
+
+<nav class="dots" id="dots"></nav>
+
+<!-- 1 copertina -->
+<section class="slide cover" id="s1">
+  <div class="wrap">
+    <img class="logo" src="media/logo.jpg" alt="Logo Offroad Club Monaco">
+    <div class="eyebrow">Offroad Club Monaco · Proposta contenuti</div>
+    <h1>The Wake</h1>
+    <div class="rule"></div>
+    <p class="lead">Ogni contenuto lascia una traccia. Come il club.</p>
+    <div class="x">Looking Up Studio · Novembre 2026</div>
+  </div>
+</section>
+
+<!-- 2 cosa abbiamo capito -->
+<section class="slide alt" id="s2">
+  <div class="wrap">
+    <div class="eyebrow">Il punto di partenza</div>
+    <h2>Cosa abbiamo capito di OCM</h2>
+    <div class="grid g3" style="margin-top:20px">
+      <div class="card"><div class="k kw">Club</div><p>Un club privato internazionale nato a Monaco: sport outdoor, viaggi, cultura, tecnologia. Esclusivo, ma con una missione.</p></div>
+      <div class="card"><div class="k kw">Missione</div><p>Avventura e responsabilità insieme: il record in moto d'acqua a bioetanolo, il legame con la Fondazione Principe Alberto II, il comitato accademico.</p></div>
+      <div class="card"><div class="k kw">Volto</div><p>I fondatori non appaiono mai. A parlare sono Mr. The Wake, i mezzi, i luoghi e gli eventi del club.</p></div>
+    </div>
+    <p class="lead" style="margin-top:56px">«The Wake of Monaco» è già il vostro claim. Noi lo trasformiamo in un linguaggio visivo.</p>
+  </div>
+  <div class="num">02</div>
+</section>
+
+<!-- 5 Mr The Wake -->
+<section class="slide" id="s3">
+  <div class="wrap ex">
+    <div><div class="phone"><video src="media/v-mrthewake.mp4" poster="media/s-mrthewake.jpg" autoplay muted loop playsinline controls preload="metadata"></video></div><p class="hint">Tocca l'altoparlante per l'audio</p></div>
+    <div>
+      <span class="tag">Esempio 1 · AI</span>
+      <h2>Mr. The Wake presenta l'universo OCM</h2>
+      <p>La mascotte del club, nel suo studio a Monaco di notte, apre il sito e fa nascere l'ologramma della galassia OCM. Un format a episodi: stesso set, stessa luce, ogni volta una sezione diversa.</p>
+      <ul class="clean">
+        <li><b>Ep. 1</b> Cos'è OCM</li>
+        <li><b>Ep. 2</b> OCM Sport · Mind. Motion. Mission.</li>
+        <li><b>Ep. 3</b> OCM Travel · Leave a wake, not a footprint.</li>
+        <li><b>Ep. 4</b> OCM Culture</li>
+      </ul>
+      
+    </div>
+  </div>
+  <div class="num">03</div>
+</section>
+
+<!-- 6 Sport -->
+<section class="slide alt" id="s4">
+  <div class="wrap ex">
+    <div><div class="phone"><video src="media/v-sport.mp4" poster="media/s-sport.jpg" autoplay muted loop playsinline controls preload="metadata"></video></div><p class="hint">Tocca l'altoparlante per l'audio</p></div>
+    <div>
+      <span class="tag">Esempio 2 · AI</span>
+      <h2>Sport action</h2>
+      <p>Trekking, parapendio, sci, enduro, vetta. Ritmo veloce, transizioni dentro la scena: la neve dello sci diventa la polvere dell'enduro, lo scarpone sale fino alla bandiera OCM sopra le nuvole.</p>
+      <ul class="clean">
+        <li><b>Logo discreto</b> su ogni sport: toppa, casco, zaino</li>
+        <li><b>Nessun volto</b>, solo gesti e movimento</li>
+        <li><b>Chiusura</b> sulla bandiera del club</li>
+      </ul>
+      
+    </div>
+  </div>
+  <div class="num">04</div>
+</section>
+
+<!-- 7 Motoslitta -->
+<section class="slide" id="s5">
+  <div class="wrap ex">
+    <div><div class="phone"><video src="media/v-motoslitta.mp4" poster="media/s-motoslitta.jpg" autoplay muted loop playsinline controls preload="metadata"></video></div><p class="hint">Tocca l'altoparlante per l'audio</p></div>
+    <div>
+      <span class="tag">Esempio 3 · AI</span>
+      <h2>OCM nella neve</h2>
+      <p>La motoslitta Taiga all'alba in una valle intatta. Dal drone, le sue tracce scrivono OCM nella neve. È il concept della scia nella forma più pura.</p>
+      <ul class="clean">
+        <li><b>Mezzo vero</b>: la Taiga ricostruita dalle foto reali</li>
+        <li><b>Drone lento</b>, luce d'alba, silenzio e vento</li>
+        <li><b>Il logo</b> ricamato sulla schiena del pilota</li>
+      </ul>
+      
+    </div>
+  </div>
+  <div class="num">05</div>
+</section>
+
+<!-- 8 Taiga fiera reale -->
+<section class="slide alt" id="s6">
+  <div class="wrap ex">
+    <div><div class="phone"><video src="media/v-taiga-fiera.mp4" poster="media/s-taiga-fiera.jpg" autoplay muted loop playsinline controls preload="metadata"></video></div><p class="hint">Tocca l'altoparlante per l'audio</p></div>
+    <div>
+      <span class="tag real">Esempio 4 · Girato reale</span>
+      <h2>Taiga in fiera</h2>
+      <p>Lo stand Taiga in fiera, girato e montato dal vero: dettagli, materiali, display. Non solo AI: montiamo anche il vostro girato di eventi, fiere e uscite del club, con lo stesso stile. E possiamo unire i due mondi: dallo stand in fiera alla neve vera, con una transizione AI.</p>
+      <ul class="clean">
+        <li><b>Reale</b>: eventi e fiere montati in stile «La scia»</li>
+        <li><b>Ibrido</b>: dallo stand alla realtà, stesso mezzo</li>
+        <li><b>Archivio</b>: il record in moto d'acqua a bioetanolo, rimontato</li>
+      </ul>
+    </div>
+  </div>
+  <div class="num">06</div>
+</section>
+
+<!-- 11 Come lavoriamo -->
+<section class="slide" id="s7">
+  <div class="wrap">
+    <div class="eyebrow">Il metodo</div>
+    <h2>Come lavoriamo</h2>
+    <div class="grid g4 steps" style="margin-top:12px">
+      <div class="card"><div class="k"></div><h3>Le vostre idee</h3><p>Ci dite quali contenuti volete raccontare: eventi, sezioni del club, partner, appuntamenti.</p></div>
+      <div class="card"><div class="k"></div><h3>Piano editoriale</h3><p>Li organizziamo in un piano con le date, due contenuti a settimana. Lo approvate o lo correggete.</p></div>
+      <div class="card"><div class="k"></div><h3>Produzione</h3><p>Realizziamo i contenuti approvati: AI, girato reale o ibridi, con controllo fotogramma per fotogramma.</p></div>
+      <div class="card"><div class="k"></div><h3>Consegna</h3><p>Tutto pronto qualche giorno prima dell'uscita. Pubblicate voi.</p></div>
+    </div>
+  </div>
+  <div class="num">07</div>
+</section>
+
+<!-- 12 prossimi passi -->
+<section class="slide statement" id="s8">
+  <div class="wrap">
+    <div class="eyebrow">Prossimi passi</div>
+    <h2>Se gli esempi vi convincono, si parte.</h2>
+    <div class="grid g3" style="margin-top:36px">
+      <div class="card" style="border-color:#3a3020"><div class="k" style="color:var(--nero)">01</div><p>Ci dite quali contenuti volete per il primo mese.</p></div>
+      <div class="card" style="border-color:#3a3020"><div class="k" style="color:var(--nero)">02</div><p>Vi mandiamo il piano editoriale e il preventivo.</p></div>
+      <div class="card" style="border-color:#3a3020"><div class="k" style="color:var(--nero)">03</div><p>Dopo il vostro ok, partiamo con la produzione.</p></div>
+    </div>
+    <p style="margin-top:56px;font-family:var(--serif);font-size:26px;font-style:italic">The Wake of Monaco.</p>
+  </div>
+  <div class="num" style="color:#3a3020">08</div>
+</section>
+
+<script>
+(function(){
+  var slides=[].slice.call(document.querySelectorAll('.slide'));
+  var dots=document.getElementById('dots');
+  slides.forEach(function(s){var a=document.createElement('a');a.href='#'+s.id;a.setAttribute('aria-label','Vai alla slide '+s.id.slice(1));dots.appendChild(a);});
+  var links=dots.querySelectorAll('a');
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){
+    var i=slides.indexOf(e.target);
+    if(e.isIntersecting&&e.intersectionRatio>.5){links.forEach(function(l,j){l.classList.toggle('on',i===j)});}
+    var v=e.target.querySelector('video'); if(v){ if(e.isIntersecting){v.play().catch(function(){});} else {v.pause();} }
+  });},{threshold:[0,.5]});
+  slides.forEach(function(s){io.observe(s)});
+  document.addEventListener('keydown',function(ev){
+    var cur=Math.round(window.scrollY/window.innerHeight);
+    if(['ArrowDown','PageDown',' '].indexOf(ev.key)>-1){ev.preventDefault();var n=slides[Math.min(cur+1,slides.length-1)];n.scrollIntoView();}
+    if(['ArrowUp','PageUp'].indexOf(ev.key)>-1){ev.preventDefault();var p=slides[Math.max(cur-1,0)];p.scrollIntoView();}
+  });
+})();
+</script>
+</body>
+</html>
