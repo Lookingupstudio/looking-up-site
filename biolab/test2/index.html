@@ -1,0 +1,186 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Emi BioLab · From liquid to thread</title>
+<meta name="description" content="Emi BioLab, independent design and research practice by Carola Emanuela Godja. From liquid to thread: alginate, step by step. Venice, Italy.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter+Tight:wght@400;500&family=IBM+Plex+Mono:wght@400&display=swap" rel="stylesheet">
+<style>
+:root{--mist:#ecedea;--graf:#25292d;--slate:#747e88;--silver:#b9bec3;--linea:rgba(37,41,45,.2)}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{background:var(--mist)}
+body{color:var(--graf);font-family:"Inter Tight",Helvetica,Arial,sans-serif;font-size:13px;line-height:1.45;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+.serif{font-family:"Instrument Serif",Georgia,serif;font-weight:400;letter-spacing:-.015em}
+.mono{font-family:"IBM Plex Mono",monospace;font-size:11px;letter-spacing:.02em}
+.maiu{text-transform:uppercase;letter-spacing:.05em;font-size:11px}
+.ul{position:relative}
+.ul::after{content:"";position:absolute;left:0;bottom:-2px;width:100%;height:1px;background:currentColor;transform:scaleX(0);transform-origin:right;transition:transform .5s cubic-bezier(.625,.05,0,1)}
+.ul:hover::after{transform:scaleX(1);transform-origin:left}
+
+header{position:fixed;top:0;left:0;right:0;z-index:10;display:flex;justify-content:space-between;align-items:center;padding:18px 24px}
+.logo{font-family:"Instrument Serif",Georgia,serif;font-size:26px;line-height:1}
+nav{display:flex;gap:34px}
+
+.pista{height:900vh}
+.scena{position:fixed;inset:0;display:grid;grid-template-columns:1fr auto 1fr;align-items:center;padding:0 24px}
+
+/* video al centro, sfuma nel fondo */
+.video{position:relative;height:calc(100vh - 130px);aspect-ratio:9/16;margin-top:20px;background:#2a2f34}
+.video canvas{width:100%;height:100%;display:block}
+
+/* passaggi a sinistra: linea sottile e cerchietti */
+.passi{justify-self:start;position:relative;padding-left:28px}
+.passi::before{content:"";position:absolute;left:5px;top:8px;bottom:8px;width:1px;background:var(--linea)}
+.passi .riemp{position:absolute;left:5px;top:8px;width:1px;background:var(--graf);height:0}
+.passo{position:relative;display:flex;align-items:center;gap:12px;height:44px;color:#9aa1a8;transition:color .5s}
+.passo i{position:absolute;left:-28px;width:11px;height:11px;border-radius:50%;border:1px solid var(--silver);background:var(--mist);transition:all .5s}
+.passo .n{width:22px}
+.passo .t{font-family:"Instrument Serif",Georgia,serif;font-size:21px;transition:font-size .6s cubic-bezier(.2,.7,0,1)}
+.passo.fatto{color:var(--slate)}
+.passo.fatto i{background:var(--graf);border-color:var(--graf);transform:scale(.55)}
+.passo.on{color:var(--graf);height:96px}
+.passo.on i{background:var(--graf);border-color:var(--graf);transform:scale(1)}
+.passo.on .t{font-size:62px;line-height:1}
+
+/* testo a destra */
+.info{justify-self:end;width:300px;position:relative;height:220px}
+.blocco{position:absolute;inset:0;opacity:0;transform:translateY(16px);transition:opacity .6s ease,transform .6s cubic-bezier(.2,.7,0,1)}
+.blocco.on{opacity:1;transform:none}
+.blocco .cod{display:flex;justify-content:space-between;border-bottom:1px solid var(--linea);padding-bottom:8px;margin-bottom:14px;color:var(--slate)}
+.blocco p{font-size:15px;line-height:1.45}
+.blocco dl{display:grid;grid-template-columns:84px 1fr;row-gap:4px;margin-top:16px;color:var(--slate)}
+
+/* apertura e chiusura */
+.titolo{position:fixed;left:24px;right:24px;bottom:34px;z-index:6;display:flex;justify-content:space-between;align-items:end;pointer-events:none}
+.titolo h1{font-size:clamp(46px,5vw,84px);line-height:.95}
+.titolo p{text-align:right}
+.fine{position:fixed;inset:0;z-index:8;background:var(--mist);display:grid;grid-template-columns:repeat(12,1fr);gap:20px;align-content:end;padding:0 24px 34px;opacity:0;pointer-events:none}
+.fine.on{pointer-events:auto}
+.fine h2{grid-column:1/8;font-size:clamp(44px,5.2vw,92px);line-height:.98}
+.fine .menu{grid-column:9/13;display:flex;flex-direction:column;align-self:end}
+.fine .menu a{display:flex;justify-content:space-between;border-bottom:1px solid var(--linea);padding:11px 0}
+.fine .prossimo{grid-column:1/8;display:inline-flex;gap:14px;border:1px solid var(--graf);padding:9px 14px;justify-self:start;margin-top:10px}
+.fine .meta{grid-column:1/13;display:flex;justify-content:space-between;color:var(--slate);border-top:1px solid var(--linea);padding-top:12px;margin-top:40px}
+.cont{position:fixed;right:24px;top:50%;transform:translateY(-50%) rotate(90deg);transform-origin:right center;z-index:6;color:var(--slate)}
+.test{position:fixed;left:50%;top:20px;transform:translateX(-50%);z-index:11;font-size:10px;letter-spacing:.06em;text-transform:uppercase;background:var(--graf);color:var(--mist);padding:4px 8px}
+.carica{position:fixed;inset:0;z-index:20;background:var(--mist);display:flex;align-items:center;justify-content:center;transition:opacity .8s}
+.carica.via{opacity:0;pointer-events:none}
+
+@media (max-width:820px){
+  nav a:not(:last-child){display:none}
+  .scena{display:block;padding:0}
+  .video{position:absolute;left:0;right:0;top:60px;height:56vh;width:100%;aspect-ratio:auto;margin:0}
+  .passi{position:absolute;left:20px;top:calc(56vh + 76px);padding-left:22px}
+  .passi::before,.passi .riemp{left:4px}
+  .passo{height:26px;font-size:10px}
+  .passo i{left:-22px;width:9px;height:9px}
+  .passo .t{font-size:15px}
+  .passo.on{height:56px}
+  .passo.on .t{font-size:40px}
+  .info{position:absolute;left:20px;right:20px;bottom:18px;top:auto;width:auto;height:84px;justify-self:auto}
+  .blocco dl,.blocco .cod{display:none}
+  .blocco .cod{margin-bottom:8px}
+  .blocco dl{display:none}
+  .blocco p{font-size:13.5px}
+  .titolo{top:calc(56vh - 46px);bottom:auto;left:20px;color:#fff;text-shadow:0 2px 14px rgba(0,0,0,.4)}
+  .titolo h1{font-size:44px}
+  .titolo p{display:none}
+  .fine{grid-template-columns:1fr;padding:0 20px 28px;gap:18px}
+  .fine h2,.fine .menu,.fine .prossimo,.fine .meta{grid-column:1}
+  .fine h2{font-size:40px}
+  .fine .meta{flex-direction:column;gap:4px;margin-top:20px}
+  .cont{display:none}
+  .test{top:auto;bottom:6px}
+}
+</style>
+</head>
+<body>
+<div class="carica mono" id="carica">From liquid to thread · <span id="perc">0</span>%</div>
+
+<header>
+  <a href="#" class="logo">EMI BIOLAB</a>
+  <nav class="maiu"><a class="ul" href="#">Research</a><a class="ul" href="#">Archive</a><a class="ul" href="#">Workshops</a><a class="ul" href="#">About</a><a class="ul" href="#">Contact</a></nav>
+</header>
+
+<div class="scena">
+  <div class="passi" id="passi"><span class="riemp" id="riemp"></span></div>
+  <div class="video"><canvas id="cv"></canvas></div>
+  <div class="info" id="info"></div>
+</div>
+
+<div class="titolo" id="titolo">
+  <h1 class="serif">From liquid<br>to thread.</h1>
+  <p class="mono">Independent design &amp; research practice<br>Venice, Italy · scroll</p>
+</div>
+
+<section class="fine" id="fine">
+  <h2 class="serif">Carola Emanuela Godja, designer and researcher. Exploring matter, developing new material possibilities.</h2>
+  <nav class="menu maiu"><a href="#">Research <span>→</span></a><a href="#">Material archive <span>→</span></a><a href="#">Workshops <span>→</span></a><a href="#">About · Contact <span>→</span></a></nav>
+  <a href="#" class="prossimo mono"><span>Learn it with Emi · next online workshop</span><span>05.12.2026</span><span>→</span></a>
+  <p class="meta mono"><span>Biomaterials / Textiles / Research</span><span>ALG-FIL · real footage, no AI</span><span>©2026 Emi BioLab</span></p>
+</section>
+
+<p class="cont mono" id="cont">001 / 200</p>
+<div class="pista"></div>
+<div class="test">Test page</div>
+
+<script src="https://unpkg.com/lenis@1.1.13/dist/lenis.min.js"></script>
+<script>
+var Q=new URLSearchParams(location.search),AUTO=Q.get('auto')==='1';
+// i passaggi: [nome, da fotogramma, testo, materiale, tempo]
+var PASSI=[
+  ['Bath',0,'A bowl of water with calcium. It looks like nothing, and it is where everything will happen.','Water, calcium','00:00'],
+  ['Alginate',28,'Alginate from brown algae, dissolved and rested until it flows like honey.','Sodium alginate','00:06'],
+  ['Extrusion',58,'A slow, steady pressure. The hand decides the thickness of the thread.','Hand pressure','00:12'],
+  ['Gel',96,'Where it touches the bath, the liquid closes into a skin. Inside, it is still soft.','Calcium crosslink','00:19'],
+  ['Coil',136,'The filament lays down on itself, a loop after the other, still full of water.','Rest in the bath','00:27'],
+  ['Thread',172,'Lifted from the bath it is matter: it can be dried, knitted, woven.','Alginate thread','00:35']
+];
+var N=200,mob=innerWidth<=820,img=[],caricate=0;
+var passi=document.getElementById('passi'),info=document.getElementById('info'),riemp=document.getElementById('riemp');
+PASSI.forEach(function(p,i){
+  var d=document.createElement('div');d.className='passo';d.innerHTML='<i></i><span class="n mono">0'+(i+1)+'</span><span class="t">'+p[0]+'</span>';passi.appendChild(d);
+  var b=document.createElement('div');b.className='blocco';b.innerHTML='<p class="cod mono"><span>ALG-FIL-00'+(i+1)+'</span><span>'+p[4]+'</span></p><p>'+p[2]+'</p><dl class="mono"><dt>Step</dt><dd>'+(i+1)+' of 6</dd><dt>Material</dt><dd>'+p[3]+'</dd></dl>';info.appendChild(b);
+});
+var elP=[].slice.call(passi.querySelectorAll('.passo')),elB=[].slice.call(info.querySelectorAll('.blocco'));
+function pad(n){return ('00'+n).slice(-3)}
+for(var i=0;i<N;i++){(function(i){var im=new Image();im.onload=im.onerror=function(){caricate++;document.getElementById('perc').textContent=Math.round(caricate/N*100);if(caricate>=40)document.getElementById('carica').classList.add('via')};im.src='frames/m/'+pad(i+1)+'.jpg';img.push(im)})(i)}
+var cv=document.getElementById('cv'),cx=cv.getContext('2d'),D=Math.min(2,devicePixelRatio||1);
+function size(){var r=cv.getBoundingClientRect();cv.width=r.width*D;cv.height=r.height*D}
+size();addEventListener('resize',size);
+function ok(im){return im&&im.complete&&im.naturalWidth}
+function piu(k){for(var j=k;j>=0;j--)if(ok(img[j]))return img[j];return null}
+function copri(im,al){var W=cv.width,H=cv.height,s=Math.max(W/im.naturalWidth,H/im.naturalHeight)*1.03,w=im.naturalWidth*s,h=im.naturalHeight*s;cx.globalAlpha=al;cx.drawImage(im,(W-w)/2,(H-h)/2,w,h)}
+function clamp(x){return Math.min(1,Math.max(0,x))}
+var prog=0,ultimo=-1;
+var titolo=document.getElementById('titolo'),fine=document.getElementById('fine'),cont=document.getElementById('cont');
+function giro(){
+  var max=document.documentElement.scrollHeight-innerHeight,p=max>0?clamp(scrollY/max):0;
+  prog+=(p-prog)*.16;
+  var v=clamp(prog/.88); // l'ultimo tratto e la chiusura
+  var f=v*(N-1),k=Math.floor(f),t=f-k,a=piu(k),b=ok(img[k+1])?img[k+1]:null;
+  if(a){copri(a,1);if(b&&t>0)copri(b,t)}cx.globalAlpha=1;
+  var s=0;for(var j=0;j<PASSI.length;j++)if(f>=PASSI[j][1])s=j;
+  if(s!==ultimo){ultimo=s;elP.forEach(function(e,j){e.classList.toggle('on',j===s);e.classList.toggle('fatto',j<s)});elB.forEach(function(e,j){e.classList.toggle('on',j===s)})}
+  var on=elP[s];riemp.style.height=(on.offsetTop+on.offsetHeight/2-8)+'px';
+  titolo.style.opacity=clamp(1-prog/.05).toFixed(3);
+  var of=clamp((prog-.9)/.06);fine.style.opacity=of.toFixed(3);fine.classList.toggle('on',of>.6);
+  cont.textContent=pad(Math.round(f)+1)+' / '+N;
+  requestAnimationFrame(giro);
+}
+requestAnimationFrame(giro);
+if(AUTO){
+  var t0=null,dur=+(Q.get('dur')||26),pausa=+(Q.get('p')||2);
+  requestAnimationFrame(function g(t){if(t0===null)t0=t;var s=clamp(((t-t0)/1000-pausa)/dur);scrollTo(0,s*(document.documentElement.scrollHeight-innerHeight));requestAnimationFrame(g)});
+}else if(window.Lenis){
+  var lenis=new Lenis({lerp:.07,wheelMultiplier:.8});
+  requestAnimationFrame(function raf(t){lenis.raf(t);requestAnimationFrame(raf)});
+}
+</script>
+</body>
+</html>
