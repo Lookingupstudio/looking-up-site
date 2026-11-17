@@ -7,7 +7,8 @@
   function metti() {
     var h = document.querySelector('header'); if (!h || h.querySelector('.tema')) return;
     var b = document.createElement('button'); b.className = 'tema'; b.type = 'button';
-    function testo() { var n = d.getAttribute('data-tema') === 'notte'; b.innerHTML = '<i></i>' + (n ? 'Night' : 'Day'); b.setAttribute('aria-label', n ? 'Switch to day mode' : 'Switch to night mode'); }
+    b.innerHTML = '<span data-t="notte"><em>Night</em></span><span data-t="giorno"><em>Day</em></span>';
+    function testo() { var n = d.getAttribute('data-tema'); b.querySelectorAll('span').forEach(function (s) { s.classList.toggle('on', s.dataset.t === n); }); b.setAttribute('aria-label', n === 'notte' ? 'Switch to day mode' : 'Switch to night mode'); }
     b.onclick = function () { var n = d.getAttribute('data-tema') === 'notte' ? 'giorno' : 'notte'; d.setAttribute('data-tema', n); try { localStorage.setItem('emi-tema', n); } catch (e) {} testo(); };
     testo();
     var nav = h.querySelector('nav'); h.insertBefore(b, nav ? nav.nextSibling : null);

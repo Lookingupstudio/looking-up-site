@@ -74,8 +74,11 @@ body.finale .avanz .linea i{background:#25292d}
 
 /* pulsante Giorno / Notte */
 header nav{margin-left:auto}
-.tema{margin-left:28px;display:inline-flex;align-items:center;gap:8px;background:none;border:1px solid currentColor;color:inherit;font-family:"IBM Plex Mono",monospace;font-size:10.5px;letter-spacing:.04em;text-transform:uppercase;padding:5px 10px;cursor:pointer}
-.tema i{width:9px;height:9px;border-radius:50%;background:currentColor}
+.tema{margin-left:28px;display:inline-flex;align-items:stretch;background:none;border:1px solid currentColor;color:inherit;padding:0;cursor:pointer;font-family:"IBM Plex Mono",monospace;font-size:11px;letter-spacing:.06em;text-transform:uppercase}
+.tema span{padding:7px 13px;transition:background .35s}
+.tema span.on{background:currentColor}
+.tema span.on em{filter:invert(1)}
+.tema em{font-style:normal;color:inherit}
 html[data-tema="notte"] .chiaro{background:#1d2125}
 html[data-tema="notte"] .cfin{color:#eef0f2}
 html[data-tema="notte"] .cfin .menu a{border-bottom-color:rgba(255,255,255,.2)!important}
@@ -87,8 +90,26 @@ html[data-tema="notte"] body.finale header,html[data-tema="notte"] body.finale .
 html[data-tema="notte"] body.finale .avanz .linea{background:rgba(255,255,255,.2)}
 html[data-tema="notte"] body.finale .avanz .linea i{background:#eef0f2}
 
+/* versione giorno anche sopra il video */
+html[data-tema="giorno"] .scena canvas,html[data-tema="giorno"] #scena{filter:brightness(1.12) saturate(.85) contrast(.92)}
+html[data-tema="giorno"] .scena .velo,html[data-tema="giorno"] .velo{background:radial-gradient(ellipse at 50% 50%,rgba(255,255,255,0) 30%,rgba(255,255,255,.75) 100%),linear-gradient(180deg,rgba(255,255,255,.75),rgba(255,255,255,0) 22%,rgba(255,255,255,0) 55%,rgba(255,255,255,.92))}
+html[data-tema="giorno"] .scena,html[data-tema="giorno"] .scena .titolo .k,html[data-tema="giorno"] .scena .avanz,html[data-tema="giorno"] .scena .titolo p.sotto{color:#25292d}
+html[data-tema="giorno"] .scena{background:#fff}
+html[data-tema="giorno"] .scena .avanz .linea{background:rgba(37,41,45,.2)}
+html[data-tema="giorno"] .scena .avanz .linea i{background:#25292d}
+html[data-tema="giorno"] header{color:#25292d}
+html[data-tema="giorno"],html[data-tema="giorno"] body{background:#fff}
+html[data-tema="giorno"] .cap,html[data-tema="giorno"] .avanz,html[data-tema="giorno"] .scorri{color:#25292d}
+html[data-tema="giorno"] .cg p{color:#25292d;text-shadow:none}
+html[data-tema="giorno"] .cg .mono{color:#5f6872}
+html[data-tema="giorno"] .avanz .linea{background:rgba(37,41,45,.2)}
+html[data-tema="giorno"] .avanz .linea i{background:#25292d}
+html[data-tema="giorno"] .carica{background:#fff;color:#25292d}
+
 @media (max-width:820px){
-  .tema{margin-left:14px;padding:4px 8px}
+  .tema{margin-left:12px}
+  .tema span{padding:6px 9px}
+  .logo{white-space:nowrap;font-size:22px}
   .cfin .lettura span{flex:1 1 45%}
   nav a:not(:last-child){display:none}
   .c0{bottom:80px}

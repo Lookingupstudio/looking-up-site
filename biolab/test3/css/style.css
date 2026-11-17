@@ -142,7 +142,9 @@ form.modulo.inviato .grazie{display:block}
 
 @media (max-width:820px){
   header nav{gap:16px}
-  header nav a:not(.qui):not(:last-child){display:none}
+  header nav a:not(:last-child){display:none}
+  .logo{white-space:nowrap;font-size:22px}
+  .tema span{padding:6px 9px}
   .test{top:auto;bottom:8px}
   .scena{height:200vh}
   .scena .titolo{grid-template-columns:1fr;bottom:62px;gap:14px}
@@ -219,8 +221,11 @@ table.prot td.s{font-family:"IBM Plex Mono",monospace;font-size:11px;color:var(-
 
 /* ===== pulsante Giorno / Notte ===== */
 header nav{margin-left:auto}
-.tema{margin-left:28px;display:inline-flex;align-items:center;gap:8px;background:none;border:1px solid currentColor;color:inherit;font-family:"IBM Plex Mono",monospace;font-size:10.5px;letter-spacing:.04em;text-transform:uppercase;padding:5px 10px;cursor:pointer}
-.tema i{width:9px;height:9px;border-radius:50%;background:currentColor;box-shadow:inset -3px 0 0 0 var(--fondo)}
+.tema{margin-left:28px;display:inline-flex;align-items:stretch;background:none;border:1px solid currentColor;color:inherit;padding:0;cursor:pointer;font-family:"IBM Plex Mono",monospace;font-size:11px;letter-spacing:.06em;text-transform:uppercase}
+.tema span{padding:7px 13px;transition:background .35s}
+.tema span.on{background:currentColor}
+.tema span.on em{filter:invert(1)}
+.tema em{font-style:normal;color:inherit}
 html[data-tema="notte"]{--fondo:#1d2125;--fondo2:#262b30;--testo:#eef0f2;--tenue:#aab1b8;--slate:#7f8890;--linea:rgba(255,255,255,.16);--iri:#c4abc0}
 html[data-tema="notte"] .testo,html[data-tema="notte"] .faq details p{color:#d3d7db}
 html[data-tema="notte"] header.pieno{background:rgba(29,33,37,.9)}
@@ -234,4 +239,14 @@ html[data-tema="notte"] .modale{background:rgba(10,12,14,.7)}
 html[data-tema="notte"] .dafare{border-color:rgba(196,171,192,.45)}
 html[data-tema="notte"] .lettura .vivo::before{background:#6fd19c}
 body,main,.chiusura,.lettura{transition:background-color .5s,color .5s}
-@media (max-width:820px){.tema{margin-left:14px;padding:4px 8px}}
+@media (max-width:820px){.tema{margin-left:12px}}
+
+/* versione giorno anche sopra il video */
+html[data-tema="giorno"] .scena canvas,html[data-tema="giorno"] #scena{filter:brightness(1.12) saturate(.85) contrast(.92)}
+html[data-tema="giorno"] .scena .velo,html[data-tema="giorno"] .velo{background:radial-gradient(ellipse at 50% 50%,rgba(255,255,255,0) 30%,rgba(255,255,255,.75) 100%),linear-gradient(180deg,rgba(255,255,255,.75),rgba(255,255,255,0) 22%,rgba(255,255,255,0) 55%,rgba(255,255,255,.92))}
+html[data-tema="giorno"] .scena,html[data-tema="giorno"] .scena .titolo .k,html[data-tema="giorno"] .scena .avanz,html[data-tema="giorno"] .scena .titolo p.sotto{color:#25292d}
+html[data-tema="giorno"] .scena{background:#fff}
+html[data-tema="giorno"] .scena .avanz .linea{background:rgba(37,41,45,.2)}
+html[data-tema="giorno"] .scena .avanz .linea i{background:#25292d}
+html[data-tema="giorno"] header{color:#25292d}
+html[data-tema="giorno"] .cg p,html[data-tema="giorno"] .scena .titolo p.sotto{text-shadow:none}
