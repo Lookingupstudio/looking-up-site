@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Material archive · Emi BioLab</title>
+<meta name="description" content="The material archive of Emi BioLab: one alginate experiment a month, with materials, observations and hypotheses.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter+Tight:wght@400;500&family=IBM+Plex+Mono:wght@400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<header>
+  <a href="index.html" class="logo">EMI BIOLAB</a>
+  <nav class="maiu"><a class="ul" href="research.html">Research</a><a class="ul" href="archive.html">Archive</a><a class="ul" href="workshops.html">Workshops</a><a class="ul" href="about.html">About</a><a class="ul" href="contact.html">Contact</a></nav>
+</header>
+<div class="test">Test page · draft texts</div>
+
+<section class="scena" data-da="130" data-a="200">
+  <div class="fisso">
+    <canvas></canvas><div class="velo"></div>
+    <div class="titolo">
+      <p class="k mono">02 · Material archive</p>
+      <h1 class="serif">Archive.</h1>
+      <p class="sotto">Filaments, textures, samples, tests. What held, what failed, what it taught.</p>
+    </div>
+    <div class="avanz mono"><span>ALG-FIL · real footage</span><div class="linea"><i></i></div><span class="cont">130 / 200</span></div>
+  </div>
+</section>
+
+<main>
+
+<section class="sez">
+  <p class="eti mono r">Material archive</p>
+  <div class="corpo">
+    <p class="grande serif r"><span class="rientro"></span>One experiment a month: tests, failures and discoveries. Each entry has a code, the materials, what was observed and what is still a hypothesis.</p>
+    <p class="nota mono r">Example entries with photos from the archive, to be replaced with the real experiments. <span class="dafare">placeholder</span></p>
+  </div>
+</section>
+<section class="sez" style="display:block">
+  <div class="filtri r" id="filtri"></div>
+  <div id="archivio"></div>
+</section>
+
+<div class="modale" id="modale" hidden>
+  <div class="box">
+    <figure class="foto"><img id="mImg" alt=""></figure>
+    <div class="det">
+      <button class="chiudi" id="mChiudi">Close ×</button>
+      <p class="mono tenue" id="mCod"></p>
+      <h2 class="serif" id="mTit" style="font-size:44px;margin:0"></h2>
+      <p id="mTesto"></p>
+      <dl class="mono" id="mDl"></dl>
+      <div class="link mono">
+        <a class="ul" href="#">Read the article on Substack → <span class="dafare">link to add</span></a>
+        <a class="ul" href="#">Watch the video on YouTube → <span class="dafare">link to add</span></a>
+      </div>
+      <p class="mono tenue" style="margin-top:10px">Want the materials?</p>
+      <p>The same ingredients and tools I used for this experiment.</p>
+      <a class="bottone" href="#" style="align-self:flex-start">See the materials →</a>
+    </div>
+  </div>
+</div>
+
+</main>
+
+<footer class="chiusura">
+  <h2 class="serif r">Let's work with matter, together.</h2>
+  <div class="dati">
+    <div class="c1 r"><span class="mono">C.</span><span>hello@emibiolab.com <span class="dafare">to confirm</span></span><span class="mono">S.</span><span><a class="ul" href="#">Instagram</a> / <a class="ul" href="#">YouTube</a> / <a class="ul" href="#">Substack</a></span></div>
+    <div class="c2 r"><p class="mono tenue" style="margin-bottom:8px">Next online workshop</p><p class="serif" style="font-size:26px">5 December 2026</p><a class="ul mono" href="workshops.html#dates">Book · €150 →</a></div>
+    <nav class="c3 maiu r"><a class="ul" href="research.html">Research</a><a class="ul" href="archive.html">Material archive</a><a class="ul" href="workshops.html">Workshops</a><a class="ul" href="academy.html">Academy</a><a class="ul" href="about.html">About · CV</a><a class="ul" href="contact.html">Contact</a></nav>
+  </div>
+  <p class="piede mono"><span>©2026 Emi BioLab · Carola Emanuela Godja</span><span class="ora"><i></i><span id="ora">Venice</span></span><span>Biomaterials / Textiles / Research</span></p>
+</footer>
+
+<script src="https://unpkg.com/lenis@1.1.13/dist/lenis.min.js"></script>
+<script src="js/sito.js"></script>
+<script>
+// Archivio: per aggiungere l'esperimento del mese basta copiare un blocco
+var ESPERIMENTI=[
+ {cod:'ALG-FIL-006',cat:'Filaments',anno:2026,mese:'October',titolo:'Pearl yarn',foto:'../img/filato-perlato.jpg',testo:'A softer bath and a longer rest gave a thread with a pearly shine.',mat:'Sodium alginate, glycerine',obs:'Pearly shine after a long rest',ipo:'',stato:'Ongoing'},
+ {cod:'ALG-MAT-005',cat:'Materials',anno:2026,mese:'September',titolo:'Green from the lagoon',foto:'../img/filato-verde.jpg',testo:'First tests with natural green pigments: what held and what faded.',mat:'Alginate, natural pigment',obs:'Colour holds when wet',ipo:'Fades with light',stato:'Ongoing'},
+ {cod:'ALG-PRO-004',cat:'Processes',anno:2026,mese:'June',titolo:'The blue bowl',foto:'../img/filato-ciotola-blu.jpg',testo:'Thickness and speed: how the hand changes the thread.',mat:'Alginate, calcium bath',obs:'Slower pressure, thicker thread',ipo:'',stato:'Documented'},
+ {cod:'ALG-ENV-003',cat:'Environmental observations',anno:2025,mese:'November',titolo:'Branches and light',foto:'../img/laguna-ramo-luce.jpg',testo:'Alginate on branches from the lagoon, left to dry in the sun.',mat:'Alginate gel, lagoon branch',obs:'Shrinks and cracks',ipo:'Salt slows the drying',stato:'Ongoing'},
+ {cod:'ALG-FIL-002',cat:'Filaments',anno:2025,mese:'July',titolo:'Hands in the bath',foto:'../img/mani-filato.jpg',testo:'Why the yarn stiffens, and the step that keeps it soft.',mat:'Alginate, calcium bath',obs:'Rinsing keeps it soft',ipo:'',stato:'Documented'},
+ {cod:'ALG-PRO-001',cat:'Processes',anno:2025,mese:'March',titolo:'First mixture',foto:'../img/mani-ciotola.jpg',testo:'Back to the basic recipe, measured again from zero.',mat:'Alginate, water',obs:'Fewer bubbles after 24 h',ipo:'',stato:'Documented'}
+];
+(function(){
+  var box=document.getElementById('archivio'),filtri=document.getElementById('filtri'),cat='All';
+  var cats=['All'];ESPERIMENTI.forEach(function(e){if(cats.indexOf(e.cat)<0)cats.push(e.cat)});
+  cats.forEach(function(c){var b=document.createElement('button');b.textContent=c;if(c===cat)b.className='on';b.onclick=function(){cat=c;[].forEach.call(filtri.children,function(x){x.classList.toggle('on',x===b)});disegna()};filtri.appendChild(b)});
+  function disegna(){
+    box.innerHTML='';var anni=[];
+    ESPERIMENTI.forEach(function(e){if((cat==='All'||e.cat===cat)&&anni.indexOf(e.anno)<0)anni.push(e.anno)});
+    anni.forEach(function(y){
+      var h=document.createElement('p');h.className='anno';h.textContent=y;box.appendChild(h);
+      var g=document.createElement('div');g.className='griglia';box.appendChild(g);
+      ESPERIMENTI.forEach(function(e,i){if(e.anno!==y||(cat!=='All'&&e.cat!==cat))return;
+        var a=document.createElement('article');a.className='scheda';
+        a.innerHTML='<div class="foto"><img loading="lazy" alt=""></div><p class="cod mono"><span></span><span></span></p><h3></h3>';
+        a.querySelector('img').src=e.foto;a.querySelector('img').alt=e.titolo;
+        a.querySelectorAll('.cod span')[0].textContent=e.cod;a.querySelectorAll('.cod span')[1].textContent=e.mese+' '+e.anno;
+        a.querySelector('h3').textContent=e.titolo;a.onclick=function(){apri(i)};g.appendChild(a)});
+    });
+  }
+  var m=document.getElementById('modale');
+  function apri(i){var e=ESPERIMENTI[i];
+    document.getElementById('mImg').src=e.foto;document.getElementById('mCod').textContent=e.cod+' · '+e.cat+' · '+e.mese+' '+e.anno;
+    document.getElementById('mTit').textContent=e.titolo;document.getElementById('mTesto').textContent=e.testo;
+    var dl='<dt>Material</dt><dd>'+e.mat+'</dd><dt>Observed</dt><dd>'+e.obs+'</dd>'+(e.ipo?'<dt>Hypothesis</dt><dd style="color:#c4abc0">'+e.ipo+'</dd>':'')+'<dt>Status</dt><dd>'+e.stato+'</dd>';
+    document.getElementById('mDl').innerHTML=dl;m.hidden=false;document.body.style.overflow='hidden';history.replaceState(null,'','#'+e.cod)}
+  function chiudi(){m.hidden=true;document.body.style.overflow='';history.replaceState(null,'',location.pathname)}
+  document.getElementById('mChiudi').onclick=chiudi;m.onclick=function(ev){if(ev.target===m)chiudi()};
+  addEventListener('keydown',function(ev){if(ev.key==='Escape'&&!m.hidden)chiudi()});
+  disegna();
+  var h=location.hash.slice(1);ESPERIMENTI.forEach(function(e,i){if(e.cod===h)apri(i)});
+})();
+</script>
+</body>
+</html>
