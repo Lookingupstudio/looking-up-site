@@ -10,7 +10,6 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter+Tight:wght@400;500&family=IBM+Plex+Mono:wght@400&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/style.css">
-<script src="js/tema.js"></script>
 </head>
 <body>
 <header>
@@ -101,12 +100,11 @@ var ESPERIMENTI=[
       var g=document.createElement('div');g.className='griglia';box.appendChild(g);
       ESPERIMENTI.forEach(function(e,i){if(e.anno!==y||(cat!=='All'&&e.cat!==cat))return;
         var a=document.createElement('article');a.className='scheda';
-        a.innerHTML='<div class="foto"><img loading="lazy" alt=""></div><div class="righello"></div><p class="cod mono"><span></span><span></span></p><h3></h3><p class="dati-s"><span>MAT.</span><b></b><span>STATUS</span><b></b></p>';a.querySelectorAll('.dati-s b')[0].textContent=e.mat;a.querySelectorAll('.dati-s b')[1].textContent=e.stato;
+        a.innerHTML='<div class="foto"><img loading="lazy" alt=""></div><p class="cod mono"><span></span><span></span></p><h3></h3>';
         a.querySelector('img').src=e.foto;a.querySelector('img').alt=e.titolo;
         a.querySelectorAll('.cod span')[0].textContent=e.cod;a.querySelectorAll('.cod span')[1].textContent=e.mese+' '+e.anno;
         a.querySelector('h3').textContent=e.titolo;a.onclick=function(){apri(i)};g.appendChild(a)});
     });
-    if(window.labFoto)window.labFoto(box);
   }
   var m=document.getElementById('modale');
   function apri(i){var e=ESPERIMENTI[i];

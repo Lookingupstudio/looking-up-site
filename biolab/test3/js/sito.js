@@ -36,32 +36,6 @@
     })();
   }
 
-
-  // ELEMENTI DA LABORATORIO
-  // barra di lettura sotto l'apertura (valori di riferimento, da confermare con Emi)
-  var main = document.querySelector('main');
-  if (main && !document.querySelector('.lettura')) {
-    var l = document.createElement('div'); l.className = 'lettura';
-    l.innerHTML = '<span class="vivo">PROTOCOL<b>ALG-FIL</b></span><span>NaAlg<b>2.0 % w/v</b></span><span>CaCl₂ bath<b>2.0 % w/v</b></span><span>T<b>21 °C</b></span><span>REST<b>24 h</b></span><span>45.4408 N<b>12.3155 E</b></span><span>LOCAL<b id="oraLab">--:--</b></span><span>REF. VALUES<b style="color:var(--iri)">to confirm</b></span>';
-    main.parentNode.insertBefore(l, main);
-    var ol = document.getElementById('oraLab');
-    var tick = function () { try { ol.textContent = new Date().toLocaleTimeString('en-GB', { timeZone: 'Europe/Rome' }) + ' CET'; } catch (e) {} };
-    tick(); setInterval(tick, 1000);
-  }
-  // mirini, etichetta del campione e barra della scala su ogni foto
-  var nfig = 0;
-  window.labFoto = function (root) {
-    (root || document).querySelectorAll('.foto').forEach(function (f) {
-      if (f.querySelector('.lab') || f.closest('.modale')) return;
-      nfig++;
-      var img = f.querySelector('img'), nome = img ? (img.alt || '').split(/[,.]/)[0].slice(0, 34) : '';
-      var d = document.createElement('div'); d.className = 'lab';
-      d.innerHTML = '<i></i><i></i><i></i><i></i><span class="etic">FIG. ' + ('0' + nfig).slice(-2) + ' · ' + nome.toUpperCase() + '</span><span class="mira"></span><span class="scala"><u></u>10 mm</span>';
-      f.appendChild(d);
-    });
-  };
-  window.labFoto();
-
   // testata piena dopo l'apertura
   var head = document.querySelector('header');
   function testata() { head.classList.toggle('pieno', scrollY > innerHeight * (sc ? 1.4 : .2)); }
