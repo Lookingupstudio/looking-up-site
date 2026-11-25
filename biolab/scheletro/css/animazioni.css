@@ -48,3 +48,11 @@
   .segnaposto,.prossimo .pallino{animation:none!important}
   .porta:hover .foto,.hero-foto:hover{border-radius:0}
 }
+
+/* sfondo laguna (js/laguna.js): sta dietro a tutto, il resto diventa trasparente sopra l'acqua */
+canvas.laguna{position:fixed;inset:0;width:100vw;height:100vh;z-index:-1;display:block;pointer-events:none}
+canvas.laguna.ferma{background:radial-gradient(120% 90% at 70% 30%,#2b3a3d 0%,#202326 60%)}
+html{background:#202326}
+body{background:transparent!important}
+.testa{background:rgba(32,35,38,.55)!important}
+.piede,.sez{background:transparent}
