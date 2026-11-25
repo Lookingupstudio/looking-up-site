@@ -1,0 +1,106 @@
+/* Emi BioLab · scheletro vestito con lo stile di test3 (25/11/2026)
+   Fondo scuro, Instrument Serif per i titoli, Inter Tight per il testo,
+   IBM Plex Mono per etichette e codici. Foto: sempre riquadri segnaposto. */
+:root{--fondo:#1d2125;--fondo2:#23282d;--testo:#f1f2f3;--tenue:#b9bec3;--slate:#8b949d;--linea:rgba(255,255,255,.16);--iri:#c4abc0;
+  --serif:"Instrument Serif",Georgia,serif;--mono:"IBM Plex Mono",ui-monospace,monospace}
+html,body{background:var(--fondo)}
+body{color:var(--testo);font-size:15px}
+a{color:inherit}
+
+/* striscia bozza come in test3 */
+.bozza-barra{background:rgba(236,237,234,.92);color:#25292d;font-size:10px;letter-spacing:.06em;text-transform:uppercase;font-family:var(--mono)}
+.bozza{color:var(--iri);font-style:normal;font-family:var(--mono);font-size:11px}
+
+/* header */
+.testa{background:rgba(29,33,37,.88);border-bottom:1px solid var(--linea)}
+.logo{font-family:var(--serif);font-weight:400;font-size:26px;text-transform:uppercase;letter-spacing:0}
+.menu a{font-family:"Inter Tight",sans-serif;font-weight:400;font-size:11px;letter-spacing:.05em}
+.menu .cta{font-family:var(--mono);text-transform:none;letter-spacing:.02em;border:1px solid rgba(255,255,255,.7);border-radius:0;padding:8px 12px}
+.menu .cta:hover{background:var(--testo);color:var(--fondo)}
+@media (max-width:860px){.menu{background:var(--fondo)}}
+.briciole{font-family:var(--mono);text-transform:none;letter-spacing:.02em;color:var(--tenue)}
+
+/* tipografia */
+.occhiello,.num,.porta .meta,.anno,.info small,.dati small,.modulo label{font-family:var(--mono);text-transform:none;letter-spacing:.02em;font-weight:400;color:var(--tenue);font-size:11px}
+h1,.h1{font-family:var(--serif);font-weight:400;text-transform:none;letter-spacing:-.03em;line-height:.9;font-size:clamp(64px,9vw,160px)}
+h2{font-family:var(--serif);font-weight:400;text-transform:none;letter-spacing:-.015em;line-height:1;font-size:clamp(36px,4vw,64px)}
+h3{font-family:var(--mono);font-weight:400;text-transform:none;letter-spacing:.02em;font-size:12px;color:var(--tenue)}
+.lead{color:#dfe2e5;font-size:clamp(18px,1.7vw,24px)}
+.muto{color:var(--tenue)}
+.macchia::before{display:none}
+
+/* sezioni e righe */
+.sez{border-top:1px solid var(--linea)}
+.righe{border-top:1px solid var(--linea)}
+.righe li{border-bottom:1px solid var(--linea)}
+.righe li b{font-family:var(--serif);font-weight:400;font-size:22px;line-height:1.15}
+.punti li{border-bottom:1px solid var(--linea)}
+.punti li::before{border-color:var(--tenue)}
+.percorso span{font-family:var(--serif);font-weight:400;text-transform:none;font-size:clamp(22px,2.2vw,32px)}
+.percorso span::after{background:var(--linea)}
+.percorso span::before{border-color:var(--tenue)}
+
+/* voci di griglia */
+.porta .riga{border-top:1px solid var(--linea)}
+.porta .titolo{font-family:var(--serif);font-weight:400;text-transform:none;font-size:clamp(24px,2.2vw,34px);line-height:1}
+.porta p{color:var(--tenue)}
+.vai{font-family:var(--mono);font-weight:400;text-transform:none;letter-spacing:.02em;font-size:11px}
+.codice{font-family:var(--mono);color:var(--tenue)}
+.stato{border-color:rgba(255,255,255,.5);border-radius:0;font-family:var(--mono);text-transform:none}
+
+/* bottoni come in test3: bordo bianco sottile, mono */
+.btn,.btn.linea,.btn.rosa{background:none;color:var(--testo);border:1px solid rgba(255,255,255,.7);border-radius:0;font-family:var(--mono);font-weight:400;text-transform:none;letter-spacing:.02em;font-size:12px;padding:11px 16px}
+.btn:hover{background:var(--testo);color:var(--fondo)}
+
+/* blocchi dati */
+.info{border-top:1px solid rgba(255,255,255,.5);border-bottom:1px solid var(--linea)}
+.info div+div{border-left:1px solid var(--linea)}
+.info b{font-family:var(--serif);font-weight:400;font-size:clamp(22px,2vw,30px)}
+.dati{border-top:1px solid rgba(255,255,255,.5)}
+.dati div{border-bottom:1px solid var(--linea)}
+.blocco{border-bottom:1px solid var(--linea)}
+details.faq{border-bottom:1px solid var(--linea)}
+details.faq summary{font-family:var(--serif);font-weight:400;font-size:23px}
+details.faq p{color:var(--tenue)}
+
+/* filtri */
+.filtri button,.filtri select,.filtri input{background:none;color:var(--testo);border:1px solid var(--linea);border-radius:0;font-family:var(--mono);text-transform:none;letter-spacing:.02em}
+.filtri select option{background:var(--fondo)}
+.filtri button.attivo{background:var(--testo);color:var(--fondo)}
+
+/* modulo */
+.modulo input,.modulo select,.modulo textarea{color:var(--testo);border-bottom:1px solid rgba(255,255,255,.5)}
+.modulo select option{background:var(--fondo)}
+
+/* footer */
+.piede{border-top:1px solid var(--linea)}
+.news{border-bottom:1px solid rgba(255,255,255,.5)}
+.news input{color:var(--testo)}
+.news button{color:var(--testo);font-family:var(--mono);font-weight:400;text-transform:none}
+
+/* segnaposto foto su fondo scuro */
+.segnaposto{background:var(--fondo2);color:var(--slate);font-family:var(--mono);text-transform:none;letter-spacing:.02em;font-size:11px;border:1px solid var(--linea)}
+.segnaposto::before{background:linear-gradient(to top right,transparent calc(50% - .5px),rgba(255,255,255,.08) 50%,transparent calc(50% + .5px)),linear-gradient(to top left,transparent calc(50% - .5px),rgba(255,255,255,.08) 50%,transparent calc(50% + .5px))}
+.segnaposto span{background:var(--fondo2)}
+.hero-foto,.porta .foto,.fondatrice .ritratto{background:var(--fondo2)}
+.nomi span.logo-box{background:var(--fondo2);color:var(--slate);font-family:var(--mono);border:1px solid var(--linea)}
+.prossimo{font-family:var(--mono);font-size:12px}
+.prossimo b{font-weight:400}
+.prossimo .pallino{background:var(--iri)}
+
+/* home a una schermata, tema scuro */
+.home-alto h1{font-size:clamp(72px,9vw,150px)}
+.striscia-fondatrice b,.striscia-voce b{font-family:var(--serif);font-weight:400;font-size:20px}
+.striscia-fondatrice span:not(.vai),.nomi-riga{color:var(--tenue);font-family:var(--mono);font-size:11px}
+.striscia-fondatrice .mini .segnaposto{min-height:0;padding:0;font-size:0}
+.striscia-fondatrice .mini .segnaposto span{display:none}
+.home-alto h1{font-size:clamp(56px,min(9vw,15vh),150px)}
+.home-alto .hero-foto{height:clamp(160px,27vh,320px)}
+.home-porte .foto{height:clamp(90px,14vh,190px)}
+.apri{color:var(--testo);font-family:var(--mono);font-weight:400;text-transform:none}
+@media (max-width:860px){
+  .home-alto .hero-foto{height:200px}
+  .home-porte{gap:0}
+  .home-porte .foto{display:none}
+  .home-porte .porta .riga{padding:16px 0}
+}

@@ -1,0 +1,219 @@
+/* Emi BioLab · scheletro dal brief (25/11/2026)
+   Stile di Emi: bianco, sans stretto grassetto, maiuscoletti grigi, linee sottili,
+   cerchietti, macchia rosa morbida. Niente card arrotondate, niente ombre. */
+:root{
+  --bianco:#ffffff; --nero:#111111; --grigio:#7a7a7a; --linea:#e4e4e4;
+  --rosa:#f6dcef; --lilla:#e9dcf6; --fondo:#fafafa;
+  --font:'Inter Tight', Helvetica, Arial, sans-serif;
+  --max:1240px; --gut:clamp(16px,4vw,48px);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--bianco);color:var(--nero);font-family:var(--font);font-size:17px;line-height:1.5;-webkit-font-smoothing:antialiased}
+img{display:block;max-width:100%;height:auto}
+a{color:inherit}
+.wrap{max-width:var(--max);margin:0 auto;padding:0 var(--gut)}
+
+/* striscia bozza */
+.bozza-barra{background:var(--nero);color:#fff;font-size:12px;letter-spacing:.04em;text-align:center;padding:7px var(--gut)}
+.bozza{color:var(--grigio);font-style:italic}
+
+/* header */
+.testa{position:sticky;top:0;z-index:20;background:rgba(255,255,255,.94);backdrop-filter:blur(8px);border-bottom:1px solid var(--linea)}
+.testa .wrap{display:flex;align-items:center;justify-content:space-between;height:64px;gap:24px}
+.logo{font-weight:800;letter-spacing:-.01em;text-decoration:none;font-size:18px;text-transform:uppercase}
+.menu{display:flex;gap:28px;align-items:center}
+.menu a{text-decoration:none;font-size:13px;font-weight:600;letter-spacing:.08em;text-transform:uppercase}
+.menu a.attivo{text-decoration:underline;text-underline-offset:6px}
+.menu .cta{border:1px solid var(--nero);border-radius:40px;padding:8px 16px}
+.menu .cta:hover{background:var(--nero);color:#fff}
+.apri{display:none;background:none;border:0;font:600 13px var(--font);letter-spacing:.08em;text-transform:uppercase;cursor:pointer}
+@media (max-width:860px){
+  .apri{display:block}
+  .menu{display:none;position:absolute;top:64px;left:0;right:0;background:#fff;flex-direction:column;align-items:flex-start;gap:18px;padding:24px var(--gut) 32px;border-bottom:1px solid var(--linea)}
+  .menu.aperto{display:flex}
+}
+
+/* briciole */
+.briciole{font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--grigio);padding-top:28px}
+.briciole a{text-decoration:none}
+.briciole span{margin:0 8px}
+
+/* tipografia */
+.occhiello{font-size:12px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--grigio);margin-bottom:14px}
+h1,.h1{font-weight:800;text-transform:uppercase;letter-spacing:-.02em;line-height:.95;font-size:clamp(44px,8vw,112px)}
+h2{font-weight:800;text-transform:uppercase;letter-spacing:-.01em;line-height:1;font-size:clamp(28px,4vw,48px)}
+h3{font-weight:700;text-transform:uppercase;letter-spacing:.02em;font-size:15px;margin-bottom:8px}
+.lead{font-size:clamp(19px,2vw,24px);line-height:1.4;max-width:760px}
+p+p{margin-top:12px}
+.muto{color:var(--grigio)}
+.piccolo{font-size:14px}
+
+/* macchia rosa dietro al titolo */
+.macchia{position:relative;display:inline-block;z-index:0}
+.macchia::before{content:"";position:absolute;z-index:-1;left:-6%;right:-8%;top:8%;bottom:-6%;background:radial-gradient(ellipse at center,var(--rosa) 0%,var(--rosa) 45%,rgba(246,220,239,0) 72%);filter:blur(6px)}
+
+/* sezioni */
+.sez{padding:clamp(56px,8vw,112px) 0;border-top:1px solid var(--linea)}
+.sez:first-of-type{border-top:0}
+.sez-testa{display:flex;justify-content:space-between;align-items:end;gap:24px;margin-bottom:40px;flex-wrap:wrap}
+.num{font-size:12px;font-weight:600;color:var(--grigio);letter-spacing:.1em}
+
+/* hero */
+.hero{padding:clamp(40px,6vw,80px) 0 clamp(40px,6vw,72px)}
+.hero .lead{margin-top:24px}
+.hero-foto{margin-top:40px;aspect-ratio:16/8;overflow:hidden;background:var(--fondo)}
+.hero-foto img{width:100%;height:100%;object-fit:cover}
+.hero-due{display:grid;grid-template-columns:1.1fr .9fr;gap:clamp(24px,5vw,72px);align-items:end}
+.hero-due .hero-foto{margin-top:0;aspect-ratio:4/5}
+@media (max-width:860px){.hero-due{grid-template-columns:1fr}}
+
+/* griglie */
+.g2,.g3,.g4{display:grid;gap:clamp(20px,3vw,40px)}
+.g2{grid-template-columns:repeat(2,1fr)}
+.g3{grid-template-columns:repeat(3,1fr)}
+.g4{grid-template-columns:repeat(4,1fr)}
+@media (max-width:860px){.g3,.g4{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:560px){.g2,.g3,.g4{grid-template-columns:1fr}}
+
+/* porta / voce di griglia (niente box: foto + linea + testo) */
+.porta{text-decoration:none;display:block}
+.porta .foto{aspect-ratio:4/5;overflow:hidden;background:var(--fondo);margin-bottom:16px}
+.porta .foto.larga{aspect-ratio:3/2}
+.porta img{width:100%;height:100%;object-fit:cover;transition:transform .6s ease}
+.porta:hover img{transform:scale(1.03)}
+.porta .riga{display:flex;justify-content:space-between;gap:12px;border-top:1px solid var(--nero);padding-top:12px}
+.porta .titolo{font-weight:800;text-transform:uppercase;font-size:clamp(18px,1.8vw,24px);line-height:1.05}
+.porta .meta{font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--grigio);margin-top:6px}
+.porta p{font-size:15px;margin-top:8px}
+.vai{font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;white-space:nowrap}
+
+/* elenco a righe con cerchietto */
+.righe{list-style:none;border-top:1px solid var(--linea)}
+.righe li{display:grid;grid-template-columns:90px 1fr auto;gap:16px;padding:16px 0;border-bottom:1px solid var(--linea);align-items:baseline}
+.righe li b{font-weight:700}
+.righe .anno{font-size:13px;color:var(--grigio)}
+@media (max-width:560px){.righe li{grid-template-columns:64px 1fr}.righe li > :last-child{grid-column:2}}
+.punti{list-style:none}
+.punti li{position:relative;padding:10px 0 10px 28px;border-bottom:1px solid var(--linea)}
+.punti li::before{content:"";position:absolute;left:2px;top:17px;width:10px;height:10px;border:1.5px solid var(--nero);border-radius:50%}
+
+/* percorso a serpentina (approccio) */
+.percorso{display:flex;gap:0;align-items:center;flex-wrap:wrap;margin-top:24px}
+.percorso span{display:flex;align-items:center;font-weight:800;text-transform:uppercase;font-size:clamp(15px,1.6vw,20px)}
+.percorso span::after{content:"";width:clamp(24px,5vw,72px);height:1px;background:var(--nero);margin:0 14px}
+.percorso span:last-child::after{display:none}
+.percorso span::before{content:"";width:9px;height:9px;border:1.5px solid var(--nero);border-radius:50%;margin-right:10px}
+
+/* bottoni */
+.btn{display:inline-flex;align-items:center;gap:10px;background:var(--nero);color:#fff;text-decoration:none;font-weight:700;font-size:13px;letter-spacing:.1em;text-transform:uppercase;padding:16px 28px;border-radius:40px;border:0;cursor:pointer;font-family:var(--font)}
+.btn.rosa{background:var(--rosa);color:var(--nero)}
+.btn.linea{background:none;color:var(--nero);border:1px solid var(--nero)}
+.bottoni{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}
+
+/* barra info (data/ora/prezzo) */
+.info{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--nero);border-bottom:1px solid var(--linea);margin-top:32px}
+.info div{padding:16px 16px 16px 0}
+.info div+div{border-left:1px solid var(--linea);padding-left:16px}
+.info small{display:block;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--grigio)}
+.info b{font-size:clamp(16px,1.6vw,22px)}
+@media (max-width:700px){.info{grid-template-columns:repeat(2,1fr)}.info div:nth-child(3){border-left:0;padding-left:0}}
+
+/* fondatrice */
+.fondatrice{display:grid;grid-template-columns:.8fr 1.2fr;gap:clamp(24px,5vw,80px);align-items:center}
+.fondatrice .ritratto{aspect-ratio:4/5;overflow:hidden;background:var(--fondo)}
+.fondatrice .ritratto img{width:100%;height:100%;object-fit:cover}
+.fondatrice.piccola{grid-template-columns:220px 1fr;gap:32px}
+@media (max-width:760px){.fondatrice,.fondatrice.piccola{grid-template-columns:1fr}.fondatrice.piccola .ritratto{max-width:220px}}
+
+/* nomi affiliazioni */
+.nomi{display:flex;flex-wrap:wrap;gap:12px 40px;align-items:center}
+.nomi span{font-weight:700;text-transform:uppercase;letter-spacing:.04em;font-size:clamp(14px,1.5vw,18px);color:#555}
+
+/* filtri archivio/progetti */
+.filtri{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:32px;align-items:center}
+.filtri button,.filtri select,.filtri input{font:600 12px var(--font);letter-spacing:.08em;text-transform:uppercase;border:1px solid var(--linea);background:#fff;padding:9px 14px;border-radius:40px;cursor:pointer;color:var(--nero)}
+.filtri input{text-transform:none;letter-spacing:0;font-size:14px;min-width:200px;cursor:text}
+.filtri button.attivo{background:var(--nero);color:#fff;border-color:var(--nero)}
+.vuoto{color:var(--grigio);padding:40px 0}
+
+/* scheda dati (entry) */
+.dati{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--nero)}
+.dati div{padding:14px 14px 14px 0;border-bottom:1px solid var(--linea)}
+.dati small{display:block;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--grigio)}
+@media (max-width:700px){.dati{grid-template-columns:repeat(2,1fr)}}
+.blocco{display:grid;grid-template-columns:260px 1fr;gap:24px;padding:28px 0;border-bottom:1px solid var(--linea)}
+@media (max-width:700px){.blocco{grid-template-columns:1fr;gap:8px}}
+.codice{font-family:ui-monospace,Menlo,monospace;font-size:12px;letter-spacing:.04em}
+.stato{display:inline-block;font-size:11px;letter-spacing:.08em;text-transform:uppercase;border:1px solid var(--nero);border-radius:40px;padding:3px 10px}
+
+/* FAQ */
+details.faq{border-bottom:1px solid var(--linea);padding:18px 0}
+details.faq summary{cursor:pointer;font-weight:700;list-style:none;display:flex;justify-content:space-between}
+details.faq summary::after{content:"+";font-weight:400}
+details.faq[open] summary::after{content:"–"}
+details.faq p{margin-top:10px;color:#444}
+
+/* modulo contatti */
+.modulo{display:grid;gap:16px;max-width:640px}
+.modulo label{font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--grigio)}
+.modulo input,.modulo select,.modulo textarea{width:100%;font:16px var(--font);border:0;border-bottom:1px solid var(--nero);padding:10px 0;background:none;border-radius:0}
+.modulo textarea{min-height:140px;resize:vertical}
+
+/* footer */
+.piede{border-top:1px solid var(--nero);padding:56px 0 40px;margin-top:40px}
+.piede .g4{align-items:start}
+.piede a{text-decoration:none;display:block;padding:3px 0;font-size:15px}
+.piede .fine{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;margin-top:48px;font-size:13px;color:var(--grigio)}
+.news{display:flex;border-bottom:1px solid var(--nero);margin-top:10px}
+.news input{flex:1;border:0;font:15px var(--font);padding:8px 0;background:none;min-width:0}
+.news button{border:0;background:none;font:700 12px var(--font);letter-spacing:.1em;text-transform:uppercase;cursor:pointer}
+
+/* riga "prossimo workshop" */
+.prossimo{display:flex;gap:16px;align-items:center;flex-wrap:wrap;font-size:14px;margin-top:28px}
+.prossimo .pallino{width:8px;height:8px;border-radius:50%;background:#e6007e;flex:none}
+
+/* segnaposto grigi al posto delle foto (bozza di struttura) */
+.segnaposto{width:100%;height:100%;min-height:120px;background:#e9e9e9;display:flex;align-items:center;justify-content:center;text-align:center;padding:16px;color:#8a8a8a;font-size:12px;letter-spacing:.1em;text-transform:uppercase;position:relative}
+.segnaposto::before{content:"";position:absolute;inset:0;background:linear-gradient(to top right,transparent calc(50% - .5px),#d6d6d6 50%,transparent calc(50% + .5px)),linear-gradient(to top left,transparent calc(50% - .5px),#d6d6d6 50%,transparent calc(50% + .5px))}
+.segnaposto span{position:relative;background:#e9e9e9;padding:4px 8px}
+.nomi span.logo-box{width:150px;height:56px;background:#e9e9e9;display:flex;align-items:center;justify-content:center;font-size:10px;color:#8a8a8a;text-align:center;padding:6px}
+
+/* WIREFRAME NEUTRO (Mattia 25/11): niente regole della newsletter sul sito.
+   Via macchia rosa, bottoni rosa, titoli maiuscoli grassetti: solo struttura in grigi.
+   Lo stile vero arriva dopo, dalle ultime prove (test3). */
+h1,.h1,h2,.porta .titolo{text-transform:none;font-weight:600;letter-spacing:-.02em}
+h1,.h1{font-size:clamp(40px,6vw,84px);line-height:1}
+h2{font-size:clamp(26px,3vw,40px)}
+.macchia::before{display:none}
+.btn{border-radius:2px;background:#333}
+.btn.rosa{background:#e9e9e9;color:#333}
+.btn.linea{border-radius:2px;border-color:#999}
+.menu .cta{border-radius:2px;border-color:#999}
+.filtri button,.filtri select,.filtri input,.stato{border-radius:2px}
+.prossimo .pallino{background:#999}
+.percorso span{font-weight:600;text-transform:none}
+
+/* HOME A UNA SCHERMATA (Mattia 25/11): identità + 3 porte, il resto nelle pagine interne */
+.home{min-height:calc(100vh - 64px - 26px);display:grid;grid-template-rows:auto 1fr auto;gap:clamp(16px,2.2vh,28px);padding-top:clamp(20px,3vh,40px);padding-bottom:clamp(16px,2.5vh,28px)}
+.home-alto{display:grid;grid-template-columns:1fr 1fr;gap:clamp(24px,4vw,64px);align-items:end}
+.home-alto h1{font-size:clamp(56px,8vw,132px)}
+.home-alto .lead{margin-top:14px;font-size:clamp(17px,1.5vw,21px)}
+.home-alto .prossimo{margin-top:16px}
+.home-alto .hero-foto{margin:0;aspect-ratio:auto;height:clamp(180px,30vh,320px)}
+.home-porte{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(16px,2vw,32px);align-content:end}
+.home-porte .foto{aspect-ratio:auto;height:clamp(110px,17vh,190px);margin-bottom:12px}
+.home-porte .num{display:block;margin-bottom:4px}
+.home-porte p{margin-top:4px;font-size:14px}
+.home-striscia{display:grid;grid-template-columns:1.4fr 1fr 1.2fr;gap:24px;border-top:1px solid var(--linea);padding-top:16px;align-items:center}
+.home-striscia a{text-decoration:none}
+.striscia-fondatrice{display:flex;gap:14px;align-items:center}
+.striscia-fondatrice .mini{width:52px;height:52px;flex:none}
+.striscia-fondatrice b,.striscia-voce b{display:block;font-weight:600}
+.striscia-fondatrice span:not(.vai),.nomi-riga{font-size:13px;color:var(--grigio)}
+.striscia-fondatrice .vai{margin-left:auto}
+.striscia-voce{display:flex;flex-direction:column;gap:2px}
+.striscia-voce .occhiello{margin:0}
+.striscia-voce .vai{margin-top:2px}
+body[data-pagina="home"] .piede{display:none}
+@media (max-width:860px){.home{min-height:0}.home-alto,.home-porte,.home-striscia{grid-template-columns:1fr}.home-porte .foto{height:140px}}
