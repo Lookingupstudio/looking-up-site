@@ -1,0 +1,1113 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Gessato · Sartoria su misura · Il sarto viene da te</title>
+<meta name="description" content="Abiti, giacche e camicie su misura. Prenoti online la prima visita: il sarto arriva a casa tua o in ufficio. Boutique di cravatte, pochette e camicie. Demo di Looking Up.">
+<meta property="og:title" content="Gessato · Il sarto viene da te">
+<meta property="og:description" content="Sartoria su misura con prenotazione online, misure a domicilio e boutique. Sito demo.">
+<meta property="og:image" content="https://www.lookingupstudio.com/sartoria-demo/img/og.jpg">
+<meta property="og:type" content="website">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='31' fill='%231a2233'/%3E%3Ctext x='32' y='44' text-anchor='middle' font-family='Georgia,serif' font-size='36' fill='%23f3ede2'%3EG%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --notte:#1a2233; --notte2:#232d42; --avorio:#f6f6f6; --avorio2:#efefef; --gesso:#ffffff; --ottone:#b08d57; --ottone-chiaro:#cdb185;
+  --inchiostro:#1b1d22; --muto:#6b6e74; --linea:#e4e4e4;
+  --serif:'Jost', 'Helvetica Neue', Arial, sans-serif; --sans:'Inter', 'Helvetica Neue', Arial, sans-serif;
+  --hh:72px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--gesso);color:var(--inchiostro);font-family:var(--sans);font-weight:300;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+button{font:inherit;cursor:pointer;border:0;background:none;color:inherit}
+input,select,textarea{font:inherit;color:inherit}
+.wrap{max-width:1240px;margin:0 auto;padding:0 32px}
+.eyebrow{font-size:11px;letter-spacing:.32em;text-transform:uppercase;color:var(--ottone);margin-bottom:16px;font-weight:400}
+h1,h2,h3,h4{font-family:var(--serif);font-weight:300;letter-spacing:-.005em;line-height:1.06;color:var(--notte)}
+h1{font-size:clamp(40px,5.33vw,76px)}
+h2{font-size:clamp(30px,3.52vw,49px)}
+h3{font-size:24px}
+h4{font-size:22px}
+.lead{font-size:18px;color:var(--muto);max-width:560px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;height:52px;padding:0 28px;border-radius:2px;font-size:12px;letter-spacing:.2em;text-transform:uppercase;font-weight:400;transition:.2s}
+.btn-p{background:var(--notte);color:var(--avorio)}
+.btn-p:hover{background:var(--notte2)}
+.btn-o{border:1px solid var(--notte);color:var(--notte)}
+.btn-o:hover{background:var(--notte);color:var(--avorio)}
+.btn-l{border:1px solid rgba(255,255,255,.6);color:var(--avorio)}
+.btn-l:hover{background:var(--avorio);color:var(--notte)}
+.btn-full{width:100%}
+.link{font-size:12px;letter-spacing:.2em;text-transform:uppercase;border-bottom:1px solid var(--ottone);padding-bottom:4px;color:var(--notte)}
+.sec{padding:110px 0}
+.sec-t{display:flex;justify-content:space-between;align-items:end;gap:24px;margin-bottom:48px;flex-wrap:wrap}
+.pin{background-color:var(--notte);background-image:repeating-linear-gradient(90deg,rgba(255,255,255,.1) 0 1px,transparent 1px 24px);color:var(--avorio)}
+.pin h1,.pin h2,.pin h3{color:var(--avorio)}
+.muto{color:var(--muto)}
+.small{font-size:13px}
+
+/* demo bar + header */
+.demobar{background:var(--avorio2);color:var(--notte);font-size:11.5px;letter-spacing:.06em;text-align:center;padding:8px 16px}
+.demobar a{border-bottom:1px solid currentColor}
+header.hd{position:sticky;top:0;z-index:75;background:rgba(255,255,255,.94);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-bottom:1px solid var(--linea)}
+.hd .wrap{height:var(--hh);display:flex;align-items:center;justify-content:space-between;gap:20px}
+.logo{display:flex;flex-direction:column;align-items:center;color:var(--notte);line-height:1}
+.logo .n{font-family:var(--serif);font-weight:400;font-size:25px;letter-spacing:.3em;margin-right:-.3em}
+.logo .s{white-space:nowrap;font-size:7.5px;letter-spacing:.44em;margin-right:-.44em;text-transform:uppercase;margin-top:6px;border-top:1px dashed rgba(26,34,51,.4);padding-top:5px}
+nav.mn{display:flex;gap:30px}
+nav.mn a{font-size:12px;letter-spacing:.18em;text-transform:uppercase;padding:6px 0;border-bottom:1px solid transparent}
+nav.mn a.on,nav.mn a:hover{border-color:var(--ottone)}
+.tools{display:flex;align-items:center;gap:6px}
+.ib{width:42px;height:42px;display:inline-flex;align-items:center;justify-content:center;border-radius:50%;position:relative}
+.ib:hover{background:var(--avorio)}
+.ib svg{width:20px;height:20px;stroke:var(--notte);fill:none;stroke-width:1.3}
+.badge{position:absolute;top:4px;right:2px;min-width:17px;height:17px;border-radius:9px;background:var(--ottone);color:#fff;font-size:10px;display:none;align-items:center;justify-content:center;padding:0 4px;font-weight:500}
+.badge.on{display:flex}
+.lang{display:flex;border:1px solid var(--linea);border-radius:99px;overflow:hidden;margin-right:6px}
+.lang button{font-size:11px;letter-spacing:.12em;padding:6px 10px}
+.lang button.on{background:var(--notte);color:var(--avorio)}
+.burger{display:none}
+
+/* views */
+.view{display:none;min-height:60vh}
+.view.on{display:block;animation:fade .45s ease}
+@keyframes fade{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+
+/* home hero */
+.hero{display:grid;grid-template-columns:1fr 1.05fr;min-height:calc(100vh - var(--hh) - 34px);background:#fff}
+.hero .tx{padding:80px 64px 80px max(32px,calc((100vw - 1240px)/2 + 32px));display:flex;flex-direction:column;justify-content:center}
+.hero h1{margin-bottom:24px}
+.hero .ctas{display:flex;gap:14px;flex-wrap:wrap;margin-top:36px}
+.hero .ph{position:relative;overflow:hidden}
+.hero .ph img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 30%}
+.hero .chip{position:absolute;left:28px;bottom:28px;background:rgba(255,255,255,.95);padding:16px 20px;border-radius:2px;max-width:290px;font-size:13px;line-height:1.5}
+.hero .chip b{font-family:var(--serif);font-size:16px;font-weight:400;display:block;color:var(--notte)}
+.trust{display:flex;gap:34px;margin-top:56px;flex-wrap:wrap}
+.trust div{font-size:12px;color:var(--muto);letter-spacing:.04em}
+.trust b{display:block;font-family:var(--serif);font-size:22px;font-weight:400;color:var(--notte);letter-spacing:0}
+
+/* due porte */
+.doors{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+.door{position:relative;overflow:hidden;border-radius:2px;min-height:620px;display:flex;align-items:flex-end;color:var(--avorio)}
+.door img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform 1.2s ease}
+.door:hover img{transform:scale(1.04)}
+.door:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(15,19,30,0) 25%,rgba(15,19,30,.55) 55%,rgba(15,19,30,.9))}
+.door .c{position:relative;z-index:2;padding:40px}
+.door h2{color:var(--avorio);margin:6px 0 12px}
+.door p{max-width:380px;opacity:.9;font-size:15px}
+.door .eyebrow{color:var(--ottone-chiaro)}
+.door .go{margin-top:22px;display:inline-block;font-size:12px;letter-spacing:.2em;text-transform:uppercase;border-bottom:1px solid var(--ottone-chiaro);padding-bottom:4px}
+
+/* steps */
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:28px}
+.step{border-top:1px solid var(--notte);padding-top:22px}
+.step .k{font-family:var(--serif);font-size:17px;color:var(--ottone);margin-bottom:12px}
+.step h4{margin-bottom:8px}
+.step p{font-size:14.5px;color:var(--muto)}
+.step .tm{margin-top:12px;font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--notte)}
+
+/* split */
+.split{display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:center}
+.split img{width:100%;height:600px;object-fit:cover;border-radius:2px}
+ul.ticks{list-style:none;margin:26px 0 34px}
+ul.ticks li{padding:12px 0 12px 28px;border-bottom:1px solid var(--linea);position:relative;font-size:15px}
+ul.ticks li:before{content:"";position:absolute;left:0;top:21px;width:14px;border-top:1px dashed var(--ottone)}
+
+/* gift teaser */
+.giftband .wrap{display:grid;grid-template-columns:1.1fr 1fr;gap:64px;align-items:center}
+.gc{aspect-ratio:85/54;width:100%;max-width:460px;margin-left:auto;border-radius:14px;padding:30px 32px;display:flex;flex-direction:column;justify-content:space-between;color:var(--avorio);box-shadow:0 30px 60px rgba(0,0,0,.35);background-color:#151c2b;background-image:repeating-linear-gradient(90deg,rgba(255,255,255,.13) 0 1px,transparent 1px 20px),linear-gradient(135deg,#222c41,#121826)}
+.gc .h{display:flex;justify-content:space-between;align-items:flex-start}
+.gc .t{font-family:var(--serif);font-size:clamp(24px,2.58vw,33px);line-height:1.02}
+.gc .t i{color:var(--ottone-chiaro)}
+.gc .f{display:flex;justify-content:space-between;font-size:10.5px;letter-spacing:.24em;text-transform:uppercase;opacity:.85;gap:10px}
+.gc .val{font-family:var(--serif);font-size:21px;letter-spacing:0;text-transform:none}
+.mono{color:var(--avorio);--chalk:var(--gesso)}
+
+/* fabrics */
+.fab{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+.fab figure img{width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:2px}
+.fab figcaption{margin-top:12px}
+.fab figcaption b{font-family:var(--serif);font-size:18px;font-weight:400;display:block;color:var(--notte)}
+.fab figcaption span{font-size:13px;color:var(--muto)}
+
+/* instagram */
+.ig-h{display:flex;align-items:center;gap:16px}
+.ig-av{width:58px;height:58px;border-radius:50%;background:var(--notte);display:flex;align-items:center;justify-content:center;padding:6px}
+.ig-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:6px}
+.ig-grid a{position:relative;aspect-ratio:1;overflow:hidden;display:block;background:var(--avorio)}
+.ig-grid img{width:100%;height:100%;object-fit:cover;transition:transform .8s}
+.ig-grid a:hover img{transform:scale(1.06)}
+.ig-grid a:after{content:"";position:absolute;inset:0;background:rgba(26,34,51,0);transition:.3s}
+.ig-grid a:hover:after{background:rgba(26,34,51,.25)}
+.ig-card{display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:14px;height:100%;font-family:var(--serif);font-size:clamp(13px,1.29vw,19px);line-height:1.15}
+.ig-card small{font-family:var(--sans);font-size:8.5px;letter-spacing:.3em;text-transform:uppercase;margin-top:10px;opacity:.8}
+
+/* page head */
+.ph-head{padding:90px 0 60px;background:#fff;border-bottom:1px solid var(--linea)}
+.ph-head h1{max-width:900px}
+.ph-head .lead{margin-top:20px}
+.crumbs{font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--muto);margin-bottom:26px}
+
+/* capi */
+.capi{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.capo{background:#fff;border:1px solid var(--linea);border-radius:2px;overflow:hidden;display:flex;flex-direction:column}
+.capo img{width:100%;aspect-ratio:4/3;object-fit:cover}
+.capo .c{padding:24px;display:flex;flex-direction:column;gap:8px;flex:1}
+.capo .pr{font-size:13px;color:var(--muto)}
+.capo .pr b{font-family:var(--serif);font-size:22px;color:var(--notte);font-weight:400}
+.capo .meta{font-size:12px;color:var(--muto);border-top:1px dashed var(--linea);padding-top:12px;margin-top:auto}
+.capo .btn{margin-top:14px}
+
+/* booking */
+.bk{display:grid;grid-template-columns:1fr 360px;gap:48px;align-items:start}
+.stepper{display:flex;gap:6px;margin-bottom:36px}
+.stepper span{flex:1;height:3px;background:var(--linea);border-radius:2px}
+.stepper span.on{background:var(--notte)}
+.bstep{display:none}
+.bstep.on{display:block;animation:fade .35s}
+.bstep h3{margin-bottom:6px}
+.opts{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:26px}
+.opt{border:1px solid var(--linea);background:#fff;padding:22px 20px;border-radius:2px;text-align:left;transition:.15s;display:flex;flex-direction:column;gap:6px}
+.opt:hover{border-color:var(--notte)}
+.opt.on{border-color:var(--notte);box-shadow:inset 0 0 0 1px var(--notte);background:#ffffff}
+.opt b{font-family:var(--serif);font-size:19px;font-weight:400;color:var(--notte)}
+.opt span{font-size:13px;color:var(--muto);line-height:1.5}
+.opt em{font-style:normal;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--ottone)}
+.opts.two{grid-template-columns:1fr 1fr}
+.opt svg{width:26px;height:26px;stroke:var(--notte);fill:none;stroke-width:1.2;margin-bottom:6px}
+.cal{background:#fff;border:1px solid var(--linea);padding:22px;border-radius:2px;margin-top:24px}
+.cal-h{display:flex;justify-content:space-between;align-items:center;margin-bottom:14px}
+.cal-h b{font-family:var(--serif);font-size:21px;font-weight:400;text-transform:capitalize}
+.cal-g{display:grid;grid-template-columns:repeat(7,1fr);gap:6px;text-align:center}
+.cal-g .dw{font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--muto);padding:4px 0}
+.cal-g button{aspect-ratio:1;border-radius:50%;font-size:14px;max-width:48px;margin:0 auto;width:100%}
+.cal-g button:disabled{color:#c8c8c8;cursor:default;text-decoration:line-through}
+.cal-g button.av:hover{background:var(--avorio)}
+.cal-g button.on{background:var(--notte);color:var(--avorio)}
+.slots{display:flex;flex-wrap:wrap;gap:10px;margin-top:18px}
+.slots button{border:1px solid var(--linea);background:#fff;padding:10px 18px;border-radius:99px;font-size:14px}
+.slots button.on{background:var(--notte);color:var(--avorio);border-color:var(--notte)}
+.fld{display:flex;flex-direction:column;gap:6px;margin-top:16px}
+.fld label{font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--muto)}
+.fld input,.fld select,.fld textarea{height:50px;border:1px solid var(--linea);background:#fff;padding:0 16px;border-radius:2px;font-size:15px;width:100%}
+.fld textarea{height:96px;padding:12px 16px;resize:vertical}
+.fld input:focus,.fld select:focus,.fld textarea:focus{outline:none;border-color:var(--notte)}
+.row2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.navb{display:flex;justify-content:space-between;gap:12px;margin-top:34px}
+.sum{position:sticky;top:calc(var(--hh) + 24px);background:var(--avorio);padding:28px;border-radius:2px}
+.sum h4{margin-bottom:14px}
+.sum dl{display:grid;grid-template-columns:auto 1fr;gap:10px 16px;font-size:14px}
+.sum dt{color:var(--muto)}
+.sum dd{text-align:right;color:var(--notte)}
+.sum .tot{border-top:1px solid var(--linea);margin-top:18px;padding-top:16px;font-size:13.5px;color:var(--muto)}
+.sum .tot b{font-family:var(--serif);font-size:26px;color:var(--notte);font-weight:400;display:block}
+.pay{background:#fff;border:1px solid var(--linea);border-radius:2px;padding:22px;margin-top:20px}
+.pay .cards{display:flex;gap:8px;margin-bottom:6px;flex-wrap:wrap}
+.pay .cards span{font-size:10.5px;border:1px solid var(--linea);padding:4px 8px;border-radius:3px;letter-spacing:.08em}
+.done{text-align:center;padding:30px 0}
+.done .ticket{max-width:420px;margin:30px auto;background:var(--gesso);border:1px solid var(--linea);text-align:left;padding:28px 30px;box-shadow:0 20px 40px rgba(0,0,0,.08)}
+.done .ticket .t{font-family:var(--serif);font-style:normal;font-size:22px;color:var(--notte);margin:10px 0 14px}
+.done .ticket .d{font-size:13.5px;border-top:1px dashed var(--linea);padding-top:12px;line-height:1.8}
+
+/* shop */
+.filters{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:36px}
+.filters button{border:1px solid var(--linea);padding:9px 18px;border-radius:99px;font-size:12px;letter-spacing:.14em;text-transform:uppercase;background:#fff}
+.filters button.on{background:var(--notte);color:var(--avorio);border-color:var(--notte)}
+.prods{display:grid;grid-template-columns:repeat(4,1fr);gap:28px 22px}
+.prod{cursor:pointer;text-align:left}
+.prod .im{aspect-ratio:4/5;overflow:hidden;background:var(--avorio);border-radius:2px;position:relative}
+.prod .im img{width:100%;height:100%;object-fit:cover;transition:transform 1s}
+.prod:hover .im img{transform:scale(1.05)}
+.prod .tag{position:absolute;top:12px;left:12px;background:rgba(255,255,255,.95);font-size:10px;letter-spacing:.16em;text-transform:uppercase;padding:5px 9px}
+.prod .n{font-family:var(--serif);font-size:18px;color:var(--notte);margin-top:14px;line-height:1.15}
+.prod .d{font-size:13px;color:var(--muto)}
+.prod .p{font-size:14px;margin-top:4px;color:var(--notte)}
+.ship{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:70px;border-top:1px solid var(--linea);padding-top:34px}
+.ship div{font-size:14px;color:var(--muto)}
+.ship b{display:block;font-family:var(--serif);font-size:18px;font-weight:400;color:var(--notte)}
+
+/* modal + drawer */
+.ov{position:fixed;inset:0;background:rgba(15,19,30,.45);z-index:80;opacity:0;pointer-events:none;transition:.3s}
+.ov.on{opacity:1;pointer-events:auto}
+.modal{position:fixed;left:50%;top:50%;transform:translate(-50%,-46%);width:min(940px,calc(100vw - 32px));max-height:calc(100vh - 40px);overflow:auto;background:var(--gesso);z-index:90;opacity:0;pointer-events:none;transition:.3s;border-radius:2px}
+.modal.on{opacity:1;pointer-events:auto;transform:translate(-50%,-50%)}
+.pm{display:grid;grid-template-columns:1fr 1fr}
+.pm img{width:100%;height:100%;min-height:420px;object-fit:cover}
+.pm .c{padding:40px 36px;display:flex;flex-direction:column;gap:12px}
+.pm .pr{font-family:var(--serif);font-size:26px;color:var(--notte)}
+.sizes{display:flex;gap:8px;flex-wrap:wrap}
+.sizes button{width:48px;height:42px;border:1px solid var(--linea);background:#fff;font-size:14px;border-radius:2px}
+.sizes button.on{background:var(--notte);color:var(--avorio);border-color:var(--notte)}
+.qty{display:inline-flex;border:1px solid var(--linea);height:46px;align-items:center;background:#fff}
+.qty button{width:42px;height:100%;font-size:18px}
+.qty span{min-width:28px;text-align:center}
+.x{position:absolute;right:12px;top:12px;width:40px;height:40px;border-radius:50%;background:rgba(255,255,255,.95);font-size:22px;line-height:1;z-index:3}
+.drawer{position:fixed;top:0;right:0;bottom:0;width:min(420px,100vw);background:var(--gesso);z-index:90;transform:translateX(100%);transition:transform .35s ease;display:flex;flex-direction:column}
+.drawer.on{transform:none}
+.drawer .dh{display:flex;justify-content:space-between;align-items:center;padding:22px 24px;border-bottom:1px solid var(--linea)}
+.drawer .dh h4{font-size:26px}
+.drawer .items{flex:1;overflow:auto;padding:8px 24px}
+.it{display:grid;grid-template-columns:72px 1fr auto;gap:14px;padding:16px 0;border-bottom:1px solid var(--linea);align-items:center}
+.it img,.it .gi{width:72px;height:88px;object-fit:cover;border-radius:2px}
+.it .gi{background:var(--notte);display:flex;align-items:center;justify-content:center;padding:14px}
+.it b{font-family:var(--serif);font-size:15px;font-weight:400;color:var(--notte);display:block;line-height:1.15}
+.it small{font-size:12px;color:var(--muto);display:block}
+.it .rm{font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--muto);border-bottom:1px solid var(--linea);margin-top:6px}
+.drawer .df{padding:22px 24px;border-top:1px solid var(--linea);background:var(--avorio)}
+.drawer .df .r{display:flex;justify-content:space-between;font-size:14px;margin-bottom:8px}
+.drawer .df .r.t{font-family:var(--serif);font-size:22px;color:var(--notte);margin:10px 0 16px}
+.empty{padding:60px 0;text-align:center;color:var(--muto)}
+.bar{height:3px;background:var(--linea);margin:6px 0 4px;border-radius:2px;overflow:hidden}
+.bar i{display:block;height:100%;background:var(--ottone)}
+
+/* gift page */
+.gift-g{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:start}
+.gift-g .gc{margin:0;max-width:none;position:sticky;top:calc(var(--hh) + 30px)}
+
+/* area */
+.login{max-width:440px;margin:0 auto;background:#fff;border:1px solid var(--linea);padding:40px}
+.acc{display:grid;grid-template-columns:1.1fr 1fr;gap:28px}
+.box{background:#fff;border:1px solid var(--linea);padding:30px;border-radius:2px}
+.box h3{font-size:22px;margin-bottom:4px}
+.meas{display:grid;grid-template-columns:repeat(3,1fr);gap:0;margin-top:20px}
+.meas div{padding:14px 0;border-bottom:1px solid var(--linea)}
+.meas span{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--muto);display:block}
+.meas b{font-family:var(--serif);font-size:22px;font-weight:400;color:var(--notte)}
+.meas b small{font-family:var(--sans);font-size:12px;color:var(--muto);margin-left:2px}
+.sw{display:flex;gap:10px;flex-wrap:wrap;margin-top:8px}
+.sw button{width:58px;height:58px;border-radius:50%;border:1px solid var(--linea);position:relative}
+.sw button.on{box-shadow:0 0 0 2px var(--gesso),0 0 0 3px var(--notte)}
+.orders li{list-style:none;display:flex;justify-content:space-between;gap:12px;padding:14px 0;border-bottom:1px solid var(--linea);font-size:14px}
+.orders li b{font-family:var(--serif);font-size:16px;font-weight:400;color:var(--notte)}
+.pill{font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;border:1px solid var(--ottone);color:var(--ottone);padding:3px 9px;border-radius:99px;white-space:nowrap;align-self:center}
+.next{background:var(--notte);color:var(--avorio);padding:26px 30px;border-radius:2px;display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap;margin-bottom:28px}
+.next b{font-family:var(--serif);font-size:22px;font-weight:400}
+
+/* atelier */
+.at-g{display:grid;grid-template-columns:repeat(12,1fr);gap:16px}
+.at-g img{width:100%;height:100%;object-fit:cover;border-radius:2px}
+.nums{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;margin-top:60px}
+.nums div{border-top:1px solid var(--notte);padding-top:18px;font-size:14px;color:var(--muto)}
+.nums b{display:block;font-family:var(--serif);font-size:46px;font-weight:400;color:var(--notte);line-height:1}
+
+/* lookbook */
+.lb{columns:3;column-gap:18px}
+.lb figure{break-inside:avoid;margin-bottom:18px}
+.lb img{width:100%;border-radius:2px}
+.lb figcaption{font-size:12px;color:var(--muto);margin-top:8px;letter-spacing:.04em}
+
+/* faq */
+.faq{max-width:860px}
+.faq details{border-bottom:1px solid var(--linea)}
+.faq summary{list-style:none;cursor:pointer;padding:24px 40px 24px 0;font-family:var(--serif);font-size:21px;color:var(--notte);position:relative}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary:after{content:"+";position:absolute;right:6px;top:20px;font-family:var(--sans);font-weight:300;font-size:26px;color:var(--ottone);transition:.2s}
+.faq details[open] summary:after{transform:rotate(45deg)}
+.faq details p{padding:0 0 24px;color:var(--muto);max-width:700px}
+
+/* footer */
+footer.ft{background:var(--notte);color:var(--avorio);padding:80px 0 30px;margin-top:0}
+.ft .g{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:40px}
+.ft a.logo{display:flex;color:var(--avorio);align-items:flex-start;opacity:1}
+.ft .logo .s{border-color:rgba(255,255,255,.4)}
+.ft h5{font-size:11px;letter-spacing:.24em;text-transform:uppercase;color:var(--ottone-chiaro);font-weight:400;margin-bottom:16px}
+.ft a,.ft p{display:block;font-size:14px;opacity:.85;margin-bottom:9px}
+.ft a:hover{opacity:1}
+.ft .bot a{display:inline;font-size:inherit;margin:0}
+.ft .bot{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;border-top:1px solid rgba(255,255,255,.15);margin-top:60px;padding-top:22px;font-size:12px;opacity:.65}
+
+/* wa + toast */
+.wa{position:fixed;right:22px;bottom:22px;z-index:60;width:56px;height:56px;border-radius:50%;background:#1f8f5a;display:flex;align-items:center;justify-content:center;box-shadow:0 10px 26px rgba(0,0,0,.22)}
+.wa svg{width:28px;height:28px;fill:#fff}
+.toast{position:fixed;left:50%;bottom:28px;transform:translate(-50%,30px);background:var(--notte);color:var(--avorio);padding:14px 22px;border-radius:2px;font-size:14px;z-index:100;opacity:0;transition:.3s;pointer-events:none;max-width:calc(100vw - 32px);text-align:center}
+.toast.on{opacity:1;transform:translate(-50%,0)}
+
+/* mobile menu */
+.mm{position:fixed;inset:0;background:var(--gesso);z-index:70;padding:110px 24px 40px;transform:translateY(-100%);transition:transform .4s ease,visibility 0s .4s;visibility:hidden;overflow:auto;display:none;flex-direction:column;gap:6px}
+.mm.on{transform:none;visibility:visible;transition:transform .4s ease}
+@media (max-width:900px){.mm{display:flex}}
+.mm a{font-family:var(--serif);font-size:31px;color:var(--notte);padding:6px 0;border-bottom:1px solid var(--linea)}
+
+@media (max-width:1080px){
+  nav.mn{gap:20px}
+  .prods{grid-template-columns:repeat(3,1fr)}
+}
+@media (max-width:900px){
+  :root{--hh:64px}
+  .wrap{padding:0 16px}
+  nav.mn{display:none}
+  .burger{display:inline-flex}
+  .logo .n{font-size:20px;letter-spacing:.24em;margin-right:-.24em}
+  .logo .s{font-size:6.5px;letter-spacing:.3em;margin-right:-.3em}
+  .demobar{font-size:10.5px;padding:6px 12px}
+  .wa{width:50px;height:50px;right:14px;bottom:14px}
+  .sec{padding:72px 0}
+  .hero{grid-template-columns:1fr;min-height:0}
+  .hero .ph{order:-1;height:42vh;min-height:300px}
+  .hero .chip{display:none}
+  .hero .tx{padding:40px 16px 56px}
+  .hero .chip{left:16px;bottom:16px;right:16px;max-width:none}
+  .hero .ctas .btn{flex:1 1 100%}
+  .trust{gap:22px;margin-top:40px}
+  .doors{grid-template-columns:1fr}
+  .door{min-height:460px}
+  .door .c{padding:26px}
+  .steps{grid-template-columns:1fr 1fr;gap:28px 18px}
+  .split,.giftband .wrap,.gift-g,.acc,.bk{grid-template-columns:1fr;gap:36px}
+  .split img{height:420px}
+  .gc{margin:0 auto}
+  .gift-g .gc{position:static}
+  .fab{grid-template-columns:1fr 1fr}
+  .ig-grid{grid-template-columns:repeat(3,1fr);gap:3px}
+  .capi{grid-template-columns:1fr}
+  .opts{grid-template-columns:1fr}
+  .sum{position:static}
+  .opts.two{grid-template-columns:1fr}
+  .gc{padding:22px 22px;border-radius:12px}
+  .gc .t{font-size:28px}
+  .prods{grid-template-columns:1fr 1fr;gap:24px 12px}
+  .prod .n{font-size:18px}
+  .ship{grid-template-columns:1fr}
+  .pm{grid-template-columns:1fr}
+  .pm img{min-height:0;height:300px}
+  .pm .c{padding:26px 20px}
+  .meas{grid-template-columns:repeat(2,1fr)}
+  .at-g{display:flex;flex-direction:column}
+  .at-g img{height:300px}
+  .nums{grid-template-columns:1fr;gap:20px}
+  .lb{columns:2;column-gap:10px}
+  .ft .g{grid-template-columns:1fr 1fr}
+  .ft .g>div:first-child{grid-column:1/-1}
+  .ph-head{padding:56px 0 40px}
+  .lang{margin-right:0}
+  .ib{width:38px;height:38px}
+  .row2{grid-template-columns:1fr}
+  .faq summary{font-size:21px}
+  .login{padding:28px 20px}
+  .box{padding:22px}
+}
+i{font-style:normal}
+</style>
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <filter id="gesso" x="-10%" y="-40%" width="120%" height="180%">
+      <feTurbulence type="fractalNoise" baseFrequency="1.4" numOctaves="2" seed="7" result="n"/>
+      <feDisplacementMap in="SourceGraphic" in2="n" scale="2.6"/>
+    </filter>
+    <symbol id="mono" viewBox="0 0 120 120">
+      <circle cx="60" cy="60" r="57" fill="none" stroke="currentColor" stroke-width="1.3"/>
+      <circle cx="60" cy="60" r="50" fill="none" stroke="currentColor" stroke-width="1" stroke-dasharray="3.2 3" opacity=".7"/>
+      <text x="60" y="80" text-anchor="middle" font-family="Jost, Helvetica, Arial, sans-serif" font-weight="300" font-size="60" fill="currentColor">G</text>
+      <path d="M37 92 Q60 86 85 89" fill="none" stroke="var(--chalk,#b08d57)" stroke-width="3.2" stroke-linecap="round" filter="url(#gesso)" opacity=".9"/>
+    </symbol>
+  </defs>
+</svg>
+
+<div class="demobar"><span data-en="Demo by <a href='https://www.lookingupstudio.com' target='_blank' rel='noopener'>Looking Up</a> · name, prices and photos are examples">Demo a cura di <a href="https://www.lookingupstudio.com" target="_blank" rel="noopener">Looking Up</a> · nome, prezzi e foto di esempio</span></div>
+
+<header class="hd">
+  <div class="wrap">
+    <a href="#/" class="logo" aria-label="Gessato, home"><span class="n">GESSATO</span><span class="s">Sartoria su misura</span></a>
+    <nav class="mn">
+      <a href="#/su-misura" data-nav="su-misura" data-en="Bespoke">Su misura</a>
+      <a href="#/boutique" data-nav="boutique">Boutique</a>
+      <a href="#/tessuti" data-nav="tessuti" data-en="Cloths">Tessuti</a>
+      <a href="#/atelier" data-nav="atelier">Atelier</a>
+      <a href="#/gift-card" data-nav="gift-card">Gift card</a>
+    </nav>
+    <div class="tools">
+      <div class="lang"><button data-lang="it" class="on">IT</button><button data-lang="en">EN</button></div>
+      <a class="ib" href="#/area-cliente" aria-label="Area cliente"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21c1.5-4 4.5-6 8-6s6.5 2 8 6"/></svg></a>
+      <button class="ib" id="cartBtn" aria-label="Carrello"><svg viewBox="0 0 24 24"><path d="M5 8h14l-1 13H6L5 8z"/><path d="M9 8V6a3 3 0 0 1 6 0v2"/></svg><span class="badge" id="badge">0</span></button>
+      <button class="ib burger" id="burger" aria-label="Menu"><svg viewBox="0 0 24 24"><path d="M4 8h16M4 16h16"/></svg></button>
+    </div>
+  </div>
+</header>
+
+<div class="mm" id="mm">
+  <a href="#/" data-en="Home">Home</a>
+  <a href="#/su-misura" data-en="Bespoke">Su misura</a>
+  <a href="#/prenota" data-en="Book a visit">Prenota una visita</a>
+  <a href="#/boutique">Boutique</a>
+  <a href="#/tessuti" data-en="Cloths and lookbook">Tessuti e lookbook</a>
+  <a href="#/atelier">Atelier</a>
+  <a href="#/gift-card">Gift card</a>
+  <a href="#/area-cliente" data-en="My account">Area cliente</a>
+  <a href="#/faq">FAQ</a>
+</div>
+
+<main>
+
+<!-- ============ HOME ============ -->
+<section class="view" data-view="home">
+  <div class="hero">
+    <div class="tx">
+      <div class="eyebrow" data-en="Bespoke tailoring">Sartoria su misura</div>
+      <h1 data-en="Your tailor,<br>at your door.">Il sarto<br>viene da te.</h1>
+      <p class="lead" data-en="Suits, jackets and shirts made to measure. Book online and the tailor comes to your home or office, with cloths and tape measure.">Abiti, giacche e camicie su misura. Prenoti online e il sarto arriva a casa tua o in ufficio, con i tessuti e il metro.</p>
+      <div class="ctas">
+        <a href="#/prenota" class="btn btn-p" data-en="Book the first visit">Prenota la prima visita</a>
+        <a href="#/boutique" class="btn btn-o" data-en="Visit the boutique">Visita la boutique</a>
+      </div>
+      <div class="trust">
+        <div><b data-en="2 fittings">2 prove</b><span data-en="at home or in the atelier">a casa o in atelier</span></div>
+        <div><b data-en="6 weeks">6 settimane</b><span data-en="from measures to delivery">dalle misure alla consegna</span></div>
+        <div><b data-en="15 min">15 min</b><span data-en="free video call">videochiamata gratuita</span></div>
+      </div>
+    </div>
+    <div class="ph">
+      <img src="img/hero-sarto.jpg" alt="Il sarto lavora a mano su una giacca in tessuto grigio" fetchpriority="high">
+      <div class="chip"><b data-en="Next visits">Prossime visite</b><span data-en="This week: Tuesday, Thursday and Saturday morning available.">Questa settimana: martedì, giovedì e sabato mattina liberi.</span></div>
+    </div>
+  </div>
+
+  <section class="sec">
+    <div class="wrap">
+      <div class="sec-t"><div><div class="eyebrow" data-en="Two ways in">Due strade</div><h2 data-en="Made for you, or ready to wear.">Fatto per te, o pronto da indossare.</h2></div></div>
+      <div class="doors">
+        <a href="#/su-misura" class="door">
+          <img src="img/abito-tre-pezzi.jpg" alt="Abito tre pezzi blu a quadri su misura" loading="lazy">
+          <div class="c"><div class="eyebrow" data-en="Bespoke · from €1,800">Su misura · da 1.800 €</div><h2 data-en="Bespoke">Su misura</h2><p data-en="Suits, jackets, coats and shirts. Book a visit: the tailor takes your measures at home, then two fittings.">Abiti, giacche, cappotti e camicie. Prenoti la visita: il sarto prende le misure a casa tua, poi due prove.</p><span class="go" data-en="Discover the process">Scopri il percorso</span></div>
+        </a>
+        <a href="#/boutique" class="door">
+          <img src="img/cravatte-lotto.jpg" alt="Cravatte in seta di diverse fantasie" loading="lazy">
+          <div class="c"><div class="eyebrow" data-en="Boutique · shipped in 48h">Boutique · spedita in 48 ore</div><h2>Boutique</h2><p data-en="Seven-fold ties, pocket squares, shirts in sizes and cufflinks. You buy them here, with a click.">Cravatte sette pieghe, pochette, camicie in taglia e gemelli. Si comprano qui, con un clic.</p><span class="go" data-en="Shop now">Vai alla boutique</span></div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec" style="background:var(--avorio)">
+    <div class="wrap">
+      <div class="sec-t"><div><div class="eyebrow" data-en="How it works">Come funziona</div><h2 data-en="From the first measure to the last stitch.">Dalla prima misura all'ultimo punto.</h2></div><a href="#/su-misura" class="link" data-en="The full process">Il percorso completo</a></div>
+      <div class="steps">
+        <div class="step"><div class="k">01</div><h4 data-en="Book">Prenoti</h4><p data-en="Choose the garment, where to meet and the day. A deposit holds the date and is taken off the final price.">Scegli il capo, dove vederci e il giorno. Una caparra blocca la data e si scala dal prezzo finale.</p></div>
+        <div class="step"><div class="k">02</div><h4 data-en="We come to you">Veniamo da te</h4><p data-en="At home, at the office or in the atelier. We bring cloths, buttons and linings to choose from.">A casa, in ufficio o in atelier. Portiamo tessuti, bottoni e fodere da scegliere con calma.</p></div>
+        <div class="step"><div class="k">03</div><h4 data-en="Two fittings">Due prove</h4><p data-en="The garment takes shape on you, fitting after fitting, until it falls just right.">Il capo prende forma addosso a te, prova dopo prova, finché cade come deve.</p></div>
+        <div class="step"><div class="k">04</div><h4 data-en="Delivered by hand">Consegna a mano</h4><p data-en="In about six weeks. Your measures stay saved: the next shirt is just a click away.">In circa sei settimane. Le tue misure restano salvate: la prossima camicia la ordini con un clic.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec">
+    <div class="wrap split">
+      <img src="img/camicie-grucce.jpg" alt="Camicie su misura bianche, azzurre e rosa appese" loading="lazy">
+      <div>
+        <div class="eyebrow" data-en="Saved measures">Misure salvate</div>
+        <h2 data-en="Measured once. Reordered with a click.">Le misure si prendono una volta. Il resto è un clic.</h2>
+        <ul class="ticks">
+          <li data-en="After the first visit your measures are saved in your account">Dopo la prima visita le tue misure restano nella tua area cliente</li>
+          <li data-en="Reorder bespoke shirts online: cloth, collar and cuffs">Riordini le camicie su misura online: tessuto, collo e polsino</li>
+          <li data-en="Track fittings and deliveries in one place">Segui prove e consegne in un posto solo</li>
+        </ul>
+        <a href="#/area-cliente" class="btn btn-o" data-en="See the account demo">Vedi l'area cliente</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec pin giftband">
+    <div class="wrap">
+      <div>
+        <div class="eyebrow" style="color:var(--ottone-chiaro)">Gift card</div>
+        <h2 data-en="Give the tailor's visit.">Regala la visita del sarto.</h2>
+        <p style="opacity:.85;margin:18px 0 32px;max-width:480px" data-en="Not an amount: an experience. Measures at home, cloth chosen together, a shirt or a suit made only for him.">Non un importo: un'esperienza. Le misure a casa, il tessuto scelto insieme, una camicia o un abito fatti solo per lui.</p>
+        <a href="#/gift-card" class="btn btn-l" data-en="Choose the gift card">Scegli la gift card</a>
+      </div>
+      <div class="gc">
+        <div class="h"><svg class="mono" style="width:52px;height:52px"><use href="#mono"/></svg><span style="font-size:10.5px;letter-spacing:.26em;text-transform:uppercase;opacity:.8">Gift card</span></div>
+        <div class="t" data-en="A bespoke<br><i>experience</i>">Un'esperienza<br><i>su misura</i></div>
+        <div class="f"><span data-en="For Andrea">Per Andrea</span><span>GESSATO</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec">
+    <div class="wrap">
+      <div class="sec-t"><div><div class="eyebrow" data-en="The cloths">I tessuti</div><h2 data-en="Chosen with you, by hand.">Scelti con te, a mano.</h2></div><a href="#/tessuti" class="link" data-en="Cloths and lookbook">Tessuti e lookbook</a></div>
+      <div class="fab">
+        <figure><img src="img/tessuto-blu.jpg" alt="Tessuti in lana blu e grigio" loading="lazy"><figcaption><b data-en="Fresco wool">Fresco di lana</b><span data-en="Navy and grey · 240 g · four seasons">Blu e grigio · 240 g · quattro stagioni</span></figcaption></figure>
+        <figure><img src="img/tessuto-quadri.jpg" alt="Tessuto pied de poule grigio" loading="lazy"><figcaption><b>Pied de poule</b><span data-en="Wool · 300 g · autumn and winter">Lana · 300 g · autunno e inverno</span></figcaption></figure>
+        <figure><img src="img/tessuto-chiaro.jpg" alt="Tessuti chiari in lino e seta" loading="lazy"><figcaption><b data-en="Linen and silk">Lino e seta</b><span data-en="Sand and sage · summer">Sabbia e salvia · estate</span></figcaption></figure>
+        <figure><img src="img/tessuto-notte.jpg" alt="Tessuto blu notte" loading="lazy"><figcaption><b data-en="Midnight barathea">Barathea notte</b><span data-en="For evening and ceremony">Per la sera e la cerimonia</span></figcaption></figure>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec" style="background:var(--avorio);padding-bottom:90px">
+    <div class="wrap">
+      <div class="sec-t">
+        <div class="ig-h">
+          <div class="ig-av"><svg class="mono" style="width:100%;height:100%"><use href="#mono"/></svg></div>
+          <div><div class="eyebrow" style="margin-bottom:4px">Instagram</div><h3>@gessato.sartoria</h3></div>
+        </div>
+        <a href="https://www.instagram.com/gessato.sartoria" target="_blank" rel="noopener" class="btn btn-o" data-en="Follow us">Seguici</a>
+      </div>
+      <div class="ig-grid" id="igGrid"></div>
+      <p class="small muto" style="margin-top:16px" data-en="Example profile: on the real site the latest posts update by themselves.">Profilo di esempio: sul sito vero gli ultimi post si aggiornano da soli.</p>
+    </div>
+  </section>
+</section>
+
+<!-- ============ SU MISURA ============ -->
+<section class="view" data-view="su-misura">
+  <div class="ph-head">
+    <div class="wrap">
+      <div class="crumbs" data-en="Home / Bespoke">Home / Su misura</div>
+      <div class="eyebrow" data-en="Bespoke">Su misura</div>
+      <h1 data-en="A suit begins with a conversation.">Un abito si comincia con una conversazione.</h1>
+      <p class="lead" data-en="Clear process, clear times, prices published. You book, we come to you.">Percorso chiaro, tempi chiari, prezzi pubblicati. Tu prenoti, noi veniamo da te.</p>
+      <div style="margin-top:30px;display:flex;gap:12px;flex-wrap:wrap"><a href="#/prenota" class="btn btn-p" data-en="Book a visit">Prenota una visita</a><a href="#/prenota?m=video" class="btn btn-o" data-en="Free 15 min video call">Videochiamata gratuita 15 min</a></div>
+    </div>
+  </div>
+
+  <section class="sec">
+    <div class="wrap">
+      <div class="sec-t"><div><div class="eyebrow" data-en="The process">Il percorso</div><h2 data-en="Four steps, about six weeks.">Quattro passi, circa sei settimane.</h2></div></div>
+      <div class="steps">
+        <div class="step"><div class="k">01</div><h4 data-en="Consultation">Consulenza</h4><p data-en="A free 15 minute video call, or straight to the first visit. We talk about occasions, style and budget.">Una videochiamata gratuita di 15 minuti, o subito la prima visita. Parliamo di occasioni, stile e budget.</p><div class="tm" data-en="15 min · free">15 min · gratuita</div></div>
+        <div class="step"><div class="k">02</div><h4 data-en="Measures at home">Misure a domicilio</h4><p data-en="The tailor comes to you with cloths, buttons and linings. Over 25 measures, posture and how you like to wear it.">Il sarto arriva con tessuti, bottoni e fodere. Più di 25 misure, la postura, come ti piace portarlo.</p><div class="tm" data-en="60 to 90 min">60-90 min</div></div>
+        <div class="step"><div class="k">03</div><h4 data-en="Fittings">Prove</h4><p data-en="First fitting on the basted garment, second on the almost finished one. At home or in the atelier.">Prima prova sul capo imbastito, seconda sul capo quasi finito. A casa o in atelier.</p><div class="tm" data-en="Weeks 3 and 5">Settimana 3 e 5</div></div>
+        <div class="step"><div class="k">04</div><h4 data-en="Delivery">Consegna</h4><p data-en="Delivered by hand, with a last check. Small adjustments within the year are free.">Consegna a mano, con un ultimo controllo. I piccoli ritocchi entro l'anno sono gratuiti.</p><div class="tm" data-en="6 to 8 weeks">6-8 settimane</div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec" style="background:var(--avorio)">
+    <div class="wrap">
+      <div class="sec-t"><div><div class="eyebrow" data-en="Choose the garment">Scegli il capo</div><h2 data-en="Prices starting from.">Prezzi a partire da.</h2></div><p class="small muto" style="max-width:340px" data-en="Example prices. The final price depends on the cloth and is confirmed at the first visit.">Prezzi di esempio. Il prezzo finale dipende dal tessuto e si conferma alla prima visita.</p></div>
+      <div class="capi" id="capiGrid"></div>
+    </div>
+  </section>
+
+  <section class="sec">
+    <div class="wrap split">
+      <div>
+        <div class="eyebrow" data-en="Three ways to meet">Tre modi per vederci</div>
+        <h2 data-en="Where you prefer.">Dove preferisci tu.</h2>
+        <ul class="ticks">
+          <li data-en="<b>At home or at the office</b> · the tailor comes to you, in the city and surroundings">  <b>A casa o in ufficio</b> · il sarto viene da te, in città e dintorni</li>
+          <li data-en="<b>In the atelier</b> · with the whole cloth library at hand"><b>In atelier</b> · con tutto l'archivio dei tessuti a portata di mano</li>
+          <li data-en="<b>Video call</b> · 15 free minutes to get to know each other, from anywhere"><b>In videochiamata</b> · 15 minuti gratuiti per conoscerci, da dove vuoi</li>
+        </ul>
+        <a href="#/prenota" class="btn btn-p" data-en="Book now">Prenota ora</a>
+      </div>
+      <img src="img/taglio.jpg" alt="Il sarto taglia il tessuto blu con le forbici" loading="lazy">
+    </div>
+  </section>
+</section>
+
+<!-- ============ PRENOTA ============ -->
+<section class="view" data-view="prenota">
+  <div class="ph-head" style="padding-bottom:40px">
+    <div class="wrap">
+      <div class="crumbs" data-en="Home / Bespoke / Book">Home / Su misura / Prenota</div>
+      <h1 data-en="Book the tailor.">Prenota il sarto.</h1>
+      <p class="lead" data-en="Four quick steps. The deposit holds your date and is taken off the final price.">Quattro passaggi veloci. La caparra blocca la tua data e si scala dal prezzo finale.</p>
+    </div>
+  </div>
+  <section class="sec" style="padding-top:56px">
+    <div class="wrap bk">
+      <div>
+        <div class="stepper" id="stepper"><span></span><span></span><span></span><span></span></div>
+        <div id="bkSteps"></div>
+      </div>
+      <aside class="sum" id="bkSum"></aside>
+    </div>
+  </section>
+</section>
+
+<!-- ============ BOUTIQUE ============ -->
+<section class="view" data-view="boutique">
+  <div class="ph-head">
+    <div class="wrap">
+      <div class="crumbs">Home / Boutique</div>
+      <h1 data-en="The boutique.">La boutique.</h1>
+      <p class="lead" data-en="What needs no measures, you buy here. Seven-fold ties, pocket squares, shirts in sizes, cufflinks.">Quello che non ha bisogno di misure si compra qui. Cravatte sette pieghe, pochette, camicie in taglia, gemelli.</p>
+    </div>
+  </div>
+  <section class="sec" style="padding-top:56px">
+    <div class="wrap">
+      <div class="filters" id="filters"></div>
+      <div class="prods" id="prods"></div>
+      <div class="ship">
+        <div><b data-en="Shipped in 48 hours">Spedita in 48 ore</b><span data-en="Free over €150, in a gift box.">Gratuita sopra i 150 €, in scatola regalo.</span></div>
+        <div><b data-en="Returns in 14 days">Reso in 14 giorni</b><span data-en="For boutique items. Bespoke garments are made only for you.">Per i prodotti della boutique. I capi su misura sono fatti solo per te.</span></div>
+        <div><b data-en="Secure payment">Pagamento sicuro</b><span data-en="Card, Apple Pay, PayPal, in three instalments.">Carta, Apple Pay, PayPal, in tre rate.</span></div>
+      </div>
+    </div>
+  </section>
+</section>
+
+<!-- ============ TESSUTI ============ -->
+<section class="view" data-view="tessuti">
+  <div class="ph-head">
+    <div class="wrap">
+      <div class="crumbs" data-en="Home / Cloths">Home / Tessuti</div>
+      <h1 data-en="Cloths and lookbook.">Tessuti e lookbook.</h1>
+      <p class="lead" data-en="A selection from the archive. At the visit the tailor brings the bunches, so you can touch them.">Una selezione dall'archivio. Alla visita il sarto porta i mazzetti, così li tocchi con mano.</p>
+    </div>
+  </div>
+  <section class="sec" style="padding-top:64px">
+    <div class="wrap">
+      <div class="fab">
+        <figure><img src="img/tessuto-blu.jpg" alt="Fresco di lana blu e grigio" loading="lazy"><figcaption><b data-en="Fresco wool">Fresco di lana</b><span data-en="Navy and grey · 240 g · four seasons">Blu e grigio · 240 g · quattro stagioni</span></figcaption></figure>
+        <figure><img src="img/tessuto-quadri.jpg" alt="Pied de poule grigio" loading="lazy"><figcaption><b>Pied de poule</b><span data-en="Wool · 300 g · autumn and winter">Lana · 300 g · autunno e inverno</span></figcaption></figure>
+        <figure><img src="img/tessuto-chiaro.jpg" alt="Lino e seta chiari" loading="lazy"><figcaption><b data-en="Linen and silk">Lino e seta</b><span data-en="Sand and sage · summer">Sabbia e salvia · estate</span></figcaption></figure>
+        <figure><img src="img/tessuto-notte.jpg" alt="Barathea blu notte" loading="lazy"><figcaption><b data-en="Midnight barathea">Barathea notte</b><span data-en="For evening and ceremony">Per la sera e la cerimonia</span></figcaption></figure>
+        <figure><img src="img/tessuto-marrone.jpg" alt="Lane marroni e tabacco" loading="lazy"><figcaption><b data-en="Tobacco flannel">Flanella tabacco</b><span data-en="Wool · 340 g · winter">Lana · 340 g · inverno</span></figcaption></figure>
+        <figure><img src="img/tessuto-viola.jpg" alt="Lane viola e ruggine" loading="lazy"><figcaption><b data-en="Wool and cashmere">Lana e cashmere</b><span data-en="Plum and rust · jackets">Prugna e ruggine · giacche</span></figcaption></figure>
+        <figure><img src="img/tessuti-pila.jpg" alt="Pila di tessuti a righe e quadri" loading="lazy"><figcaption><b data-en="Prince of Wales check">Principe di Galles</b><span data-en="Wool · 280 g · city">Lana · 280 g · città</span></figcaption></figure>
+        <figure><img src="img/bottoni.jpg" alt="Campionario di bottoni" loading="lazy"><figcaption><b data-en="Buttons and linings">Bottoni e fodere</b><span data-en="Horn, mother of pearl, cupro">Corno, madreperla, cupro</span></figcaption></figure>
+      </div>
+    </div>
+  </section>
+  <section class="sec" style="background:var(--avorio)">
+    <div class="wrap">
+      <div class="sec-t"><div><div class="eyebrow">Lookbook</div><h2 data-en="Finished, and worn.">Finiti, e indossati.</h2></div><a href="#/prenota" class="btn btn-p" data-en="Book a visit">Prenota una visita</a></div>
+      <div class="lb">
+        <figure><img src="img/abito-blu.jpg" alt="Abito blu su misura" loading="lazy"><figcaption data-en="Navy suit, fresco wool">Abito blu, fresco di lana</figcaption></figure>
+        <figure><img src="img/orologio.jpg" alt="Polsino e giacca scura" loading="lazy"><figcaption data-en="Detail: sleeve and cuff">Dettaglio manica e polsino</figcaption></figure>
+        <figure><img src="img/abito-verde.jpg" alt="Abito verde oliva tre pezzi" loading="lazy"><figcaption data-en="Three-piece, olive">Tre pezzi, verde oliva</figcaption></figure>
+        <figure><img src="img/abito-tre-pezzi.jpg" alt="Abito tre pezzi a quadri blu" loading="lazy"><figcaption data-en="Three-piece, navy check">Tre pezzi, quadro blu</figcaption></figure>
+        <figure><img src="img/abito-grigio.jpg" alt="Abito grigio" loading="lazy"><figcaption data-en="Grey, double vent">Grigio, doppio spacco</figcaption></figure>
+        <figure><img src="img/pochette-abito.jpg" alt="Abito da cerimonia con pochette" loading="lazy"><figcaption data-en="Ceremony, midnight blue">Cerimonia, blu notte</figcaption></figure>
+        <figure><img src="img/abito-blu-strada.jpg" alt="Abito blu in città" loading="lazy"><figcaption data-en="Royal blue, city">Blu royal, città</figcaption></figure>
+        <figure><img src="img/abito-bottone.jpg" alt="Giacca blu abbottonata" loading="lazy"><figcaption data-en="Single button, navy">Monopetto, blu</figcaption></figure>
+        <figure><img src="img/ritratto-scuro.jpg" alt="Abito scuro da sera" loading="lazy"><figcaption data-en="Evening, charcoal">Sera, antracite</figcaption></figure>
+      </div>
+    </div>
+  </section>
+</section>
+
+<!-- ============ ATELIER ============ -->
+<section class="view" data-view="atelier">
+  <div class="ph-head">
+    <div class="wrap">
+      <div class="crumbs">Home / Atelier</div>
+      <h1 data-en="Hands, chalk and time.">Mani, gesso e tempo.</h1>
+      <p class="lead" data-en="Example text: the real story will be written with the founders.">Testo di esempio: la storia vera si scrive con i founder.</p>
+    </div>
+  </div>
+  <section class="sec" style="padding-top:64px">
+    <div class="wrap">
+      <div class="at-g">
+        <img src="img/atelier-interno.jpg" alt="L'atelier con gli abiti esposti" style="grid-column:span 7;height:520px" loading="lazy">
+        <img src="img/cartamodello.jpg" alt="Taglio del cartamodello" style="grid-column:span 5;height:520px" loading="lazy">
+        <img src="img/fili.jpg" alt="Rocchetti di filo" style="grid-column:span 4;height:380px" loading="lazy">
+        <img src="img/metro-forbici.jpg" alt="Metro da sarto e forbici" style="grid-column:span 4;height:380px" loading="lazy">
+        <img src="img/giacca-tavolo.jpg" alt="Giacca finita sul tavolo" style="grid-column:span 4;height:380px" loading="lazy">
+      </div>
+      <div class="split" style="margin-top:90px;align-items:start">
+        <div><div class="eyebrow" data-en="The story">La storia</div><h2 data-en="A family workshop that learned to travel.">Una bottega di famiglia che ha imparato a viaggiare.</h2></div>
+        <div>
+          <p class="lead" style="max-width:none" data-en="Gessato was born at a cutting table. For years, clients came to us. Then we understood that the time of a man who wears a suit is precious: so now it is the tailor who travels, with the cloths in a bag and the chalk in his pocket.">Gessato nasce su un tavolo da taglio. Per anni i clienti sono venuti da noi. Poi abbiamo capito che il tempo di chi porta un abito è prezioso: così adesso è il sarto a muoversi, con i tessuti in borsa e il gesso in tasca.</p>
+          <p style="margin-top:20px;color:var(--muto)" data-en="Every garment is cut by hand, on your measures, and finished in the atelier. Example text, to be replaced.">Ogni capo è tagliato a mano, sulle tue misure, e rifinito in atelier. Testo di esempio, da sostituire.</p>
+        </div>
+      </div>
+      <div class="nums">
+        <div><b data-en="40 h">40 ore</b><span data-en="of handwork for a suit">di lavoro a mano per un abito</span></div>
+        <div><b>25+</b><span data-en="measures taken at the first visit">misure prese alla prima visita</span></div>
+        <div><b data-en="1 tailor">1 sarto</b><span data-en="who follows you from start to finish">che ti segue dall'inizio alla fine</span></div>
+      </div>
+    </div>
+  </section>
+</section>
+
+<!-- ============ GIFT CARD ============ -->
+<section class="view" data-view="gift-card">
+  <div class="ph-head">
+    <div class="wrap">
+      <div class="crumbs">Home / Gift card</div>
+      <h1 data-en="A bespoke experience, to give.">Un'esperienza su misura, da regalare.</h1>
+      <p class="lead" data-en="The gift for someone who already has everything: the tailor's visit, the cloth chosen together, a garment made only for him.">Il regalo per chi ha già tutto: la visita del sarto, il tessuto scelto insieme, un capo fatto solo per lui.</p>
+    </div>
+  </div>
+  <section class="sec" style="padding-top:64px">
+    <div class="wrap gift-g">
+      <div class="gc" id="gcPrev">
+        <div class="h"><svg class="mono" style="width:58px;height:58px"><use href="#mono"/></svg><span style="font-size:10.5px;letter-spacing:.26em;text-transform:uppercase;opacity:.8">Gift card</span></div>
+        <div class="t" id="gcT"></div>
+        <div class="f"><span id="gcTo"></span><span class="val" id="gcVal"></span></div>
+      </div>
+      <div id="gcForm"></div>
+    </div>
+  </section>
+</section>
+
+<!-- ============ AREA CLIENTE ============ -->
+<section class="view" data-view="area-cliente">
+  <div class="ph-head" style="padding-bottom:44px">
+    <div class="wrap">
+      <div class="crumbs" data-en="Home / My account">Home / Area cliente</div>
+      <h1 id="accTitle"></h1>
+    </div>
+  </div>
+  <section class="sec" style="padding-top:56px">
+    <div class="wrap" id="acc"></div>
+  </section>
+</section>
+
+<!-- ============ FAQ ============ -->
+<section class="view" data-view="faq">
+  <div class="ph-head">
+    <div class="wrap">
+      <div class="crumbs">Home / FAQ</div>
+      <h1 data-en="Questions, and clear answers.">Domande, e risposte chiare.</h1>
+    </div>
+  </div>
+  <section class="sec" style="padding-top:40px">
+    <div class="wrap"><div class="faq">
+      <details open><summary data-en="How long does a bespoke suit take?">Quanto tempo serve per un abito su misura?</summary><p data-en="About six to eight weeks from the first visit, with two fittings in between. For a ceremony, better to start three months ahead.">Circa sei-otto settimane dalla prima visita, con due prove in mezzo. Per una cerimonia meglio partire tre mesi prima.</p></details>
+      <details><summary data-en="Does the home visit cost extra?">La visita a domicilio ha un costo?</summary><p data-en="In the city and surroundings it is included. You pay a deposit when booking, which is taken off the final price. Example conditions.">In città e dintorni è inclusa. Alla prenotazione paghi una caparra, che poi si scala dal prezzo finale. Condizioni di esempio.</p></details>
+      <details><summary data-en="Where do you come?">Fino a dove arrivate?</summary><p data-en="The city and surroundings with the home service; elsewhere in Italy and abroad on request, with dedicated tailor days.">Città e dintorni con il servizio a domicilio; nel resto d'Italia e all'estero su richiesta, con giornate dedicate.</p></details>
+      <details><summary data-en="Can I return a bespoke garment?">Posso restituire un capo su misura?</summary><p data-en="No, because it is made only for you. But adjustments are included until it is perfect, and small touch-ups are free for a year.">No, perché è fatto solo per te. Ma le modifiche sono incluse finché non è perfetto, e i piccoli ritocchi sono gratuiti per un anno.</p></details>
+      <details><summary data-en="And boutique items?">E i prodotti della boutique?</summary><p data-en="You can return them within 14 days, unused and in their box. Shipping in 48 hours, free over €150.">Puoi renderli entro 14 giorni, non usati e nella loro scatola. Spedizione in 48 ore, gratuita sopra i 150 €.</p></details>
+      <details><summary data-en="How do saved measures work?">Come funzionano le misure salvate?</summary><p data-en="After the first visit we save your measures in your account. You can reorder shirts online by choosing cloth, collar and cuffs. If your measures change, we update them at the next fitting.">Dopo la prima visita salviamo le tue misure nella tua area cliente. Puoi riordinare le camicie online scegliendo tessuto, collo e polsino. Se le misure cambiano, le aggiorniamo alla prova successiva.</p></details>
+      <details><summary data-en="How long is the gift card valid?">Quanto dura la gift card?</summary><p data-en="Twelve months. The recipient books the visit online with the card code.">Dodici mesi. Chi la riceve prenota la visita online con il codice della card.</p></details>
+      <details><summary data-en="How can I pay?">Come posso pagare?</summary><p data-en="Card, Apple Pay, Google Pay, PayPal, bank transfer and payment in three instalments. The balance of bespoke garments is paid at delivery.">Carta, Apple Pay, Google Pay, PayPal, bonifico e pagamento in tre rate. Il saldo dei capi su misura si paga alla consegna.</p></details>
+    </div></div>
+  </section>
+</section>
+
+</main>
+
+<footer class="ft">
+  <div class="wrap">
+    <div class="g">
+      <div>
+        <a href="#/" class="logo"><span class="n">GESSATO</span><span class="s">Sartoria su misura</span></a>
+        <p style="margin-top:24px;max-width:300px" data-en="Your tailor, at your door.">Il sarto viene da te.</p>
+      </div>
+      <div><h5 data-en="Bespoke">Su misura</h5><a href="#/su-misura" data-en="The process">Il percorso</a><a href="#/prenota" data-en="Book a visit">Prenota una visita</a><a href="#/tessuti" data-en="Cloths">Tessuti</a><a href="#/gift-card">Gift card</a></div>
+      <div><h5>Boutique</h5><a href="#/boutique" data-en="Ties">Cravatte</a><a href="#/boutique" data-en="Shirts">Camicie</a><a href="#/area-cliente" data-en="My account">Area cliente</a><a href="#/faq">FAQ</a></div>
+      <div><h5 data-en="Contacts">Contatti</h5><p data-en="Atelier by appointment<br>Address to be defined">Atelier su appuntamento<br>Indirizzo da definire</p><a href="#" class="js-wa">WhatsApp</a><a href="https://www.instagram.com/gessato.sartoria" target="_blank" rel="noopener">Instagram</a></div>
+    </div>
+    <div class="bot"><span data-en="Gessato · example name · demo site">Gessato · nome di esempio · sito demo</span><span data-en="Demo by <a href='https://www.lookingupstudio.com' target='_blank' rel='noopener' style='display:inline'>Looking Up</a> · stock photos">Demo a cura di <a href="https://www.lookingupstudio.com" target="_blank" rel="noopener" style="display:inline">Looking Up</a> · foto stock</span></div>
+  </div>
+</footer>
+
+<a href="#" class="wa js-wa" aria-label="WhatsApp"><svg viewBox="0 0 32 32"><path d="M16 3a13 13 0 0 0-11.2 19.6L3 29l6.6-1.7A13 13 0 1 0 16 3zm0 23.6c-2 0-4-.6-5.7-1.6l-.4-.2-3.9 1 1-3.8-.3-.4A10.6 10.6 0 1 1 16 26.6zm5.8-7.9c-.3-.2-1.9-.9-2.2-1s-.5-.2-.7.2-.8 1-1 1.2-.4.2-.7 0a8.7 8.7 0 0 1-4.3-3.8c-.3-.5.3-.5 1-1.6.1-.2 0-.4 0-.5l-1-2.4c-.3-.6-.5-.5-.7-.5h-.6a1.2 1.2 0 0 0-.9.4 3.6 3.6 0 0 0-1.1 2.7 6.3 6.3 0 0 0 1.3 3.3 14.4 14.4 0 0 0 5.5 4.9c2 .9 2.9.9 3.9.8.6-.1 1.9-.8 2.2-1.5s.3-1.4.2-1.5-.4-.2-.7-.3z"/></svg></a>
+
+<div class="ov" id="ov"></div>
+<div class="modal" id="modal"></div>
+<aside class="drawer" id="drawer" aria-label="Carrello"></aside>
+<div class="toast" id="toast"></div>
+
+<script>
+(function(){
+var LANG='it';
+try{var sl=localStorage.getItem('gs-lang');if(sl)LANG=sl;}catch(e){}
+function T(it,en){return LANG==='en'?en:it;}
+function eur(n){var s=String(n).replace(/\B(?=(\d{3})+(?!\d))/g,LANG==='en'?',':'.');return LANG==='en'?'€'+s:s+' €';}
+var $=function(s,r){return (r||document).querySelector(s)}, $$=function(s,r){return [].slice.call((r||document).querySelectorAll(s))};
+function toast(m){var t=$('#toast');t.textContent=m;t.classList.add('on');clearTimeout(t._t);t._t=setTimeout(function(){t.classList.remove('on')},2600);}
+
+/* ---------- dati ---------- */
+var CAPI=[
+ {id:'abito',it:'Abito',en:'Suit',da:1800,cap:200,img:'abito-blu-2',dit:'Giacca e pantalone, interamente su misura.',den:'Jacket and trousers, fully bespoke.',t:'6-8',p:2},
+ {id:'giacca',it:'Giacca',en:'Jacket',da:1200,cap:200,img:'abito-bottone',dit:'Spalla morbida o strutturata, a tua scelta.',den:'Soft or structured shoulder, your choice.',t:'5-6',p:2},
+ {id:'camicia',it:'Camicia',en:'Shirt',da:180,cap:50,img:'camicia-tavolo',dit:'Prima camicia con prova. Poi si riordina online.',den:'First shirt with a fitting. Then reorder online.',t:'3',p:1},
+ {id:'cappotto',it:'Cappotto',en:'Overcoat',da:2200,cap:300,img:'ritratto-scuro',dit:'Lana, cashmere, cammello. Per molti inverni.',den:'Wool, cashmere, camel. For many winters.',t:'8',p:2},
+ {id:'cerimonia',it:'Cerimonia',en:'Ceremony',da:2400,cap:300,img:'pochette-abito',dit:'Sposo, testimoni, tight e smoking.',den:'Groom, best men, morning dress and dinner suit.',t:'10-12',p:3},
+ {id:'pantalone',it:'Pantalone',en:'Trousers',da:450,cap:100,img:'abito-grigio',dit:'Vita alta o classica, con o senza pinces.',den:'High or classic rise, with or without pleats.',t:'4',p:1}
+];
+var MODI=[
+ {id:'casa',it:'A domicilio',en:'At home',dit:'A casa o in ufficio, in città e dintorni.',den:'At home or at the office, in the city and surroundings.',icon:'<path d="M3 11l9-7 9 7v9H3z"/><path d="M9 20v-6h6v6"/>'},
+ {id:'atelier',it:'In atelier',en:'In the atelier',dit:'Con tutto l\'archivio dei tessuti.',den:'With the whole cloth library.',icon:'<path d="M6 4l6 8 6-8"/><circle cx="7" cy="17" r="3"/><circle cx="17" cy="17" r="3"/><path d="M9 15l3-3 3 3"/>'},
+ {id:'video',it:'Videochiamata',en:'Video call',dit:'15 minuti per conoscerci. Gratuita.',den:'15 minutes to get to know each other. Free.',icon:'<rect x="3" y="6" width="13" height="12" rx="2"/><path d="M16 10l5-3v10l-5-3"/>'}
+];
+var PRODS=[
+ {id:'p1',cat:'cravatte',it:'Cravatta sette pieghe, paisley blu',en:'Seven-fold tie, navy paisley',p:140,img:'cravatta-paisley',dit:'Seta stampata, sette pieghe a mano, senza fodera.',den:'Printed silk, hand-folded seven times, unlined.',tag:['Novità','New']},
+ {id:'p2',cat:'cravatte',it:'Cravatta in seta, lilla',en:'Silk tie, lilac',p:120,img:'cravatta-legno',dit:'Seta jacquard, punta a mano.',den:'Jacquard silk, hand-finished tip.'},
+ {id:'p3',cat:'cravatte',it:'Cravatta a pois, blu e verde',en:'Polka dot tie, navy and green',p:120,img:'cravatta-pois',dit:'Seta stampata, pois piccolo.',den:'Printed silk, small polka dot.'},
+ {id:'p4',cat:'pochette',it:'Pochette in seta, fantasie',en:'Silk pocket square, patterns',p:65,img:'pochette-scaffale',dit:'Orlo arrotolato a mano. Fantasia a scelta.',den:'Hand-rolled edge. Pattern of your choice.'},
+ {id:'p5',cat:'camicie',it:'Camicia bianca, popeline',en:'White shirt, poplin',p:160,img:'camicia-bianca',dit:'Cotone popeline 100/2, collo francese. In taglia.',den:'100/2 cotton poplin, cutaway collar. Ready to wear.',size:1,tag:['In taglia','Ready to wear']},
+ {id:'p6',cat:'camicie',it:'Camicia azzurra, oxford',en:'Blue shirt, oxford',p:160,img:'camicia-righe',dit:'Cotone oxford, collo button down. In taglia.',den:'Oxford cotton, button-down collar. Ready to wear.',size:1},
+ {id:'p7',cat:'accessori',it:'Gemelli in argento, monogramma',en:'Silver cufflinks, monogram',p:180,img:'gemelli',dit:'Argento 925, incisione delle iniziali inclusa.',den:'925 silver, initials engraving included.',tag:['Incisione','Engraving']},
+ {id:'p8',cat:'pochette',it:'Pochette in lino, blu',en:'Linen pocket square, navy',p:55,img:'pochette-abito',dit:'Lino irlandese, orlo a mano.',den:'Irish linen, hand-rolled edge.'}
+];
+var CATS=[['tutto','Tutto','All'],['cravatte','Cravatte','Ties'],['pochette','Pochette','Pocket squares'],['camicie','Camicie','Shirts'],['accessori','Accessori','Accessories']];
+var GIFTS=[
+ {id:'g1',it:'Camicia su misura',en:'Bespoke shirt',v:180,dit:'Visita del sarto e una camicia su misura.',den:'Tailor visit and one bespoke shirt.'},
+ {id:'g2',it:'Giacca su misura',en:'Bespoke jacket',v:1200,dit:'Visita, due prove, una giacca.',den:'Visit, two fittings, one jacket.'},
+ {id:'g3',it:'Abito su misura',en:'Bespoke suit',v:1800,dit:'Il regalo completo: un abito fatto per lui.',den:'The full gift: a suit made for him.'},
+ {id:'g4',it:'Importo libero',en:'Custom amount',v:0,dit:'Scegli tu il valore, da usare in boutique o su misura.',den:'Choose the value, for the boutique or bespoke.'}
+];
+
+/* ---------- carrello ---------- */
+var cart=[];
+try{cart=JSON.parse(localStorage.getItem('gs-cart')||'[]')}catch(e){cart=[]}
+function saveCart(){try{localStorage.setItem('gs-cart',JSON.stringify(cart))}catch(e){} renderBadge();}
+function addCart(it){var f=cart.filter(function(c){return c.key===it.key})[0]; if(f)f.q+=it.q; else cart.push(it); saveCart(); renderDrawer(); openDrawer();}
+function renderBadge(){var n=cart.reduce(function(a,c){return a+c.q},0);var b=$('#badge');b.textContent=n;b.classList.toggle('on',n>0);}
+function total(){return cart.reduce(function(a,c){return a+c.p*c.q},0)}
+function renderDrawer(){
+  var d=$('#drawer'), tot=total(), free=150;
+  var h='<div class="dh"><h4>'+T('Il tuo carrello','Your bag')+'</h4><button class="ib js-close" aria-label="Chiudi" style="font-size:21px">×</button></div><div class="items">';
+  if(!cart.length) h+='<div class="empty"><p style="font-family:var(--serif);font-size:18px;color:var(--notte)">'+T('Il carrello è vuoto.','Your bag is empty.')+'</p><p style="margin-top:8px">'+T('Dai un\'occhiata alla boutique.','Have a look at the boutique.')+'</p><a href="#/boutique" class="btn btn-o js-close" style="margin-top:22px">Boutique</a></div>';
+  cart.forEach(function(c,i){
+    var vis=c.gift?'<div class="gi"><svg class="mono" style="width:100%;height:100%"><use href="#mono"/></svg></div>':'<img src="img/'+c.img+'.jpg" alt="">';
+    h+='<div class="it">'+vis+'<div><b>'+T(c.it,c.en)+'</b><small>'+(c.v?T(c.v[0],c.v[1]):'')+'</small><small>'+T('Quantità','Qty')+' '+c.q+'</small><button class="rm" data-rm="'+i+'">'+T('Rimuovi','Remove')+'</button></div><div style="font-size:14px">'+eur(c.p*c.q)+'</div></div>';
+  });
+  h+='</div>';
+  if(cart.length){
+    var miss=Math.max(0,free-tot);
+    h+='<div class="df"><div style="font-size:12.5px;color:var(--muto)">'+(miss?T('Ancora '+eur(miss)+' per la spedizione gratuita','Another '+eur(miss)+' for free shipping'):T('Spedizione gratuita','Free shipping'))+'</div><div class="bar"><i style="width:'+Math.min(100,tot/free*100)+'%"></i></div>'+
+       '<div class="r t"><span>'+T('Totale','Total')+'</span><span>'+eur(tot)+'</span></div><button class="btn btn-p btn-full" id="checkout">'+T('Vai al pagamento','Checkout')+'</button><p style="font-size:11.5px;color:var(--muto);margin-top:10px;text-align:center">'+T('Demo: nessun pagamento reale','Demo: no real payment')+'</p></div>';
+  }
+  d.innerHTML=h;
+}
+function openDrawer(){$('#drawer').classList.add('on');$('#ov').classList.add('on');}
+function closeAll(){$('#drawer').classList.remove('on');$('#modal').classList.remove('on');$('#ov').classList.remove('on');$('#mm').classList.remove('on');}
+function openModal(h){var m=$('#modal');m.innerHTML='<button class="x js-close" aria-label="Chiudi">×</button>'+h;m.classList.add('on');$('#ov').classList.add('on');m.scrollTop=0;}
+function checkout(){
+  var tot=total();
+  closeAll();
+  openModal('<div style="padding:44px 40px;max-width:560px;margin:0 auto"><div class="eyebrow">'+T('Pagamento','Payment')+'</div><h3>'+T('Ultimo passo','Last step')+'</h3>'+
+  '<div class="fld"><label>Email</label><input value="marco.rossi@example.com"></div><div class="fld"><label>'+T('Indirizzo di spedizione','Shipping address')+'</label><input value="Via di esempio 12"></div>'+
+  '<div class="pay"><div class="cards"><span>VISA</span><span>MASTERCARD</span><span>APPLE PAY</span><span>PAYPAL</span><span>'+T('3 RATE','3 INSTALMENTS')+'</span></div><div class="fld"><label>'+T('Carta','Card')+'</label><input value="4242 4242 4242 4242"></div><div class="row2"><div class="fld"><label>'+T('Scadenza','Expiry')+'</label><input value="12/28"></div><div class="fld"><label>CVC</label><input value="123"></div></div></div>'+
+  '<button class="btn btn-p btn-full" style="margin-top:22px" id="payNow">'+T('Paga','Pay')+' '+eur(tot)+'</button><p class="small muto" style="text-align:center;margin-top:10px">'+T('Simulazione: nessun addebito','Simulation: nothing is charged')+'</p></div>');
+}
+function paid(){
+  cart=[];saveCart();renderDrawer();
+  openModal('<div class="done" style="padding:56px 30px"><svg class="mono" style="width:70px;height:70px;color:var(--notte);margin:0 auto 20px;display:block"><use href="#mono"/></svg><h3>'+T('Grazie. Ordine confermato.','Thank you. Order confirmed.')+'</h3><p class="muto" style="margin:12px auto 0;max-width:420px">'+T('Ordine di prova N. GS-1048. Riceverai una email con la spedizione entro 48 ore.','Test order no. GS-1048. You will receive a shipping email within 48 hours.')+'</p><button class="btn btn-o js-close" style="margin-top:28px">'+T('Chiudi','Close')+'</button></div>');
+}
+
+/* ---------- home: instagram ---------- */
+function renderIG(){
+  var posts=[
+   {img:'hero-sarto'},{card:['Il sarto viene da te.','Your tailor, at your door.'],bg:'notte'},{img:'cravatta-paisley'},
+   {img:'tessuto-blu'},{img:'abito-tre-pezzi'},{card:['Sei settimane, due prove.','Six weeks, two fittings.'],bg:'avorio'},
+   {img:'gemelli'},{img:'taglio'},{img:'pochette-scaffale'},
+   {img:'camicie-grucce'},{img:'bottoni'},{card:['Un\'esperienza su misura.','A bespoke experience.'],bg:'notte2'}
+  ];
+  $('#igGrid').innerHTML=posts.map(function(p,i){
+    var inner=p.img?'<img src="img/'+p.img+'.jpg" alt="Post Instagram di Gessato" loading="lazy">':
+      '<div class="ig-card" style="'+(p.bg==='avorio'?'background:var(--avorio);color:var(--notte)':'background:var(--notte);color:var(--avorio);background-image:repeating-linear-gradient(90deg,rgba(255,255,255,.1) 0 1px,transparent 1px 14px)')+'">'+T(p.card[0],p.card[1])+'<small>Gessato</small></div>';
+    return '<a href="https://www.instagram.com/gessato.sartoria" target="_blank" rel="noopener" aria-label="Post Instagram '+(i+1)+'">'+inner+'</a>';
+  }).join('');
+}
+
+/* ---------- su misura: capi ---------- */
+function renderCapi(){
+  $('#capiGrid').innerHTML=CAPI.map(function(c){
+    return '<div class="capo"><img src="img/'+c.img+'.jpg" alt="'+c.it+' su misura" loading="lazy"><div class="c"><h3>'+T(c.it,c.en)+'</h3><div class="pr">'+T('da','from')+' <b>'+eur(c.da)+'</b></div><p class="small muto">'+T(c.dit,c.den)+'</p><div class="meta">'+T(c.t+' settimane · '+c.p+(c.p>1?' prove':' prova'),c.t+' weeks · '+c.p+(c.p>1?' fittings':' fitting'))+' · '+T('caparra','deposit')+' '+eur(c.cap)+'</div><a class="btn btn-o" href="#/prenota?c='+c.id+'">'+T('Prenota','Book')+'</a></div></div>';
+  }).join('');
+}
+
+/* ---------- prenotazione ---------- */
+var BK={step:0,capo:null,modo:null,day:null,slot:null,nome:'',email:'',tel:'',zona:'',note:''};
+var MESI_IT=['gennaio','febbraio','marzo','aprile','maggio','giugno','luglio','agosto','settembre','ottobre','novembre','dicembre'];
+var MESI_EN=['January','February','March','April','May','June','July','August','September','October','November','December'];
+var GG_IT=['lun','mar','mer','gio','ven','sab','dom'], GG_EN=['Mon','Tue','Wed','Thu','Fri','Sat','Sun'];
+var calY=2026,calM=11;
+function capoById(id){return CAPI.filter(function(c){return c.id===id})[0]}
+function modoById(id){return MODI.filter(function(c){return c.id===id})[0]}
+function deposit(){if(BK.modo==='video')return 0;var c=capoById(BK.capo);return c?c.cap:0;}
+function dayLabel(){if(!BK.day)return '';var d=new Date(calY,calM,BK.day);var wd=(d.getDay()+6)%7;return T(['lunedì','martedì','mercoledì','giovedì','venerdì','sabato','domenica'][wd]+' '+BK.day+' '+MESI_IT[calM],['Monday','Tuesday','Wednesday','Thursday','Friday','Saturday','Sunday'][wd]+' '+BK.day+' '+MESI_EN[calM]);}
+function isAvail(d){var dt=new Date(calY,calM,d);var wd=dt.getDay();if(wd===0)return false;if(calY===2026&&calM===11&&d<1)return false;return [3,10,17,24,25,26,31,8].indexOf(d)<0;}
+function slots(){return BK.modo==='video'?['09:30','11:00','12:15','14:30','17:45','19:00']:['09:30','11:30','15:00','18:30'];}
+function renderBK(){
+  $$('#stepper span').forEach(function(s,i){s.classList.toggle('on',i<=Math.min(BK.step,3))});
+  var h='';
+  if(BK.step===0){
+    h='<div class="bstep on"><h3>'+T('Cosa vuoi fare?','What would you like?')+'</h3><p class="muto">'+T('Scegli il capo. Se non sei sicuro, scegli la videochiamata al passo dopo.','Choose the garment. Not sure? Pick the video call in the next step.')+'</p><div class="opts">'+
+    CAPI.map(function(c){return '<button class="opt'+(BK.capo===c.id?' on':'')+'" data-capo="'+c.id+'"><b>'+T(c.it,c.en)+'</b><span>'+T('da','from')+' '+eur(c.da)+'</span><em>'+T(c.t+' settimane',c.t+' weeks')+'</em></button>'}).join('')+
+    '</div><div class="navb"><span></span><button class="btn btn-p" data-next '+(BK.capo?'':'disabled style="opacity:.4"')+'>'+T('Avanti','Next')+'</button></div></div>';
+  }
+  if(BK.step===1){
+    h='<div class="bstep on"><h3>'+T('Dove ci vediamo?','Where shall we meet?')+'</h3><p class="muto">'+T('Il sarto viene da te, oppure vieni tu in atelier.','The tailor comes to you, or you come to the atelier.')+'</p><div class="opts">'+
+    MODI.map(function(m){return '<button class="opt'+(BK.modo===m.id?' on':'')+'" data-modo="'+m.id+'"><svg viewBox="0 0 24 24">'+m.icon+'</svg><b>'+T(m.it,m.en)+'</b><span>'+T(m.dit,m.den)+'</span><em>'+(m.id==='video'?T('Gratuita','Free'):T('Caparra','Deposit')+' '+eur(capoById(BK.capo).cap))+'</em></button>'}).join('')+'</div>'+
+    (BK.modo==='casa'?'<div class="fld" style="max-width:420px"><label>'+T('Indirizzo o CAP','Address or postcode')+'</label><input id="zona" value="'+BK.zona+'" placeholder="'+T('Es. 20121','E.g. 20121')+'"></div><p class="small muto" style="margin-top:8px">'+T('Controlliamo subito se la zona è coperta.','We check right away if the area is covered.')+'</p>':'')+
+    '<div class="navb"><button class="btn btn-o" data-prev>'+T('Indietro','Back')+'</button><button class="btn btn-p" data-next '+(BK.modo?'':'disabled style="opacity:.4"')+'>'+T('Avanti','Next')+'</button></div></div>';
+  }
+  if(BK.step===2){
+    var first=(new Date(calY,calM,1).getDay()+6)%7, days=new Date(calY,calM+1,0).getDate();
+    var g=(LANG==='en'?GG_EN:GG_IT).map(function(d){return '<span class="dw">'+d+'</span>'}).join('');
+    for(var i=0;i<first;i++)g+='<span></span>';
+    for(var d=1;d<=days;d++){var av=isAvail(d);g+='<button '+(av?'class="av'+(BK.day===d?' on':'')+'" data-day="'+d+'"':'disabled')+'>'+d+'</button>';}
+    h='<div class="bstep on"><h3>'+T('Scegli giorno e ora','Pick a day and time')+'</h3><p class="muto">'+(BK.modo==='video'?T('Videochiamata di 15 minuti.','15 minute video call.'):T('La prima visita dura 60-90 minuti.','The first visit lasts 60 to 90 minutes.'))+'</p>'+
+    '<div class="cal"><div class="cal-h"><button class="ib" data-cal="-1" '+(calM===11&&calY===2026?'disabled style="opacity:.3"':'')+'>‹</button><b>'+(LANG==='en'?MESI_EN[calM]:MESI_IT[calM])+' '+calY+'</b><button class="ib" data-cal="1">›</button></div><div class="cal-g">'+g+'</div></div>'+
+    (BK.day?'<div class="slots">'+slots().map(function(s){return '<button data-slot="'+s+'" class="'+(BK.slot===s?'on':'')+'">'+s+'</button>'}).join('')+'</div>':'')+
+    '<div class="navb"><button class="btn btn-o" data-prev>'+T('Indietro','Back')+'</button><button class="btn btn-p" data-next '+(BK.day&&BK.slot?'':'disabled style="opacity:.4"')+'>'+T('Avanti','Next')+'</button></div></div>';
+  }
+  if(BK.step===3){
+    var dep=deposit();
+    h='<div class="bstep on"><h3>'+T('I tuoi dati','Your details')+'</h3>'+
+    '<div class="row2"><div class="fld"><label>'+T('Nome e cognome','Full name')+'</label><input id="f-nome" value="'+(BK.nome||'Marco Rossi')+'"></div><div class="fld"><label>'+T('Telefono','Phone')+'</label><input id="f-tel" value="'+(BK.tel||'+39 333 000 0000')+'"></div></div>'+
+    '<div class="fld"><label>Email</label><input id="f-email" value="'+(BK.email||'marco.rossi@example.com')+'"></div>'+
+    '<div class="fld"><label>'+T('Note per il sarto (facoltativo)','Notes for the tailor (optional)')+'</label><textarea id="f-note" placeholder="'+T('Occasione, tessuto che hai in mente, citofono...','Occasion, cloth in mind, doorbell...')+'">'+BK.note+'</textarea></div>'+
+    (dep?'<div class="pay"><div style="display:flex;justify-content:space-between;align-items:baseline;gap:10px;margin-bottom:10px"><b style="font-family:var(--serif);font-size:16px;font-weight:400;color:var(--notte)">'+T('Caparra','Deposit')+' '+eur(dep)+'</b><span class="small muto">'+T('scalata dal prezzo finale','taken off the final price')+'</span></div><div class="cards"><span>VISA</span><span>MASTERCARD</span><span>APPLE PAY</span><span>PAYPAL</span></div><div class="fld"><label>'+T('Carta','Card')+'</label><input value="4242 4242 4242 4242"></div><div class="row2"><div class="fld"><label>'+T('Scadenza','Expiry')+'</label><input value="12/28"></div><div class="fld"><label>CVC</label><input value="123"></div></div><p class="small muto" style="margin-top:12px">'+T('Rimborsabile fino a 48 ore prima dell\'appuntamento.','Refundable up to 48 hours before the appointment.')+'</p></div>':'<p class="pay" style="margin-top:20px">'+T('La videochiamata è gratuita: nessun pagamento.','The video call is free: no payment.')+'</p>')+
+    '<div class="navb"><button class="btn btn-o" data-prev>'+T('Indietro','Back')+'</button><button class="btn btn-p" data-confirm>'+(dep?T('Paga la caparra','Pay the deposit')+' '+eur(dep):T('Conferma','Confirm'))+'</button></div><p class="small muto" style="text-align:right;margin-top:10px">'+T('Demo: nessun pagamento reale','Demo: no real payment')+'</p></div>';
+  }
+  if(BK.step===4){
+    var m=modoById(BK.modo), c=capoById(BK.capo);
+    h='<div class="bstep on done"><svg class="mono" style="width:64px;height:64px;color:var(--notte);margin:0 auto;display:block"><use href="#mono"/></svg><h2 style="margin-top:18px">'+T('A presto, ','See you soon, ')+(BK.nome||'Marco').split(' ')[0]+'.</h2><p class="muto" style="margin-top:10px">'+T('Ti abbiamo mandato la conferma via email e WhatsApp.','We sent the confirmation by email and WhatsApp.')+'</p>'+
+    '<div class="ticket"><div style="display:flex;justify-content:space-between;align-items:center"><span style="font-family:var(--serif);letter-spacing:.28em;font-size:17px;color:var(--notte)">GESSATO</span><span class="pill">'+T('Confermato','Confirmed')+'</span></div><div class="t">'+(BK.modo==='casa'?T('Il sarto viene da te.','Your tailor, at your door.'):BK.modo==='video'?T('Ci vediamo in video.','See you on video.'):T('Ti aspettiamo in atelier.','See you in the atelier.'))+'</div><div class="d">'+dayLabel()+' · '+T('ore','at')+' '+BK.slot+'<br>'+T(m.it,m.en)+' · '+T(c.it,c.en)+(deposit()?'<br>'+T('Caparra versata','Deposit paid')+' '+eur(deposit()):'')+'</div></div>'+
+    '<div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap"><button class="btn btn-o" data-ics>'+T('Aggiungi al calendario','Add to calendar')+'</button><a href="#/area-cliente" class="btn btn-p">'+T('Vai all\'area cliente','Go to my account')+'</a></div></div>';
+  }
+  $('#bkSteps').innerHTML=h;
+  renderSum();
+}
+function renderSum(){
+  var c=capoById(BK.capo), m=modoById(BK.modo), dep=deposit();
+  $('#bkSum').innerHTML='<h4>'+T('Riepilogo','Summary')+'</h4><dl><dt>'+T('Capo','Garment')+'</dt><dd>'+(c?T(c.it,c.en):'·')+'</dd><dt>'+T('Dove','Where')+'</dt><dd>'+(m?T(m.it,m.en):'·')+'</dd><dt>'+T('Quando','When')+'</dt><dd>'+(BK.day?dayLabel()+(BK.slot?', '+BK.slot:''):'·')+'</dd><dt>'+T('Prezzo','Price')+'</dt><dd>'+(c?T('da ','from ')+eur(c.da):'·')+'</dd></dl>'+
+  '<div class="tot">'+T('Da pagare ora','Due now')+'<b>'+(m?eur(dep):'·')+'</b>'+(dep?T('Caparra scalata dal prezzo finale.','Deposit taken off the final price.'):(m?T('Videochiamata gratuita.','Free video call.'):''))+'</div>';
+}
+
+/* ---------- boutique ---------- */
+var curCat='tutto';
+function renderShop(){
+  $('#filters').innerHTML=CATS.map(function(c){return '<button data-cat="'+c[0]+'" class="'+(curCat===c[0]?'on':'')+'">'+T(c[1],c[2])+'</button>'}).join('');
+  $('#prods').innerHTML=PRODS.filter(function(p){return curCat==='tutto'||p.cat===curCat}).map(function(p){
+    return '<button class="prod" data-prod="'+p.id+'"><div class="im"><img src="img/'+p.img+'.jpg" alt="'+p.it+'" loading="lazy">'+(p.tag?'<span class="tag">'+T(p.tag[0],p.tag[1])+'</span>':'')+'</div><div class="n">'+T(p.it,p.en)+'</div><div class="p">'+eur(p.p)+'</div></button>';
+  }).join('');
+}
+var pmState={size:null,q:1};
+function openProd(id){
+  var p=PRODS.filter(function(x){return x.id===id})[0]; pmState={size:p.size?'40':null,q:1,id:id};
+  openModal('<div class="pm"><img src="img/'+p.img+'.jpg" alt="'+p.it+'"><div class="c"><div class="eyebrow">Boutique</div><h3>'+T(p.it,p.en)+'</h3><div class="pr">'+eur(p.p)+'</div><p class="muto">'+T(p.dit,p.den)+'</p>'+
+  (p.size?'<div class="fld"><label>'+T('Taglia collo','Collar size')+'</label><div class="sizes">'+['38','39','40','41','42','43','44'].map(function(s){return '<button data-size="'+s+'" class="'+(s==='40'?'on':'')+'">'+s+'</button>'}).join('')+'</div></div><p class="small muto">'+T('Vuoi la camicia su misura? Dopo la prima visita la riordini dall\'area cliente.','Want it bespoke? After the first visit, reorder it from your account.')+'</p>':'')+
+  '<div style="display:flex;gap:12px;margin-top:10px;align-items:center"><div class="qty"><button data-q="-1">−</button><span id="pmq">1</span><button data-q="1">+</button></div><button class="btn btn-p" style="flex:1" data-addprod="'+p.id+'">'+T('Aggiungi al carrello','Add to bag')+'</button></div>'+
+  '<ul class="ticks" style="margin:14px 0 0"><li>'+T('Spedita in 48 ore, in scatola regalo','Shipped in 48 hours, in a gift box')+'</li><li>'+T('Reso gratuito entro 14 giorni','Free returns within 14 days')+'</li></ul></div></div>');
+}
+
+/* ---------- gift ---------- */
+var GC={id:'g1',val:250,to:'Andrea',from:'',msg:'',fmt:'digitale'};
+function giftVal(){var g=GIFTS.filter(function(x){return x.id===GC.id})[0];return g.v||GC.val;}
+function renderGiftPrev(){
+  var g=GIFTS.filter(function(x){return x.id===GC.id})[0];
+  $('#gcT').innerHTML=GC.id==='g4'?T('Un regalo<br><i>su misura</i>','A bespoke<br><i>gift</i>'):T('Un\'esperienza<br><i>su misura</i>','A bespoke<br><i>experience</i>')+'<div style="font-family:var(--sans);font-size:11px;letter-spacing:.22em;text-transform:uppercase;margin-top:14px;opacity:.85">'+T(g.it,g.en)+'</div>';
+  $('#gcTo').textContent=T('Per ','For ')+(GC.to||'...');
+  $('#gcVal').textContent=eur(giftVal());
+}
+function renderGift(){
+  $('#gcForm').innerHTML='<div class="eyebrow">'+T('1 · Scegli l\'esperienza','1 · Choose the experience')+'</div><div class="opts two" style="margin-top:10px">'+
+  GIFTS.map(function(g){return '<button class="opt'+(GC.id===g.id?' on':'')+'" data-gift="'+g.id+'"><b>'+T(g.it,g.en)+'</b><span>'+T(g.dit,g.den)+'</span><em>'+(g.v?eur(g.v):T('da 100 €','from €100'))+'</em></button>'}).join('')+'</div>'+
+  (GC.id==='g4'?'<div class="fld"><label>'+T('Importo','Amount')+'</label><select id="gcAmt">'+[100,250,500,1000].map(function(v){return '<option value="'+v+'" '+(GC.val===v?'selected':'')+'>'+eur(v)+'</option>'}).join('')+'</select></div>':'')+
+  '<div class="eyebrow" style="margin-top:36px">'+T('2 · Personalizza','2 · Personalise')+'</div><div class="row2"><div class="fld"><label>'+T('Per','To')+'</label><input id="gcToI" value="'+GC.to+'"></div><div class="fld"><label>'+T('Da parte di','From')+'</label><input id="gcFromI" value="'+GC.from+'" placeholder="'+T('Il tuo nome','Your name')+'"></div></div>'+
+  '<div class="fld"><label>'+T('Messaggio','Message')+'</label><textarea id="gcMsg" placeholder="'+T('Buon compleanno. Questa volta il sarto viene da te.','Happy birthday. This time the tailor comes to you.')+'">'+GC.msg+'</textarea></div>'+
+  '<div class="fld"><label>'+T('Formato','Format')+'</label><div class="sizes" style="gap:10px"><button style="width:auto;padding:0 18px" data-fmt="digitale" class="'+(GC.fmt==='digitale'?'on':'')+'">'+T('Digitale, via email','Digital, by email')+'</button><button style="width:auto;padding:0 18px" data-fmt="busta" class="'+(GC.fmt==='busta'?'on':'')+'">'+T('In busta regalo','Gift envelope')+'</button></div></div>'+
+  '<button class="btn btn-p btn-full" style="margin-top:30px" data-addgift>'+T('Aggiungi al carrello','Add to bag')+' · <span id="gcBtnV">'+eur(giftVal())+'</span></button><p class="small muto" style="margin-top:12px">'+T('Valida 12 mesi. Chi la riceve prenota la visita online con il codice.','Valid 12 months. The recipient books the visit online with the code.')+'</p>';
+  renderGiftPrev();
+}
+
+/* ---------- area cliente ---------- */
+var logged=false; try{logged=localStorage.getItem('gs-log')==='1'}catch(e){}
+var RO={tess:0,collo:0,pols:0,q:2};
+var TESS=[['Popeline bianco','White poplin','#f7f6f1'],['Oxford azzurro','Blue oxford','#bcd0e6'],['Righe blu','Navy stripe','repeating-linear-gradient(90deg,#fff 0 5px,#4a6390 5px 7px)'],['Twill rosa','Pink twill','#ecd3d1'],['Lino sabbia','Sand linen','#ddd0b8']];
+function renderAcc(){
+  $('#accTitle').innerHTML=logged?T('Bentornato, Marco.','Welcome back, Marco.'):T('Area cliente.','My account.');
+  if(!logged){
+    $('#acc').innerHTML='<div class="login"><div class="eyebrow">'+T('Accedi','Sign in')+'</div><h3>'+T('Le tue misure ti aspettano.','Your measures are waiting.')+'</h3><div class="fld"><label>Email</label><input value="marco.rossi@example.com"></div><div class="fld"><label>Password</label><input type="password" value="demodemo"></div><button class="btn btn-p btn-full" style="margin-top:22px" data-login>'+T('Entra (demo)','Sign in (demo)')+'</button><p class="small muto" style="margin-top:14px;text-align:center">'+T('Il profilo si crea alla prima visita del sarto.','Your profile is created at the tailor\'s first visit.')+'</p></div>';
+    return;
+  }
+  var meas=[['Collo','Collar',40,'cm'],['Torace','Chest',102,'cm'],['Vita','Waist',88,'cm'],['Spalle','Shoulders',46,'cm'],['Manica','Sleeve',64,'cm'],['Lunghezza','Length',78,'cm'],['Polso','Wrist',17.5,'cm'],['Bicipite','Bicep',33,'cm'],['Fianchi','Hips',100,'cm']];
+  $('#acc').innerHTML='<div class="next"><div><div class="eyebrow" style="color:var(--ottone-chiaro);margin-bottom:6px">'+T('Prossimo appuntamento','Next appointment')+'</div><b>'+T('Seconda prova giacca · martedì 9 dicembre, 18:30','Second jacket fitting · Tuesday 9 December, 6:30 pm')+'</b><div style="opacity:.8;font-size:14px">'+T('A domicilio · Il sarto porta la giacca quasi finita','At home · The tailor brings the almost finished jacket')+'</div></div><a href="#/prenota" class="btn btn-l">'+T('Sposta','Reschedule')+'</a></div>'+
+  '<div class="acc"><div class="box"><div class="eyebrow">'+T('Le tue misure','Your measures')+'</div><h3>'+T('Salvate il 14 ottobre 2026','Saved on 14 October 2026')+'</h3><p class="small muto">'+T('Prese a domicilio. Aggiornate a ogni prova.','Taken at home. Updated at every fitting.')+'</p><div class="meas">'+
+  meas.map(function(m){return '<div><span>'+T(m[0],m[1])+'</span><b>'+String(m[2]).replace('.',LANG==='en'?'.':',')+'<small>'+m[3]+'</small></b></div>'}).join('')+'</div>'+
+  '<div class="eyebrow" style="margin-top:34px">'+T('I tuoi capi','Your garments')+'</div><ul class="orders"><li><div><b>'+T('Giacca blu, fresco di lana','Navy jacket, fresco wool')+'</b><div class="small muto">'+T('In lavorazione · seconda prova il 9/12','In progress · second fitting on 9/12')+'</div></div><span class="pill">'+T('In prova','Fitting')+'</span></li><li><div><b>'+T('Abito grigio, flanella','Grey suit, flannel')+'</b><div class="small muto">'+T('Consegnato a marzo 2026','Delivered March 2026')+'</div></div><span class="pill" style="border-color:var(--notte);color:var(--notte)">'+T('Consegnato','Delivered')+'</span></li><li><div><b>'+T('3 camicie, popeline','3 shirts, poplin')+'</b><div class="small muto">'+T('Consegnate a ottobre 2026','Delivered October 2026')+'</div></div><span class="pill" style="border-color:var(--notte);color:var(--notte)">'+T('Consegnate','Delivered')+'</span></li></ul>'+
+  '<button class="link" style="margin-top:26px" data-logout>'+T('Esci','Sign out')+'</button></div>'+
+  '<div class="box" style="background:var(--avorio);border-color:var(--avorio)"><div class="eyebrow">'+T('Riordina','Reorder')+'</div><h3>'+T('Camicia su misura, con le tue misure.','Bespoke shirt, on your measures.')+'</h3><p class="small muto">'+T('Nessuna nuova visita: la tagliamo sulle misure salvate e arriva in 3 settimane.','No new visit: we cut it on your saved measures and it arrives in 3 weeks.')+'</p>'+
+  '<div class="fld"><label>'+T('Tessuto','Cloth')+' · <span style="color:var(--notte)">'+T(TESS[RO.tess][0],TESS[RO.tess][1])+'</span></label><div class="sw">'+TESS.map(function(t,i){return '<button data-tess="'+i+'" class="'+(RO.tess===i?'on':'')+'" style="background:'+t[2]+'" aria-label="'+t[0]+'"></button>'}).join('')+'</div></div>'+
+  '<div class="fld"><label>'+T('Collo','Collar')+'</label><div class="sizes" style="gap:8px">'+[['Francese','Cutaway'],['Button down','Button-down'],['Coreano','Band']].map(function(c,i){return '<button style="width:auto;padding:0 16px" data-collo="'+i+'" class="'+(RO.collo===i?'on':'')+'">'+T(c[0],c[1])+'</button>'}).join('')+'</div></div>'+
+  '<div class="fld"><label>'+T('Polsino','Cuff')+'</label><div class="sizes" style="gap:8px">'+[['Semplice','Barrel'],['Per gemelli','French cuff']].map(function(c,i){return '<button style="width:auto;padding:0 16px" data-pols="'+i+'" class="'+(RO.pols===i?'on':'')+'">'+T(c[0],c[1])+'</button>'}).join('')+'</div></div>'+
+  '<div style="display:flex;gap:12px;margin-top:26px;align-items:center;flex-wrap:wrap"><div class="qty"><button data-roq="-1">−</button><span>'+RO.q+'</span><button data-roq="1">+</button></div><button class="btn btn-p" style="flex:1;min-width:200px" data-reorder>'+T('Aggiungi','Add')+' · '+eur(180*RO.q)+'</button></div></div></div>';
+}
+
+/* ---------- router ---------- */
+var VIEWS=['home','su-misura','prenota','boutique','tessuti','atelier','gift-card','area-cliente','faq'];
+function route(){
+  var h=location.hash.replace(/^#\/?/,''), parts=h.split('?'), v=parts[0]||'home', q=new URLSearchParams(parts[1]||'');
+  if(VIEWS.indexOf(v)<0)v='home';
+  $$('.view').forEach(function(s){s.classList.toggle('on',s.dataset.view===v)});
+  $$('nav.mn a').forEach(function(a){a.classList.toggle('on',a.dataset.nav===v||(v==='prenota'&&a.dataset.nav==='su-misura'))});
+  if(v==='prenota'){
+    if(q.get('c')){BK={step:1,capo:q.get('c'),modo:null,day:null,slot:null,nome:'',email:'',tel:'',zona:'',note:''};}
+    else if(q.get('m')==='video'){BK={step:2,capo:'abito',modo:'video',day:null,slot:null,nome:'',email:'',tel:'',zona:'',note:''};}
+    else if(BK.step===4){BK={step:0,capo:null,modo:null,day:null,slot:null,nome:'',email:'',tel:'',zona:'',note:''};}
+    renderBK();
+  }
+  if(v==='area-cliente')renderAcc();
+  closeAll();
+  window.scrollTo(0,0);
+  document.title=(v==='home'?'Gessato · '+T('Sartoria su misura · Il sarto viene da te','Bespoke tailoring · Your tailor, at your door'):'Gessato · '+({'su-misura':T('Su misura','Bespoke'),'prenota':T('Prenota','Book'),'boutique':'Boutique','tessuti':T('Tessuti','Cloths'),'atelier':'Atelier','gift-card':'Gift card','area-cliente':T('Area cliente','My account'),'faq':'FAQ'})[v]);
+}
+
+/* ---------- lingua ---------- */
+function applyLang(){
+  document.documentElement.lang=LANG;
+  $$('[data-en]').forEach(function(el){ if(el.dataset.it===undefined)el.dataset.it=el.innerHTML; el.innerHTML=LANG==='en'?el.dataset.en:el.dataset.it; });
+  $$('.lang button').forEach(function(b){b.classList.toggle('on',b.dataset.lang===LANG)});
+  renderIG();renderCapi();renderShop();renderGift();renderDrawer();
+  if($('[data-view="prenota"]').classList.contains('on'))renderBK(); else renderSum();
+  renderAcc();
+}
+
+/* ---------- eventi ---------- */
+document.addEventListener('click',function(e){
+  var t=e.target.closest('button,a'); if(!t)return;
+  var d=t.dataset;
+  if(t.classList.contains('js-close')){closeAll();}
+  if(t.classList.contains('js-wa')){e.preventDefault();toast(T('Demo: qui si apre la chat WhatsApp dell\'atelier.','Demo: this opens the atelier WhatsApp chat.'));return;}
+  if(d.lang){LANG=d.lang;try{localStorage.setItem('gs-lang',LANG)}catch(x){} applyLang();route();return;}
+  if(t.id==='cartBtn'){renderDrawer();openDrawer();return;}
+  if(t.id==='burger'){$('#mm').classList.toggle('on');return;}
+  if(t.id==='checkout'){checkout();return;}
+  if(t.id==='payNow'){paid();return;}
+  if(d.rm!==undefined){cart.splice(+d.rm,1);saveCart();renderDrawer();return;}
+  /* booking */
+  if(d.capo){BK.capo=d.capo;renderBK();return;}
+  if(d.modo){BK.modo=d.modo;renderBK();return;}
+  if(d.cal){calM+=+d.cal;if(calM>11){calM=0;calY++}if(calM<0){calM=11;calY--}BK.day=null;BK.slot=null;renderBK();return;}
+  if(d.day){BK.day=+d.day;BK.slot=null;renderBK();return;}
+  if(d.slot){BK.slot=d.slot;renderBK();return;}
+  if(d.next!==undefined){if(t.disabled)return; if(BK.step===1&&$('#zona'))BK.zona=$('#zona').value; BK.step++;renderBK();window.scrollTo({top:0,behavior:'smooth'});return;}
+  if(d.prev!==undefined){BK.step--;renderBK();return;}
+  if(d.confirm!==undefined){BK.nome=$('#f-nome').value;BK.email=$('#f-email').value;BK.tel=$('#f-tel').value;BK.note=$('#f-note').value;t.textContent=T('Pagamento in corso...','Processing...');setTimeout(function(){BK.step=4;renderBK();window.scrollTo({top:0,behavior:'smooth'});},900);return;}
+  if(d.ics!==undefined){toast(T('Demo: qui si scarica l\'invito per il calendario.','Demo: this downloads the calendar invite.'));return;}
+  /* shop */
+  if(d.cat){curCat=d.cat;renderShop();return;}
+  if(d.prod){openProd(d.prod);return;}
+  if(d.size){$$('[data-size]').forEach(function(b){b.classList.toggle('on',b===t)});pmState.size=d.size;return;}
+  if(d.q){pmState.q=Math.max(1,pmState.q+(+d.q));$('#pmq').textContent=pmState.q;return;}
+  if(d.addprod){var p=PRODS.filter(function(x){return x.id===d.addprod})[0];addCart({key:p.id+(pmState.size||''),it:p.it,en:p.en,p:p.p,q:pmState.q,img:p.img,v:pmState.size?['Collo '+pmState.size,'Collar '+pmState.size]:null});$('#modal').classList.remove('on');return;}
+  /* gift */
+  if(d.gift){GC.id=d.gift;renderGift();return;}
+  if(d.fmt){GC.fmt=d.fmt;$$('[data-fmt]').forEach(function(b){b.classList.toggle('on',b===t)});return;}
+  if(d.addgift!==undefined){var g=GIFTS.filter(function(x){return x.id===GC.id})[0];addCart({key:'gift'+Date.now(),gift:1,it:'Gift card · '+g.it,en:'Gift card · '+g.en,p:giftVal(),q:1,v:[(GC.to?'Per '+GC.to+' · ':'')+(GC.fmt==='busta'?'In busta regalo':'Digitale'),(GC.to?'For '+GC.to+' · ':'')+(GC.fmt==='busta'?'Gift envelope':'Digital')]});return;}
+  /* area */
+  if(d.login!==undefined){logged=true;try{localStorage.setItem('gs-log','1')}catch(x){}renderAcc();return;}
+  if(d.logout!==undefined){logged=false;try{localStorage.removeItem('gs-log')}catch(x){}renderAcc();return;}
+  if(d.tess){RO.tess=+d.tess;renderAcc();return;}
+  if(d.collo){RO.collo=+d.collo;renderAcc();return;}
+  if(d.pols){RO.pols=+d.pols;renderAcc();return;}
+  if(d.roq){RO.q=Math.max(1,RO.q+(+d.roq));renderAcc();return;}
+  if(d.reorder!==undefined){var tt=TESS[RO.tess];var co=[['Francese','Cutaway'],['Button down','Button-down'],['Coreano','Band']][RO.collo];var po=[['polsino semplice','barrel cuff'],['polsino per gemelli','French cuff']][RO.pols];
+    addCart({key:'ro'+RO.tess+RO.collo+RO.pols,it:'Camicia su misura',en:'Bespoke shirt',p:180,q:RO.q,img:'camicia-tavolo',v:[tt[0]+' · '+co[0]+' · '+po[0]+' · misure salvate',tt[1]+' · '+co[1]+' · '+po[1]+' · saved measures']});return;}
+});
+document.addEventListener('input',function(e){
+  var id=e.target.id;
+  if(id==='gcToI'){GC.to=e.target.value;renderGiftPrev();}
+  if(id==='gcFromI'){GC.from=e.target.value;}
+  if(id==='gcMsg'){GC.msg=e.target.value;}
+});
+document.addEventListener('change',function(e){if(e.target.id==='gcAmt'){GC.val=+e.target.value;renderGiftPrev();$('#gcBtnV').textContent=eur(giftVal());}});
+$('#ov').addEventListener('click',closeAll);
+document.addEventListener('keydown',function(e){if(e.key==='Escape')closeAll();});
+window.addEventListener('hashchange',route);
+
+renderBadge();applyLang();route();
+})();
+</script>
+</body>
+</html>

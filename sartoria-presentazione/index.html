@@ -1,0 +1,420 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Il sarto viene da te · Proposta sito sartoria su misura</title>
+<meta name="description" content="Proposta di Looking Up Studio: come vendere online la sartoria su misura. Struttura del sito, demo, brand e Instagram di esempio.">
+<meta property="og:title" content="Il sarto viene da te · Proposta sito">
+<meta property="og:description" content="Come vendere online la sartoria su misura. Proposta di Looking Up Studio.">
+<meta property="og:image" content="https://www.lookingupstudio.com/sartoria-presentazione/img/og.jpg">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --notte:#1a2233; --notte2:#20293c; --avorio:#f6f6f6; --gesso:#ffffff; --ottone:#b08d57; --ottone-chiaro:#cdb185;
+  --inchiostro:#1b1d22; --muto:#6b6e74; --linea:#e4e4e4;
+  --serif:'Jost', 'Helvetica Neue', Arial, sans-serif; --sans:'Inter','Helvetica Neue',Arial,sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--gesso);color:var(--inchiostro);font-family:var(--sans);font-weight:300;line-height:1.55;-webkit-font-smoothing:antialiased}
+img{display:block;max-width:100%}
+a{color:inherit}
+.slide{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:80px 6vw;position:relative;overflow:hidden}
+.slide.av{background:var(--avorio)}
+.slide.dk{background-color:var(--notte);color:#d7dae0}
+.slide.pin{background-color:var(--notte);background-image:repeating-linear-gradient(90deg,rgba(255,255,255,.08) 0 1px,transparent 1px 26px);color:#d7dae0}
+.wrap{width:100%;max-width:1200px}
+.eyebrow{font-size:12px;letter-spacing:.32em;text-transform:uppercase;color:var(--ottone);margin-bottom:22px;font-weight:400}
+.dk .eyebrow,.pin .eyebrow{color:var(--ottone-chiaro)}
+h1,h2,h3{font-family:var(--serif);font-weight:300;letter-spacing:-.005em;color:var(--notte);line-height:1.04}
+.dk h1,.dk h2,.dk h3,.pin h1,.pin h2,.pin h3{color:var(--avorio)}
+h1{font-size:clamp(48px,7.74vw,114px)}
+h2{font-size:clamp(33px,4.4vw,60px);margin-bottom:26px}
+h3{font-size:24px;margin-bottom:8px}
+p{font-size:18px;max-width:660px}
+.lead{font-family:var(--serif);font-weight:300;font-style:normal;font-size:clamp(19px,2.06vw,27px);color:var(--muto);max-width:780px;line-height:1.3}
+.dk .lead,.pin .lead{color:var(--ottone-chiaro)}
+.rule{width:64px;height:0;border-top:1.5px dashed var(--ottone);margin:34px 0}
+.num{position:absolute;bottom:26px;right:6vw;font-size:12px;letter-spacing:.2em;color:var(--muto)}
+.dk .num,.pin .num{color:rgba(255,255,255,.45)}
+.grid{display:grid;gap:28px}
+.g2{grid-template-columns:repeat(2,1fr)}.g3{grid-template-columns:repeat(3,1fr)}.g4{grid-template-columns:repeat(4,1fr)}.g5{grid-template-columns:repeat(5,1fr)}
+.card{border-top:1px solid var(--notte);padding-top:20px}
+.dk .card,.pin .card{border-color:rgba(205,177,133,.5)}
+.card p{font-size:15.5px;color:var(--muto)}
+.dk .card p,.pin .card p{color:#b8bcc4}
+.card .k{font-family:var(--serif);font-size:17px;color:var(--ottone);margin-bottom:10px}
+.card h3{font-size:22px}
+.card .w{font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--notte);margin-top:12px;font-weight:400}
+.dk .card .w{color:var(--ottone-chiaro)}
+.small{font-size:13px;color:var(--muto)}
+.x{font-size:12px;letter-spacing:.26em;text-transform:uppercase;color:rgba(255,255,255,.6);margin-top:44px}
+.split{display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:center}
+.ph{width:100%;height:68vh;max-height:640px;object-fit:cover;border-radius:2px}
+.statement{background:var(--ottone)}
+.statement h2{color:var(--notte);font-size:clamp(46px,7vw,104px);max-width:1050px}
+.statement p{color:#2b2418;font-size:20px}
+.statement .eyebrow{color:#3a3020}
+.statement .num{color:#4a3d27}
+.ref{background:#fff;border:1px solid var(--linea);padding:24px 22px;border-radius:2px;display:flex;flex-direction:column;gap:8px}
+.ref b{font-family:var(--serif);font-size:21px;font-weight:400;color:var(--notte);line-height:1.1}
+.ref .c{font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--ottone)}
+.ref p{font-size:14.5px;color:var(--muto)}
+.ref .take{margin-top:auto;padding-top:12px;border-top:1px dashed var(--linea);font-size:13.5px;color:var(--notte)}
+.map{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.mbox{background:rgba(255,255,255,.06);border:1px solid rgba(205,177,133,.35);padding:22px 20px;border-radius:2px}
+.mbox b{font-family:var(--serif);font-size:21px;font-weight:400;color:var(--avorio);display:block;margin-bottom:6px}
+.mbox span{font-size:13.5px;color:#b8bcc4;display:block;line-height:1.5}
+.mbox.hi{background:var(--avorio);border-color:var(--avorio)}
+.mbox.hi b{color:var(--notte)}.mbox.hi span{color:var(--muto)}
+.mbox em{font-style:normal;font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--ottone-chiaro);display:block;margin-bottom:8px}
+.mbox.hi em{color:var(--ottone)}
+.flow{display:grid;grid-template-columns:repeat(6,1fr);gap:0;margin-top:30px;position:relative}
+.flow:before{content:"";position:absolute;left:4%;right:4%;top:22px;border-top:1.5px dashed var(--ottone)}
+.flow div{position:relative;padding-right:18px}
+.flow i{display:flex;width:44px;height:44px;border-radius:50%;background:var(--notte);color:var(--avorio);align-items:center;justify-content:center;font-style:normal;font-family:var(--serif);font-size:17px;margin-bottom:18px;position:relative}
+.flow div.on i{background:var(--ottone)}
+.flow b{font-family:var(--serif);font-size:20px;font-weight:400;color:var(--notte);display:block;line-height:1.1;margin-bottom:6px}
+.flow span{font-size:14px;color:var(--muto);display:block}
+.shot{border-radius:6px;overflow:hidden;box-shadow:0 30px 70px rgba(26,34,51,.22),0 0 0 1px rgba(26,34,51,.08);background:#fff}
+.shot .bar{height:28px;background:#eeeeee;display:flex;align-items:center;gap:6px;padding:0 12px}
+.shot .bar i{width:9px;height:9px;border-radius:50%;background:#cfcfcf}
+.shot .bar span{margin-left:12px;font-size:11px;color:var(--muto);letter-spacing:.02em}
+.phone{width:100%;max-width:250px;border-radius:34px;background:#111;padding:8px;box-shadow:0 30px 60px rgba(26,34,51,.3)}
+.phone img{border-radius:27px;width:100%}
+.demo-stage{display:grid;grid-template-columns:1fr 250px;gap:40px;align-items:end}
+.btn{display:inline-flex;align-items:center;justify-content:center;height:54px;padding:0 30px;background:var(--notte);color:var(--avorio);text-decoration:none;font-size:12px;letter-spacing:.2em;text-transform:uppercase;border-radius:2px;margin-top:30px}
+.dk .btn{background:var(--avorio);color:var(--notte)}
+.cap{margin-top:14px}
+.cap b{font-family:var(--serif);font-size:20px;font-weight:400;color:var(--notte);display:block}
+.cap span{font-size:14px;color:var(--muto)}
+.gcard{aspect-ratio:85/54;width:100%;max-width:440px;border-radius:14px;padding:28px 30px;display:flex;flex-direction:column;justify-content:space-between;color:var(--avorio);box-shadow:0 30px 60px rgba(0,0,0,.35);background-color:#151c2b;background-image:repeating-linear-gradient(90deg,rgba(255,255,255,.13) 0 1px,transparent 1px 20px),linear-gradient(135deg,#222c41,#121826)}
+.gcard .t{font-family:var(--serif);font-size:31px;line-height:1.02}
+.gcard .t i{color:var(--ottone-chiaro)}
+.gcard .f{display:flex;justify-content:space-between;font-size:10.5px;letter-spacing:.24em;text-transform:uppercase;opacity:.85}
+.meas{background:#fff;border-radius:4px;padding:24px 26px;max-width:440px;box-shadow:0 30px 60px rgba(0,0,0,.3);color:var(--notte)}
+.meas .r{display:grid;grid-template-columns:repeat(3,1fr);margin-top:10px}
+.meas .r div{padding:10px 0;border-bottom:1px solid #eeeeee}
+.meas .r span{display:block;font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--muto)}
+.meas .r b{font-family:var(--serif);font-size:21px;font-weight:400}
+.meas .go{margin-top:16px;background:var(--notte);color:var(--avorio);text-align:center;padding:12px;font-size:11px;letter-spacing:.2em;text-transform:uppercase}
+.swatch{display:flex;gap:10px;margin-top:20px}
+.swatch div{flex:1;height:90px;border-radius:2px;position:relative}
+.swatch span{position:absolute;left:10px;bottom:8px;font-size:10px;letter-spacing:.14em;text-transform:uppercase}
+.qs{columns:2;column-gap:56px}
+.qg{break-inside:avoid;margin-bottom:30px}
+.qg h3{font-size:24px;border-bottom:1px solid rgba(205,177,133,.45);padding-bottom:10px;margin-bottom:10px}
+.qg ol{list-style:none;counter-reset:none}
+.qg li{display:grid;grid-template-columns:30px 1fr;font-size:15px;padding:7px 0;color:#d2d5db;line-height:1.45}
+.qg li b{font-family:var(--serif);font-weight:400;color:var(--ottone-chiaro);font-size:15px}
+.dots{position:fixed;right:18px;top:50%;transform:translateY(-50%);display:flex;flex-direction:column;gap:10px;z-index:9}
+.dots a{width:7px;height:7px;border-radius:50%;background:rgba(176,141,87,.35);display:block}
+.dots a.on{background:var(--ottone)}
+@media (max-width:900px){
+  .slide{padding:76px 16px;min-height:auto}
+  .g2,.g3,.g4,.g5,.split,.demo-stage{grid-template-columns:1fr}
+  .split{gap:36px}
+  .ph{height:56vh}
+  .map{grid-template-columns:1fr 1fr;gap:10px}
+  .mbox{padding:16px 14px}.mbox b{font-size:20px}
+  .flow{grid-template-columns:1fr 1fr;gap:26px 10px}
+  .flow:before{display:none}
+  .demo-stage .phone{margin:0 auto}
+  .qs{columns:1}
+  .dots{display:none}
+  p{font-size:16.5px}
+  .statement p{font-size:17px}
+  .swatch div{height:64px}
+}
+i{font-style:normal}
+</style>
+</head>
+<body>
+<nav class="dots" id="dots"></nav>
+
+<!-- 1 copertina -->
+<section class="slide pin" id="s1">
+  <div class="wrap">
+    <div class="eyebrow">Proposta · Sito e-commerce per una sartoria su misura</div>
+    <h1>Il sarto<br>viene da te.</h1>
+    <div class="rule"></div>
+    <p class="lead">Come vendere online un abito che non si compra con un clic.</p>
+    <div class="x">Looking Up Studio · Novembre 2026 · Nome e brand di esempio: Gessato</div>
+  </div>
+</section>
+
+<!-- 2 problema -->
+<section class="slide" id="s2">
+  <div class="wrap">
+    <div class="eyebrow">Il problema</div>
+    <h2>Il su misura non si compra con un clic.</h2>
+    <p>Un e-commerce classico funziona con il pulsante «aggiungi al carrello». Un abito sartoriale no: oggi si ordina e poi una persona va a casa del cliente.</p>
+    <div class="grid g3" style="margin-top:50px">
+      <div class="card"><div class="k">01</div><h3>Servono le misure</h3><p>Più di venti misure, la postura, come il cliente ama portare il capo. Nessun modulo online le sostituisce.</p></div>
+      <div class="card"><div class="k">02</div><h3>Serve fiducia</h3><p>Si spendono migliaia di euro. Il cliente vuole conoscere il sarto e toccare i tessuti prima di decidere.</p></div>
+      <div class="card"><div class="k">03</div><h3>Serve tempo</h3><p>Sei-otto settimane, due o tre prove. Il cliente deve sapere fin dall'inizio cosa lo aspetta.</p></div>
+    </div>
+  </div>
+  <div class="num">02</div>
+</section>
+
+<!-- 3 insight -->
+<section class="slide statement" id="s3">
+  <div class="wrap">
+    <div class="eyebrow">L'idea</div>
+    <h2>Vendere l'appuntamento, non l'abito.</h2>
+    <p style="max-width:760px">Online si compra il primo passo: la visita del sarto, a casa, in atelier o in videochiamata, con una piccola caparra che blocca la data e poi si scala dal prezzo. Tutto quello che non ha bisogno di misure si vende davvero online.</p>
+  </div>
+  <div class="num">03</div>
+</section>
+
+<!-- 4 Londra -->
+<section class="slide av" id="s4">
+  <div class="wrap">
+    <div class="eyebrow">Ispirazione · Londra</div>
+    <h2>A Londra il sarto si prenota online.</h2>
+    <div class="grid g5" style="gap:14px;margin-top:10px">
+      <div class="ref"><span class="c">Savile Row</span><b>Henry Herbert</b><p>Il sarto va a casa o in ufficio del cliente. E arriva in Vespa.</p><div class="take">Il servizio diventa un racconto riconoscibile.</div></div>
+      <div class="ref"><span class="c">Mayfair e City</span><b>Edit Suits</b><p>Visite a casa o al lavoro, due showroom, prenotazione online.</p><div class="take">Si sceglie dove vedersi, in pochi passaggi.</div></div>
+      <div class="ref"><span class="c">Visiting tailor</span><b>Clifton Suits</b><p>Il «sarto che viene a trovarti», con un modulo di prenotazione semplice.</p><div class="take">Il domicilio è al centro del sito.</div></div>
+      <div class="ref"><span class="c">Bespoke</span><b>Alexandra Wood</b><p>Prima videochiamata gratuita di 15 minuti. Bespoke da 6.000 £, 10-12 settimane, 3-4 prove.</p><div class="take">Un primo passo gratuito e tempi scritti.</div></div>
+      <div class="ref"><span class="c">40 Savile Row</span><b>Savile Row Company</b><p>Servizio a domicilio e prezzi pubblicati: su misura da 1.650 £, 6-8 settimane.</p><div class="take">Prezzi «a partire da» creano fiducia.</div></div>
+    </div>
+    <p class="lead" style="margin-top:44px;font-size:24px">In comune: prezzi di partenza scritti, tempi chiari, una prenotazione che si fa dal telefono in un minuto.</p>
+  </div>
+  <div class="num">04</div>
+</section>
+
+<!-- 5 Marinella -->
+<section class="slide" id="s5">
+  <div class="wrap split">
+    <div>
+      <div class="eyebrow">Ispirazione · Napoli</div>
+      <h2>Marinella: accessori online, sartoria su appuntamento.</h2>
+      <p>Cravatte, pochette e accessori si comprano con un clic, in tutto il mondo. Il su misura resta un'esperienza in persona.</p>
+      <p style="margin-top:18px;color:var(--muto)">Per voi la boutique online è il negozio sempre aperto: porta vendite tutto l'anno, fa conoscere il marchio e spesso è la porta d'ingresso verso il primo abito.</p>
+    </div>
+    <img class="ph" src="img/cravatte-lotto.jpg" alt="Cravatte in seta di diverse fantasie" loading="lazy">
+  </div>
+  <div class="num">05</div>
+</section>
+
+<!-- 6 struttura -->
+<section class="slide dk" id="s6">
+  <div class="wrap">
+    <div class="eyebrow">La struttura del sito</div>
+    <h2>Due porte, un percorso chiaro.</h2>
+    <div class="map" style="margin-top:14px">
+      <div class="mbox hi" style="grid-column:span 2"><em>Home</em><b>Su misura · Boutique</b><span>Due strade chiare fin dalla prima schermata: farsi fare un capo, o comprare subito.</span></div>
+      <div class="mbox hi"><em>Cuore del sito</em><b>Prenota il sarto</b><span>Capo, dove vedersi, giorno e ora, caparra online.</span></div>
+      <div class="mbox hi"><em>E-commerce vero</em><b>Boutique</b><span>Cravatte, pochette, camicie in taglia, gemelli. Carrello e pagamento.</span></div>
+      <div class="mbox"><em>Su misura</em><b>Il percorso</b><span>Consulenza, misure a domicilio, prove, consegna. Tempi e prezzi «da».</span></div>
+      <div class="mbox"><em>Regalo</em><b>Gift card</b><span>«Un'esperienza su misura»: si regala la visita del sarto.</span></div>
+      <div class="mbox"><em>Fedeltà</em><b>Area cliente</b><span>Misure salvate, capi in lavorazione, riordino camicie.</span></div>
+      <div class="mbox"><em>Ispirazione</em><b>Tessuti e lookbook</b><span>Le lane, i dettagli, i capi finiti indossati.</span></div>
+      <div class="mbox"><em>Fiducia</em><b>Atelier e storia</b><span>Le mani, il laboratorio, le persone.</span></div>
+      <div class="mbox"><em>Risposte</em><b>FAQ</b><span>Tempi, prove, resi, pagamenti, zone servite.</span></div>
+      <div class="mbox"><em>Contatto</em><b>WhatsApp</b><span>Sempre a portata di pollice, su ogni pagina.</span></div>
+      <div class="mbox"><em>Lingue</em><b>Italiano · English</b><span>Per i clienti stranieri e per un domani a Londra.</span></div>
+    </div>
+  </div>
+  <div class="num">06</div>
+</section>
+
+<!-- 7 percorso cliente -->
+<section class="slide av" id="s7">
+  <div class="wrap">
+    <div class="eyebrow">Il percorso del cliente</div>
+    <h2>Dalla prima visita al riordino con un clic.</h2>
+    <div class="flow">
+      <div><i>1</i><b>Scopre</b><span>Instagram, passaparola, una gift card ricevuta.</span></div>
+      <div class="on"><i>2</i><b>Prenota online</b><span>Capo, dove, quando. Caparra o videochiamata gratuita.</span></div>
+      <div><i>3</i><b>Il sarto va da lui</b><span>Misure, tessuti, bottoni. Con calma, a casa sua.</span></div>
+      <div><i>4</i><b>Prove</b><span>Due prove, avvisi via email e WhatsApp.</span></div>
+      <div><i>5</i><b>Consegna</b><span>A mano. Le misure restano salvate.</span></div>
+      <div class="on"><i>6</i><b>Riordina</b><span>Le camicie successive si ordinano online.</span></div>
+    </div>
+    <p class="lead" style="margin-top:56px;font-size:25px">Il sito non sostituisce il sarto: gli porta i clienti già pronti, con la data in agenda.</p>
+  </div>
+  <div class="num">07</div>
+</section>
+
+<!-- 8 demo -->
+<section class="slide" id="s8">
+  <div class="wrap">
+    <div class="eyebrow">La demo</div>
+    <h2>Si può già provare.</h2>
+    <div class="demo-stage" style="margin-top:10px">
+      <div class="shot"><div class="bar"><i></i><i></i><i></i><span>lookingupstudio.com/sartoria-demo</span></div><img src="img/demo-home.jpg" alt="Home page del sito demo" loading="lazy"></div>
+      <div class="phone"><img src="img/demo-home-m.jpg" alt="Home page del sito demo sul telefono" loading="lazy"></div>
+    </div>
+    <div style="display:flex;gap:30px;align-items:center;flex-wrap:wrap">
+      <a class="btn" href="https://www.lookingupstudio.com/sartoria-demo/" target="_blank" rel="noopener">Apri la demo</a>
+      <p class="small" style="margin-top:30px;max-width:520px">Prenotazione, carrello, gift card, area cliente e cambio lingua funzionano davvero. Nome, prezzi e foto sono di esempio.</p>
+    </div>
+  </div>
+  <div class="num">08</div>
+</section>
+
+<!-- 9 demo dettagli -->
+<section class="slide av" id="s9">
+  <div class="wrap">
+    <div class="eyebrow">Dentro la demo</div>
+    <h2>Le tre pagine che fanno la differenza.</h2>
+    <div class="grid g3" style="gap:24px">
+      <div><div class="shot"><img src="img/demo-pren.jpg" alt="Prenotazione con calendario" loading="lazy"></div><div class="cap"><b>Prenota il sarto</b><span>Capo, a domicilio o in atelier o in video, calendario, caparra scalata dal prezzo.</span></div></div>
+      <div><div class="shot"><img src="img/demo-gift.jpg" alt="Gift card esperienza su misura" loading="lazy"></div><div class="cap"><b>Gift card</b><span>Si sceglie l'esperienza, si scrive la dedica, si vede l'anteprima.</span></div></div>
+      <div><div class="shot"><img src="img/demo-area.jpg" alt="Area cliente con le misure salvate" loading="lazy"></div><div class="cap"><b>Area cliente</b><span>Misure salvate, prossima prova, riordino delle camicie.</span></div></div>
+    </div>
+  </div>
+  <div class="num">09</div>
+</section>
+
+<!-- 10 due idee -->
+<section class="slide pin" id="s10">
+  <div class="wrap">
+    <div class="eyebrow">Due idee forti</div>
+    <h2>Rendere online ciò che online non si compra.</h2>
+    <div class="grid g2" style="gap:56px;margin-top:20px;align-items:start">
+      <div>
+        <div class="gcard"><div style="display:flex;justify-content:space-between;font-size:10.5px;letter-spacing:.26em;text-transform:uppercase;opacity:.8"><span>Gessato</span><span>Gift card</span></div><div class="t">Un'esperienza<br><i>su misura</i></div><div class="f"><span>Per Andrea</span><span>Camicia su misura</span></div></div>
+        <h3 style="margin-top:30px">La gift card «esperienza»</h3>
+        <p style="color:#b8bcc4;font-size:16px">Il regalo per chi ha già tutto: la visita del sarto e un capo fatto per lui. Perfetta per Natale, compleanni, matrimoni. Chi la riceve diventa un cliente.</p>
+      </div>
+      <div>
+        <div class="meas"><div style="font-size:10.5px;letter-spacing:.22em;text-transform:uppercase;color:var(--ottone)">Le tue misure · salvate</div><div class="r"><div><span>Collo</span><b>40</b></div><div><span>Torace</span><b>102</b></div><div><span>Manica</span><b>64</b></div><div><span>Spalle</span><b>46</b></div><div><span>Vita</span><b>88</b></div><div><span>Polso</span><b>17,5</b></div></div><div class="go">Riordina camicia · 180 €</div></div>
+        <h3 style="margin-top:30px">Le misure salvate</h3>
+        <p style="color:#b8bcc4;font-size:16px">Dopo la prima visita le misure restano nell'area cliente. La seconda, la terza, la decima camicia si ordinano online, senza nuove visite.</p>
+      </div>
+    </div>
+  </div>
+  <div class="num">10</div>
+</section>
+
+<!-- 11 brand -->
+<section class="slide" id="s11">
+  <div class="wrap">
+    <div class="eyebrow">Brand identity di esempio</div>
+    <h2>Gessato.</h2>
+    <p>Il gesso con cui il sarto segna il tessuto, e il gessato, il tessuto rigato più classico. Un nome di esempio per mostrare il metodo: con i founder si parte dal loro nome, o se ne sceglie uno insieme.</p>
+    <div class="grid g2" style="gap:24px;margin-top:40px">
+      <div class="shot"><img src="img/brand-logo.jpg" alt="Logo e monogramma di esempio" loading="lazy"></div>
+      <div class="shot"><img src="img/brand-app.jpg" alt="Etichetta, biglietto appuntamento e gift card" loading="lazy"></div>
+    </div>
+    <div class="swatch">
+      <div style="background:#1a2233;color:#f6f6f6"><span>Blu notte</span></div>
+      <div style="background:#ffffff;color:#1a2233;border:1px solid var(--linea)"><span>Bianco</span></div>
+      <div style="background:#f6f6f6;color:#1a2233;border:1px solid var(--linea)"><span>Grigio chiarissimo</span></div>
+      <div style="background:#b08d57;color:#1a2233"><span>Ottone</span></div>
+    </div>
+    <p class="small" style="margin-top:16px">Caratteri: Jost leggero per titoli e logo, Inter per i testi. Sfondi bianchi, blu notte e ottone come accenti. Tono: discreto, preciso, caldo, senza fretta.</p>
+  </div>
+  <div class="num">11</div>
+</section>
+
+<!-- 12 instagram -->
+<section class="slide av" id="s12">
+  <div class="wrap split">
+    <img src="img/instagram.png" alt="Mockup del profilo Instagram di esempio" loading="lazy" style="border-radius:8px">
+    <div>
+      <div class="eyebrow">Instagram</div>
+      <h2>Il profilo che porta al sito.</h2>
+      <p>Foto vere del lavoro, mani e tessuti, alternate a poche grafiche del brand. In bio il servizio in una riga e il link alla prenotazione.</p>
+      <div class="grid" style="gap:0;margin-top:26px">
+        <div class="card" style="padding:14px 0;border-color:var(--linea)"><p style="color:var(--notte)"><b style="font-weight:500">Highlight:</b> Su misura, Tessuti, A domicilio, Clienti, Gift card</p></div>
+        <div class="card" style="padding:14px 0;border-color:var(--linea)"><p style="color:var(--notte)"><b style="font-weight:500">Sul sito:</b> gli ultimi post in home, aggiornati da soli</p></div>
+        <div class="card" style="padding:14px 0;border-color:var(--linea)"><p style="color:var(--notte)"><b style="font-weight:500">Reel:</b> il sarto che arriva, il gesso sul tessuto, la prova</p></div>
+      </div>
+    </div>
+  </div>
+  <div class="num">12</div>
+</section>
+
+<!-- 13 prossimi passi -->
+<section class="slide statement" id="s13">
+  <div class="wrap">
+    <div class="eyebrow">Prossimi passi</div>
+    <h2 style="font-size:clamp(42px,5.6vw,80px)">Se la direzione vi convince, si parte.</h2>
+    <div class="grid g4" style="margin-top:36px">
+      <div class="card" style="border-color:#3a3020"><div class="k" style="color:var(--notte)">01</div><p style="color:#2b2418">Rispondete alle domande della pagina seguente, anche a voce.</p></div>
+      <div class="card" style="border-color:#3a3020"><div class="k" style="color:var(--notte)">02</div><p style="color:#2b2418">Definiamo insieme nome e brand, capi, prezzi di partenza, caparra e zone servite.</p></div>
+      <div class="card" style="border-color:#3a3020"><div class="k" style="color:var(--notte)">03</div><p style="color:#2b2418">Vi mandiamo la struttura definitiva del sito e il preventivo.</p></div>
+      <div class="card" style="border-color:#3a3020"><div class="k" style="color:var(--notte)">04</div><p style="color:#2b2418">Foto e video in atelier, poi sviluppo e messa online.</p></div>
+    </div>
+  </div>
+  <div class="num">13</div>
+</section>
+
+<!-- 14 domande -->
+<section class="slide dk" id="s14">
+  <div class="wrap">
+    <div class="eyebrow">Domande per voi</div>
+    <h2>Per costruirlo su misura.</h2>
+    <div class="qs" style="margin-top:20px">
+      <div class="qg"><h3>Il progetto</h3><ol>
+        <li><b>1</b>Perché adesso un sito e-commerce? Cosa deve cambiare tra un anno (più clienti, più fatturato, nuove città, estero)?</li>
+        <li><b>2</b>Chi è il vostro cliente ideale oggi? Età, professione, dove vive, per quali occasioni compra (lavoro, cerimonia, sposo)?</li>
+        <li><b>3</b>Cosa vi rende diversi dalle altre sartorie? Cosa dicono di voi i clienti contenti?</li>
+      </ol></div>
+      <div class="qg"><h3>Il servizio a domicilio</h3><ol>
+        <li><b>4</b>In quali zone andate a casa del cliente oggi? E dove vorreste arrivare (altre città, Londra, estero)?</li>
+        <li><b>5</b>Quante visite servono per un capo (misure, prove, consegna) e in quanto tempo è pronto?</li>
+        <li><b>6</b>Il domicilio ha un costo o è incluso? Accettereste una caparra online al momento della prenotazione?</li>
+      </ol></div>
+      <div class="qg"><h3>Prodotti e prezzi</h3><ol>
+        <li><b>7</b>Quali capi fate (abito, giacca, camicia, cappotto, cerimonia) e da che prezzo partono?</li>
+        <li><b>8</b>Avete prodotti che si possono vendere senza misure (cravatte, pochette, camicie in taglia, accessori)?</li>
+        <li><b>9</b>Vi piace l'idea di una gift card «esperienza su misura» da regalare?</li>
+        <li><b>10</b>Conservate le misure dei clienti? Si possono riusare per riordini online (es. camicie)?</li>
+      </ol></div>
+      <div class="qg"><h3>Brand</h3><ol>
+        <li><b>11</b>Avete già nome, logo, colori? Siete disposti a rivederli o devono restare?</li>
+        <li><b>12</b>Tre parole che descrivono come volete essere percepiti.</li>
+        <li><b>13</b>Un brand (anche non di moda) che ammirate e uno da cui volete distinguervi.</li>
+      </ol></div>
+      <div class="qg"><h3>Pratico</h3><ol>
+        <li><b>14</b>Chi seguirà ordini, appuntamenti e messaggi dopo il lancio?</li>
+        <li><b>15</b>Avete foto e video dei capi e del lavoro in atelier, o vanno fatti?</li>
+        <li><b>16</b>Instagram: avete già un profilo? Chi lo gestisce?</li>
+        <li><b>17</b>Entro quando volete essere online e che budget avete in mente?</li>
+      </ol></div>
+    </div>
+  </div>
+  <div class="num">14</div>
+</section>
+
+<!-- 15 chiusura -->
+<section class="slide pin" id="s15">
+  <div class="wrap" style="text-align:center">
+    <img src="img/logo-bianco.png" alt="Logo Gessato di esempio" style="width:min(520px,90%);margin:0 auto">
+    <p class="lead" style="margin:30px auto 0">Il sarto viene da te.</p>
+    <div class="x">Looking Up Studio · lookingupstudio.com</div>
+  </div>
+  <div class="num">15</div>
+</section>
+
+<script>
+(function(){
+  var slides=[].slice.call(document.querySelectorAll('.slide'));
+  var dots=document.getElementById('dots');
+  slides.forEach(function(s){var a=document.createElement('a');a.href='#'+s.id;a.setAttribute('aria-label','Vai alla slide '+s.id.slice(1));dots.appendChild(a);});
+  var links=dots.querySelectorAll('a');
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){
+    var i=slides.indexOf(e.target);
+    if(e.isIntersecting&&e.intersectionRatio>.5){links.forEach(function(l,j){l.classList.toggle('on',i===j)});}
+  });},{threshold:[0,.5]});
+  slides.forEach(function(s){io.observe(s)});
+  function cur(){var y=window.scrollY+window.innerHeight/2;for(var i=slides.length-1;i>=0;i--){if(slides[i].offsetTop<=y)return i;}return 0;}
+  document.addEventListener('keydown',function(ev){
+    if(['ArrowDown','PageDown',' '].indexOf(ev.key)>-1){ev.preventDefault();slides[Math.min(cur()+1,slides.length-1)].scrollIntoView();}
+    if(['ArrowUp','PageUp'].indexOf(ev.key)>-1){ev.preventDefault();slides[Math.max(cur()-1,0)].scrollIntoView();}
+  });
+})();
+</script>
+</body>
+</html>
