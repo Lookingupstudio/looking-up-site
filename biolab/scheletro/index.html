@@ -4,8 +4,26 @@
 <meta property="og:title" content="Emi BioLab · Independent Design & Research Practice"><meta property="og:description" content="Emi BioLab is an independent design and research practice in Venice exploring matter through experimentation."><meta property="og:image" content="../img/filato-ciotola-blu.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter+Tight:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&family=IBM+Plex+Mono:wght@400&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/style.css?v=q3"><link rel="stylesheet" href="css/tema-test3.css?v=q3"><link rel="stylesheet" href="css/arte.css?v=q3"><link rel="stylesheet" href="css/palette.css?v=q3"></head>
+<link rel="stylesheet" href="css/style.css?v=q4"><link rel="stylesheet" href="css/tema-test3.css?v=q4"><link rel="stylesheet" href="css/arte.css?v=q4"><link rel="stylesheet" href="css/palette.css?v=q4"><link rel="stylesheet" href="css/transizioni.css?v=q4"><link rel="stylesheet" href="css/intro.css?v=q4"><script src="js/transizioni.js?v=q4" defer></script></head>
 <body data-pagina="home" data-sezione="">
+<div class="intro" aria-hidden="true"><div class="intro-nome"><span>Emi</span> <span>BioLab</span></div><div class="intro-barra"><i></i></div><div class="intro-perc">0%</div></div>
+<script>
+/* caricamento iniziale: solo alla prima visita della sessione (Mattia 26/11) */
+(function(){
+  var el=document.querySelector('.intro');if(!el)return;
+  var visto=false;try{visto=sessionStorage.getItem('emi-intro')==='1';sessionStorage.setItem('emi-intro','1');}catch(e){}
+  if(visto||matchMedia('(prefers-reduced-motion: reduce)').matches){el.remove();return;}
+  document.documentElement.classList.add('con-intro');
+  var barra=el.querySelector('.intro-barra i'),perc=el.querySelector('.intro-perc'),t0=performance.now(),dur=2000,caricato=false;
+  addEventListener('load',function(){caricato=true;});
+  (function g(now){
+    var t=Math.min(1,(now-t0)/dur);if(!caricato&&t>.9)t=.9; /* non arriva a 100 finché la pagina non è caricata */
+    var e=1-Math.pow(1-t,3),v=Math.round(e*100);
+    barra.style.transform='scaleX('+e+')';perc.textContent=v+'%';
+    if(v<100){requestAnimationFrame(g);}else{setTimeout(function(){el.classList.add('via');document.documentElement.classList.remove('con-intro');},350);setTimeout(function(){el.remove();},1600);}
+  })(t0);
+})();
+</script>
 <main>
 
 <div class="arte wrap">
@@ -21,9 +39,9 @@
     </nav>
   </header>
   <nav class="arte-porte" aria-label="Three directions">
-    <a href="education.html" data-vis="Education · hands at work"><span class="parola">Education</span><span class="sotto">Workshops, courses, the future School</span></a>
-    <a href="research.html" data-vis="Research · lagoon, water, matter"><span class="parola">Research</span><span class="sotto">Methodology, research areas, material archive</span></a>
-    <a href="projects.html" data-vis="Projects · documentation"><span class="parola">Projects</span><span class="sotto">Independent work and collaborations</span></a>
+    <div class="voce" data-vis="Education · hands at work"><span class="parola">Education</span><span class="sotto">Workshops, courses, the future School</span><a class="esplora" href="education.html">Explore Education <span aria-hidden="true">→</span></a></div>
+    <div class="voce" data-vis="Research · lagoon, water, matter"><span class="parola">Research</span><span class="sotto">Methodology, research areas, material archive</span><a class="esplora" href="research.html">Explore Research <span aria-hidden="true">→</span></a></div>
+    <div class="voce" data-vis="Projects · documentation"><span class="parola">Projects</span><span class="sotto">Independent work and collaborations</span><a class="esplora" href="projects.html">Explore Projects <span aria-hidden="true">→</span></a></div>
   </nav>
   <footer class="arte-piede">
     <div class="profilo">
@@ -65,7 +83,7 @@
 /* al passaggio su una direzione appare una sola immagine morbida che segue il mouse (per ora segnaposto) */
 (function(){
   var vis=document.querySelector('.arte-vis'),et=vis.querySelector('span'),x=0,y=0,tx=0,ty=0;
-  document.querySelectorAll('.arte-porte a').forEach(function(a){
+  document.querySelectorAll('.arte-porte .voce').forEach(function(a){
     a.addEventListener('mouseenter',function(){et.textContent=a.dataset.vis;vis.classList.add('su')});
     a.addEventListener('mouseleave',function(){vis.classList.remove('su')});
   });
@@ -73,44 +91,11 @@
   (function g(){x+=(tx-x)*.09;y+=(ty-y)*.09;vis.style.transform='translate('+(x+28)+'px,'+(y-120)+'px)';requestAnimationFrame(g)})();
 })();
 </script>
-<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
-  <filter id="onda-parola" x="-70%" y="-40%" width="240%" height="180%" color-interpolation-filters="sRGB">
-    <feTurbulence type="fractalNoise" baseFrequency="0.009 0.0015" numOctaves="1" seed="7" result="rumore"/>
-    <feOffset in="rumore" dx="0" dy="0" result="onde"/>
-    <feDisplacementMap in="SourceGraphic" in2="onde" scale="0" xChannelSelector="G" yChannelSelector="R"/>
-  </filter>
-</svg>
-<script>
-/* passaggio sulle parole: un'onda morbida attraversa la parola una volta, poi la parola si posa un po' opaca (Mattia 25/11) */
-(function(){
-  var mappa=document.querySelector('#onda-parola feDisplacementMap'),off=document.querySelector('#onda-parola feOffset');
-  if(!mappa||matchMedia('(prefers-reduced-motion: reduce)').matches)return;
-  var corsa=null;
-  function ferma(){if(corsa){cancelAnimationFrame(corsa.id);corsa.p.style.filter='';corsa=null;}mappa.setAttribute('scale','0');}
-  function onda(p){
-    ferma();
-    p.style.filter='url(#onda-parola)';p.classList.remove('posata');
-    var t0=performance.now(),dur=6000;
-    corsa={p:p};
-    (function g(now){
-      var t=Math.min(1,(now-t0)/dur),e=Math.sin(Math.PI*t);
-      mappa.setAttribute('scale',(70*e).toFixed(2));off.setAttribute('dx',(-180+360*t).toFixed(1));
-      if(t<1){corsa.id=requestAnimationFrame(g);}else{p.style.filter='';p.classList.add('posata');corsa=null;}
-    })(t0);
-  }
-  document.querySelectorAll('.arte-porte a').forEach(function(a){
-    var p=a.querySelector('.parola');
-    a.addEventListener('mouseenter',function(){onda(p);});
-    a.addEventListener('mouseleave',function(){if(corsa&&corsa.p===p)ferma();p.classList.remove('posata');});
-  });
-  if(location.search.indexOf('onda')>-1){document.documentElement.classList.add('prova');var a2=document.querySelectorAll('.arte-porte a')[1];a2.classList.add('prova-acqua');onda(a2.querySelector('.parola'));}
-})();
-</script>
 <script>
 /* da telefono non c'è il passaggio del mouse: le tre parole si accendono a turno e accanto appare la loro immagine (Mattia 26/11) */
 (function(){
   if(!matchMedia('(hover: none), (max-width: 760px)').matches)return;
-  var porte=document.querySelector('.arte-porte'),voci=[].slice.call(document.querySelectorAll('.arte-porte a')),vis=document.querySelector('.arte-vis');
+  var porte=document.querySelector('.arte-porte'),voci=[].slice.call(document.querySelectorAll('.arte-porte .voce')),vis=document.querySelector('.arte-vis');
   if(!porte||!vis||!voci.length)return;
   var et=vis.querySelector('span'),i=0,ridotto=matchMedia('(prefers-reduced-motion: reduce)').matches;
   porte.classList.add('cicla');
@@ -123,9 +108,9 @@
   }
   function giro(){accendi(i);i=(i+1)%voci.length;}
   setTimeout(function(){giro();if(!ridotto)setInterval(giro,3200);},1400);
-  addEventListener('scroll',function(){var a=document.querySelector('.arte-porte a.attiva');if(a){var r=a.querySelector('.parola').getBoundingClientRect();vis.style.top=(r.top+r.height/2-75)+'px';}},{passive:true});
+  addEventListener('scroll',function(){var a=document.querySelector('.arte-porte .voce.attiva');if(a){var r=a.querySelector('.parola').getBoundingClientRect();vis.style.top=(r.top+r.height/2-75)+'px';}},{passive:true});
 })();
 </script>
 </main>
-<script src="js/contenuti.js?v=q3"></script><script src="js/sito.js?v=q3"></script>
+<script src="js/contenuti.js?v=q4"></script><script src="js/sito.js?v=q4"></script>
 </body></html>

@@ -1,0 +1,11 @@
+/* Transizioni morbide tra una pagina e l'altra (Mattia 26/11)
+   Browser nuovi (Chrome, Safari 18.2+): dissolvenza nativa tra le pagine.
+   Altri: la pagina entra in dissolvenza e, al clic su un link interno, esce in dissolvenza. */
+@view-transition{navigation:auto}
+::view-transition-old(root){animation:vtEsce .45s cubic-bezier(.4,0,.2,1) both}
+::view-transition-new(root){animation:vtEntra .6s cubic-bezier(.2,.7,.2,1) both}
+@keyframes vtEsce{to{opacity:0;filter:blur(6px)}}
+@keyframes vtEntra{from{opacity:0;filter:blur(6px);transform:translateY(10px)}}
+html.vt-fallback body{animation:vtEntra .6s cubic-bezier(.2,.7,.2,1) both}
+html.vt-esce body{opacity:0;filter:blur(6px);transition:opacity .35s ease,filter .35s ease}
+@media (prefers-reduced-motion:reduce){::view-transition-old(root),::view-transition-new(root){animation:none}html.vt-fallback body{animation:none}}
