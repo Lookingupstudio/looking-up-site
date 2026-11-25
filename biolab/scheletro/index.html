@@ -4,7 +4,7 @@
 <meta property="og:title" content="Emi BioLab · Independent Design & Research Practice"><meta property="og:description" content="Emi BioLab is an independent design and research practice in Venice exploring matter through experimentation."><meta property="og:image" content="../img/filato-ciotola-blu.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter+Tight:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&family=IBM+Plex+Mono:wght@400&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/style.css?v=p7"><link rel="stylesheet" href="css/tema-test3.css?v=p7"><link rel="stylesheet" href="css/arte.css?v=p7"><link rel="stylesheet" href="css/palette.css?v=p7"></head>
+<link rel="stylesheet" href="css/style.css?v=p8"><link rel="stylesheet" href="css/tema-test3.css?v=p8"><link rel="stylesheet" href="css/arte.css?v=p8"><link rel="stylesheet" href="css/palette.css?v=p8"></head>
 <body data-pagina="home" data-sezione="">
 <main>
 
@@ -74,8 +74,8 @@
 })();
 </script>
 <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
-  <filter id="onda-parola" x="-5%" y="-40%" width="110%" height="180%" color-interpolation-filters="sRGB">
-    <feTurbulence type="fractalNoise" baseFrequency="0.0035 0.006" numOctaves="1" seed="7" result="rumore"/>
+  <filter id="onda-parola" x="-70%" y="-40%" width="240%" height="180%" color-interpolation-filters="sRGB">
+    <feTurbulence type="fractalNoise" baseFrequency="0.009 0.0015" numOctaves="1" seed="7" result="rumore"/>
     <feOffset in="rumore" dx="0" dy="0" result="onde"/>
     <feDisplacementMap in="SourceGraphic" in2="onde" scale="0" xChannelSelector="G" yChannelSelector="R"/>
   </filter>
@@ -89,11 +89,11 @@
   function onda(p){
     if(corsa)cancelAnimationFrame(corsa.id);
     p.style.filter='url(#onda-parola)';p.classList.remove('posata');
-    var t0=performance.now(),dur=1700;
+    var t0=performance.now(),dur=1900;
     corsa={p:p};
     (function g(now){
       var t=Math.min(1,(now-t0)/dur),e=Math.sin(Math.PI*t);
-      mappa.setAttribute('scale',(26*e*e).toFixed(2));off.setAttribute('dx',(-420+840*t).toFixed(1));
+      mappa.setAttribute('scale',(70*e).toFixed(2));off.setAttribute('dx',(-180+360*t).toFixed(1));
       if(t<1){corsa.id=requestAnimationFrame(g);}else{p.style.filter='';p.classList.add('posata');corsa=null;}
     })(t0);
   }
@@ -106,5 +106,5 @@
 })();
 </script>
 </main>
-<script src="js/contenuti.js?v=p7"></script><script src="js/sito.js?v=p7"></script>
+<script src="js/contenuti.js?v=p8"></script><script src="js/sito.js?v=p8"></script>
 </body></html>
