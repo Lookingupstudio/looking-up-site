@@ -1,0 +1,50 @@
+/* Emi BioLab · animazioni organiche (25/11/2026)
+   L'organicità sta nel movimento, non nel layout: le cose si posano come un gel,
+   le superfici respirano, le immagini al passaggio diventano membrane.
+   Tutto discreto, e spento per chi chiede meno movimento. */
+
+/* 1. entrata: blur → nitido e piccola risalita, come un liquido che si solidifica */
+.anim{opacity:0;filter:blur(10px);transform:translateY(18px);
+  transition:opacity 1.3s cubic-bezier(.2,.7,.2,1),filter 1.5s cubic-bezier(.2,.7,.2,1),transform 1.4s cubic-bezier(.2,.7,.2,1);
+  transition-delay:var(--rit,0s)}
+.anim.dentro{opacity:1;filter:none;transform:none}
+
+/* titolo grande: le lettere si condensano una alla volta */
+.lettere span{display:inline-block;opacity:0;filter:blur(14px);transform:translateY(.12em) scaleY(1.06);
+  transition:opacity 1.2s ease,filter 1.6s cubic-bezier(.2,.7,.2,1),transform 1.6s cubic-bezier(.2,.7,.2,1);transition-delay:var(--rit,0s)}
+.lettere.dentro span{opacity:1;filter:none;transform:none}
+
+/* 2. superfici che respirano: i segnaposto (e domani le foto) si muovono piano come acqua */
+.segnaposto{background-size:220% 220%!important;animation:respiro 18s ease-in-out infinite alternate}
+.porta:nth-child(2) .segnaposto,.home-porte .porta:nth-child(2) .segnaposto{animation-duration:23s;animation-delay:-6s}
+.porta:nth-child(3) .segnaposto{animation-duration:27s;animation-delay:-11s}
+@keyframes respiro{0%{background-position:0% 30%}50%{background-position:70% 60%}100%{background-position:100% 20%}}
+
+/* 3. al passaggio del mouse l'immagine diventa una membrana: bordi che si ammorbidiscono e piccolo zoom */
+.porta .foto,.hero-foto,.fondatrice .ritratto,.striscia-fondatrice .mini{overflow:hidden;border-radius:0;
+  transition:border-radius 1.1s cubic-bezier(.3,.8,.2,1),transform 1.1s cubic-bezier(.3,.8,.2,1)}
+.porta .foto > *,.hero-foto > *{transition:transform 1.4s cubic-bezier(.2,.7,.2,1)}
+.porta:hover .foto{border-radius:14% 22% 18% 26% / 26% 18% 30% 20%}
+.porta:hover .foto > *{transform:scale(1.06)}
+.hero-foto:hover{border-radius:10% 18% 14% 20% / 20% 12% 24% 16%}
+.striscia-fondatrice:hover .mini{border-radius:50%}
+
+/* il visual principale ondeggia appena col mouse (parallax leggero, via JS) */
+.hero-foto > *{will-change:transform}
+
+/* 4. linee che si disegnano */
+.porta .riga{position:relative;border-top-color:transparent!important}
+.porta .riga::before{content:"";position:absolute;left:0;top:-1px;height:1px;width:100%;background:var(--linea);
+  transform:scaleX(0);transform-origin:left;transition:transform 1.6s cubic-bezier(.2,.7,.2,1) .3s}
+.porta.dentro .riga::before,.anim.dentro .riga::before{transform:scaleX(1)}
+.porta:hover .riga::before{background:var(--lilla,#A8A1BB)}
+
+/* 5. il pallino del prossimo workshop pulsa piano, come una goccia */
+.prossimo .pallino{animation:goccia 3.2s ease-in-out infinite}
+@keyframes goccia{0%,100%{transform:scale(1);opacity:1}50%{transform:scale(1.6);opacity:.55}}
+
+@media (prefers-reduced-motion:reduce){
+  .anim,.lettere span{opacity:1!important;filter:none!important;transform:none!important;transition:none!important}
+  .segnaposto,.prossimo .pallino{animation:none!important}
+  .porta:hover .foto,.hero-foto:hover{border-radius:0}
+}
