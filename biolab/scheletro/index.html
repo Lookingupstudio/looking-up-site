@@ -4,7 +4,7 @@
 <meta property="og:title" content="Emi BioLab · Independent Design & Research Practice"><meta property="og:description" content="Emi BioLab is an independent design and research practice in Venice exploring matter through experimentation."><meta property="og:image" content="../img/filato-ciotola-blu.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter+Tight:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&family=IBM+Plex+Mono:wght@400&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/style.css?v=q2"><link rel="stylesheet" href="css/tema-test3.css?v=q2"><link rel="stylesheet" href="css/arte.css?v=q2"><link rel="stylesheet" href="css/palette.css?v=q2"></head>
+<link rel="stylesheet" href="css/style.css?v=q3"><link rel="stylesheet" href="css/tema-test3.css?v=q3"><link rel="stylesheet" href="css/arte.css?v=q3"><link rel="stylesheet" href="css/palette.css?v=q3"></head>
 <body data-pagina="home" data-sezione="">
 <main>
 
@@ -35,7 +35,7 @@
 </div>
 <div class="storia-vista" role="dialog" aria-modal="true" aria-label="Carola's story" hidden>
   <div class="storia-card">
-    <video class="storia-video" src="video/storia-laguna.mp4" muted loop playsinline preload="none" aria-hidden="true"></video>
+    <video class="storia-video" muted loop playsinline webkit-playsinline autoplay preload="metadata" poster="video/storia-laguna.jpg" aria-hidden="true"><source src="video/storia-laguna.mp4" type="video/mp4"></video>
     <div class="storia-barre"><i></i></div>
     <div class="storia-testa"><img data-vera src="img/carola-avatar.jpg" alt="" width="64" height="64"><b>Carola Emanuela Godja</b><button class="storia-chiudi" type="button" aria-label="Close">×</button></div>
     <p class="storia-domanda">Where would you like to go?</p>
@@ -52,7 +52,7 @@
 (function(){
   const v=document.querySelector('.storia-vista'),btn=document.querySelector('.avatar.storia');if(!v||!btn)return;
   let timer;
-  const apri=()=>{v.hidden=false;const vid=v.querySelector('.storia-video');if(vid){vid.play().catch(()=>{});}requestAnimationFrame(()=>v.classList.add('aperta'));btn.classList.add('vista');document.body.style.overflow='hidden';v.querySelector('.storia-scelte a').focus({preventScroll:true});clearTimeout(timer);timer=setTimeout(chiudi,15000);};
+  const apri=()=>{v.hidden=false;const vid=v.querySelector('.storia-video');if(vid){vid.muted=true;vid.defaultMuted=true;vid.setAttribute('muted','');var pp=vid.play();if(pp&&pp.catch)pp.catch(function(){vid.load();vid.play().catch(function(){});});}requestAnimationFrame(()=>v.classList.add('aperta'));btn.classList.add('vista');document.body.style.overflow='hidden';v.querySelector('.storia-scelte a').focus({preventScroll:true});clearTimeout(timer);timer=setTimeout(chiudi,15000);};
   const chiudi=()=>{v.classList.remove('aperta');const vid=v.querySelector('.storia-video');if(vid)vid.pause();document.body.style.overflow='';clearTimeout(timer);setTimeout(()=>{v.hidden=true;btn.focus({preventScroll:true});},350);};
   btn.addEventListener('click',apri);document.querySelectorAll('.apri-storia').forEach(b=>b.addEventListener('click',apri));
   v.querySelector('.storia-chiudi').addEventListener('click',chiudi);
@@ -127,5 +127,5 @@
 })();
 </script>
 </main>
-<script src="js/contenuti.js?v=q2"></script><script src="js/sito.js?v=q2"></script>
+<script src="js/contenuti.js?v=q3"></script><script src="js/sito.js?v=q3"></script>
 </body></html>
