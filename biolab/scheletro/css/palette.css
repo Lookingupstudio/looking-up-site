@@ -44,3 +44,27 @@ a:hover{color:inherit}
 /* FIX: la storia chiusa restava sopra la pagina (trasparente) e bloccava clic e passaggio del mouse */
 .storia-vista[hidden]{display:none!important}
 .storia-vista:not(.aperta){pointer-events:none}
+/* niente corsivo al passaggio: la parola resta dritta e "ondeggia" come vista nell'acqua */
+.arte-porte a:hover .parola{font-style:normal!important;transform:translateX(10px)!important}
+.arte-porte .parola{display:inline-block}.arte-porte a.prova-acqua .parola{color:#fff!important;transform:translateX(10px)}.arte-porte a.prova-acqua .sotto{opacity:1;transform:none}
+.arte-porte a.prova-acqua .parola{color:#fff!important}
+/* effetto onda: al passaggio le lettere salgono e scendono una dopo l'altra, come un'onda che scorre */
+.arte-porte .parola{filter:none!important}
+.arte-porte .lettera{display:inline-block;transform:translateY(0);transition:transform .6s cubic-bezier(.2,.7,.2,1)}
+@media (prefers-reduced-motion:no-preference){
+  .arte-porte a:hover .lettera,.arte-porte a.prova-acqua .lettera{animation:onda 1.8s ease-in-out infinite;animation-delay:calc(var(--i) * .09s)}
+}
+@keyframes onda{0%,100%{transform:translateY(0)}50%{transform:translateY(-.09em)}}
+/* onda più morbida: lenta, bassa, e dove passa la cresta la lettera si opacizza e sfuma un poco (Mattia 25/11) */
+@media (prefers-reduced-motion:no-preference){
+  .arte-porte a:hover .lettera,.arte-porte a.prova-acqua .lettera{animation:ondaMorbida 2.8s cubic-bezier(.45,0,.55,1) infinite!important;animation-delay:calc(var(--i) * .14s)!important}
+}
+@keyframes ondaMorbida{
+  0%,100%{transform:translateY(0);opacity:1;filter:blur(0)}
+  50%{transform:translateY(-.06em);opacity:.38;filter:blur(1.2px)}
+}
+/* via le lettere che saltano: l'onda ora piega tutta la parola, una sola volta, poi la parola si posa velata */
+.arte-porte .lettera{animation:none!important}
+.arte-porte .parola{transition:color .8s cubic-bezier(.2,.7,.2,1),opacity 1.2s ease,transform .9s cubic-bezier(.2,.7,.2,1)!important}
+.arte-porte .parola.posata{opacity:.72}
+html.prova .arte-porte a,html.prova .arte-testa,html.prova .arte-piede{animation:none!important;opacity:1!important}html.prova .arte-porte .parola{color:rgba(183,198,195,.2)!important}html.prova .arte-porte a.prova-acqua .parola{color:#fff!important}html.prova .arte-porte a.prova-acqua .sotto{opacity:1;transform:none}html.prova .arte-vis{display:none}
