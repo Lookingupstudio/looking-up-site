@@ -99,3 +99,23 @@ body[data-pagina="home"] .piede{display:none}
   background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.22);font-size:16px;transition:background .3s,transform .3s}
 .storia-scelte a small{font-size:12px;color:rgba(255,255,255,.65)}
 .storia-scelte a:hover,.storia-scelte a:focus-visible{background:rgba(255,255,255,.24);transform:translateX(4px);outline:none}
+
+/* 25/11 notte (Mattia): fondo nero pieno, bio sotto "Emi BioLab", frase a destra, prossimo workshop in basso a destra */
+html,body{background:#000!important}
+.testa,.menu{background:rgba(0,0,0,.8)!important}
+.avatar.storia::after{border-color:#000}
+.arte{grid-template-rows:auto 1fr auto!important}
+.arte-testa{display:flex!important;justify-content:space-between!important;align-items:flex-start!important;gap:40px;flex-wrap:wrap}
+.arte-testa p.arte-destra{font-size:14px;line-height:1.6;color:var(--tenue);text-align:right;max-width:360px;margin:6px 0 0}
+.arte-piede{display:flex;justify-content:space-between;gap:24px;font-size:14px}
+.arte-piede a{text-decoration:none;color:var(--tenue);transition:color .4s}.arte-piede a:hover{color:var(--testo)}
+@media (max-width:860px){.arte-testa p.arte-destra{text-align:left}}
+/* Mattia 25/11 notte: a sinistra titolo, frase, bio; a destra i profili social */
+.arte-testa p.arte-frase{font-size:14px!important;line-height:1.6!important;color:var(--tenue)!important;text-align:left!important;max-width:420px;margin:0!important;font-family:inherit!important}
+.arte-titolo{gap:20px!important}
+.arte-social{display:flex;gap:10px;flex-wrap:wrap;margin-top:6px}
+.arte-social a{font-size:13px;text-decoration:none;color:var(--testo);padding:9px 16px;border-radius:999px;border:1px solid rgba(255,255,255,.2);background:rgba(255,255,255,.04);transition:background .3s,border-color .3s}
+.arte-social a:hover{background:rgba(255,255,255,.12);border-color:rgba(255,255,255,.4)}
+/* finestra che appare al passaggio sulle parole: più visibile sul nero */
+.arte-vis{background:linear-gradient(160deg,rgba(195,206,208,.28),rgba(183,198,195,.16) 50%,rgba(168,161,187,.24))!important;border:1px solid rgba(255,255,255,.12)}
+@media (max-width:860px){.arte-social{margin-top:0}}
