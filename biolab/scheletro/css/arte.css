@@ -1,0 +1,41 @@
+/* Emi BioLab · home minimale e artistica (25/11/2026)
+   Solo tipografia e spazio: il nome, una frase, tre parole grandi che sono le porte.
+   Al passaggio su una parola compare una sola immagine morbida che segue il mouse. */
+body[data-pagina="home"] .piede{display:none}
+.arte{min-height:calc(100vh - 95px);display:grid;grid-template-rows:auto 1fr auto;padding-top:clamp(40px,9vh,110px);padding-bottom:clamp(24px,4vh,44px)}
+.arte-testa{display:flex;justify-content:space-between;align-items:flex-end;gap:40px;flex-wrap:wrap}
+.arte-testa h1{font-size:clamp(28px,2.6vw,40px)!important;letter-spacing:0;line-height:1}
+.arte-testa p{font-size:14px;line-height:1.6;color:var(--tenue);text-align:right;max-width:360px}
+.arte-porte{align-self:center;display:flex;flex-direction:column;gap:clamp(4px,1.2vh,14px);margin:clamp(30px,6vh,80px) 0}
+.arte-porte a{display:flex;align-items:baseline;gap:28px;text-decoration:none;width:max-content;max-width:100%}
+.arte-porte .parola{font-family:var(--serif);font-weight:400;font-size:clamp(64px,10.5vw,168px);line-height:.98;letter-spacing:-.005em;color:var(--testo);
+  transition:color .8s cubic-bezier(.2,.7,.2,1),font-style .3s,transform .9s cubic-bezier(.2,.7,.2,1)}
+.arte-porte .sotto{font-size:14px;color:var(--tenue);opacity:0;transform:translateX(-10px);transition:opacity .7s,transform .9s cubic-bezier(.2,.7,.2,1)}
+.arte-porte:hover .parola{color:rgba(241,242,243,.22)}
+.arte-porte a:hover .parola{color:var(--testo);font-style:italic;transform:translateX(18px)}
+.arte-porte a:hover .sotto{opacity:1;transform:none}
+.arte-piede{display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap;font-size:14px}
+.arte-piede a{text-decoration:none;color:var(--tenue);transition:color .4s}
+.arte-piede a:hover{color:var(--testo)}
+.arte-vis{position:fixed;left:0;top:0;width:260px;height:330px;pointer-events:none;z-index:-0;opacity:0;
+  border-radius:22px;background:linear-gradient(160deg,rgba(195,206,208,.20),rgba(183,198,195,.10) 50%,rgba(168,161,187,.16));
+  -webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);
+  transition:opacity .6s,clip-path .8s cubic-bezier(.2,.7,.2,1);clip-path:inset(40% 0 40% 0 round 22px);display:flex;align-items:flex-end;padding:14px}
+.arte-vis.su{opacity:1;clip-path:inset(0 0 0 0 round 22px)}
+.arte-vis span{font-size:11px;color:rgba(255,255,255,.55)}
+/* entrata */
+@keyframes arteSale{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:none}}
+.arte-testa,.arte-piede{animation:arteSale 1.2s cubic-bezier(.2,.7,.2,1) both}
+.arte-porte a{animation:arteSale 1.3s cubic-bezier(.2,.7,.2,1) both}
+.arte-porte a:nth-child(1){animation-delay:.15s}.arte-porte a:nth-child(2){animation-delay:.3s}.arte-porte a:nth-child(3){animation-delay:.45s}
+.arte-piede{animation-delay:.7s}
+@media (max-width:760px){
+  .arte-testa{flex-direction:column;align-items:flex-start}.arte-testa p{text-align:left}
+  .arte-porte .sotto{display:none}.arte-vis{display:none}
+}
+@media (prefers-reduced-motion:reduce){.arte-testa,.arte-piede,.arte-porte a{animation:none}}
+@media (max-width:760px){
+  .arte-porte .parola{font-size:18vw}
+  .arte-porte a::after{content:"→";font-size:18px;color:var(--tenue);align-self:center}
+  .arte-porte{margin:40px 0}
+}

@@ -4,32 +4,38 @@
 <meta property="og:title" content="Emi BioLab · Independent Design & Research Practice"><meta property="og:description" content="Emi BioLab is an independent design and research practice in Venice exploring matter through experimentation."><meta property="og:image" content="../img/filato-ciotola-blu.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter+Tight:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&family=IBM+Plex+Mono:wght@400&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/style.css?v=r1"><link rel="stylesheet" href="css/tema-test3.css?v=r1"></head>
+<link rel="stylesheet" href="css/style.css?v=m1"><link rel="stylesheet" href="css/tema-test3.css?v=m1"><link rel="stylesheet" href="css/arte.css?v=m1"></head>
 <body data-pagina="home" data-sezione="">
 <main>
 
-<div class="home wrap">
-  <section class="home-alto">
-    <div class="home-testo">
-      <p class="occhiello">Independent Design &amp; Research Practice · Venice</p>
-      <h1>Emi BioLab</h1>
-      <p class="lead">Exploring matter through experimentation, developing knowledge and new design possibilities.</p>
-      <div data-prossimo class="prossimo"></div>
-    </div>
-    <div class="hero-foto"><img src="../img/mani-filato.jpg" alt="Main visual · image or video of matter transforming"></div>
-  </section>
-  <nav class="home-porte" aria-label="Three directions">
-    <a class="porta" href="education.html"><div class="foto"><img src="../img/mani-ciotola.jpg" alt="Education visual"></div><div class="riga"><div><span class="num">01</span><div class="titolo">Education</div><p>Workshops, courses, future School.</p></div><span class="vai">Explore →</span></div></a>
-    <a class="porta" href="research.html"><div class="foto"><img src="../img/laguna-ramo-luce.jpg" alt="Research visual"></div><div class="riga"><div><span class="num">02</span><div class="titolo">Research</div><p>Methodology, research areas, material archive.</p></div><span class="vai">Explore →</span></div></a>
-    <a class="porta" href="projects.html"><div class="foto"><img src="../img/dowsing.jpg" alt="Projects visual"></div><div class="riga"><div><span class="num">03</span><div class="titolo">Projects</div><p>Independent work and collaborations.</p></div><span class="vai">Explore →</span></div></a>
+<div class="arte wrap">
+  <header class="arte-testa">
+    <h1>Emi BioLab</h1>
+    <p>Independent design &amp; research practice, Venice.<br>Exploring matter through experimentation.</p>
+  </header>
+  <nav class="arte-porte" aria-label="Three directions">
+    <a href="education.html" data-vis="Education · hands at work"><span class="parola">Education</span><span class="sotto">Workshops, courses, the future School</span></a>
+    <a href="research.html" data-vis="Research · lagoon, water, matter"><span class="parola">Research</span><span class="sotto">Methodology, research areas, material archive</span></a>
+    <a href="projects.html" data-vis="Projects · documentation"><span class="parola">Projects</span><span class="sotto">Independent work and collaborations</span></a>
   </nav>
-  <section class="home-striscia">
-    <a href="about.html" class="striscia-fondatrice"><div class="mini"><img src="../img/ritratto-berlino.jpg" alt="Portrait"></div><div><b>Carola Emanuela Godja</b><span>Designer &amp; Researcher · Founder · MA Iuav · TEDxVenezia speaker</span></div><span class="vai">About →</span></a>
-    <a href="entry.html?e=ALG-014" class="striscia-voce"><span class="occhiello">Selected exploration</span><b>ALG-014 · Continuous filament</b><span class="vai">View →</span></a>
-    <div class="striscia-voce"><span class="occhiello">Selected affiliations</span><span class="nomi-riga">TEDxVenezia · Iuav · Ocean Space / TBA21 · Bevilacqua La Masa · UIUC</span></div>
-  </section>
+  <footer class="arte-piede">
+    <a href="about.html">Carola Emanuela Godja, designer &amp; researcher</a>
+    <a href="workshop.html?w=algi-yarn-live">Next live workshop · 5 December</a>
+  </footer>
+  <div class="arte-vis" aria-hidden="true"><span></span></div>
 </div>
-
+<script>
+/* al passaggio su una direzione appare una sola immagine morbida che segue il mouse (per ora segnaposto) */
+(function(){
+  var vis=document.querySelector('.arte-vis'),et=vis.querySelector('span'),x=0,y=0,tx=0,ty=0;
+  document.querySelectorAll('.arte-porte a').forEach(function(a){
+    a.addEventListener('mouseenter',function(){et.textContent=a.dataset.vis;vis.classList.add('su')});
+    a.addEventListener('mouseleave',function(){vis.classList.remove('su')});
+  });
+  addEventListener('pointermove',function(e){tx=e.clientX;ty=e.clientY},{passive:true});
+  (function g(){x+=(tx-x)*.09;y+=(ty-y)*.09;vis.style.transform='translate('+(x+28)+'px,'+(y-120)+'px)';requestAnimationFrame(g)})();
+})();
+</script>
 </main>
-<script src="js/contenuti.js?v=r1"></script><script src="js/sito.js?v=r1"></script>
+<script src="js/contenuti.js?v=m1"></script><script src="js/sito.js?v=m1"></script><script src="js/sfondo.js?v=m1"></script>
 </body></html>

@@ -93,11 +93,11 @@
       <div class="bottoni"><a class="btn" href="${w.link}">Reserve your spot →</a><a class="btn linea" href="#programme">Programme</a></div></div>
       <div class="hero-foto"><img src="${w.foto}" alt="${esc(w.titolo)}"></div></div>
       <div class="wrap"><div class="info"><div><small>When</small><b>${giorno(w.data)}</b></div><div><small>Time</small><b>${esc(w.quando.split('·')[1] || '')}</b></div><div><small>Duration</small><b>${esc(w.durata)}</b></div><div><small>Price</small><b>${esc(w.prezzo)}</b></div></div></div></section>
-    <section class="sez"><div class="wrap g2"><div><p class="occhiello">01 · Learning outcomes</p><h2>What you will learn</h2></div><ul class="punti">${w.impari.map(i => `<li>${esc(i)}</li>`).join('')}</ul></div></section>
-    <section class="sez"><div class="wrap"><p class="occhiello">02 · Process &amp; techniques</p><div class="percorso">${w.tecniche.map(t => `<span>${esc(t)}</span>`).join('')}</div>
+    <section class="sez"><div class="wrap g2"><div><p class="occhiello">Learning outcomes</p><h2>What you will learn</h2></div><ul class="punti">${w.impari.map(i => `<li>${esc(i)}</li>`).join('')}</ul></div></section>
+    <section class="sez"><div class="wrap"><p class="occhiello">Process &amp; techniques</p><div class="percorso">${w.tecniche.map(t => `<span>${esc(t)}</span>`).join('')}</div>
       <div class="g3" style="margin-top:40px"><div class="porta"><div class="foto larga"><img src="../img/miscela-ciotola.jpg" alt="Mixture" loading="lazy"></div></div><div class="porta"><div class="foto larga"><img src="../img/mani-filato.jpg" alt="Extrusion" loading="lazy"></div></div><div class="porta"><div class="foto larga"><img src="../img/filato-perlato.jpg" alt="Yarn" loading="lazy"></div></div></div></div></section>
-    <section class="sez" id="programme"><div class="wrap g2"><div><p class="occhiello">03 · Programme</p><h2>The session</h2></div><ul class="righe">${w.programma.map(p => `<li><span class="anno">${p[0]}</span><b>${esc(p[1])}</b><span></span></li>`).join('')}</ul></div></section>
-    <section class="sez"><div class="wrap"><p class="occhiello">04 · Practical information</p>
+    <section class="sez" id="programme"><div class="wrap g2"><div><p class="occhiello">Programme</p><h2>The session</h2></div><ul class="righe">${w.programma.map(p => `<li><span class="anno">${p[0]}</span><b>${esc(p[1])}</b><span></span></li>`).join('')}</ul></div></section>
+    <section class="sez"><div class="wrap"><p class="occhiello">Practical information</p>
       <div class="dati"><div><small>Format</small>${esc(w.formato)} on Google Meet</div><div><small>Duration</small>${esc(w.durata)}</div><div><small>Level</small>${esc(w.livello)}</div><div><small>Language</small>English</div></div>
       <div class="blocco"><h3>Materials &amp; tools</h3><p>${esc(w.materiali)}</p></div></div></section>
     ${istruttrice}
