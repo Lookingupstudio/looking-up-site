@@ -69,3 +69,12 @@ a:hover{color:inherit}
 .arte-porte .parola.posata{opacity:.72}
 html.prova .arte-porte a,html.prova .arte-testa,html.prova .arte-piede{animation:none!important;opacity:1!important}html.prova .arte-porte .parola{color:rgba(183,198,195,.2)!important}html.prova .arte-porte a.prova-acqua .parola{color:#fff!important}html.prova .arte-porte a.prova-acqua .sotto{opacity:1;transform:none}html.prova .arte-vis{display:none}
 .arte-porte .parola.posata{opacity:.55}
+/* telefono: parola accesa a turno + immagine accanto (al posto del passaggio del mouse) */
+@media (hover:none),(max-width:760px){
+  .arte-porte.cicla .parola{color:rgba(183,198,195,.28)!important;transition:color .9s ease!important}
+  .arte-porte.cicla a.attiva .parola{color:#fff!important}
+  .arte-porte.cicla a::after{transition:opacity .6s}
+  .arte-porte.cicla a.attiva::after{opacity:0}
+  .arte-vis{display:flex!important;position:fixed!important;left:auto!important;right:16px;transform:none!important;width:112px!important;height:150px!important;padding:10px!important;border-radius:18px!important}
+  .arte-vis span{font-size:9px!important;line-height:1.3}
+}

@@ -4,7 +4,7 @@
 <meta property="og:title" content="Emi BioLab · Independent Design & Research Practice"><meta property="og:description" content="Emi BioLab is an independent design and research practice in Venice exploring matter through experimentation."><meta property="og:image" content="../img/filato-ciotola-blu.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter+Tight:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&family=IBM+Plex+Mono:wght@400&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/style.css?v=q1"><link rel="stylesheet" href="css/tema-test3.css?v=q1"><link rel="stylesheet" href="css/arte.css?v=q1"><link rel="stylesheet" href="css/palette.css?v=q1"></head>
+<link rel="stylesheet" href="css/style.css?v=q2"><link rel="stylesheet" href="css/tema-test3.css?v=q2"><link rel="stylesheet" href="css/arte.css?v=q2"><link rel="stylesheet" href="css/palette.css?v=q2"></head>
 <body data-pagina="home" data-sezione="">
 <main>
 
@@ -106,6 +106,26 @@
   if(location.search.indexOf('onda')>-1){document.documentElement.classList.add('prova');var a2=document.querySelectorAll('.arte-porte a')[1];a2.classList.add('prova-acqua');onda(a2.querySelector('.parola'));}
 })();
 </script>
+<script>
+/* da telefono non c'è il passaggio del mouse: le tre parole si accendono a turno e accanto appare la loro immagine (Mattia 26/11) */
+(function(){
+  if(!matchMedia('(hover: none), (max-width: 760px)').matches)return;
+  var porte=document.querySelector('.arte-porte'),voci=[].slice.call(document.querySelectorAll('.arte-porte a')),vis=document.querySelector('.arte-vis');
+  if(!porte||!vis||!voci.length)return;
+  var et=vis.querySelector('span'),i=0,ridotto=matchMedia('(prefers-reduced-motion: reduce)').matches;
+  porte.classList.add('cicla');
+  function accendi(n){
+    voci.forEach(function(a,k){a.classList.toggle('attiva',k===n);a.querySelector('.parola').style.setProperty('color',k===n?'#ffffff':'rgba(183,198,195,.28)','important');});
+    var a=voci[n],r=a.querySelector('.parola').getBoundingClientRect();
+    et.textContent=a.dataset.vis;
+    vis.style.top=(r.top+r.height/2-75)+'px';
+    vis.classList.remove('su');void vis.offsetWidth;vis.classList.add('su');
+  }
+  function giro(){accendi(i);i=(i+1)%voci.length;}
+  setTimeout(function(){giro();if(!ridotto)setInterval(giro,3200);},1400);
+  addEventListener('scroll',function(){var a=document.querySelector('.arte-porte a.attiva');if(a){var r=a.querySelector('.parola').getBoundingClientRect();vis.style.top=(r.top+r.height/2-75)+'px';}},{passive:true});
+})();
+</script>
 </main>
-<script src="js/contenuti.js?v=q1"></script><script src="js/sito.js?v=q1"></script>
+<script src="js/contenuti.js?v=q2"></script><script src="js/sito.js?v=q2"></script>
 </body></html>
