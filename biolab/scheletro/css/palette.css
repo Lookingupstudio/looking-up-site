@@ -1,0 +1,28 @@
+/* Palette del sito (Mattia 25/11 notte, coolors 202326-b7c6c3-a2666f)
+   Carbon Black #202326 fondo · Ash Grey #B7C6C3 testo · Bianco #FFFFFF accento (al posto di Smoky Rose, Mattia 25/11) */
+:root{--fondo:#000000;--fondo2:#0d0f10;--testo:#B7C6C3;--tenue:#83908d;--slate:#6e7976;--linea:rgba(183,198,195,.16);--accento:#FFFFFF}
+html,body{background:#000!important;color:var(--testo)}
+.testa,.menu{background:rgba(0,0,0,.85)!important}
+.testa a,.menu a{color:var(--testo)}
+.menu .cta,.testa .cta{background:#FFFFFF!important;border-color:#FFFFFF!important;color:#202326!important}
+.menu .cta:hover,.testa .cta:hover{background:#B7C6C3!important}
+.logo.logo-segnaposto{border-color:rgba(183,198,195,.35)!important;color:var(--testo)!important}
+a:hover{color:inherit}
+/* home */
+.arte-porte .parola{color:var(--testo)!important}
+.arte-porte:hover .parola{color:rgba(183,198,195,.2)!important}
+.arte-porte a:hover .parola{color:#FFFFFF!important}
+.arte-porte a:hover .sotto{color:var(--testo)}
+.arte-vis{background:linear-gradient(160deg,rgba(255,255,255,.28),rgba(183,198,195,.14))!important}
+.arte .profilo .bio b,.arte-testa h1{color:var(--testo)!important}
+.arte .profilo .bio .link,.arte-piede a:hover{color:#FFFFFF!important}
+.avatar.storia{background:conic-gradient(from 200deg,#FFFFFF,#B7C6C3,#FFFFFF)!important;box-shadow:0 0 16px rgba(255,255,255,.45)!important}
+.avatar.storia::after{border-color:#000!important}
+.arte-social a{color:var(--testo)!important;border-color:rgba(183,198,195,.25)!important}
+.arte-social a:hover{border-color:#FFFFFF!important;background:rgba(255,255,255,.15)!important}
+.storia-card{background:linear-gradient(170deg,rgba(255,255,255,.35),rgba(0,0,0,.85))!important}
+.storia-scelte a:hover{background:rgba(255,255,255,.35)!important}
+/* social solo icone */
+.arte-social{gap:6px!important}
+.arte-social a{width:42px;height:42px;padding:0!important;display:inline-flex;align-items:center;justify-content:center;border-color:transparent!important;background:none!important}
+.arte-social a:hover{color:#FFFFFF!important;border-color:transparent!important;background:none!important}
