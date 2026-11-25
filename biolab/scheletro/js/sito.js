@@ -16,7 +16,7 @@
   const prossimo = prossimoWorkshop();
   $('.bozza-barra').insertAdjacentHTML('afterend', `
   <header class="testa"><div class="wrap">
-    <a class="logo" href="index.html">Emi BioLab</a>
+    <a class="logo logo-segnaposto" href="index.html" aria-label="Emi BioLab, home">Logo</a>
     <button class="apri" aria-expanded="false">Menu</button>
     <nav class="menu">
       ${voci.map(v => `<a href="${v[2]}" class="${sezione === v[0] ? 'attivo' : ''}">${v[1]}</a>`).join('')}
@@ -177,7 +177,7 @@
 
   /* BOZZA DI STRUTTURA: ogni foto diventa un riquadro grigio con la descrizione */
   function segnaposti() {
-    document.querySelectorAll('main img').forEach(img => {
+    document.querySelectorAll('main img:not([data-vera])').forEach(img => {
       const d = document.createElement('div');
       d.className = 'segnaposto';
       d.innerHTML = `<span>${esc(img.alt || 'Photo')}</span>`;

@@ -208,3 +208,7 @@ h2{letter-spacing:0;line-height:1.08}
 .striscia-voce{display:flex;flex-direction:column}
 .striscia-voce .vai{margin-top:auto!important}
 .striscia-voce b,.striscia-fondatrice b{margin-bottom:2px}
+
+/* Logo in header: segnaposto finché non c'è il logo vero (Mattia 25/11) */
+.testa .logo-segnaposto,.logo.logo-segnaposto{display:inline-flex;align-items:center;justify-content:center;width:112px;height:38px;border-radius:999px;
+  border:1px dashed rgba(255,255,255,.35);font-family:var(--sans,inherit);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.6)}

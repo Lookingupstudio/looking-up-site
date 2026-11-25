@@ -4,26 +4,55 @@
 <meta property="og:title" content="Emi BioLab · Independent Design & Research Practice"><meta property="og:description" content="Emi BioLab is an independent design and research practice in Venice exploring matter through experimentation."><meta property="og:image" content="../img/filato-ciotola-blu.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter+Tight:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&family=IBM+Plex+Mono:wght@400&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/style.css?v=m1"><link rel="stylesheet" href="css/tema-test3.css?v=m1"><link rel="stylesheet" href="css/arte.css?v=m1"></head>
+<link rel="stylesheet" href="css/style.css?v=p2"><link rel="stylesheet" href="css/tema-test3.css?v=p2"><link rel="stylesheet" href="css/arte.css?v=p2"></head>
 <body data-pagina="home" data-sezione="">
 <main>
 
 <div class="arte wrap">
   <header class="arte-testa">
-    <h1>Emi BioLab</h1>
-    <p>Independent design &amp; research practice, Venice.<br>Exploring matter through experimentation.</p>
+    <div class="arte-titolo">
+      <h1>Emi BioLab</h1>
+      <div class="profilo">
+        <button class="avatar storia" type="button" aria-label="Open Carola's story: choose where to go" aria-haspopup="dialog"><img data-vera src="img/carola-avatar.jpg" alt="Carola Emanuela Godja" width="120" height="120"></button>
+        <a href="about.html" class="bio"><b>Carola Emanuela Godja</b><span>Designer &amp; researcher · Founder of Emi BioLab</span><span>Iuav · TEDxVenezia speaker · Venice</span><span class="link">About →</span></a>
+      </div>
+      <p class="arte-frase">Independent design &amp; research practice, Venice.<br>Exploring matter through experimentation.</p>
+    </div>
   </header>
   <nav class="arte-porte" aria-label="Three directions">
     <a href="education.html" data-vis="Education · hands at work"><span class="parola">Education</span><span class="sotto">Workshops, courses, the future School</span></a>
     <a href="research.html" data-vis="Research · lagoon, water, matter"><span class="parola">Research</span><span class="sotto">Methodology, research areas, material archive</span></a>
     <a href="projects.html" data-vis="Projects · documentation"><span class="parola">Projects</span><span class="sotto">Independent work and collaborations</span></a>
   </nav>
-  <footer class="arte-piede">
-    <a href="about.html">Carola Emanuela Godja, designer &amp; researcher</a>
-    <a href="workshop.html?w=algi-yarn-live">Next live workshop · 5 December</a>
-  </footer>
   <div class="arte-vis" aria-hidden="true"><span></span></div>
 </div>
+<div class="storia-vista" role="dialog" aria-modal="true" aria-label="Carola's story" hidden>
+  <div class="storia-card">
+    <div class="storia-barre"><i></i></div>
+    <div class="storia-testa"><img data-vera src="img/carola-avatar.jpg" alt="" width="64" height="64"><b>Carola Emanuela Godja</b><button class="storia-chiudi" type="button" aria-label="Close">×</button></div>
+    <p class="storia-domanda">Where would you like to go?</p>
+    <nav class="storia-scelte">
+      <a href="education.html">Education<small>Workshops, courses, the future School</small></a>
+      <a href="research.html">Research<small>Methodology, areas, material archive</small></a>
+      <a href="projects.html">Projects<small>Independent work and collaborations</small></a>
+      <a href="about.html">About me<small>Who I am, talks, teaching</small></a>
+    </nav>
+  </div>
+</div>
+<script>
+/* "storia" come su Instagram: clic sulla foto, si apre e si sceglie dove andare */
+(function(){
+  const v=document.querySelector('.storia-vista'),btn=document.querySelector('.avatar.storia');if(!v||!btn)return;
+  let timer;
+  const apri=()=>{v.hidden=false;requestAnimationFrame(()=>v.classList.add('aperta'));btn.classList.add('vista');document.body.style.overflow='hidden';v.querySelector('.storia-scelte a').focus({preventScroll:true});clearTimeout(timer);timer=setTimeout(chiudi,15000);};
+  const chiudi=()=>{v.classList.remove('aperta');document.body.style.overflow='';clearTimeout(timer);setTimeout(()=>{v.hidden=true;btn.focus({preventScroll:true});},350);};
+  btn.addEventListener('click',apri);
+  v.querySelector('.storia-chiudi').addEventListener('click',chiudi);
+  v.addEventListener('click',e=>{if(e.target===v)chiudi();});
+  addEventListener('keydown',e=>{if(e.key==='Escape'&&!v.hidden)chiudi();});
+  if(location.search.includes('storia'))apri();
+})();
+</script>
 <script>
 /* al passaggio su una direzione appare una sola immagine morbida che segue il mouse (per ora segnaposto) */
 (function(){
@@ -37,5 +66,5 @@
 })();
 </script>
 </main>
-<script src="js/contenuti.js?v=m1"></script><script src="js/sito.js?v=m1"></script><script src="js/sfondo.js?v=m1"></script>
+<script src="js/contenuti.js?v=p2"></script><script src="js/sito.js?v=p2"></script><script src="js/acqua.js?v=p2"></script>
 </body></html>

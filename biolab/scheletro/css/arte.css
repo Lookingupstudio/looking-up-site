@@ -39,3 +39,63 @@ body[data-pagina="home"] .piede{display:none}
   .arte-porte a::after{content:"→";font-size:18px;color:var(--tenue);align-self:center}
   .arte-porte{margin:40px 0}
 }
+
+/* Founder come profilo Instagram in basso (Mattia 25/11) */
+.arte .profilo{display:flex;gap:14px;align-items:center;color:var(--testo)}
+.arte .profilo .avatar{flex:none;width:56px;height:56px;border-radius:50%;
+  background:linear-gradient(135deg,rgba(195,206,208,.35),rgba(168,161,187,.28));
+  box-shadow:0 0 0 2px #1d2125,0 0 0 3px rgba(255,255,255,.25)}
+.arte .profilo .bio{display:flex;flex-direction:column;gap:2px}
+.arte .profilo .bio b{font-family:var(--serif);font-weight:400;font-size:19px;line-height:1.15;color:var(--testo)}
+.arte .profilo .bio span{font-size:13px;line-height:1.45;color:var(--tenue)}
+.arte .profilo .bio .link{color:var(--testo);margin-top:3px}
+.arte .profilo:hover b{text-decoration:underline;text-underline-offset:5px;text-decoration-thickness:1px}
+
+.arte-titolo{display:flex;flex-direction:column;gap:22px}
+.arte-testa{align-items:flex-start}
+.arte .profilo{text-decoration:none}.arte .profilo .bio span{text-decoration:none}
+.arte-testa p.arte-frase{text-align:left;margin:0}
+/* con bio e frase in alto, le tre parole stanno comunque in una schermata */
+@media (min-width:861px){
+  .arte{padding-top:clamp(28px,6vh,80px)}
+  .arte-porte{margin:clamp(24px,4vh,56px) 0}
+  .arte-porte .parola{font-size:clamp(64px,min(10.5vw,13.5vh),168px)}
+}
+
+/* Profilo con "storia" stile Instagram (Mattia 25/11): anello colorato sulla foto, clic = scegli dove andare */
+.arte .profilo{display:flex;gap:16px;align-items:center}
+.arte .profilo .bio{text-decoration:none;color:var(--testo)}
+.arte .profilo .bio:hover b{text-decoration:underline;text-underline-offset:5px;text-decoration-thickness:1px}
+.avatar.storia{all:unset;cursor:pointer;flex:none;width:64px;height:64px;border-radius:50%;padding:3px;position:relative;
+  background:conic-gradient(from 200deg,#B7C6C3,#A8A1BB,#C3CED0,#7fa9ad,#B7C6C3);box-shadow:none!important;
+  transition:transform .4s cubic-bezier(.2,.7,.2,1)}
+.avatar.storia::after{content:"";position:absolute;inset:3px;border-radius:50%;border:2px solid #14202a;pointer-events:none}
+.avatar.storia img{width:100%;height:100%;border-radius:50%;object-fit:cover;display:block}
+.avatar.storia:hover{transform:scale(1.06)}
+.avatar.storia:focus-visible{outline:2px solid var(--testo);outline-offset:4px}
+.avatar.storia.vista{background:rgba(255,255,255,.28)}
+@media (prefers-reduced-motion:no-preference){
+  .avatar.storia:not(.vista){animation:anello 3.5s ease-in-out infinite}
+  @keyframes anello{50%{filter:brightness(1.25) saturate(1.2)}}
+}
+.storia-vista{position:fixed;inset:0;z-index:100;display:flex;align-items:center;justify-content:center;padding:16px;
+  background:rgba(8,14,18,.55);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);opacity:0;transition:opacity .35s}
+.storia-vista.aperta{opacity:1}
+.storia-card{width:min(400px,100%);height:min(700px,calc(100vh - 32px));border-radius:22px;padding:14px 18px 26px;display:flex;flex-direction:column;
+  background:linear-gradient(170deg,rgba(120,160,165,.35),rgba(168,161,187,.22) 55%,rgba(20,32,42,.6));border:1px solid rgba(255,255,255,.14);
+  box-shadow:0 30px 80px rgba(0,0,0,.45);transform:scale(.94) translateY(14px);transition:transform .45s cubic-bezier(.2,.7,.2,1)}
+.storia-vista.aperta .storia-card{transform:none}
+.storia-barre{height:3px;border-radius:3px;background:rgba(255,255,255,.25);overflow:hidden}
+.storia-barre i{display:block;height:100%;width:0;background:#fff;border-radius:3px}
+.storia-vista.aperta .storia-barre i{animation:barra 15s linear forwards}
+@keyframes barra{to{width:100%}}
+.storia-testa{display:flex;align-items:center;gap:10px;margin-top:14px;font-size:14px}
+.storia-testa img{width:34px;height:34px;border-radius:50%;object-fit:cover}
+.storia-testa b{font-weight:500}
+.storia-chiudi{all:unset;cursor:pointer;margin-left:auto;font-size:28px;line-height:1;padding:0 4px;color:#fff}
+.storia-domanda{margin:auto 0 22px;font-family:var(--serif);font-size:32px;line-height:1.1;color:#fff}
+.storia-scelte{display:flex;flex-direction:column;gap:10px}
+.storia-scelte a{display:flex;flex-direction:column;gap:2px;text-decoration:none;color:#fff;padding:14px 20px;border-radius:999px;
+  background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.22);font-size:16px;transition:background .3s,transform .3s}
+.storia-scelte a small{font-size:12px;color:rgba(255,255,255,.65)}
+.storia-scelte a:hover,.storia-scelte a:focus-visible{background:rgba(255,255,255,.24);transform:translateX(4px);outline:none}
