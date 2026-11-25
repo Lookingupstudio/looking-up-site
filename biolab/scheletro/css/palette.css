@@ -41,3 +41,6 @@ a:hover{color:inherit}
 .storia-scelte a{background:rgba(0,0,0,.35)!important;border-color:rgba(255,255,255,.22)!important;-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px)}
 .storia-scelte a:hover{background:rgba(255,255,255,.18)!important}
 @media (prefers-reduced-motion:reduce){.storia-video{display:none}}
+/* FIX: la storia chiusa restava sopra la pagina (trasparente) e bloccava clic e passaggio del mouse */
+.storia-vista[hidden]{display:none!important}
+.storia-vista:not(.aperta){pointer-events:none}
