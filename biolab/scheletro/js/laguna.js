@@ -7,6 +7,10 @@
   const cv = document.createElement('canvas');
   cv.className = 'laguna';
   cv.setAttribute('aria-hidden', 'true');
+  // stile scritto qui: lo sfondo resta dietro a tutto anche se il CSS non è ancora aggiornato
+  Object.assign(cv.style, { position: 'fixed', top: '0', left: '0', width: '100vw', height: '100vh', zIndex: '-1', display: 'block', pointerEvents: 'none' });
+  document.documentElement.style.background = '#202326';
+  document.body.style.background = 'transparent';
   document.body.prepend(cv);
   const gl = !ridotto && cv.getContext('webgl', { antialias: false, alpha: false, premultipliedAlpha: false });
   if (!gl) { cv.classList.add('ferma'); return; }
