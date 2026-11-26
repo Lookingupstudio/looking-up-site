@@ -66,3 +66,33 @@ html body .arte-piede a.prossimo{display:inline-flex!important;gap:6px!important
 }
 /* telefono: la miniatura scorre insieme alle categorie (non più fissa sullo schermo) */
 @media (max-width:760px){html body .arte-vis.in-porte{position:absolute!important;right:0!important;left:auto!important;top:0;z-index:2}}
+/* storia di Carola: sopra a tutto, alta quanto lo schermo vero del telefono (barre di Safari escluse), video più visibile */
+html body .storia-vista{z-index:500!important;padding:max(12px,env(safe-area-inset-top)) 12px max(12px,env(safe-area-inset-bottom))!important}
+html body .storia-card{height:min(700px,calc(100vh - 24px))!important;height:min(700px,calc(100dvh - 24px))!important}
+html body .storia-card::before{background:linear-gradient(180deg,rgba(0,0,0,.4),rgba(0,0,0,0) 30%,rgba(0,0,0,.05) 50%,rgba(0,0,0,.6))!important}
+html body .storia-vista{background:rgba(0,0,0,.6)!important}
+html.storia-aperta body header.testa{visibility:hidden}
+/* storia a formato 9:16, pop-up centrato più piccolo dello schermo (Mattia 26/11) */
+html body .storia-card{aspect-ratio:9/16;height:auto!important;width:min(380px,82vw,calc((100dvh - 120px)*9/16))!important;max-height:calc(100dvh - 120px);border-radius:20px!important;box-shadow:0 30px 80px rgba(0,0,0,.6)}
+html body .storia-vista{-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px)}
+html body .storia-domanda{font-size:clamp(22px,6.4vw,30px)!important;margin-bottom:16px!important}
+html body .storia-scelte{gap:8px!important}
+html body .storia-scelte a{padding:11px 16px!important;border-radius:16px!important}
+/* storia: domanda più piccola, riga messaggio + reazioni in basso come su IG */
+html body .storia-domanda{font-size:clamp(18px,5vw,22px)!important;line-height:1.2!important;margin-bottom:12px!important}
+html body .storia-risposta{display:flex;align-items:center;gap:8px;margin-top:14px}
+html body .storia-msg{flex:1;display:flex;align-items:center;min-width:0;height:44px;border:1px solid rgba(255,255,255,.55);border-radius:999px;padding:0 6px 0 16px;background:rgba(0,0,0,.15)}
+html body .storia-msg input{all:unset;flex:1;min-width:0;font:16px "Figtree",sans-serif;color:#fff}
+html body .storia-msg input::placeholder{color:rgba(255,255,255,.75)}
+html body .storia-msg button{all:unset;cursor:pointer;color:#fff;width:34px;height:34px;display:grid;place-items:center;border-radius:50%}
+html body .storia-reazioni{display:flex;gap:2px}
+html body .storia-reazioni button{all:unset;cursor:pointer;font-size:24px;line-height:1;width:36px;height:40px;display:grid;place-items:center;transition:transform .2s}
+html body .storia-reazioni button:active{transform:scale(.85)}
+html body .storia-reazioni button.tocca{animation:reazTocca .45s cubic-bezier(.2,.7,.2,1.4)}
+@keyframes reazTocca{40%{transform:scale(1.45)}100%{transform:none}}
+html body .storia-card>.storia-volo{position:absolute!important;inset:0;pointer-events:none;z-index:5!important;overflow:hidden}
+html body .storia-volo .grande{position:absolute;left:50%;top:50%;font-size:96px;line-height:1;transform:translate(-50%,-50%) scale(0);animation:reazGrande 1.4s cubic-bezier(.2,.7,.2,1) forwards}
+@keyframes reazGrande{25%{transform:translate(-50%,-50%) scale(1.15);opacity:1}45%{transform:translate(-50%,-50%) scale(1)}80%{opacity:1}100%{transform:translate(-50%,-70%) scale(.9);opacity:0}}
+html body .storia-volo .sale{position:absolute;bottom:60px;line-height:1;opacity:0;animation:reazSale 1.9s ease-out forwards}
+@keyframes reazSale{0%{opacity:0;transform:translate(0,0) scale(.5)}15%{opacity:1}100%{opacity:0;transform:translate(var(--dx),-420px) scale(1.1)}}
+html body .storia-card.in-pausa .storia-barre i{animation-play-state:paused!important}

@@ -4,7 +4,7 @@
 <meta property="og:title" content="Emi BioLab · Independent Design & Research Practice"><meta property="og:description" content="Emi BioLab is an independent design and research practice in Venice exploring matter through experimentation."><meta property="og:image" content="../img/filato-ciotola-blu.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter+Tight:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&family=IBM+Plex+Mono:wght@400&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/style.css?v=q7"><link rel="stylesheet" href="css/tema-test3.css?v=q7"><link rel="stylesheet" href="css/arte.css?v=q7"><link rel="stylesheet" href="css/palette.css?v=q7"><link rel="stylesheet" href="css/animazioni.css?v=q7"><link rel="stylesheet" href="css/transizioni.css?v=q7"><link rel="stylesheet" href="css/intro.css?v=q7"><link rel="stylesheet" href="css/hero-video.css?v=h3"><script src="js/palette-variante.js?v=f2"></script><script src="js/transizioni.js?v=q7" defer></script><link href="https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..700;1,400&display=swap" rel="stylesheet"><link rel="stylesheet" href="css/font-figtree.css?v=f2"></head>
+<link rel="stylesheet" href="css/style.css?v=q7"><link rel="stylesheet" href="css/tema-test3.css?v=q7"><link rel="stylesheet" href="css/arte.css?v=q7"><link rel="stylesheet" href="css/palette.css?v=q7"><link rel="stylesheet" href="css/animazioni.css?v=q7"><link rel="stylesheet" href="css/transizioni.css?v=q7"><link rel="stylesheet" href="css/intro.css?v=q7"><link rel="stylesheet" href="css/hero-video.css?v=h3"><script src="js/palette-variante.js?v=f2"></script><script src="js/transizioni.js?v=q7" defer></script><link href="https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..700;1,400&display=swap" rel="stylesheet"><link rel="stylesheet" href="css/font-figtree.css?v=f3"></head>
 <body data-pagina="home" data-sezione="">
 <div class="intro" aria-hidden="true"><div class="intro-nome"><span>Emi</span> <span>BioLab</span></div><div class="intro-barra"><i></i></div><div class="intro-perc">0%</div></div>
 <script>
@@ -75,15 +75,20 @@
       <a href="projects.html">Projects<small>Independent work and collaborations</small></a>
       <a href="about.html">About me<small>Who I am, talks, teaching</small></a>
     </nav>
+    <div class="storia-risposta">
+      <form class="storia-msg" data-wa="393474043158" autocomplete="off"><input type="text" name="m" placeholder="Message..." aria-label="Send a message to Carola" enterkeyhint="send"><button type="submit" aria-label="Send on WhatsApp"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M3.5 11.6 20 4l-5.8 16.2-3.1-6.6z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="m11.1 13.6 3.6-3.6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></button></form>
+      <div class="storia-reazioni" aria-label="React"><button type="button" data-e="🧜‍♀️" aria-label="Mermaid">🧜‍♀️</button><button type="button" data-e="🩵" aria-label="Light blue heart">🩵</button><button type="button" data-e="🪸" aria-label="Coral">🪸</button></div>
+    </div>
+    <div class="storia-volo" aria-hidden="true"></div>
   </div>
 </div>
 <script>
 /* "storia" come su Instagram: clic sulla foto, si apre e si sceglie dove andare */
 (function(){
-  const v=document.querySelector('.storia-vista'),btn=document.querySelector('.avatar.storia');if(!v||!btn)return;
+  const v=document.querySelector('.storia-vista'),btn=document.querySelector('.avatar.storia');if(!v||!btn)return;document.body.appendChild(v); /* fuori da main: così sta sopra la barra in alto (Mattia 26/11) */
   let timer;
-  const apri=()=>{v.hidden=false;const vid=v.querySelector('.storia-video');if(vid){vid.muted=true;vid.defaultMuted=true;vid.setAttribute('muted','');var pp=vid.play();if(pp&&pp.catch)pp.catch(function(){vid.load();vid.play().catch(function(){});});}requestAnimationFrame(()=>v.classList.add('aperta'));btn.classList.add('vista');document.body.style.overflow='hidden';v.querySelector('.storia-scelte a').focus({preventScroll:true});clearTimeout(timer);timer=setTimeout(chiudi,15000);};
-  const chiudi=()=>{v.classList.remove('aperta');const vid=v.querySelector('.storia-video');if(vid)vid.pause();document.body.style.overflow='';clearTimeout(timer);setTimeout(()=>{v.hidden=true;btn.focus({preventScroll:true});},350);};
+  const apri=()=>{v.hidden=false;const vid=v.querySelector('.storia-video');if(vid){vid.muted=true;vid.defaultMuted=true;vid.setAttribute('muted','');var pp=vid.play();if(pp&&pp.catch)pp.catch(function(){vid.load();vid.play().catch(function(){});});}requestAnimationFrame(()=>v.classList.add('aperta'));btn.classList.add('vista');document.body.style.overflow='hidden';v.querySelector('.storia-scelte a').focus({preventScroll:true});clearTimeout(window.emiST);window.emiST=setTimeout(chiudi,15000);};
+  const chiudi=()=>{v.classList.remove('aperta');const vid=v.querySelector('.storia-video');if(vid)vid.pause();document.body.style.overflow='';clearTimeout(window.emiST);setTimeout(()=>{v.hidden=true;btn.focus({preventScroll:true});},350);};
   btn.addEventListener('click',apri);document.querySelectorAll('.apri-storia').forEach(b=>b.addEventListener('click',apri));
   v.querySelector('.storia-chiudi').addEventListener('click',chiudi);
   v.addEventListener('click',e=>{if(e.target===v)chiudi();});
@@ -142,6 +147,25 @@
 </script><script>
 /* telefono: la barra in alto si scurisce appena scorri (Mattia 26/11) */
 (function(){var h=document.documentElement;function f(){h.classList.toggle('scorso',scrollY>30)}addEventListener('scroll',f,{passive:true});f();})();
+</script><script>
+/* storia: messaggio come su Instagram (apre WhatsApp) + reazioni con animazione (Mattia 26/11) */
+(function(){
+  var v=document.querySelector('.storia-vista');if(!v)return;
+  var card=v.querySelector('.storia-card'),f=v.querySelector('.storia-msg'),inp=f.querySelector('input'),volo=v.querySelector('.storia-volo');
+  function pausa(){clearTimeout(window.emiST);card.classList.add('in-pausa');}
+  inp.addEventListener('focus',pausa);inp.addEventListener('input',pausa);
+  f.addEventListener('submit',function(e){e.preventDefault();var t=inp.value.trim();if(!t){inp.focus();return;}
+    var n=(f.dataset.wa||'').replace(/\D/g,'');var url='https://wa.me/'+n+'?text='+encodeURIComponent(t);
+    window.open(url,'_blank','noopener');inp.value='';inp.blur();});
+  v.querySelectorAll('.storia-reazioni button').forEach(function(b){b.addEventListener('click',function(){
+    pausa();b.classList.remove('tocca');void b.offsetWidth;b.classList.add('tocca');
+    var e=b.dataset.e,big=document.createElement('span');big.className='grande';big.textContent=e;volo.appendChild(big);setTimeout(function(){big.remove()},1500);
+    for(var k=0;k<9;k++){(function(k){var x=document.createElement('span');x.className='sale';x.textContent=e;
+      x.style.left=(18+Math.random()*64)+'%';x.style.fontSize=(22+Math.random()*22)+'px';x.style.animationDelay=(k*70+Math.random()*80)+'ms';
+      x.style.setProperty('--dx',(Math.random()*60-30)+'px');volo.appendChild(x);setTimeout(function(){x.remove()},2300);})(k);}
+    if(navigator.vibrate)navigator.vibrate(12);
+  });});
+})();
 </script></main>
 <script src="js/animazioni.js?v=q7"></script><script src="js/vis-video.js?v=s1"></script>
 <script src="js/contenuti.js?v=f1"></script><script src="js/sito.js?v=q7"></script>
