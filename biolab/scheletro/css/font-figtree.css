@@ -99,3 +99,8 @@ html body .storia-card.in-pausa .storia-barre i{animation-play-state:paused!impo
 /* home: niente "Next live workshop" in fondo e niente bottone chiaro/scuro (Mattia 26/11): i social restano a destra / sotto il profilo */
 html body .arte-piede .piede-dx{justify-content:flex-end}
 html body .cambia-palette{display:none!important}
+/* telefono: la miniatura scivola da una categoria all'altra invece di riaprirsi ogni volta */
+@media (max-width:760px){html body .arte-vis.in-porte{transition:opacity .5s ease,clip-path .8s cubic-bezier(.2,.7,.2,1),top .55s cubic-bezier(.2,.7,.2,1)!important}
+  html body .arte-porte .parola{transition:color .45s ease!important}}
+/* telefono: più aria tra le categorie, così lo scroll ha spazio per accenderle una alla volta */
+@media (max-width:760px){html body .arte-porte{gap:9vh!important}html body .arte-piede{padding-bottom:14vh!important}}

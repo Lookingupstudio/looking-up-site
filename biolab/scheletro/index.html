@@ -4,7 +4,7 @@
 <meta property="og:title" content="Emi BioLab · Independent Design & Research Practice"><meta property="og:description" content="Emi BioLab is an independent design and research practice in Venice exploring matter through experimentation."><meta property="og:image" content="../img/filato-ciotola-blu.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter+Tight:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&family=IBM+Plex+Mono:wght@400&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/style.css?v=q7"><link rel="stylesheet" href="css/tema-test3.css?v=q7"><link rel="stylesheet" href="css/arte.css?v=q7"><link rel="stylesheet" href="css/palette.css?v=q7"><link rel="stylesheet" href="css/animazioni.css?v=q7"><link rel="stylesheet" href="css/transizioni.css?v=q7"><link rel="stylesheet" href="css/intro.css?v=q7"><link rel="stylesheet" href="css/hero-video.css?v=h3"><script src="js/transizioni.js?v=q7" defer></script><link href="https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..700;1,400&display=swap" rel="stylesheet"><link rel="stylesheet" href="css/font-figtree.css?v=f4"><link rel="stylesheet" href="css/menu-mobile.css?v=m1"></head>
+<link rel="stylesheet" href="css/style.css?v=q7"><link rel="stylesheet" href="css/tema-test3.css?v=q7"><link rel="stylesheet" href="css/arte.css?v=q7"><link rel="stylesheet" href="css/palette.css?v=q7"><link rel="stylesheet" href="css/animazioni.css?v=q7"><link rel="stylesheet" href="css/transizioni.css?v=q7"><link rel="stylesheet" href="css/intro.css?v=q7"><link rel="stylesheet" href="css/hero-video.css?v=h3"><script src="js/transizioni.js?v=q7" defer></script><link href="https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..700;1,400&display=swap" rel="stylesheet"><link rel="stylesheet" href="css/font-figtree.css?v=f5"><link rel="stylesheet" href="css/menu-mobile.css?v=m1"></head>
 <body data-pagina="home" data-sezione="">
 <div class="intro" aria-hidden="true"><div class="intro-nome"><span>Emi</span> <span>BioLab</span></div><div class="intro-barra"><i></i></div><div class="intro-perc">0%</div></div>
 <script>
@@ -109,26 +109,32 @@
 })();
 </script>
 <script>
-/* da telefono non c'è il passaggio del mouse: le tre parole si accendono a turno e accanto appare la loro immagine (Mattia 26/11) */
+/* da telefono non c'è il passaggio del mouse: la categoria si accende seguendo lo scroll (non più a turno "a semaforo") e la miniatura scivola accanto (Mattia 26/11) */
 (function(){
   if(!matchMedia('(hover: none), (max-width: 760px)').matches)return;
   var porte=document.querySelector('.arte-porte'),voci=[].slice.call(document.querySelectorAll('.arte-porte .voce')),vis=document.querySelector('.arte-vis');
   if(!porte||!vis||!voci.length)return;
   var et=vis.querySelector('span'),i=0,ridotto=matchMedia('(prefers-reduced-motion: reduce)').matches;
-  porte.classList.add('cicla');porte.style.position='relative';porte.appendChild(vis);vis.classList.add('in-porte');
+  porte.style.position='relative';porte.appendChild(vis);vis.classList.add('in-porte');
+  var attuale=-1;
   function accendi(n){
+    porte.classList.add('cicla');if(n!==attuale)voci.forEach(function(a){a.classList.remove('scelta')});attuale=n;
     voci.forEach(function(a,k){a.classList.toggle('attiva',k===n);a.querySelector('.parola').style.setProperty('color',k===n?'var(--parola-attiva,#ffffff)':'var(--parola-spenta,rgba(213,213,208,.28))','important');});
     var a=voci[n],pr=porte.getBoundingClientRect(),r=a.querySelector('.parola').getBoundingClientRect();
     et.textContent=a.dataset.vis;
     vis.style.top=(r.top-pr.top+r.height/2-vis.offsetHeight/2)+'px';
-    vis.classList.remove('su');void vis.offsetWidth;vis.classList.add('su');
+    if(!vis.classList.contains('su'))vis.classList.add('su');
   }
-  function giro(){accendi(i);i=(i+1)%voci.length;}
+  function spegni(){if(attuale<0)return;attuale=-1;voci.forEach(function(a){a.classList.remove('attiva','scelta');a.querySelector('.parola').style.removeProperty('color')});porte.classList.remove('cicla');vis.classList.remove('su');}
   window.emiAccendi=accendi;
-  /* parte solo quando l'intro è finita e le categorie sono davvero sullo schermo: niente miniatura già aperta all'arrivo (Mattia 26/11) */
-  var visibili=false;new IntersectionObserver(function(e){visibili=e[0].intersectionRatio>=.6},{threshold:[0,.6,1]}).observe(porte);
-  (function aspetta(){if(window.emiScelta)return;if(document.documentElement.classList.contains('con-intro')||document.querySelector('.intro')||!visibili){setTimeout(aspetta,250);return;}
-    setTimeout(function(){if(window.emiScelta)return;giro();if(!ridotto)window.emiGiro=setInterval(giro,3200);},1100);})();
+  /* scroll -> categoria: fermo in cima = niente acceso (effetto sorpresa al primo scroll), poi Education, Research, Projects man mano che scendi */
+  var pronto=false,inCoda=false;
+  (function aspetta(){if(document.documentElement.classList.contains('con-intro')||document.querySelector('.intro')){setTimeout(aspetta,250);return;}pronto=true;daScroll();})();
+  function daScroll(){inCoda=false;if(!pronto)return;
+    var max=document.documentElement.scrollHeight-innerHeight;if(max<40)return;
+    if(scrollY<24){spegni();return;}
+    var p=Math.min(1,scrollY/max),n=Math.min(voci.length-1,Math.max(0,Math.floor((p-.06)/.94*voci.length)));accendi(n);}
+  addEventListener('scroll',function(){if(!inCoda){inCoda=true;requestAnimationFrame(daScroll);}},{passive:true});
   
 })();
 </script>
