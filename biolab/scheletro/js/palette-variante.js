@@ -18,6 +18,6 @@
     b.setAttribute('aria-label','Switch colour palette');b.title='Light / dark';
     b.innerHTML='<svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><circle cx="12" cy="12" r="8.5" fill="none" stroke="currentColor" stroke-width="1.4"/><path d="M12 3.5a8.5 8.5 0 0 1 0 17z" fill="currentColor"/></svg>';
     b.addEventListener('click',function(){v=(leggi()||'scura')==='chiara'?'scura':'chiara';salva(v);applica(v);});
-    document.body.appendChild(b);
+    var dx=document.querySelector('.arte-piede .piede-dx');if(dx&&matchMedia('(max-width: 760px)').matches){b.classList.add('nel-piede');dx.appendChild(b);}else document.body.appendChild(b);
   });
 })();
