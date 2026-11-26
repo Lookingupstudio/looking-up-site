@@ -6,12 +6,36 @@
 <meta property="og:title" content="Algi Yarn · Live workshop · Emi BioLab"><meta property="og:description" content="From seaweed to thread, live with Emi. Saturday 5 December, 6:30 PM CET."><meta property="og:image" content="../img/filato-ciotola-blu.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter+Tight:wght@400;500&family=IBM+Plex+Mono:wght@400&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/workshop-processo.css?v=q6">
-<link rel="stylesheet" href="css/transizioni.css?v=q6"><script src="js/transizioni.js?v=q6" defer></script>
+<link rel="stylesheet" href="css/workshop-processo.css?v=q7">
+<link rel="stylesheet" href="css/transizioni.css?v=q7"><script src="js/transizioni.js?v=q7" defer></script>
 </head>
 <body>
 <!-- Pagina workshop in stile alethia.earth (Mattia 26/11). Tutte le immagini sono SEGNAPOSTO. -->
 <div class="caricamento" aria-hidden="true"><span></span></div>
+
+<!-- Sfondo di tutta la pagina: il video dall'alga al gomitolo avanza con lo scroll (Mattia 26/11: "dall'inizio alla fine") -->
+<div class="fondo-viaggio" aria-hidden="true">
+  <canvas class="viaggio-tela" data-frame="video/viaggio/f{n}.webp" data-totale="457"></canvas>
+  <div class="viaggio-velo"></div>
+</div>
+<div class="viaggio-didascalie" aria-hidden="true">
+  <ol class="viaggio-testi">
+    <li data-t="0.0000"><p class="tag">[ 01 · The seaweed ]</p><p>It all starts in the water, with brown seaweed.</p></li>
+    <li data-t="0.1316"><p class="tag">[ 02 · The cells ]</p><p>Closer. Inside its cell walls lives alginate.</p></li>
+    <li data-t="0.2105"><p class="tag">[ 03 · The chains ]</p><p>Long natural chains, ready to let go.</p></li>
+    <li data-t="0.2895"><p class="tag">[ 04 · The powder ]</p><p>Extracted and dried, a fine white powder.</p></li>
+    <li data-t="0.3684"><p class="tag">[ 05 · The gel ]</p><p>In water the chains open up and turn into gel.</p></li>
+    <li data-t="0.4474"><p class="tag">[ 06 · Glycerin ]</p><p>A drop of glycerin keeps it flexible.</p></li>
+    <li data-t="0.5263"><p class="tag">[ 07 · The blender ]</p><p>Blended until smooth and even.</p></li>
+    <li data-t="0.6053"><p class="tag">[ 08 · Rest ]</p><p>The air leaves. Patience is part of the material.</p></li>
+    <li data-t="0.6842"><p class="tag">[ 09 · Extrusion ]</p><p>From the nozzle, a continuous filament.</p></li>
+    <li data-t="0.7632"><p class="tag">[ 10 · Calcium bath ]</p><p>Calcium binds the chains: a thread is born.</p></li>
+    <li data-t="0.8421"><p class="tag">[ 11 · Rinse ]</p><p>Rinsed in clear water.</p></li>
+    <li data-t="0.9211"><p class="tag">[ 12 · Drying ]</p><p>It dries and turns pearly.</p></li>
+    <li data-t="1.0000"><p class="tag">[ 13 · The yarn ]</p><p>Wound into a ball, ready to use.</p></li>
+  </ol>
+  <div class="viaggio-barra"><i></i></div>
+</div>
 
 <header class="barra">
   <a class="logo-segnaposto" href="index.html" aria-label="Emi BioLab, home">Logo</a>
@@ -22,38 +46,12 @@
 <main>
   <!-- 1. HERO: oggetti che galleggiano -->
   <section class="hero">
-    <div class="galleggia" aria-hidden="true">
-      <figure class="ogg o1" data-p="1.0"><div class="segnaposto blob"><span>cutout · seaweed</span></div></figure>
-      <figure class="ogg o2" data-p="1.8"><div class="segnaposto blob b2"><span>cutout · yarn skein</span></div></figure>
-      <figure class="ogg o3" data-p="2.6"><div class="segnaposto blob b3"><span>cutout · bowl</span></div></figure>
-      <figure class="ogg o4" data-p="3.4"><div class="segnaposto blob b4"></div></figure>
-    </div>
     <div class="hero-testo">
       <h1 class="sale"><span>From seaweed</span><span>to thread,</span><span>live with Emi</span></h1>
       <a class="bottone piccolo" href="#prenota">Algi Yarn workshop <i>→</i></a>
     </div>
     <p class="hero-sotto">Online workshop · Saturday 5 December · 6:30 to 8:00 PM CET<br>Make a continuous algae-based yarn in your kitchen.</p>
     <p class="scorri">Scroll to discover</p>
-  </section>
-
-  <!-- 2. VIAGGIO: dall'alga al filo, un unico piano sequenza (immagini AI concettuali, bozze) -->
-  <section class="viaggio" data-scena>
-    <div class="viaggio-fisso">
-      <div class="viaggio-strati" aria-hidden="true">
-        <img src="img/viaggio/01.jpg" alt=""><img src="img/viaggio/02.jpg" alt=""><img src="img/viaggio/03.jpg" alt="">
-        <img src="img/viaggio/04.jpg" alt=""><img src="img/viaggio/05.jpg" alt=""><img src="img/viaggio/06.jpg" alt="">
-      </div>
-      <div class="viaggio-velo"></div>
-      <ol class="viaggio-testi">
-        <li><p class="tag">[ 01 · The seaweed ]</p><p>It all starts in the water, with brown seaweed.</p></li>
-        <li><p class="tag">[ 02 · The cells ]</p><p>Closer. Inside its cell walls lives alginate.</p></li>
-        <li><p class="tag">[ 03 · The chains ]</p><p>Long natural chains, ready to let go.</p></li>
-        <li><p class="tag">[ 04 · The powder ]</p><p>Extracted and dried, they become a fine white powder.</p></li>
-        <li><p class="tag">[ 05 · The gel ]</p><p>In water the chains open up and turn into gel.</p></li>
-        <li><p class="tag">[ 06 · The thread ]</p><p>In the calcium bath they bind together. A thread is born.</p></li>
-      </ol>
-      <div class="viaggio-barra"><i></i></div>
-    </div>
   </section>
 
   <!-- 3. IL PROCESSO: scena fissa + passaggi numerati -->
@@ -132,5 +130,5 @@
 
 <footer class="piede"><span>Emi BioLab · Venice</span><a href="https://www.instagram.com/emibiolab/">Instagram</a><a href="index.html">Home</a></footer>
 
-<script src="js/workshop-processo.js?v=q6"></script>
+<script src="js/workshop-processo.js?v=q7"></script>
 </body></html>

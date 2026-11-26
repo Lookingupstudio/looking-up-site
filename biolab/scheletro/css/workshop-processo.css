@@ -161,7 +161,7 @@ html.pronto .sale span{transform:none;opacity:1}
 .barra.su-chiaro .bottone{background:var(--inchiostro);color:var(--chiaro)}
 
 /* 2. VIAGGIO: piano sequenza dall'alga al filo (Mattia 26/11: "uno shot unico") */
-.viaggio{height:900vh}
+.viaggio{height:1300vh}
 .viaggio-fisso{position:sticky;top:0;height:100vh;overflow:hidden;background:#000}
 .viaggio-strati{position:absolute;inset:0}
 .viaggio-strati img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;mix-blend-mode:screen;will-change:transform,opacity,filter;transform-origin:50% 50%}
@@ -174,3 +174,30 @@ html.pronto .sale span{transform:none;opacity:1}
 .viaggio-barra i{display:block;width:100%;height:calc(var(--p,0)*100%);background:var(--rosa)}
 @media (prefers-reduced-motion:reduce){.viaggio{height:auto}.viaggio-fisso{position:relative}.viaggio-strati img:last-child{opacity:1}.viaggio-testi li:last-child{opacity:1}}
 .viaggio-testi li{transition:opacity .45s ease,transform .7s cubic-bezier(.2,.7,.2,1)}
+
+.viaggio-tela{position:absolute;inset:0;width:100%;height:100%;display:block;background:#000 url(../video/viaggio-poster.jpg) center/cover no-repeat}
+
+/* === 26/11 sera: il video fa da sfondo a TUTTA la pagina === */
+.fondo-viaggio{position:fixed;inset:0;z-index:0;background:#000}
+.fondo-viaggio .viaggio-tela{position:absolute;inset:0;width:100%;height:100%}
+.fondo-viaggio .viaggio-velo{position:absolute;inset:0;background:radial-gradient(ellipse at 50% 50%,rgba(0,0,0,.28),rgba(0,0,0,.1) 70%),linear-gradient(90deg,rgba(0,0,0,.62),rgba(0,0,0,.18) 55%,rgba(0,0,0,.45)),linear-gradient(0deg,rgba(0,0,0,.5),transparent 40%)}
+main,.piede{position:relative;z-index:1}
+.barra{z-index:50}
+.hero,.processo-fisso,.nera,.programma,.prenota,.piede{background:transparent!important}
+.processo-foto{display:none}
+.ruota{display:none}
+.chiara{background:rgba(10,10,9,.5)!important;color:var(--testo)!important;backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px)}
+.chiara .tag.scuro{color:var(--rosa)}
+.chiara .scheda .segnaposto{background:rgba(213,213,208,.08)}
+.chiara .scheda.verde{background:rgba(225,179,216,.16);color:var(--testo)}
+.programma{border-top:0}
+.programma li{border-bottom-color:rgba(213,213,208,.18)}
+.viaggio-didascalie{position:fixed;inset:0;z-index:2;pointer-events:none}
+.viaggio-didascalie .viaggio-testi{position:absolute;right:clamp(16px,3vw,40px);left:auto;bottom:clamp(24px,5vh,48px);width:min(300px,60vw);height:80px;text-align:right}
+.viaggio-didascalie .viaggio-testi li{right:0;left:auto}
+.viaggio-didascalie .viaggio-testi p:not(.tag){font-size:15px;line-height:1.35;color:rgba(255,255,255,.8);font-family:var(--testo-f);margin-top:6px}
+.viaggio-didascalie .viaggio-barra{right:clamp(10px,1.4vw,20px)}
+.barra.su-chiaro{color:inherit}.barra.su-chiaro .logo-segnaposto{border-color:rgba(213,213,208,.4)}.barra.su-chiaro .bottone{background:var(--testo);color:var(--inchiostro)}
+@media (max-width:760px){.viaggio-didascalie .viaggio-testi{bottom:16px;width:56vw}.passi{bottom:110px}}
+.prenota h2,.frase-grande,.programma li{text-shadow:0 2px 30px rgba(0,0,0,.55)}
+@media (max-width:760px){.viaggio-didascalie .viaggio-testi{display:none}}
