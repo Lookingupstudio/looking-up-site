@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex, nofollow">
 <title>Gessato · Sartoria su misura · Il sarto viene da te</title>
-<meta name="description" content="Abiti, giacche e camicie su misura. Prenoti online la prima visita: il sarto arriva a casa tua o in ufficio. Boutique di cravatte, pochette e camicie. Demo di Looking Up.">
+<meta name="description" content="Abiti, giacche e camicie su misura. Prenoti online la prima visita: il sarto arriva a casa tua o in ufficio. I modelli della boutique, su misura per te. Demo di Looking Up.">
 <meta property="og:title" content="Gessato · Il sarto viene da te">
 <meta property="og:description" content="Sartoria su misura con prenotazione online, misure a domicilio e boutique. Sito demo.">
 <meta property="og:image" content="https://www.lookingupstudio.com/sartoria-demo/img/og.jpg">
@@ -220,8 +220,11 @@ ul.ticks li:before{content:"";position:absolute;left:0;top:21px;width:14px;borde
 .filters button{border:1px solid var(--linea);padding:9px 18px;border-radius:99px;font-size:12px;letter-spacing:.14em;text-transform:uppercase;background:#fff}
 .filters button.on{background:var(--notte);color:var(--avorio);border-color:var(--notte)}
 .prods{display:grid;grid-template-columns:repeat(4,1fr);gap:28px 22px}
-.prod{cursor:pointer;text-align:left}
-.prod .im{aspect-ratio:4/5;overflow:hidden;background:var(--avorio);border-radius:2px;position:relative}
+.prod{text-align:left}
+.prod .pb{display:block;width:100%;text-align:left;cursor:pointer}
+.prod .go2{display:inline-block;margin-top:14px;font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--notte);border-bottom:1px solid var(--notte);padding-bottom:4px}
+.prod .go2:hover{color:var(--ottone);border-color:var(--ottone)}
+.prod .im{aspect-ratio:4/5;overflow:hidden;background:#f7f6f3;border-radius:0;position:relative}
 .prod .im img{width:100%;height:100%;object-fit:cover;transition:transform 1s}
 .prod:hover .im img{transform:scale(1.05)}
 .prod .tag{position:absolute;top:12px;left:12px;background:rgba(255,255,255,.95);font-size:10px;letter-spacing:.16em;text-transform:uppercase;padding:5px 9px}
@@ -456,7 +459,7 @@ i{font-style:normal}
       <p class="lead" data-en="Suits, jackets and shirts made to measure. Book online and the tailor comes to your home or office, with cloths and tape measure.">Abiti, giacche e camicie su misura. Prenoti online e il sarto arriva a casa tua o in ufficio, con i tessuti e il metro.</p>
       <div class="ctas">
         <a href="#/prenota" class="btn btn-p" data-en="Book the first visit">Prenota la prima visita</a>
-        <a href="#/boutique" class="btn btn-o" data-en="Visit the boutique">Visita la boutique</a>
+        <a href="#/boutique" class="btn btn-o" data-en="See the models">Scopri i modelli</a>
       </div>
       <div class="trust">
         <div><b data-en="2 fittings">2 prove</b><span data-en="at home or in the atelier">a casa o in atelier</span></div>
@@ -472,15 +475,15 @@ i{font-style:normal}
 
   <section class="sec">
     <div class="wrap">
-      <div class="sec-t"><div><div class="eyebrow" data-en="Two ways in">Due strade</div><h2 data-en="Made for you, or ready to wear.">Fatto per te, o pronto da indossare.</h2></div></div>
+      <div class="sec-t"><div><div class="eyebrow" data-en="Two ways in">Due strade</div><h2 data-en="Start from a conversation, or from a model.">Parti da una conversazione, o da un modello.</h2></div></div>
       <div class="doors">
         <a href="#/su-misura" class="door">
-          <img src="img/abito-tre-pezzi.jpg" alt="Abito tre pezzi blu a quadri su misura" loading="lazy">
+          <img src="img/porta-su-misura.jpg" alt="Le mani del sarto cuciono a mano con ago e filo" loading="lazy">
           <div class="c"><div class="eyebrow" data-en="Bespoke · from €1,800">Su misura · da 1.800 €</div><h2 data-en="Bespoke">Su misura</h2><p data-en="Suits, jackets, coats and shirts. Book a visit: the tailor takes your measures at home, then two fittings.">Abiti, giacche, cappotti e camicie. Prenoti la visita: il sarto prende le misure a casa tua, poi due prove.</p><span class="go" data-en="Discover the process">Scopri il percorso</span></div>
         </a>
         <a href="#/boutique" class="door">
-          <img src="img/cravatte-lotto.jpg" alt="Cravatte in seta di diverse fantasie" loading="lazy">
-          <div class="c"><div class="eyebrow" data-en="Boutique · shipped in 48h">Boutique · spedita in 48 ore</div><h2>Boutique</h2><p data-en="Seven-fold ties, pocket squares, shirts in sizes and cufflinks. You buy them here, with a click.">Cravatte sette pieghe, pochette, camicie in taglia e gemelli. Si comprano qui, con un clic.</p><span class="go" data-en="Shop now">Vai alla boutique</span></div>
+          <img src="img/porta-boutique.jpg" alt="Una mano sul revers di un abito gessato" loading="lazy" style="object-position:35% 50%">
+          <div class="c"><div class="eyebrow" data-en="Boutique · the models">Boutique · i modelli</div><h2>Boutique</h2><p data-en="Suits, jackets, coats and ceremony wear to start from. Choose a model: the tailor makes it on your measures.">Abiti, giacche, cappotti e cerimonia da cui partire. Scegli un modello: il sarto lo fa sulle tue misure.</p><span class="go" data-en="See the models">Scopri i modelli</span></div>
         </a>
       </div>
     </div>
@@ -631,7 +634,7 @@ i{font-style:normal}
     <div class="wrap">
       <div class="crumbs">Home / Boutique</div>
       <h1 data-en="The boutique.">La boutique.</h1>
-      <p class="lead" data-en="What needs no measures, you buy here. Seven-fold ties, pocket squares, shirts in sizes, cufflinks.">Quello che non ha bisogno di misure si compra qui. Cravatte sette pieghe, pochette, camicie in taglia, gemelli.</p>
+      <p class="lead" data-en="Our models, made on your measures. Choose one and book the tailor: he comes to you with the cloths and takes your measures.">I nostri modelli, fatti sulle tue misure. Scegline uno e prenota il sarto: viene da te con i tessuti e prende le misure.</p>
     </div>
   </div>
   <section class="sec" style="padding-top:56px">
@@ -639,9 +642,9 @@ i{font-style:normal}
       <div class="filters" id="filters"></div>
       <div class="prods" id="prods"></div>
       <div class="ship">
-        <div><b data-en="Shipped in 48 hours">Spedita in 48 ore</b><span data-en="Free over €150, in a gift box.">Gratuita sopra i 150 €, in scatola regalo.</span></div>
-        <div><b data-en="Returns in 14 days">Reso in 14 giorni</b><span data-en="For boutique items. Bespoke garments are made only for you.">Per i prodotti della boutique. I capi su misura sono fatti solo per te.</span></div>
-        <div><b data-en="Secure payment">Pagamento sicuro</b><span data-en="Card, Apple Pay, PayPal, in three instalments.">Carta, Apple Pay, PayPal, in tre rate.</span></div>
+        <div><b data-en="Every model is bespoke">Ogni modello è su misura</b><span data-en="Cloth, lining, buttons and details are chosen with the tailor.">Tessuto, fodera, bottoni e dettagli si scelgono con il sarto.</span></div>
+        <div><b data-en="Deposit only">Solo una caparra</b><span data-en="You book online with a deposit, taken off the final price.">Prenoti online con una caparra, scalata dal prezzo finale.</span></div>
+        <div><b data-en="Two fittings">Due prove</b><span data-en="At home or in the atelier, delivery in about six weeks.">A casa o in atelier, consegna in circa sei settimane.</span></div>
       </div>
     </div>
   </section>
@@ -770,7 +773,7 @@ i{font-style:normal}
       <details><summary data-en="Does the home visit cost extra?">La visita a domicilio ha un costo?</summary><p data-en="In the city and surroundings it is included. You pay a deposit when booking, which is taken off the final price. Example conditions.">In città e dintorni è inclusa. Alla prenotazione paghi una caparra, che poi si scala dal prezzo finale. Condizioni di esempio.</p></details>
       <details><summary data-en="Where do you come?">Fino a dove arrivate?</summary><p data-en="The city and surroundings with the home service; elsewhere in Italy and abroad on request, with dedicated tailor days.">Città e dintorni con il servizio a domicilio; nel resto d'Italia e all'estero su richiesta, con giornate dedicate.</p></details>
       <details><summary data-en="Can I return a bespoke garment?">Posso restituire un capo su misura?</summary><p data-en="No, because it is made only for you. But adjustments are included until it is perfect, and small touch-ups are free for a year.">No, perché è fatto solo per te. Ma le modifiche sono incluse finché non è perfetto, e i piccoli ritocchi sono gratuiti per un anno.</p></details>
-      <details><summary data-en="And boutique items?">E i prodotti della boutique?</summary><p data-en="You can return them within 14 days, unused and in their box. Shipping in 48 hours, free over €150.">Puoi renderli entro 14 giorni, non usati e nella loro scatola. Spedizione in 48 ore, gratuita sopra i 150 €.</p></details>
+      <details><summary data-en="How do the boutique models work?">Come funzionano i modelli della boutique?</summary><p data-en="They are a starting point: you choose a model, book the tailor and he makes it on your measures, in the cloth you prefer. Nothing is sold ready-made.">Sono un punto di partenza: scegli un modello, prenoti il sarto e lui lo realizza sulle tue misure, nel tessuto che preferisci. Niente si vende già pronto.</p></details>
       <details><summary data-en="How do saved measures work?">Come funzionano le misure salvate?</summary><p data-en="After the first visit we save your measures in your account. You can reorder shirts online by choosing cloth, collar and cuffs. If your measures change, we update them at the next fitting.">Dopo la prima visita salviamo le tue misure nella tua area cliente. Puoi riordinare le camicie online scegliendo tessuto, collo e polsino. Se le misure cambiano, le aggiorniamo alla prova successiva.</p></details>
       <details><summary data-en="How long is the gift card valid?">Quanto dura la gift card?</summary><p data-en="Twelve months. The recipient books the visit online with the card code.">Dodici mesi. Chi la riceve prenota la visita online con il codice della card.</p></details>
       <details><summary data-en="How can I pay?">Come posso pagare?</summary><p data-en="Card, Apple Pay, Google Pay, PayPal, bank transfer and payment in three instalments. The balance of bespoke garments is paid at delivery.">Carta, Apple Pay, Google Pay, PayPal, bonifico e pagamento in tre rate. Il saldo dei capi su misura si paga alla consegna.</p></details>
@@ -788,7 +791,7 @@ i{font-style:normal}
         <p style="margin-top:24px;max-width:300px" data-en="Your tailor, at your door.">Il sarto viene da te.</p>
       </div>
       <div><h5 data-en="Bespoke">Su misura</h5><a href="#/su-misura" data-en="The process">Il percorso</a><a href="#/prenota" data-en="Book a visit">Prenota una visita</a><a href="#/tessuti" data-en="Cloths">Tessuti</a><a href="#/gift-card">Gift card</a></div>
-      <div><h5>Boutique</h5><a href="#/boutique" data-en="Ties">Cravatte</a><a href="#/boutique" data-en="Shirts">Camicie</a><a href="#/area-cliente" data-en="My account">Area cliente</a><a href="#/faq">FAQ</a></div>
+      <div><h5>Boutique</h5><a href="#/boutique" data-en="Suits">Abiti</a><a href="#/boutique" data-en="Jackets and coats">Giacche e cappotti</a><a href="#/boutique" data-en="Ceremony">Cerimonia</a><a href="#/area-cliente" data-en="My account">Area cliente</a><a href="#/faq">FAQ</a></div>
       <div><h5 data-en="Contacts">Contatti</h5><p data-en="Atelier by appointment<br>Address to be defined">Atelier su appuntamento<br>Indirizzo da definire</p><a href="#" class="js-wa">WhatsApp</a><a href="https://www.instagram.com/gessato.sartoria" target="_blank" rel="noopener">Instagram</a></div>
     </div>
     <div class="bot"><span data-en="Gessato · example name · demo site">Gessato · nome di esempio · sito demo</span><span data-en="Demo by <a href='https://www.lookingupstudio.com' target='_blank' rel='noopener' style='display:inline'>Looking Up</a> · stock photos">Demo a cura di <a href="https://www.lookingupstudio.com" target="_blank" rel="noopener" style="display:inline">Looking Up</a> · foto stock</span></div>
@@ -826,21 +829,21 @@ var MODI=[
  {id:'video',it:'Videochiamata',en:'Video call',dit:'15 minuti per conoscerci. Gratuita.',den:'15 minutes to get to know each other. Free.',icon:'<rect x="3" y="6" width="13" height="12" rx="2"/><path d="M16 10l5-3v10l-5-3"/>'}
 ];
 var PRODS=[
- {id:'p1',cat:'cravatte',it:'Cravatta sette pieghe, paisley blu',en:'Seven-fold tie, navy paisley',p:140,img:'cravatta-paisley',dit:'Seta stampata, sette pieghe a mano, senza fodera.',den:'Printed silk, hand-folded seven times, unlined.',tag:['Novità','New']},
- {id:'p2',cat:'cravatte',it:'Cravatta in seta, lilla',en:'Silk tie, lilac',p:120,img:'cravatta-legno',dit:'Seta jacquard, punta a mano.',den:'Jacquard silk, hand-finished tip.'},
- {id:'p3',cat:'cravatte',it:'Cravatta a pois, blu e verde',en:'Polka dot tie, navy and green',p:120,img:'cravatta-pois',dit:'Seta stampata, pois piccolo.',den:'Printed silk, small polka dot.'},
- {id:'p4',cat:'pochette',it:'Pochette in seta, fantasie',en:'Silk pocket square, patterns',p:65,img:'pochette-scaffale',dit:'Orlo arrotolato a mano. Fantasia a scelta.',den:'Hand-rolled edge. Pattern of your choice.'},
- {id:'p5',cat:'camicie',it:'Camicia bianca, popeline',en:'White shirt, poplin',p:160,img:'camicia-bianca',dit:'Cotone popeline 100/2, collo francese. In taglia.',den:'100/2 cotton poplin, cutaway collar. Ready to wear.',size:1,tag:['In taglia','Ready to wear']},
- {id:'p6',cat:'camicie',it:'Camicia azzurra, oxford',en:'Blue shirt, oxford',p:160,img:'camicia-righe',dit:'Cotone oxford, collo button down. In taglia.',den:'Oxford cotton, button-down collar. Ready to wear.',size:1},
- {id:'p7',cat:'accessori',it:'Gemelli in argento, monogramma',en:'Silver cufflinks, monogram',p:180,img:'gemelli',dit:'Argento 925, incisione delle iniziali inclusa.',den:'925 silver, initials engraving included.',tag:['Incisione','Engraving']},
- {id:'p8',cat:'pochette',it:'Pochette in lino, blu',en:'Linen pocket square, navy',p:55,img:'pochette-abito',dit:'Lino irlandese, orlo a mano.',den:'Irish linen, hand-rolled edge.'}
+ {id:'m1',cat:'abiti',capo:'abito',it:'Abito Milano',en:'Milano suit',p:1800,img:'fig-abito-milano',tit:'Monopetto due bottoni, revers a lancia',ten:'Single-breasted, two buttons, notch lapel',fit:'Fresco di lana 240 g, blu',fen:'Fresco wool 240 g, blue',tag:['Il più scelto','Most chosen']},
+ {id:'m2',cat:'abiti',capo:'abito',it:'Abito Nero',en:'Black suit',p:1900,img:'fig-abito-nero',tit:'Monopetto, linea asciutta',ten:'Single-breasted, clean line',fit:'Barathea di lana, nero',fen:'Wool barathea, black'},
+ {id:'m3',cat:'abiti',capo:'abito',it:'Abito Avorio',en:'Ivory suit',p:2100,img:'fig-abito-avorio',tit:'Tre pezzi con gilet, per il giorno',ten:'Three-piece with waistcoat, for daytime',fit:'Lana fredda, avorio',fen:'Cool wool, ivory'},
+ {id:'m4',cat:'giacche',capo:'giacca',it:'Giacca Notte',en:'Notte jacket',p:1400,img:'fig-giacca-notte',tit:'Da sera, revers a scialle',ten:'Evening jacket, shawl lapel',fit:'Lana e seta, blu notte',fen:'Wool and silk, midnight blue'},
+ {id:'m5',cat:'giacche',capo:'giacca',it:'Giacca Cammello',en:'Camel jacket',p:1200,img:'fig-giacca-cammello',tit:'Monopetto, spalla morbida',ten:'Single-breasted, soft shoulder',fit:'Lana e cashmere, cammello',fen:'Wool and cashmere, camel'},
+ {id:'m6',cat:'giacche',capo:'giacca',it:'Giacca Riviera',en:'Riviera jacket',p:1200,img:'fig-giacca-riviera',tit:'Sfoderata, per l\'estate',ten:'Unlined, for summer',fit:'Lino e seta, salvia',fen:'Linen and silk, sage'},
+ {id:'m7',cat:'cappotti',capo:'cappotto',it:'Cappotto Tweed',en:'Tweed overcoat',p:2200,img:'fig-cappotto-tweed',tit:'Monopetto, lunghezza al ginocchio',ten:'Single-breasted, knee length',fit:'Tweed di lana, sale e pepe',fen:'Wool tweed, salt and pepper'},
+ {id:'m8',cat:'cerimonia',capo:'cerimonia',it:'Smoking Bianco',en:'White dinner jacket',p:2400,img:'fig-smoking-bianco',tit:'Doppiopetto, revers a scialle',ten:'Double-breasted, shawl lapel',fit:'Lana e mohair, bianco',fen:'Wool and mohair, white'}
 ];
-var CATS=[['tutto','Tutto','All'],['cravatte','Cravatte','Ties'],['pochette','Pochette','Pocket squares'],['camicie','Camicie','Shirts'],['accessori','Accessori','Accessories']];
+var CATS=[['tutto','Tutto','All'],['abiti','Abiti','Suits'],['giacche','Giacche','Jackets'],['cappotti','Cappotti','Coats'],['cerimonia','Cerimonia','Ceremony']];
 var GIFTS=[
  {id:'g1',it:'Camicia su misura',en:'Bespoke shirt',v:180,dit:'Visita del sarto e una camicia su misura.',den:'Tailor visit and one bespoke shirt.'},
  {id:'g2',it:'Giacca su misura',en:'Bespoke jacket',v:1200,dit:'Visita, due prove, una giacca.',den:'Visit, two fittings, one jacket.'},
  {id:'g3',it:'Abito su misura',en:'Bespoke suit',v:1800,dit:'Il regalo completo: un abito fatto per lui.',den:'The full gift: a suit made for him.'},
- {id:'g4',it:'Importo libero',en:'Custom amount',v:0,dit:'Scegli tu il valore, da usare in boutique o su misura.',den:'Choose the value, for the boutique or bespoke.'}
+ {id:'g4',it:'Importo libero',en:'Custom amount',v:0,dit:'Scegli tu il valore, da usare per un capo su misura.',den:'Choose the value, for any bespoke garment.'}
 ];
 
 /* ---------- carrello ---------- */
@@ -853,7 +856,7 @@ function total(){return cart.reduce(function(a,c){return a+c.p*c.q},0)}
 function renderDrawer(){
   var d=$('#drawer'), tot=total(), free=150;
   var h='<div class="dh"><h4>'+T('Il tuo carrello','Your bag')+'</h4><button class="ib js-close" aria-label="Chiudi" style="font-size:21px">×</button></div><div class="items">';
-  if(!cart.length) h+='<div class="empty"><p style="font-family:var(--serif);font-size:18px;color:var(--notte)">'+T('Il carrello è vuoto.','Your bag is empty.')+'</p><p style="margin-top:8px">'+T('Dai un\'occhiata alla boutique.','Have a look at the boutique.')+'</p><a href="#/boutique" class="btn btn-o js-close" style="margin-top:22px">Boutique</a></div>';
+  if(!cart.length) h+='<div class="empty"><p style="font-family:var(--serif);font-size:18px;color:var(--notte)">'+T('Il carrello è vuoto.','Your bag is empty.')+'</p><p style="margin-top:8px">'+T('Qui trovi le gift card e i riordini delle tue camicie.','Gift cards and your shirt reorders appear here.')+'</p><a href="#/gift-card" class="btn btn-o js-close" style="margin-top:22px">Gift card</a></div>';
   cart.forEach(function(c,i){
     var vis=c.gift?'<div class="gi"><svg class="mono" style="width:100%;height:100%"><use href="#mono"/></svg></div>':'<img src="img/'+c.img+'.jpg" alt="">';
     h+='<div class="it">'+vis+'<div><b>'+T(c.it,c.en)+'</b><small>'+(c.v?T(c.v[0],c.v[1]):'')+'</small><small>'+T('Quantità','Qty')+' '+c.q+'</small><button class="rm" data-rm="'+i+'">'+T('Rimuovi','Remove')+'</button></div><div style="font-size:14px">'+eur(c.p*c.q)+'</div></div>';
@@ -861,7 +864,7 @@ function renderDrawer(){
   h+='</div>';
   if(cart.length){
     var miss=Math.max(0,free-tot);
-    h+='<div class="df"><div style="font-size:12.5px;color:var(--muto)">'+(miss?T('Ancora '+eur(miss)+' per la spedizione gratuita','Another '+eur(miss)+' for free shipping'):T('Spedizione gratuita','Free shipping'))+'</div><div class="bar"><i style="width:'+Math.min(100,tot/free*100)+'%"></i></div>'+
+    h+='<div class="df">'+
        '<div class="r t"><span>'+T('Totale','Total')+'</span><span>'+eur(tot)+'</span></div><button class="btn btn-p btn-full" id="checkout">'+T('Vai al pagamento','Checkout')+'</button><p style="font-size:11.5px;color:var(--muto);margin-top:10px;text-align:center">'+T('Demo: nessun pagamento reale','Demo: no real payment')+'</p></div>';
   }
   d.innerHTML=h;
@@ -925,7 +928,7 @@ function renderBK(){
     '</div><div class="navb"><span></span><button class="btn btn-p" data-next '+(BK.capo?'':'disabled style="opacity:.4"')+'>'+T('Avanti','Next')+'</button></div></div>';
   }
   if(BK.step===1){
-    h='<div class="bstep on"><h3>'+T('Dove ci vediamo?','Where shall we meet?')+'</h3><p class="muto">'+T('Il sarto viene da te, oppure vieni tu in atelier.','The tailor comes to you, or you come to the atelier.')+'</p><div class="opts">'+
+    h='<div class="bstep on"><h3>'+T('Dove ci vediamo?','Where shall we meet?')+'</h3><p class="muto">'+(BK.mod?T('Hai scelto: ','You chose: ')+'<b style="font-weight:400;color:var(--notte)">'+T(prodById(BK.mod).it,prodById(BK.mod).en)+'</b>. '+T('Il sarto porta i tessuti e prende le misure.','The tailor brings the cloths and takes your measures.'):T('Il sarto viene da te, oppure vieni tu in atelier.','The tailor comes to you, or you come to the atelier.'))+'</p><div class="opts">'+
     MODI.map(function(m){return '<button class="opt'+(BK.modo===m.id?' on':'')+'" data-modo="'+m.id+'"><svg viewBox="0 0 24 24">'+m.icon+'</svg><b>'+T(m.it,m.en)+'</b><span>'+T(m.dit,m.den)+'</span><em>'+(m.id==='video'?T('Gratuita','Free'):T('Caparra','Deposit')+' '+eur(capoById(BK.capo).cap))+'</em></button>'}).join('')+'</div>'+
     (BK.modo==='casa'?'<div class="fld" style="max-width:420px"><label>'+T('Indirizzo o CAP','Address or postcode')+'</label><input id="zona" value="'+BK.zona+'" placeholder="'+T('Es. 20121','E.g. 20121')+'"></div><p class="small muto" style="margin-top:8px">'+T('Controlliamo subito se la zona è coperta.','We check right away if the area is covered.')+'</p>':'')+
     '<div class="navb"><button class="btn btn-o" data-prev>'+T('Indietro','Back')+'</button><button class="btn btn-p" data-next '+(BK.modo?'':'disabled style="opacity:.4"')+'>'+T('Avanti','Next')+'</button></div></div>';
@@ -952,7 +955,7 @@ function renderBK(){
   if(BK.step===4){
     var m=modoById(BK.modo), c=capoById(BK.capo);
     h='<div class="bstep on done"><svg class="mono" style="width:64px;height:64px;color:var(--notte);margin:0 auto;display:block"><use href="#mono"/></svg><h2 style="margin-top:18px">'+T('A presto, ','See you soon, ')+(BK.nome||'Marco').split(' ')[0]+'.</h2><p class="muto" style="margin-top:10px">'+T('Ti abbiamo mandato la conferma via email e WhatsApp.','We sent the confirmation by email and WhatsApp.')+'</p>'+
-    '<div class="ticket"><div style="display:flex;justify-content:space-between;align-items:center"><span style="font-family:var(--serif);letter-spacing:.28em;font-size:17px;color:var(--notte)">GESSATO</span><span class="pill">'+T('Confermato','Confirmed')+'</span></div><div class="t">'+(BK.modo==='casa'?T('Il sarto viene da te.','Your tailor, at your door.'):BK.modo==='video'?T('Ci vediamo in video.','See you on video.'):T('Ti aspettiamo in atelier.','See you in the atelier.'))+'</div><div class="d">'+dayLabel()+' · '+T('ore','at')+' '+BK.slot+'<br>'+T(m.it,m.en)+' · '+T(c.it,c.en)+(deposit()?'<br>'+T('Caparra versata','Deposit paid')+' '+eur(deposit()):'')+'</div></div>'+
+    '<div class="ticket"><div style="display:flex;justify-content:space-between;align-items:center"><span style="font-family:var(--serif);letter-spacing:.28em;font-size:17px;color:var(--notte)">GESSATO</span><span class="pill">'+T('Confermato','Confirmed')+'</span></div><div class="t">'+(BK.modo==='casa'?T('Il sarto viene da te.','Your tailor, at your door.'):BK.modo==='video'?T('Ci vediamo in video.','See you on video.'):T('Ti aspettiamo in atelier.','See you in the atelier.'))+'</div><div class="d">'+dayLabel()+' · '+T('ore','at')+' '+BK.slot+'<br>'+T(m.it,m.en)+' · '+(BK.mod?T(prodById(BK.mod).it,prodById(BK.mod).en):T(c.it,c.en))+(deposit()?'<br>'+T('Caparra versata','Deposit paid')+' '+eur(deposit()):'')+'</div></div>'+
     '<div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap"><button class="btn btn-o" data-ics>'+T('Aggiungi al calendario','Add to calendar')+'</button><a href="#/area-cliente" class="btn btn-p">'+T('Vai all\'area cliente','Go to my account')+'</a></div></div>';
   }
   $('#bkSteps').innerHTML=h;
@@ -960,7 +963,8 @@ function renderBK(){
 }
 function renderSum(){
   var c=capoById(BK.capo), m=modoById(BK.modo), dep=deposit();
-  $('#bkSum').innerHTML='<h4>'+T('Riepilogo','Summary')+'</h4><dl><dt>'+T('Capo','Garment')+'</dt><dd>'+(c?T(c.it,c.en):'·')+'</dd><dt>'+T('Dove','Where')+'</dt><dd>'+(m?T(m.it,m.en):'·')+'</dd><dt>'+T('Quando','When')+'</dt><dd>'+(BK.day?dayLabel()+(BK.slot?', '+BK.slot:''):'·')+'</dd><dt>'+T('Prezzo','Price')+'</dt><dd>'+(c?T('da ','from ')+eur(c.da):'·')+'</dd></dl>'+
+  var md=BK.mod?prodById(BK.mod):null;
+  $('#bkSum').innerHTML=(md?'<img src="img/'+md.img+'.svg" alt="" style="width:100%;aspect-ratio:1;object-fit:contain;background:#f7f6f3;margin-bottom:18px">':'')+'<h4>'+T('Riepilogo','Summary')+'</h4><dl>'+(md?'<dt>'+T('Modello','Model')+'</dt><dd>'+T(md.it,md.en)+'</dd><dt>'+T('Tessuto','Cloth')+'</dt><dd>'+T(md.fit,md.fen)+'</dd>':'')+'<dt>'+T('Capo','Garment')+'</dt><dd>'+(c?T(c.it,c.en):'·')+'</dd><dt>'+T('Dove','Where')+'</dt><dd>'+(m?T(m.it,m.en):'·')+'</dd><dt>'+T('Quando','When')+'</dt><dd>'+(BK.day?dayLabel()+(BK.slot?', '+BK.slot:''):'·')+'</dd><dt>'+T('Prezzo','Price')+'</dt><dd>'+(md?T('da ','from ')+eur(md.p):(c?T('da ','from ')+eur(c.da):'·'))+'</dd></dl>'+
   '<div class="tot">'+T('Da pagare ora','Due now')+'<b>'+(m?eur(dep):'·')+'</b>'+(dep?T('Caparra scalata dal prezzo finale.','Deposit taken off the final price.'):(m?T('Videochiamata gratuita.','Free video call.'):''))+'</div>';
 }
 
@@ -969,16 +973,16 @@ var curCat='tutto';
 function renderShop(){
   $('#filters').innerHTML=CATS.map(function(c){return '<button data-cat="'+c[0]+'" class="'+(curCat===c[0]?'on':'')+'">'+T(c[1],c[2])+'</button>'}).join('');
   $('#prods').innerHTML=PRODS.filter(function(p){return curCat==='tutto'||p.cat===curCat}).map(function(p){
-    return '<button class="prod" data-prod="'+p.id+'"><div class="im"><img src="img/'+p.img+'.jpg" alt="'+p.it+'" loading="lazy">'+(p.tag?'<span class="tag">'+T(p.tag[0],p.tag[1])+'</span>':'')+'</div><div class="n">'+T(p.it,p.en)+'</div><div class="p">'+eur(p.p)+'</div></button>';
+    return '<article class="prod"><button class="pb" data-prod="'+p.id+'" aria-label="'+p.it+'"><div class="im"><img src="img/'+p.img+'.svg" alt="'+T(p.it,p.en)+'" loading="lazy">'+(p.tag?'<span class="tag">'+T(p.tag[0],p.tag[1])+'</span>':'')+'</div><div class="n">'+T(p.it,p.en)+'</div><div class="d">'+T(p.fit,p.fen)+'</div><div class="p">'+T('da ','from ')+eur(p.p)+'</div></button><a class="go2" href="#/prenota?c='+p.capo+'&mod='+p.id+'">'+T('Prenota il sarto','Book the tailor')+'</a></article>';
   }).join('');
 }
-var pmState={size:null,q:1};
+function prodById(id){return PRODS.filter(function(x){return x.id===id})[0]}
 function openProd(id){
-  var p=PRODS.filter(function(x){return x.id===id})[0]; pmState={size:p.size?'40':null,q:1,id:id};
-  openModal('<div class="pm"><img src="img/'+p.img+'.jpg" alt="'+p.it+'"><div class="c"><div class="eyebrow">Boutique</div><h3>'+T(p.it,p.en)+'</h3><div class="pr">'+eur(p.p)+'</div><p class="muto">'+T(p.dit,p.den)+'</p>'+
-  (p.size?'<div class="fld"><label>'+T('Taglia collo','Collar size')+'</label><div class="sizes">'+['38','39','40','41','42','43','44'].map(function(s){return '<button data-size="'+s+'" class="'+(s==='40'?'on':'')+'">'+s+'</button>'}).join('')+'</div></div><p class="small muto">'+T('Vuoi la camicia su misura? Dopo la prima visita la riordini dall\'area cliente.','Want it bespoke? After the first visit, reorder it from your account.')+'</p>':'')+
-  '<div style="display:flex;gap:12px;margin-top:10px;align-items:center"><div class="qty"><button data-q="-1">−</button><span id="pmq">1</span><button data-q="1">+</button></div><button class="btn btn-p" style="flex:1" data-addprod="'+p.id+'">'+T('Aggiungi al carrello','Add to bag')+'</button></div>'+
-  '<ul class="ticks" style="margin:14px 0 0"><li>'+T('Spedita in 48 ore, in scatola regalo','Shipped in 48 hours, in a gift box')+'</li><li>'+T('Reso gratuito entro 14 giorni','Free returns within 14 days')+'</li></ul></div></div>');
+  var p=prodById(id), c=capoById(p.capo);
+  openModal('<div class="pm"><img src="img/'+p.img+'.svg" alt="'+T(p.it,p.en)+'" style="object-fit:contain;background:#f7f6f3"><div class="c"><div class="eyebrow">'+T('Boutique · su misura per te','Boutique · made to your measures')+'</div><h3>'+T(p.it,p.en)+'</h3><div class="pr">'+T('da ','from ')+eur(p.p)+'</div><p class="muto">'+T(p.tit,p.ten)+'.</p>'+
+  '<ul class="ticks" style="margin:6px 0 0"><li>'+T('Tessuto suggerito: ','Suggested cloth: ')+T(p.fit,p.fen)+'</li><li>'+T(c.t+' settimane · '+c.p+(c.p>1?' prove':' prova'),c.t+' weeks · '+c.p+(c.p>1?' fittings':' fitting'))+'</li><li>'+T('Caparra alla prenotazione: ','Deposit when booking: ')+eur(c.cap)+'</li></ul>'+
+  '<a class="btn btn-p btn-full" style="margin-top:20px" href="#/prenota?c='+p.capo+'&mod='+p.id+'">'+T('Prenota il sarto','Book the tailor')+'</a>'+
+  '<p class="small muto" style="margin-top:4px">'+T('Il sarto viene da te con i tessuti e prende le misure. Tessuto e dettagli si possono cambiare.','The tailor comes to you with the cloths and takes your measures. Cloth and details can be changed.')+'</p></div></div>');
 }
 
 /* ---------- gift ---------- */
@@ -1032,7 +1036,7 @@ function route(){
   $$('.view').forEach(function(s){s.classList.toggle('on',s.dataset.view===v)});
   $$('nav.mn a').forEach(function(a){a.classList.toggle('on',a.dataset.nav===v||(v==='prenota'&&a.dataset.nav==='su-misura'))});
   if(v==='prenota'){
-    if(q.get('c')){BK={step:1,capo:q.get('c'),modo:null,day:null,slot:null,nome:'',email:'',tel:'',zona:'',note:''};}
+    if(q.get('c')){BK={step:1,capo:q.get('c'),mod:q.get('mod')||null,modo:null,day:null,slot:null,nome:'',email:'',tel:'',zona:'',note:''};}
     else if(q.get('m')==='video'){BK={step:2,capo:'abito',modo:'video',day:null,slot:null,nome:'',email:'',tel:'',zona:'',note:''};}
     else if(BK.step===4){BK={step:0,capo:null,modo:null,day:null,slot:null,nome:'',email:'',tel:'',zona:'',note:''};}
     renderBK();
@@ -1066,7 +1070,7 @@ document.addEventListener('click',function(e){
   if(t.id==='payNow'){paid();return;}
   if(d.rm!==undefined){cart.splice(+d.rm,1);saveCart();renderDrawer();return;}
   /* booking */
-  if(d.capo){BK.capo=d.capo;renderBK();return;}
+  if(d.capo){if(BK.capo!==d.capo)BK.mod=null;BK.capo=d.capo;renderBK();return;}
   if(d.modo){BK.modo=d.modo;renderBK();return;}
   if(d.cal){calM+=+d.cal;if(calM>11){calM=0;calY++}if(calM<0){calM=11;calY--}BK.day=null;BK.slot=null;renderBK();return;}
   if(d.day){BK.day=+d.day;BK.slot=null;renderBK();return;}
@@ -1078,9 +1082,6 @@ document.addEventListener('click',function(e){
   /* shop */
   if(d.cat){curCat=d.cat;renderShop();return;}
   if(d.prod){openProd(d.prod);return;}
-  if(d.size){$$('[data-size]').forEach(function(b){b.classList.toggle('on',b===t)});pmState.size=d.size;return;}
-  if(d.q){pmState.q=Math.max(1,pmState.q+(+d.q));$('#pmq').textContent=pmState.q;return;}
-  if(d.addprod){var p=PRODS.filter(function(x){return x.id===d.addprod})[0];addCart({key:p.id+(pmState.size||''),it:p.it,en:p.en,p:p.p,q:pmState.q,img:p.img,v:pmState.size?['Collo '+pmState.size,'Collar '+pmState.size]:null});$('#modal').classList.remove('on');return;}
   /* gift */
   if(d.gift){GC.id=d.gift;renderGift();return;}
   if(d.fmt){GC.fmt=d.fmt;$$('[data-fmt]').forEach(function(b){b.classList.toggle('on',b===t)});return;}

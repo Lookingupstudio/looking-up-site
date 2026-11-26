@@ -4,415 +4,452 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex, nofollow">
-<title>Il sarto viene da te · Proposta sito sartoria su misura</title>
-<meta name="description" content="Proposta di Looking Up Studio: come vendere online la sartoria su misura. Struttura del sito, demo, brand e Instagram di esempio.">
-<meta property="og:title" content="Il sarto viene da te · Proposta sito">
+<title>Il sarto viene da te · Proposta</title>
+<meta name="description" content="Come vendere online la sartoria su misura. Proposta di Looking Up Studio.">
+<meta property="og:title" content="Il sarto viene da te">
 <meta property="og:description" content="Come vendere online la sartoria su misura. Proposta di Looking Up Studio.">
 <meta property="og:image" content="https://www.lookingupstudio.com/sartoria-presentazione/img/og.jpg">
 <meta property="og:type" content="website">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Jost:wght@200;300;400&family=Inter:wght@300;400&display=swap" rel="stylesheet">
 <style>
 :root{
-  --notte:#1a2233; --notte2:#20293c; --avorio:#f6f6f6; --gesso:#ffffff; --ottone:#b08d57; --ottone-chiaro:#cdb185;
-  --inchiostro:#1b1d22; --muto:#6b6e74; --linea:#e4e4e4;
-  --serif:'Jost', 'Helvetica Neue', Arial, sans-serif; --sans:'Inter','Helvetica Neue',Arial,sans-serif;
+  --ink:#1a2233; --grey:#8a8c90; --grey2:#5f6266; --hair:#e6e6e6; --soft:#f7f7f6; --brass:#b08d57;
+  --title:'Jost','Helvetica Neue',Arial,sans-serif; --text:'Inter','Helvetica Neue',Arial,sans-serif;
+  --pad:7vw;
 }
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
-body{background:var(--gesso);color:var(--inchiostro);font-family:var(--sans);font-weight:300;line-height:1.55;-webkit-font-smoothing:antialiased}
-img{display:block;max-width:100%}
-a{color:inherit}
-.slide{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:80px 6vw;position:relative;overflow:hidden}
-.slide.av{background:var(--avorio)}
-.slide.dk{background-color:var(--notte);color:#d7dae0}
-.slide.pin{background-color:var(--notte);background-image:repeating-linear-gradient(90deg,rgba(255,255,255,.08) 0 1px,transparent 1px 26px);color:#d7dae0}
-.wrap{width:100%;max-width:1200px}
-.eyebrow{font-size:12px;letter-spacing:.32em;text-transform:uppercase;color:var(--ottone);margin-bottom:22px;font-weight:400}
-.dk .eyebrow,.pin .eyebrow{color:var(--ottone-chiaro)}
-h1,h2,h3{font-family:var(--serif);font-weight:300;letter-spacing:-.005em;color:var(--notte);line-height:1.04}
-.dk h1,.dk h2,.dk h3,.pin h1,.pin h2,.pin h3{color:var(--avorio)}
-h1{font-size:clamp(48px,7.74vw,114px)}
-h2{font-size:clamp(33px,4.4vw,60px);margin-bottom:26px}
-h3{font-size:24px;margin-bottom:8px}
-p{font-size:18px;max-width:660px}
-.lead{font-family:var(--serif);font-weight:300;font-style:normal;font-size:clamp(19px,2.06vw,27px);color:var(--muto);max-width:780px;line-height:1.3}
-.dk .lead,.pin .lead{color:var(--ottone-chiaro)}
-.rule{width:64px;height:0;border-top:1.5px dashed var(--ottone);margin:34px 0}
-.num{position:absolute;bottom:26px;right:6vw;font-size:12px;letter-spacing:.2em;color:var(--muto)}
-.dk .num,.pin .num{color:rgba(255,255,255,.45)}
-.grid{display:grid;gap:28px}
-.g2{grid-template-columns:repeat(2,1fr)}.g3{grid-template-columns:repeat(3,1fr)}.g4{grid-template-columns:repeat(4,1fr)}.g5{grid-template-columns:repeat(5,1fr)}
-.card{border-top:1px solid var(--notte);padding-top:20px}
-.dk .card,.pin .card{border-color:rgba(205,177,133,.5)}
-.card p{font-size:15.5px;color:var(--muto)}
-.dk .card p,.pin .card p{color:#b8bcc4}
-.card .k{font-family:var(--serif);font-size:17px;color:var(--ottone);margin-bottom:10px}
-.card h3{font-size:22px}
-.card .w{font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--notte);margin-top:12px;font-weight:400}
-.dk .card .w{color:var(--ottone-chiaro)}
-.small{font-size:13px;color:var(--muto)}
-.x{font-size:12px;letter-spacing:.26em;text-transform:uppercase;color:rgba(255,255,255,.6);margin-top:44px}
-.split{display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:center}
-.ph{width:100%;height:68vh;max-height:640px;object-fit:cover;border-radius:2px}
-.statement{background:var(--ottone)}
-.statement h2{color:var(--notte);font-size:clamp(46px,7vw,104px);max-width:1050px}
-.statement p{color:#2b2418;font-size:20px}
-.statement .eyebrow{color:#3a3020}
-.statement .num{color:#4a3d27}
-.ref{background:#fff;border:1px solid var(--linea);padding:24px 22px;border-radius:2px;display:flex;flex-direction:column;gap:8px}
-.ref b{font-family:var(--serif);font-size:21px;font-weight:400;color:var(--notte);line-height:1.1}
-.ref .c{font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--ottone)}
-.ref p{font-size:14.5px;color:var(--muto)}
-.ref .take{margin-top:auto;padding-top:12px;border-top:1px dashed var(--linea);font-size:13.5px;color:var(--notte)}
-.map{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
-.mbox{background:rgba(255,255,255,.06);border:1px solid rgba(205,177,133,.35);padding:22px 20px;border-radius:2px}
-.mbox b{font-family:var(--serif);font-size:21px;font-weight:400;color:var(--avorio);display:block;margin-bottom:6px}
-.mbox span{font-size:13.5px;color:#b8bcc4;display:block;line-height:1.5}
-.mbox.hi{background:var(--avorio);border-color:var(--avorio)}
-.mbox.hi b{color:var(--notte)}.mbox.hi span{color:var(--muto)}
-.mbox em{font-style:normal;font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--ottone-chiaro);display:block;margin-bottom:8px}
-.mbox.hi em{color:var(--ottone)}
-.flow{display:grid;grid-template-columns:repeat(6,1fr);gap:0;margin-top:30px;position:relative}
-.flow:before{content:"";position:absolute;left:4%;right:4%;top:22px;border-top:1.5px dashed var(--ottone)}
-.flow div{position:relative;padding-right:18px}
-.flow i{display:flex;width:44px;height:44px;border-radius:50%;background:var(--notte);color:var(--avorio);align-items:center;justify-content:center;font-style:normal;font-family:var(--serif);font-size:17px;margin-bottom:18px;position:relative}
-.flow div.on i{background:var(--ottone)}
-.flow b{font-family:var(--serif);font-size:20px;font-weight:400;color:var(--notte);display:block;line-height:1.1;margin-bottom:6px}
-.flow span{font-size:14px;color:var(--muto);display:block}
-.shot{border-radius:6px;overflow:hidden;box-shadow:0 30px 70px rgba(26,34,51,.22),0 0 0 1px rgba(26,34,51,.08);background:#fff}
-.shot .bar{height:28px;background:#eeeeee;display:flex;align-items:center;gap:6px;padding:0 12px}
-.shot .bar i{width:9px;height:9px;border-radius:50%;background:#cfcfcf}
-.shot .bar span{margin-left:12px;font-size:11px;color:var(--muto);letter-spacing:.02em}
-.phone{width:100%;max-width:250px;border-radius:34px;background:#111;padding:8px;box-shadow:0 30px 60px rgba(26,34,51,.3)}
-.phone img{border-radius:27px;width:100%}
-.demo-stage{display:grid;grid-template-columns:1fr 250px;gap:40px;align-items:end}
-.btn{display:inline-flex;align-items:center;justify-content:center;height:54px;padding:0 30px;background:var(--notte);color:var(--avorio);text-decoration:none;font-size:12px;letter-spacing:.2em;text-transform:uppercase;border-radius:2px;margin-top:30px}
-.dk .btn{background:var(--avorio);color:var(--notte)}
-.cap{margin-top:14px}
-.cap b{font-family:var(--serif);font-size:20px;font-weight:400;color:var(--notte);display:block}
-.cap span{font-size:14px;color:var(--muto)}
-.gcard{aspect-ratio:85/54;width:100%;max-width:440px;border-radius:14px;padding:28px 30px;display:flex;flex-direction:column;justify-content:space-between;color:var(--avorio);box-shadow:0 30px 60px rgba(0,0,0,.35);background-color:#151c2b;background-image:repeating-linear-gradient(90deg,rgba(255,255,255,.13) 0 1px,transparent 1px 20px),linear-gradient(135deg,#222c41,#121826)}
-.gcard .t{font-family:var(--serif);font-size:31px;line-height:1.02}
-.gcard .t i{color:var(--ottone-chiaro)}
-.gcard .f{display:flex;justify-content:space-between;font-size:10.5px;letter-spacing:.24em;text-transform:uppercase;opacity:.85}
-.meas{background:#fff;border-radius:4px;padding:24px 26px;max-width:440px;box-shadow:0 30px 60px rgba(0,0,0,.3);color:var(--notte)}
-.meas .r{display:grid;grid-template-columns:repeat(3,1fr);margin-top:10px}
-.meas .r div{padding:10px 0;border-bottom:1px solid #eeeeee}
-.meas .r span{display:block;font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--muto)}
-.meas .r b{font-family:var(--serif);font-size:21px;font-weight:400}
-.meas .go{margin-top:16px;background:var(--notte);color:var(--avorio);text-align:center;padding:12px;font-size:11px;letter-spacing:.2em;text-transform:uppercase}
-.swatch{display:flex;gap:10px;margin-top:20px}
-.swatch div{flex:1;height:90px;border-radius:2px;position:relative}
-.swatch span{position:absolute;left:10px;bottom:8px;font-size:10px;letter-spacing:.14em;text-transform:uppercase}
-.qs{columns:2;column-gap:56px}
-.qg{break-inside:avoid;margin-bottom:30px}
-.qg h3{font-size:24px;border-bottom:1px solid rgba(205,177,133,.45);padding-bottom:10px;margin-bottom:10px}
-.qg ol{list-style:none;counter-reset:none}
-.qg li{display:grid;grid-template-columns:30px 1fr;font-size:15px;padding:7px 0;color:#d2d5db;line-height:1.45}
-.qg li b{font-family:var(--serif);font-weight:400;color:var(--ottone-chiaro);font-size:15px}
-.dots{position:fixed;right:18px;top:50%;transform:translateY(-50%);display:flex;flex-direction:column;gap:10px;z-index:9}
-.dots a{width:7px;height:7px;border-radius:50%;background:rgba(176,141,87,.35);display:block}
-.dots a.on{background:var(--ottone)}
+body{background:#fff;color:var(--ink);font-family:var(--text);font-weight:300;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+img{display:block;width:100%;height:100%;object-fit:cover}
+a{color:inherit;text-decoration:none}
+
+/* struttura */
+.s{position:relative;min-height:100vh;padding:14vh var(--pad);display:grid;grid-template-columns:repeat(12,1fr);column-gap:2.2vw;align-content:center}
+.s.flush{padding:0}
+.lbl{font-family:var(--text);font-size:10px;font-weight:400;letter-spacing:.32em;text-transform:uppercase;color:var(--grey)}
+.ttl{font-family:var(--title);font-weight:200;font-size:clamp(30px,3.3vw,52px);line-height:1.14;letter-spacing:.005em;color:var(--ink)}
+.ttl.xl{font-size:clamp(40px,5vw,78px);line-height:1.06}
+.txt{font-size:14px;line-height:1.85;color:var(--grey2);max-width:400px}
+.txt + .txt{margin-top:14px}
+.line{width:38px;height:1px;background:var(--brass);margin:30px 0}
+.n{font-family:var(--title);font-weight:300;font-size:12px;letter-spacing:.12em;color:var(--brass)}
+.cap{font-size:10px;letter-spacing:.28em;text-transform:uppercase;color:var(--grey);margin-top:14px}
+.ph{overflow:hidden;background:var(--soft)}
+.link{display:inline-block;font-size:10.5px;letter-spacing:.32em;text-transform:uppercase;color:var(--ink);padding-bottom:6px;border-bottom:1px solid var(--ink);margin-top:34px}
+
+/* ingresso morbido */
+.rv{opacity:0;transform:translateY(18px);transition:opacity 1.6s cubic-bezier(.2,.6,.2,1),transform 1.6s cubic-bezier(.2,.6,.2,1)}
+.rv.d1{transition-delay:.15s}.rv.d2{transition-delay:.3s}.rv.d3{transition-delay:.45s}
+.rv.in{opacity:1;transform:none}
+.ph.rv{transform:none;transition:opacity 2s ease}
+@media (prefers-reduced-motion:reduce){.rv{opacity:1;transform:none;transition:none}}
+
+/* contatore */
+.count{position:fixed;right:var(--pad);bottom:28px;font-family:var(--title);font-size:11px;font-weight:300;letter-spacing:.2em;color:var(--grey);z-index:5;mix-blend-mode:difference;color:#9a9a9a}
+.brand-top{position:fixed;left:var(--pad);top:26px;font-family:var(--title);font-size:11px;font-weight:400;letter-spacing:.42em;color:var(--ink);z-index:5;mix-blend-mode:difference;color:#fff}
+
+/* 01 copertina */
+.cover{grid-template-columns:repeat(12,1fr);padding:0}
+.cover .tx{grid-column:1/6;align-self:end;padding:0 0 13vh var(--pad)}
+.cover .im{grid-column:6/13;height:100vh}
+.cover .im img{object-position:50% 40%}
+
+/* 02 problema */
+.prob .a{grid-column:1/6;align-self:center}
+.prob .b{grid-column:7/12;height:64vh;margin-top:8vh}
+.prob .b img{object-position:50% 50%}
+.three{display:flex;gap:34px;margin-top:44px}
+.three span{font-size:10px;letter-spacing:.3em;text-transform:uppercase;color:var(--ink)}
+
+/* 03 idea */
+.idea .a{grid-column:3/11;text-align:center}
+.idea .line{margin:34px auto}
+.idea .txt{margin:0 auto}
+
+/* 04 Londra */
+.lon .im{grid-column:1/6;height:78vh}
+.lon .im img{object-position:40% 30%}
+.lon .a{grid-column:7/13;align-self:center}
+.idx{margin-top:40px;border-top:1px solid var(--hair)}
+.idx li{list-style:none;display:grid;grid-template-columns:170px 1fr;gap:20px;padding:15px 0;border-bottom:1px solid var(--hair);align-items:baseline}
+.idx b{font-weight:400;font-size:10px;letter-spacing:.26em;text-transform:uppercase;color:var(--ink)}
+.idx span{font-size:13px;color:var(--grey2);line-height:1.6}
+
+/* 05 Napoli */
+.nap .a{grid-column:1/7;align-self:center}
+.nap .im{grid-column:8/12;height:60vh;background:#fff}
+.nap .im img{object-fit:contain;mix-blend-mode:multiply;filter:brightness(1.03) contrast(1.02)}
+
+/* 06 interludio */
+.full{height:100vh;position:relative}
+.full img{position:absolute;inset:0}
+.full .c{position:absolute;left:var(--pad);top:15vh;color:var(--ink)}
+.full .c .lbl{color:var(--grey2)}
+.full .c .ttl{color:var(--ink);margin-top:14px}
+.full .c{z-index:2}
+
+/* 07 struttura */
+.str .a{grid-column:1/5}
+.str .b{grid-column:6/13;columns:2;column-gap:4vw}
+.str .it{break-inside:avoid;padding:0 0 26px}
+.str .it .n{display:block;margin-bottom:8px}
+.str .it h4{font-family:var(--title);font-weight:300;font-size:19px;letter-spacing:.01em;color:var(--ink);margin-bottom:4px}
+.str .it p{font-size:12.5px;color:var(--grey);line-height:1.65}
+
+/* 08 percorso */
+.per .a{grid-column:1/8}
+.per .steps{grid-column:1/13;display:grid;grid-template-columns:repeat(6,1fr);gap:2.2vw;margin-top:9vh;border-top:1px solid var(--hair);padding-top:26px}
+.per .steps h4{font-family:var(--title);font-weight:300;font-size:18px;margin:10px 0 6px}
+.per .steps p{font-size:12.5px;color:var(--grey);line-height:1.65}
+.per .im{grid-column:9/13;grid-row:1;height:34vh;align-self:start}
+
+/* 09 demo */
+.dem .a{grid-column:1/5;align-self:end;padding-bottom:4vh}
+.dem .d{grid-column:5/12;border:1px solid var(--hair);align-self:center}
+.dem .m{grid-column:11/13;grid-row:1;align-self:end;margin:0 0 -9vh 1vw;border:1px solid var(--hair);border-radius:22px;overflow:hidden;background:#fff;position:relative;z-index:2;box-shadow:0 24px 60px rgba(26,34,51,.10)}
+.dem .a{grid-row:1}.dem .d{grid-row:1}
+.dem img{height:auto}
+
+/* 10 dentro la demo */
+.ins .a{grid-column:1/13;margin-bottom:7vh}
+.ins .p1{grid-column:1/8}.ins .p2{grid-column:9/13;margin-top:18vh}.ins .p3{grid-column:4/10;margin-top:9vh}
+.ins figure img{height:auto;border:1px solid var(--hair)}
+
+/* 11 due idee */
+.two .p1{grid-column:1/6}.two .p2{grid-column:8/13;margin-top:18vh}
+.two .im{height:56vh}
+.two h4{font-family:var(--title);font-weight:300;font-size:22px;margin:26px 0 10px;color:var(--ink)}
+
+/* 12 brand */
+.brd .a{grid-column:1/5;align-self:center}
+.brd .b{grid-column:6/13;display:flex;flex-direction:column;align-items:center;justify-content:center;background:var(--soft);padding:12vh 4vw}
+.brd .b .logo{width:min(380px,70%);height:auto}
+.pal{display:flex;gap:28px;margin-top:9vh}
+.pal div{display:flex;flex-direction:column;align-items:center;gap:12px}
+.pal i{width:34px;height:34px;border-radius:50%;display:block;border:1px solid var(--hair)}
+.pal span{font-size:9px;letter-spacing:.26em;text-transform:uppercase;color:var(--grey)}
+.typ{margin-top:34px;display:grid;grid-template-columns:auto 1fr;gap:10px 22px;font-size:12.5px;color:var(--grey2)}
+.typ b{font-weight:400;font-size:10px;letter-spacing:.26em;text-transform:uppercase;color:var(--ink)}
+
+/* 13 instagram */
+.ig .im{grid-column:1/7;height:auto}
+.ig .im img{height:auto}
+.ig .a{grid-column:8/12;align-self:center}
+
+/* 14 passi */
+.nx .a{grid-column:1/6}
+.nx ol{grid-column:7/13;list-style:none}
+.nx li{display:grid;grid-template-columns:60px 1fr;padding:22px 0;border-bottom:1px solid var(--hair);font-family:var(--title);font-weight:300;font-size:19px;line-height:1.45;color:var(--ink)}
+.nx li:first-child{border-top:1px solid var(--hair)}
+
+/* 15 domande */
+.qs .a{grid-column:1/13;margin-bottom:8vh}
+.qs .cols{grid-column:1/13;columns:3;column-gap:4vw}
+.qs .g{break-inside:avoid;margin-bottom:38px}
+.qs .g .lbl{color:var(--ink);display:block;padding-bottom:12px;border-bottom:1px solid var(--hair);margin-bottom:8px}
+.qs .g p{font-size:12.5px;line-height:1.7;color:var(--grey2);padding:8px 0;display:grid;grid-template-columns:26px 1fr}
+.qs .g p i{font-style:normal;font-family:var(--title);color:var(--brass);font-size:11px;padding-top:2px}
+
+/* 16 chiusura */
+.end{display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;min-height:100vh;padding:14vh var(--pad)}
+.end .logo{width:min(300px,60%);height:auto}
+.end .ttl{font-size:clamp(20px,1.8vw,26px);margin-top:7vh;color:var(--grey2)}
+
 @media (max-width:900px){
-  .slide{padding:76px 16px;min-height:auto}
-  .g2,.g3,.g4,.g5,.split,.demo-stage{grid-template-columns:1fr}
-  .split{gap:36px}
-  .ph{height:56vh}
-  .map{grid-template-columns:1fr 1fr;gap:10px}
-  .mbox{padding:16px 14px}.mbox b{font-size:20px}
-  .flow{grid-template-columns:1fr 1fr;gap:26px 10px}
-  .flow:before{display:none}
-  .demo-stage .phone{margin:0 auto}
-  .qs{columns:1}
-  .dots{display:none}
-  p{font-size:16.5px}
-  .statement p{font-size:17px}
-  .swatch div{height:64px}
+  :root{--pad:24px}
+  .s{display:block;min-height:0;padding:96px var(--pad)}
+  .ttl{font-size:28px}
+  .ttl.xl{font-size:38px}
+  .txt{font-size:14px}
+  .cover{display:flex;flex-direction:column;padding:0}
+  .cover .im{height:68vh;order:-1}
+  .cover .tx{padding:44px var(--pad) 64px}
+  .prob .b{height:auto;aspect-ratio:4/5;margin:48px 0 0}
+  .three{gap:20px;flex-wrap:wrap}
+  .idea .a{text-align:left}.idea .line{margin:30px 0}
+  .lon .im{height:auto;aspect-ratio:4/5;margin:0 calc(var(--pad)*-1) 48px}
+  .idx li{grid-template-columns:1fr;gap:4px}
+  .nap .im{height:auto;aspect-ratio:1;margin-top:40px}
+  .full{height:auto;display:flex;flex-direction:column}
+  .full img{position:static;aspect-ratio:4/5;height:auto}
+  .full::after{display:none}
+  .full .c{position:static;padding:36px var(--pad) 72px}
+  .str .b{columns:1;margin-top:44px}
+  .per .im{height:auto;aspect-ratio:3/2;margin-top:40px}
+  .per .steps{grid-template-columns:1fr 1fr;gap:28px 20px;margin-top:44px}
+  .dem .a{padding:0 0 36px}
+  .dem .m{width:58%;margin:28px auto 0;border-radius:18px}
+  .ins .a{margin-bottom:36px}
+  .ins figure{margin:0 0 36px!important}
+  .two .im{height:auto;aspect-ratio:4/5}
+  .two .p2{margin-top:56px}
+  .brd .b{margin-top:44px;padding:56px 20px}
+  .pal{gap:16px;margin-top:44px}
+  .ig .a{margin-top:36px}
+  .nx ol{margin-top:36px}
+  .nx li{font-size:17px;grid-template-columns:44px 1fr}
+  .qs .cols{columns:1}
+  .qs .a{margin-bottom:36px}
+  .count{display:none}
+  .brand-top{top:18px}
 }
-i{font-style:normal}
 </style>
 </head>
 <body>
-<nav class="dots" id="dots"></nav>
 
-<!-- 1 copertina -->
-<section class="slide pin" id="s1">
-  <div class="wrap">
-    <div class="eyebrow">Proposta · Sito e-commerce per una sartoria su misura</div>
-    <h1>Il sarto<br>viene da te.</h1>
-    <div class="rule"></div>
-    <p class="lead">Come vendere online un abito che non si compra con un clic.</p>
-    <div class="x">Looking Up Studio · Novembre 2026 · Nome e brand di esempio: Gessato</div>
+<div class="brand-top">GESSATO</div>
+<div class="count" id="count">01 / 16</div>
+
+<!-- 01 -->
+<section class="s cover" id="s1">
+  <div class="tx">
+    <div class="lbl rv">Proposta · Sito per una sartoria su misura</div>
+    <h1 class="ttl xl rv d1" style="margin-top:28px">Il sarto<br>viene da te.</h1>
+    <div class="line rv d2"></div>
+    <p class="txt rv d2">Come vendere online un abito che non si compra con un clic.</p>
+    <p class="cap rv d3" style="margin-top:44px">Looking Up Studio · Novembre 2026</p>
+  </div>
+  <div class="im ph rv"><img src="img/hero-sarto.jpg" alt="Un sarto lavora a mano su una giacca di lana"></div>
+</section>
+
+<!-- 02 -->
+<section class="s prob" id="s2">
+  <div class="a">
+    <div class="lbl rv">Il problema</div>
+    <h2 class="ttl rv d1" style="margin-top:26px">Il su misura non si compra con un clic.</h2>
+    <p class="txt rv d2" style="margin-top:26px">Servono le misure, la fiducia, il tempo. Oggi si ordina, poi una persona va a casa del cliente.</p>
+    <div class="three rv d3"><span>Le misure</span><span>La fiducia</span><span>Il tempo</span></div>
+  </div>
+  <div class="b ph rv"><img src="img/ago-filo.jpg" alt="Mani che cuciono con ago e filo"></div>
+</section>
+
+<!-- 03 -->
+<section class="s idea" id="s3">
+  <div class="a">
+    <div class="lbl rv">L'idea</div>
+    <h2 class="ttl xl rv d1" style="margin-top:30px">Vendere l'appuntamento,<br>non l'abito.</h2>
+    <div class="line rv d2"></div>
+    <p class="txt rv d2">Online si sceglie un modello e si prenota la visita del sarto, con una caparra scalata dal prezzo. Le misure, le prende lui.</p>
   </div>
 </section>
 
-<!-- 2 problema -->
-<section class="slide" id="s2">
-  <div class="wrap">
-    <div class="eyebrow">Il problema</div>
-    <h2>Il su misura non si compra con un clic.</h2>
-    <p>Un e-commerce classico funziona con il pulsante «aggiungi al carrello». Un abito sartoriale no: oggi si ordina e poi una persona va a casa del cliente.</p>
-    <div class="grid g3" style="margin-top:50px">
-      <div class="card"><div class="k">01</div><h3>Servono le misure</h3><p>Più di venti misure, la postura, come il cliente ama portare il capo. Nessun modulo online le sostituisce.</p></div>
-      <div class="card"><div class="k">02</div><h3>Serve fiducia</h3><p>Si spendono migliaia di euro. Il cliente vuole conoscere il sarto e toccare i tessuti prima di decidere.</p></div>
-      <div class="card"><div class="k">03</div><h3>Serve tempo</h3><p>Sei-otto settimane, due o tre prove. Il cliente deve sapere fin dall'inizio cosa lo aspetta.</p></div>
-    </div>
+<!-- 04 -->
+<section class="s lon" id="s4">
+  <div class="im ph rv"><img src="img/orologio.jpg" alt="Mano sul revers di un abito gessato"></div>
+  <div class="a">
+    <div class="lbl rv">Ispirazione · Londra</div>
+    <h2 class="ttl rv d1" style="margin-top:26px">A Londra il sarto<br>si prenota online.</h2>
+    <ul class="idx rv d2">
+      <li><b>Henry Herbert</b><span>Il sarto va a casa o in ufficio. In Vespa.</span></li>
+      <li><b>Edit Suits</b><span>Visite a casa o al lavoro, prenotazione online.</span></li>
+      <li><b>Clifton Suits</b><span>Il «visiting tailor», un modulo semplice.</span></li>
+      <li><b>Alexandra Wood</b><span>Prima videochiamata gratuita, 15 minuti. Tempi e prezzi scritti.</span></li>
+      <li><b>Savile Row Co.</b><span>Prezzi pubblicati: su misura da 1.650 £, 6-8 settimane.</span></li>
+    </ul>
   </div>
-  <div class="num">02</div>
 </section>
 
-<!-- 3 insight -->
-<section class="slide statement" id="s3">
-  <div class="wrap">
-    <div class="eyebrow">L'idea</div>
-    <h2>Vendere l'appuntamento, non l'abito.</h2>
-    <p style="max-width:760px">Online si compra il primo passo: la visita del sarto, a casa, in atelier o in videochiamata, con una piccola caparra che blocca la data e poi si scala dal prezzo. Tutto quello che non ha bisogno di misure si vende davvero online.</p>
+<!-- 05 -->
+<section class="s nap" id="s5">
+  <div class="a">
+    <div class="lbl rv">Ispirazione · Napoli</div>
+    <h2 class="ttl rv d1" style="margin-top:26px">Un modello iconico,<br>riconoscibile ovunque.</h2>
+    <p class="txt rv d2" style="margin-top:26px">Come la cravatta di Marinella. Per Gessato, la boutique mostra pochi modelli simbolo: si sceglie online, il sarto lo realizza sulle tue misure.</p>
   </div>
-  <div class="num">03</div>
+  <div class="im rv"><img src="img/cravatta-paisley.jpg" alt="Cravatta in seta blu con disegno paisley"></div>
 </section>
 
-<!-- 4 Londra -->
-<section class="slide av" id="s4">
-  <div class="wrap">
-    <div class="eyebrow">Ispirazione · Londra</div>
-    <h2>A Londra il sarto si prenota online.</h2>
-    <div class="grid g5" style="gap:14px;margin-top:10px">
-      <div class="ref"><span class="c">Savile Row</span><b>Henry Herbert</b><p>Il sarto va a casa o in ufficio del cliente. E arriva in Vespa.</p><div class="take">Il servizio diventa un racconto riconoscibile.</div></div>
-      <div class="ref"><span class="c">Mayfair e City</span><b>Edit Suits</b><p>Visite a casa o al lavoro, due showroom, prenotazione online.</p><div class="take">Si sceglie dove vedersi, in pochi passaggi.</div></div>
-      <div class="ref"><span class="c">Visiting tailor</span><b>Clifton Suits</b><p>Il «sarto che viene a trovarti», con un modulo di prenotazione semplice.</p><div class="take">Il domicilio è al centro del sito.</div></div>
-      <div class="ref"><span class="c">Bespoke</span><b>Alexandra Wood</b><p>Prima videochiamata gratuita di 15 minuti. Bespoke da 6.000 £, 10-12 settimane, 3-4 prove.</p><div class="take">Un primo passo gratuito e tempi scritti.</div></div>
-      <div class="ref"><span class="c">40 Savile Row</span><b>Savile Row Company</b><p>Servizio a domicilio e prezzi pubblicati: su misura da 1.650 £, 6-8 settimane.</p><div class="take">Prezzi «a partire da» creano fiducia.</div></div>
-    </div>
-    <p class="lead" style="margin-top:44px;font-size:24px">In comune: prezzi di partenza scritti, tempi chiari, una prenotazione che si fa dal telefono in un minuto.</p>
+<!-- 06 -->
+<section class="full" id="s6">
+  <img class="rv ph" src="img/feltri.jpg" alt="Tessuti di lana nei toni del bianco, sabbia, grigio e nero">
+  <div class="c">
+    <div class="lbl rv">Il principio</div>
+    <p class="ttl rv d1">Il sito porta il cliente.<br>Il sarto fa il resto.</p>
   </div>
-  <div class="num">04</div>
 </section>
 
-<!-- 5 Marinella -->
-<section class="slide" id="s5">
-  <div class="wrap split">
-    <div>
-      <div class="eyebrow">Ispirazione · Napoli</div>
-      <h2>Marinella: accessori online, sartoria su appuntamento.</h2>
-      <p>Cravatte, pochette e accessori si comprano con un clic, in tutto il mondo. Il su misura resta un'esperienza in persona.</p>
-      <p style="margin-top:18px;color:var(--muto)">Per voi la boutique online è il negozio sempre aperto: porta vendite tutto l'anno, fa conoscere il marchio e spesso è la porta d'ingresso verso il primo abito.</p>
-    </div>
-    <img class="ph" src="img/cravatte-lotto.jpg" alt="Cravatte in seta di diverse fantasie" loading="lazy">
+<!-- 07 -->
+<section class="s str" id="s7">
+  <div class="a">
+    <div class="lbl rv">La struttura</div>
+    <h2 class="ttl rv d1" style="margin-top:26px">Due porte,<br>un percorso chiaro.</h2>
+    <p class="txt rv d2" style="margin-top:26px">Su misura e i modelli della boutique, dalla prima schermata. Italiano e inglese.</p>
   </div>
-  <div class="num">05</div>
+  <div class="b rv d2">
+    <div class="it"><span class="n">01</span><h4>Home</h4><p>Due strade: partire da una conversazione, o da un modello.</p></div>
+    <div class="it"><span class="n">02</span><h4>Prenota il sarto</h4><p>Capo, luogo, giorno, caparra. Il cuore del sito.</p></div>
+    <div class="it"><span class="n">03</span><h4>Su misura</h4><p>Il percorso, i tempi, i prezzi a partire da.</p></div>
+    <div class="it"><span class="n">04</span><h4>Boutique</h4><p>I modelli: abiti, giacche, cappotti, cerimonia. Tutti su misura.</p></div>
+    <div class="it"><span class="n">05</span><h4>Gift card</h4><p>Si regala la visita del sarto.</p></div>
+    <div class="it"><span class="n">06</span><h4>Area cliente</h4><p>Misure salvate, prove, riordino delle camicie.</p></div>
+    <div class="it"><span class="n">07</span><h4>Tessuti</h4><p>Le lane, i dettagli, i capi indossati.</p></div>
+    <div class="it"><span class="n">08</span><h4>Atelier</h4><p>Le mani, il laboratorio, la storia.</p></div>
+    <div class="it"><span class="n">09</span><h4>Domande</h4><p>Tempi, prove, resi, zone servite.</p></div>
+    <div class="it"><span class="n">10</span><h4>WhatsApp</h4><p>Un messaggio, su ogni pagina.</p></div>
+  </div>
 </section>
 
-<!-- 6 struttura -->
-<section class="slide dk" id="s6">
-  <div class="wrap">
-    <div class="eyebrow">La struttura del sito</div>
-    <h2>Due porte, un percorso chiaro.</h2>
-    <div class="map" style="margin-top:14px">
-      <div class="mbox hi" style="grid-column:span 2"><em>Home</em><b>Su misura · Boutique</b><span>Due strade chiare fin dalla prima schermata: farsi fare un capo, o comprare subito.</span></div>
-      <div class="mbox hi"><em>Cuore del sito</em><b>Prenota il sarto</b><span>Capo, dove vedersi, giorno e ora, caparra online.</span></div>
-      <div class="mbox hi"><em>E-commerce vero</em><b>Boutique</b><span>Cravatte, pochette, camicie in taglia, gemelli. Carrello e pagamento.</span></div>
-      <div class="mbox"><em>Su misura</em><b>Il percorso</b><span>Consulenza, misure a domicilio, prove, consegna. Tempi e prezzi «da».</span></div>
-      <div class="mbox"><em>Regalo</em><b>Gift card</b><span>«Un'esperienza su misura»: si regala la visita del sarto.</span></div>
-      <div class="mbox"><em>Fedeltà</em><b>Area cliente</b><span>Misure salvate, capi in lavorazione, riordino camicie.</span></div>
-      <div class="mbox"><em>Ispirazione</em><b>Tessuti e lookbook</b><span>Le lane, i dettagli, i capi finiti indossati.</span></div>
-      <div class="mbox"><em>Fiducia</em><b>Atelier e storia</b><span>Le mani, il laboratorio, le persone.</span></div>
-      <div class="mbox"><em>Risposte</em><b>FAQ</b><span>Tempi, prove, resi, pagamenti, zone servite.</span></div>
-      <div class="mbox"><em>Contatto</em><b>WhatsApp</b><span>Sempre a portata di pollice, su ogni pagina.</span></div>
-      <div class="mbox"><em>Lingue</em><b>Italiano · English</b><span>Per i clienti stranieri e per un domani a Londra.</span></div>
-    </div>
+<!-- 08 -->
+<section class="s per" id="s8">
+  <div class="a">
+    <div class="lbl rv">Il percorso del cliente</div>
+    <h2 class="ttl rv d1" style="margin-top:26px">Dalla prima visita<br>al riordino con un clic.</h2>
   </div>
-  <div class="num">06</div>
+  <div class="im ph rv d2"><img src="img/bottoni-mano.jpg" alt="Bottoni di corno nel palmo di una mano" style="object-position:50% 62%"></div>
+  <div class="steps rv d2">
+    <div><span class="n">01</span><h4>Scopre</h4><p>Instagram, passaparola, una gift card.</p></div>
+    <div><span class="n">02</span><h4>Prenota</h4><p>Capo, luogo, giorno. Caparra o videochiamata.</p></div>
+    <div><span class="n">03</span><h4>Il sarto arriva</h4><p>Misure e tessuti, a casa sua.</p></div>
+    <div><span class="n">04</span><h4>Prove</h4><p>Due, con avvisi via email e WhatsApp.</p></div>
+    <div><span class="n">05</span><h4>Consegna</h4><p>A mano. Le misure restano salvate.</p></div>
+    <div><span class="n">06</span><h4>Riordina</h4><p>Le camicie successive, online.</p></div>
+  </div>
 </section>
 
-<!-- 7 percorso cliente -->
-<section class="slide av" id="s7">
-  <div class="wrap">
-    <div class="eyebrow">Il percorso del cliente</div>
-    <h2>Dalla prima visita al riordino con un clic.</h2>
-    <div class="flow">
-      <div><i>1</i><b>Scopre</b><span>Instagram, passaparola, una gift card ricevuta.</span></div>
-      <div class="on"><i>2</i><b>Prenota online</b><span>Capo, dove, quando. Caparra o videochiamata gratuita.</span></div>
-      <div><i>3</i><b>Il sarto va da lui</b><span>Misure, tessuti, bottoni. Con calma, a casa sua.</span></div>
-      <div><i>4</i><b>Prove</b><span>Due prove, avvisi via email e WhatsApp.</span></div>
-      <div><i>5</i><b>Consegna</b><span>A mano. Le misure restano salvate.</span></div>
-      <div class="on"><i>6</i><b>Riordina</b><span>Le camicie successive si ordinano online.</span></div>
-    </div>
-    <p class="lead" style="margin-top:56px;font-size:25px">Il sito non sostituisce il sarto: gli porta i clienti già pronti, con la data in agenda.</p>
+<!-- 09 -->
+<section class="s dem" id="s9">
+  <div class="a">
+    <div class="lbl rv">La demo</div>
+    <h2 class="ttl rv d1" style="margin-top:26px">Si può già provare.</h2>
+    <p class="txt rv d2" style="margin-top:22px">Boutique dei modelli, prenotazione, gift card, area cliente, due lingue. Nome, prezzi e foto di esempio.</p>
+    <a class="link rv d3" href="https://www.lookingupstudio.com/sartoria-demo/" target="_blank" rel="noopener">Apri la demo</a>
   </div>
-  <div class="num">07</div>
+  <div class="d rv d1"><img src="img/demo-home.jpg" alt="La home del sito demo"></div>
+  <div class="m rv d3"><img src="img/demo-home-m.jpg" alt="La home del sito demo sul telefono"></div>
 </section>
 
-<!-- 8 demo -->
-<section class="slide" id="s8">
-  <div class="wrap">
-    <div class="eyebrow">La demo</div>
-    <h2>Si può già provare.</h2>
-    <div class="demo-stage" style="margin-top:10px">
-      <div class="shot"><div class="bar"><i></i><i></i><i></i><span>lookingupstudio.com/sartoria-demo</span></div><img src="img/demo-home.jpg" alt="Home page del sito demo" loading="lazy"></div>
-      <div class="phone"><img src="img/demo-home-m.jpg" alt="Home page del sito demo sul telefono" loading="lazy"></div>
-    </div>
-    <div style="display:flex;gap:30px;align-items:center;flex-wrap:wrap">
-      <a class="btn" href="https://www.lookingupstudio.com/sartoria-demo/" target="_blank" rel="noopener">Apri la demo</a>
-      <p class="small" style="margin-top:30px;max-width:520px">Prenotazione, carrello, gift card, area cliente e cambio lingua funzionano davvero. Nome, prezzi e foto sono di esempio.</p>
-    </div>
+<!-- 10 -->
+<section class="s ins" id="s10">
+  <div class="a">
+    <div class="lbl rv">Dentro la demo</div>
   </div>
-  <div class="num">08</div>
+  <figure class="p1 rv"><img src="img/demo-pren.jpg" alt="Prenotazione con calendario"><figcaption class="cap">Prenota il sarto</figcaption></figure>
+  <figure class="p2 rv d1"><img src="img/demo-gift.jpg" alt="Gift card"><figcaption class="cap">Gift card</figcaption></figure>
+  <figure class="p3 rv d2"><img src="img/demo-area.jpg" alt="Area cliente con le misure salvate"><figcaption class="cap">Area cliente</figcaption></figure>
 </section>
 
-<!-- 9 demo dettagli -->
-<section class="slide av" id="s9">
-  <div class="wrap">
-    <div class="eyebrow">Dentro la demo</div>
-    <h2>Le tre pagine che fanno la differenza.</h2>
-    <div class="grid g3" style="gap:24px">
-      <div><div class="shot"><img src="img/demo-pren.jpg" alt="Prenotazione con calendario" loading="lazy"></div><div class="cap"><b>Prenota il sarto</b><span>Capo, a domicilio o in atelier o in video, calendario, caparra scalata dal prezzo.</span></div></div>
-      <div><div class="shot"><img src="img/demo-gift.jpg" alt="Gift card esperienza su misura" loading="lazy"></div><div class="cap"><b>Gift card</b><span>Si sceglie l'esperienza, si scrive la dedica, si vede l'anteprima.</span></div></div>
-      <div><div class="shot"><img src="img/demo-area.jpg" alt="Area cliente con le misure salvate" loading="lazy"></div><div class="cap"><b>Area cliente</b><span>Misure salvate, prossima prova, riordino delle camicie.</span></div></div>
-    </div>
+<!-- 11 -->
+<section class="s two" id="s11">
+  <div class="p1">
+    <div class="im ph rv"><img src="img/pochette-abito.jpg" alt="Giacca blu da cerimonia con pochette" style="object-position:50% 40%"></div>
+    <div class="lbl rv" style="margin-top:30px">Un'idea</div>
+    <h4 class="rv d1">La gift card «esperienza».</h4>
+    <p class="txt rv d1">Si regala la visita del sarto e un capo fatto per lui. Chi la riceve diventa cliente.</p>
   </div>
-  <div class="num">09</div>
+  <div class="p2">
+    <div class="im ph rv"><img src="img/camicie-grucce.jpg" alt="Camicie su misura appese"></div>
+    <div class="lbl rv" style="margin-top:30px">Un'altra</div>
+    <h4 class="rv d1">Le misure restano.</h4>
+    <p class="txt rv d1">Dopo la prima visita, la prossima camicia si ordina online. Senza nuove visite.</p>
+  </div>
 </section>
 
-<!-- 10 due idee -->
-<section class="slide pin" id="s10">
-  <div class="wrap">
-    <div class="eyebrow">Due idee forti</div>
-    <h2>Rendere online ciò che online non si compra.</h2>
-    <div class="grid g2" style="gap:56px;margin-top:20px;align-items:start">
-      <div>
-        <div class="gcard"><div style="display:flex;justify-content:space-between;font-size:10.5px;letter-spacing:.26em;text-transform:uppercase;opacity:.8"><span>Gessato</span><span>Gift card</span></div><div class="t">Un'esperienza<br><i>su misura</i></div><div class="f"><span>Per Andrea</span><span>Camicia su misura</span></div></div>
-        <h3 style="margin-top:30px">La gift card «esperienza»</h3>
-        <p style="color:#b8bcc4;font-size:16px">Il regalo per chi ha già tutto: la visita del sarto e un capo fatto per lui. Perfetta per Natale, compleanni, matrimoni. Chi la riceve diventa un cliente.</p>
-      </div>
-      <div>
-        <div class="meas"><div style="font-size:10.5px;letter-spacing:.22em;text-transform:uppercase;color:var(--ottone)">Le tue misure · salvate</div><div class="r"><div><span>Collo</span><b>40</b></div><div><span>Torace</span><b>102</b></div><div><span>Manica</span><b>64</b></div><div><span>Spalle</span><b>46</b></div><div><span>Vita</span><b>88</b></div><div><span>Polso</span><b>17,5</b></div></div><div class="go">Riordina camicia · 180 €</div></div>
-        <h3 style="margin-top:30px">Le misure salvate</h3>
-        <p style="color:#b8bcc4;font-size:16px">Dopo la prima visita le misure restano nell'area cliente. La seconda, la terza, la decima camicia si ordinano online, senza nuove visite.</p>
-      </div>
+<!-- 12 -->
+<section class="s brd" id="s12">
+  <div class="a">
+    <div class="lbl rv">Identità di esempio</div>
+    <h2 class="ttl rv d1" style="margin-top:26px">Gessato.</h2>
+    <p class="txt rv d2" style="margin-top:22px">Il gesso del sarto e il tessuto rigato più classico. Un nome di esempio, per mostrare il metodo.</p>
+    <div class="typ rv d3"><b>Titoli</b><span>Jost, leggero</span><b>Testi</b><span>Inter</span><b>Tono</b><span>Discreto, preciso, senza fretta</span></div>
+  </div>
+  <div class="b rv d1">
+    <img class="logo" src="img/logo-notte.png" alt="Logo Gessato di esempio">
+    <div class="pal">
+      <div><i style="background:#fff"></i><span>Bianco</span></div>
+      <div><i style="background:#f6f6f6"></i><span>Grigio</span></div>
+      <div><i style="background:#1a2233;border-color:#1a2233"></i><span>Notte</span></div>
+      <div><i style="background:#b08d57;border-color:#b08d57"></i><span>Ottone</span></div>
     </div>
   </div>
-  <div class="num">10</div>
 </section>
 
-<!-- 11 brand -->
-<section class="slide" id="s11">
-  <div class="wrap">
-    <div class="eyebrow">Brand identity di esempio</div>
-    <h2>Gessato.</h2>
-    <p>Il gesso con cui il sarto segna il tessuto, e il gessato, il tessuto rigato più classico. Un nome di esempio per mostrare il metodo: con i founder si parte dal loro nome, o se ne sceglie uno insieme.</p>
-    <div class="grid g2" style="gap:24px;margin-top:40px">
-      <div class="shot"><img src="img/brand-logo.jpg" alt="Logo e monogramma di esempio" loading="lazy"></div>
-      <div class="shot"><img src="img/brand-app.jpg" alt="Etichetta, biglietto appuntamento e gift card" loading="lazy"></div>
-    </div>
-    <div class="swatch">
-      <div style="background:#1a2233;color:#f6f6f6"><span>Blu notte</span></div>
-      <div style="background:#ffffff;color:#1a2233;border:1px solid var(--linea)"><span>Bianco</span></div>
-      <div style="background:#f6f6f6;color:#1a2233;border:1px solid var(--linea)"><span>Grigio chiarissimo</span></div>
-      <div style="background:#b08d57;color:#1a2233"><span>Ottone</span></div>
-    </div>
-    <p class="small" style="margin-top:16px">Caratteri: Jost leggero per titoli e logo, Inter per i testi. Sfondi bianchi, blu notte e ottone come accenti. Tono: discreto, preciso, caldo, senza fretta.</p>
+<!-- 13 -->
+<section class="s ig" id="s13">
+  <div class="im rv"><img src="img/instagram.jpg" alt="Mockup del profilo Instagram di esempio"></div>
+  <div class="a">
+    <div class="lbl rv">Instagram · @gessato.sartoria</div>
+    <h2 class="ttl rv d1" style="margin-top:26px">Il profilo<br>che porta al sito.</h2>
+    <p class="txt rv d2" style="margin-top:22px">Mani, tessuti, dettagli. Poche parole. In bio il servizio e il link per prenotare; gli ultimi post anche sul sito.</p>
   </div>
-  <div class="num">11</div>
 </section>
 
-<!-- 12 instagram -->
-<section class="slide av" id="s12">
-  <div class="wrap split">
-    <img src="img/instagram.png" alt="Mockup del profilo Instagram di esempio" loading="lazy" style="border-radius:8px">
-    <div>
-      <div class="eyebrow">Instagram</div>
-      <h2>Il profilo che porta al sito.</h2>
-      <p>Foto vere del lavoro, mani e tessuti, alternate a poche grafiche del brand. In bio il servizio in una riga e il link alla prenotazione.</p>
-      <div class="grid" style="gap:0;margin-top:26px">
-        <div class="card" style="padding:14px 0;border-color:var(--linea)"><p style="color:var(--notte)"><b style="font-weight:500">Highlight:</b> Su misura, Tessuti, A domicilio, Clienti, Gift card</p></div>
-        <div class="card" style="padding:14px 0;border-color:var(--linea)"><p style="color:var(--notte)"><b style="font-weight:500">Sul sito:</b> gli ultimi post in home, aggiornati da soli</p></div>
-        <div class="card" style="padding:14px 0;border-color:var(--linea)"><p style="color:var(--notte)"><b style="font-weight:500">Reel:</b> il sarto che arriva, il gesso sul tessuto, la prova</p></div>
-      </div>
-    </div>
+<!-- 14 -->
+<section class="s nx" id="s14">
+  <div class="a">
+    <div class="lbl rv">Prossimi passi</div>
+    <h2 class="ttl rv d1" style="margin-top:26px">Se la direzione<br>vi convince.</h2>
   </div>
-  <div class="num">12</div>
+  <ol class="rv d2">
+    <li><span class="n">01</span>Le vostre risposte alle domande che seguono.</li>
+    <li><span class="n">02</span>Nome e brand, capi, prezzi, caparra, zone servite.</li>
+    <li><span class="n">03</span>Struttura definitiva e preventivo.</li>
+    <li><span class="n">04</span>Foto e video in atelier, poi sviluppo e messa online.</li>
+  </ol>
 </section>
 
-<!-- 13 prossimi passi -->
-<section class="slide statement" id="s13">
-  <div class="wrap">
-    <div class="eyebrow">Prossimi passi</div>
-    <h2 style="font-size:clamp(42px,5.6vw,80px)">Se la direzione vi convince, si parte.</h2>
-    <div class="grid g4" style="margin-top:36px">
-      <div class="card" style="border-color:#3a3020"><div class="k" style="color:var(--notte)">01</div><p style="color:#2b2418">Rispondete alle domande della pagina seguente, anche a voce.</p></div>
-      <div class="card" style="border-color:#3a3020"><div class="k" style="color:var(--notte)">02</div><p style="color:#2b2418">Definiamo insieme nome e brand, capi, prezzi di partenza, caparra e zone servite.</p></div>
-      <div class="card" style="border-color:#3a3020"><div class="k" style="color:var(--notte)">03</div><p style="color:#2b2418">Vi mandiamo la struttura definitiva del sito e il preventivo.</p></div>
-      <div class="card" style="border-color:#3a3020"><div class="k" style="color:var(--notte)">04</div><p style="color:#2b2418">Foto e video in atelier, poi sviluppo e messa online.</p></div>
+<!-- 15 -->
+<section class="s qs" id="s15">
+  <div class="a">
+    <div class="lbl rv">Domande per voi</div>
+    <h2 class="ttl rv d1" style="margin-top:26px">Per costruirlo su misura.</h2>
+  </div>
+  <div class="cols rv d2">
+    <div class="g"><span class="lbl">Il progetto</span>
+      <p><i>01</i>Perché adesso un sito e-commerce? Cosa deve cambiare tra un anno (più clienti, più fatturato, nuove città, estero)?</p>
+      <p><i>02</i>Chi è il vostro cliente ideale oggi? Età, professione, dove vive, per quali occasioni compra (lavoro, cerimonia, sposo)?</p>
+      <p><i>03</i>Cosa vi rende diversi dalle altre sartorie? Cosa dicono di voi i clienti contenti?</p>
+    </div>
+    <div class="g"><span class="lbl">Il servizio a domicilio</span>
+      <p><i>04</i>In quali zone andate a casa del cliente oggi? E dove vorreste arrivare (altre città, Londra, estero)?</p>
+      <p><i>05</i>Quante visite servono per un capo (misure, prove, consegna) e in quanto tempo è pronto?</p>
+      <p><i>06</i>Il domicilio ha un costo o è incluso? Accettereste una caparra online al momento della prenotazione?</p>
+    </div>
+    <div class="g"><span class="lbl">Prodotti e prezzi</span>
+      <p><i>07</i>Quali capi fate (abito, giacca, camicia, cappotto, cerimonia) e da che prezzo partono?</p>
+      <p><i>08</i>Avete prodotti che si possono vendere senza misure (cravatte, pochette, camicie in taglia, accessori)?</p>
+      <p><i>09</i>Vi piace l'idea di una gift card «esperienza su misura» da regalare?</p>
+      <p><i>10</i>Conservate le misure dei clienti? Si possono riusare per riordini online (es. camicie)?</p>
+    </div>
+    <div class="g"><span class="lbl">Brand</span>
+      <p><i>11</i>Avete già nome, logo, colori? Siete disposti a rivederli o devono restare?</p>
+      <p><i>12</i>Tre parole che descrivono come volete essere percepiti.</p>
+      <p><i>13</i>Un brand (anche non di moda) che ammirate e uno da cui volete distinguervi.</p>
+    </div>
+    <div class="g"><span class="lbl">Pratico</span>
+      <p><i>14</i>Chi seguirà ordini, appuntamenti e messaggi dopo il lancio?</p>
+      <p><i>15</i>Avete foto e video dei capi e del lavoro in atelier, o vanno fatti?</p>
+      <p><i>16</i>Instagram: avete già un profilo? Chi lo gestisce?</p>
+      <p><i>17</i>Entro quando volete essere online e che budget avete in mente?</p>
     </div>
   </div>
-  <div class="num">13</div>
 </section>
 
-<!-- 14 domande -->
-<section class="slide dk" id="s14">
-  <div class="wrap">
-    <div class="eyebrow">Domande per voi</div>
-    <h2>Per costruirlo su misura.</h2>
-    <div class="qs" style="margin-top:20px">
-      <div class="qg"><h3>Il progetto</h3><ol>
-        <li><b>1</b>Perché adesso un sito e-commerce? Cosa deve cambiare tra un anno (più clienti, più fatturato, nuove città, estero)?</li>
-        <li><b>2</b>Chi è il vostro cliente ideale oggi? Età, professione, dove vive, per quali occasioni compra (lavoro, cerimonia, sposo)?</li>
-        <li><b>3</b>Cosa vi rende diversi dalle altre sartorie? Cosa dicono di voi i clienti contenti?</li>
-      </ol></div>
-      <div class="qg"><h3>Il servizio a domicilio</h3><ol>
-        <li><b>4</b>In quali zone andate a casa del cliente oggi? E dove vorreste arrivare (altre città, Londra, estero)?</li>
-        <li><b>5</b>Quante visite servono per un capo (misure, prove, consegna) e in quanto tempo è pronto?</li>
-        <li><b>6</b>Il domicilio ha un costo o è incluso? Accettereste una caparra online al momento della prenotazione?</li>
-      </ol></div>
-      <div class="qg"><h3>Prodotti e prezzi</h3><ol>
-        <li><b>7</b>Quali capi fate (abito, giacca, camicia, cappotto, cerimonia) e da che prezzo partono?</li>
-        <li><b>8</b>Avete prodotti che si possono vendere senza misure (cravatte, pochette, camicie in taglia, accessori)?</li>
-        <li><b>9</b>Vi piace l'idea di una gift card «esperienza su misura» da regalare?</li>
-        <li><b>10</b>Conservate le misure dei clienti? Si possono riusare per riordini online (es. camicie)?</li>
-      </ol></div>
-      <div class="qg"><h3>Brand</h3><ol>
-        <li><b>11</b>Avete già nome, logo, colori? Siete disposti a rivederli o devono restare?</li>
-        <li><b>12</b>Tre parole che descrivono come volete essere percepiti.</li>
-        <li><b>13</b>Un brand (anche non di moda) che ammirate e uno da cui volete distinguervi.</li>
-      </ol></div>
-      <div class="qg"><h3>Pratico</h3><ol>
-        <li><b>14</b>Chi seguirà ordini, appuntamenti e messaggi dopo il lancio?</li>
-        <li><b>15</b>Avete foto e video dei capi e del lavoro in atelier, o vanno fatti?</li>
-        <li><b>16</b>Instagram: avete già un profilo? Chi lo gestisce?</li>
-        <li><b>17</b>Entro quando volete essere online e che budget avete in mente?</li>
-      </ol></div>
-    </div>
-  </div>
-  <div class="num">14</div>
-</section>
-
-<!-- 15 chiusura -->
-<section class="slide pin" id="s15">
-  <div class="wrap" style="text-align:center">
-    <img src="img/logo-bianco.png" alt="Logo Gessato di esempio" style="width:min(520px,90%);margin:0 auto">
-    <p class="lead" style="margin:30px auto 0">Il sarto viene da te.</p>
-    <div class="x">Looking Up Studio · lookingupstudio.com</div>
-  </div>
-  <div class="num">15</div>
+<!-- 16 -->
+<section class="end" id="s16">
+  <img class="logo rv" src="img/logo-notte.png" alt="Gessato">
+  <p class="ttl rv d1">Il sarto viene da te.</p>
+  <p class="cap rv d2" style="margin-top:7vh">Looking Up Studio · lookingupstudio.com</p>
 </section>
 
 <script>
 (function(){
-  var slides=[].slice.call(document.querySelectorAll('.slide'));
-  var dots=document.getElementById('dots');
-  slides.forEach(function(s){var a=document.createElement('a');a.href='#'+s.id;a.setAttribute('aria-label','Vai alla slide '+s.id.slice(1));dots.appendChild(a);});
-  var links=dots.querySelectorAll('a');
-  var io=new IntersectionObserver(function(es){es.forEach(function(e){
-    var i=slides.indexOf(e.target);
-    if(e.isIntersecting&&e.intersectionRatio>.5){links.forEach(function(l,j){l.classList.toggle('on',i===j)});}
-  });},{threshold:[0,.5]});
-  slides.forEach(function(s){io.observe(s)});
-  function cur(){var y=window.scrollY+window.innerHeight/2;for(var i=slides.length-1;i>=0;i--){if(slides[i].offsetTop<=y)return i;}return 0;}
+  var els=[].slice.call(document.querySelectorAll('.rv'));
+  var all=function(){els.forEach(function(e){e.classList.add('in')});};
+  if(!('IntersectionObserver' in window)||/[?&]statico/.test(location.search)){all();}
+  else{
+    var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});},{threshold:.12,rootMargin:'0px 0px -6% 0px'});
+    els.forEach(function(e){io.observe(e)});
+    setTimeout(function(){els.forEach(function(e){var r=e.getBoundingClientRect();if(r.top<innerHeight&&r.bottom>0)e.classList.add('in');});},50);
+  }
+  var secs=[].slice.call(document.querySelectorAll('body > section')), cnt=document.getElementById('count'), tot=('0'+secs.length).slice(-2);
+  function cur(){var y=scrollY+innerHeight/2,i=0;secs.forEach(function(s,k){if(s.offsetTop<=y)i=k;});return i;}
+  function upd(){cnt.textContent=('0'+(cur()+1)).slice(-2)+' / '+tot;}
+  addEventListener('scroll',upd,{passive:true});upd();
   document.addEventListener('keydown',function(ev){
-    if(['ArrowDown','PageDown',' '].indexOf(ev.key)>-1){ev.preventDefault();slides[Math.min(cur()+1,slides.length-1)].scrollIntoView();}
-    if(['ArrowUp','PageUp'].indexOf(ev.key)>-1){ev.preventDefault();slides[Math.max(cur()-1,0)].scrollIntoView();}
+    if(['ArrowDown','PageDown',' '].indexOf(ev.key)>-1){ev.preventDefault();secs[Math.min(cur()+1,secs.length-1)].scrollIntoView();}
+    if(['ArrowUp','PageUp'].indexOf(ev.key)>-1){ev.preventDefault();secs[Math.max(cur()-1,0)].scrollIntoView();}
   });
 })();
 </script>
