@@ -1,0 +1,43 @@
+/* PROVA font Figtree (Mattia 26/11): tutto il sito in Figtree, come olafureliasson.net con Circular */
+:root,html body{--serif:"Figtree",Helvetica,Arial,sans-serif!important;--mono:"Figtree",Helvetica,Arial,sans-serif!important;--font:"Figtree",Helvetica,Arial,sans-serif!important;--testo-f:"Figtree",Helvetica,Arial,sans-serif!important;--titolo:"Figtree",Helvetica,Arial,sans-serif!important;--sans:"Figtree",Helvetica,Arial,sans-serif!important}
+html body, html body *:not(svg):not(path){font-family:"Figtree",Helvetica,Arial,sans-serif!important}
+.arte-porte .parola,.arte-porte .voce:hover .parola{font-style:normal!important;letter-spacing:-.03em!important;font-weight:400!important}
+.arte-titolo h1,.intro-nome{font-weight:500!important;letter-spacing:-.02em!important}
+@media (max-width:760px){.arte-porte .parola{font-size:15vw!important}}
+/* statement più leggibile sopra il video + più aria prima delle tre categorie (Mattia 26/11) */
+html body .arte-testa p.arte-frase{font-size:17px!important;line-height:1.5!important;color:#D5D5D0!important;font-weight:450!important;max-width:470px;text-shadow:0 1px 14px rgba(10,10,9,.75),0 0 2px rgba(10,10,9,.5)}
+html body .arte-porte{margin-top:clamp(56px,11vh,130px)!important}
+@media (max-width:760px){html body .arte-testa p.arte-frase{font-size:16px!important}html body .arte-porte{margin-top:56px!important}}
+/* categorie: tutta la voce è cliccabile, niente "Explore"; descrizione più leggibile (Mattia 26/11) */
+html body .arte-porte a.voce{text-decoration:none;color:inherit;cursor:pointer;-webkit-tap-highlight-color:transparent}
+html body .arte-porte .esplora{display:none!important}
+html body .arte-porte .sotto{font-size:17px!important;line-height:1.4!important;color:#D5D5D0!important;opacity:.9!important;font-weight:450!important;margin-top:10px!important;text-shadow:0 1px 14px rgba(10,10,9,.75),0 0 2px rgba(10,10,9,.5)}
+html body .arte-porte .voce:hover .sotto{opacity:1!important;color:#fff!important}
+@media (hover:none),(max-width:760px){
+  html body .arte-porte .sotto{font-size:15px!important;margin-top:6px!important;max-width:58vw}
+  html body .arte-porte .voce.scelta .sotto::after{content:"  Tap again to enter \2192";color:#E1B3D8;white-space:nowrap;display:block;margin-top:6px;font-size:13px;letter-spacing:.02em}
+  /* miniatura: stesse proporzioni del video (520x660), video a filo, niente bordo/velo */
+  html body .arte-vis{width:108px!important;height:137px!important;padding:0!important;border:0!important;background:#0A0A09!important;-webkit-backdrop-filter:none!important;backdrop-filter:none!important;border-radius:16px!important;overflow:hidden!important}
+  html body .arte-vis video{top:0;left:0;width:100%!important;height:100%!important;object-fit:cover;display:block;border-radius:16px}
+}
+/* profilo di Carola: più respiro e più in basso (Mattia 26/11) */
+html body .arte-piede{margin-top:clamp(36px,6vh,80px)!important;padding-bottom:clamp(16px,3vh,32px)}
+html body .arte .profilo{gap:18px!important}
+html body .arte .profilo .bio{gap:4px!important}
+html body .arte .profilo .bio b{font-size:20px!important;margin-bottom:2px}
+html body .arte .profilo .bio span{font-size:14px!important;line-height:1.5!important}
+@media (max-width:760px){html body .arte-piede{margin-top:44px!important;padding-bottom:24px}}
+/* niente "About": la foto di Carola è la porta, con un glow rosa che respira come una storia IG da aprire (Mattia 26/11) */
+html body .avatar.storia{position:relative;isolation:isolate;background:conic-gradient(from 200deg,#E1B3D8,#FFFFFF,#E1B3D8)!important;box-shadow:none!important;animation:none!important;cursor:pointer;overflow:visible}
+html body .avatar.storia::before{content:"";position:absolute;inset:-16px;border-radius:50%;background:radial-gradient(circle closest-side,rgba(225,179,216,.9) 62%,rgba(225,179,216,0) 100%);filter:blur(4px);z-index:-1;animation:glowStoria 2.6s ease-in-out infinite;pointer-events:none}
+html body .avatar.storia.vista{background:rgba(255,255,255,.28)!important}
+html body .avatar.storia.vista::before{animation:none;opacity:0}
+@keyframes glowStoria{0%,100%{opacity:.35;transform:scale(.92)}50%{opacity:1;transform:scale(1.12)}}
+html body .arte .profilo .bio-ig{cursor:pointer}
+@media (prefers-reduced-motion:reduce){html body .avatar.storia::before{animation:none;opacity:.8}}
+/* telefono: descrizione di Carola sempre in due righe (Mattia 26/11) */
+@media (max-width:760px){
+  html body .arte .profilo{gap:14px!important}
+  html body .arte .profilo .avatar.storia{width:56px!important;height:56px!important;flex:0 0 56px}
+  html body .arte .profilo .bio span{white-space:nowrap;font-size:clamp(10.5px,3.05vw,14px)!important;line-height:1.45!important}
+}

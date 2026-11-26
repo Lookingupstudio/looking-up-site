@@ -133,7 +133,6 @@ window.EMI = {
   /* ABOUT · esperienze (anno, ruolo, organizzazione) */
   esperienze: {
     'Talks & lectures': [
-      ['·', 'TEDxVenezia', 'Speaker · title and link to add'],
       ['2026', 'Biomaterials as Situated Practice', 'Iuav University of Venice'],
       ['2025', 'Guest lecture', 'University of Illinois Urbana-Champaign'],
       ['2025', 'Biomaterials Seminar', 'Universidad ORT, Uruguay']

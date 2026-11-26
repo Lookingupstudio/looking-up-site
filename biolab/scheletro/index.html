@@ -4,7 +4,7 @@
 <meta property="og:title" content="Emi BioLab · Independent Design & Research Practice"><meta property="og:description" content="Emi BioLab is an independent design and research practice in Venice exploring matter through experimentation."><meta property="og:image" content="../img/filato-ciotola-blu.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter+Tight:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&family=IBM+Plex+Mono:wght@400&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/style.css?v=q7"><link rel="stylesheet" href="css/tema-test3.css?v=q7"><link rel="stylesheet" href="css/arte.css?v=q7"><link rel="stylesheet" href="css/palette.css?v=q7"><link rel="stylesheet" href="css/animazioni.css?v=q7"><link rel="stylesheet" href="css/transizioni.css?v=q7"><link rel="stylesheet" href="css/intro.css?v=q7"><link rel="stylesheet" href="css/hero-video.css?v=h3"><script src="js/palette-variante.js?v=q7"></script><script src="js/transizioni.js?v=q7" defer></script></head>
+<link rel="stylesheet" href="css/style.css?v=q7"><link rel="stylesheet" href="css/tema-test3.css?v=q7"><link rel="stylesheet" href="css/arte.css?v=q7"><link rel="stylesheet" href="css/palette.css?v=q7"><link rel="stylesheet" href="css/animazioni.css?v=q7"><link rel="stylesheet" href="css/transizioni.css?v=q7"><link rel="stylesheet" href="css/intro.css?v=q7"><link rel="stylesheet" href="css/hero-video.css?v=h3"><script src="js/palette-variante.js?v=q7"></script><script src="js/transizioni.js?v=q7" defer></script><link href="https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..700;1,400&display=swap" rel="stylesheet"><link rel="stylesheet" href="css/font-figtree.css?v=f1"></head>
 <body data-pagina="home" data-sezione="">
 <div class="intro" aria-hidden="true"><div class="intro-nome"><span>Emi</span> <span>BioLab</span></div><div class="intro-barra"><i></i></div><div class="intro-perc">0%</div></div>
 <script>
@@ -52,14 +52,14 @@
     </nav>
   </header>
   <nav class="arte-porte" aria-label="Three directions">
-    <div class="voce" data-vis="Education · hands at work"><span class="parola">Education</span><span class="sotto">Workshops, courses, the future School</span><a class="esplora" href="education.html">Explore Education <span aria-hidden="true">→</span></a></div>
-    <div class="voce" data-vis="Research · lagoon, water, matter"><span class="parola">Research</span><span class="sotto">Methodology, research areas, material archive</span><a class="esplora" href="research.html">Explore Research <span aria-hidden="true">→</span></a></div>
-    <div class="voce" data-vis="Projects · documentation"><span class="parola">Projects</span><span class="sotto">Independent work and collaborations</span><a class="esplora" href="projects.html">Explore Projects <span aria-hidden="true">→</span></a></div>
+    <a class="voce" href="education.html" data-vis="Education · hands at work"><span class="parola">Education</span><span class="sotto">Workshops, courses, the future School</span></a>
+    <a class="voce" href="research.html" data-vis="Research · lagoon, water, matter"><span class="parola">Research</span><span class="sotto">Methodology, research areas, material archive</span></a>
+    <a class="voce" href="projects.html" data-vis="Projects · documentation"><span class="parola">Projects</span><span class="sotto">Independent work and collaborations</span></a>
   </nav>
   <footer class="arte-piede">
     <div class="profilo">
       <button class="avatar storia" type="button" aria-label="Open Carola's story: choose where to go" aria-haspopup="dialog"><img data-vera src="img/carola-avatar.jpg" alt="Carola Emanuela Godja" width="120" height="120"></button>
-      <div class="bio"><button class="bio-ig apri-storia" type="button" aria-haspopup="dialog"><b>Carola Emanuela Godja</b><span>Designer &amp; researcher · Founder of Emi BioLab</span><span>Iuav · TEDxVenezia speaker · Venice</span></button><a href="about.html" class="link">About →</a></div>
+      <div class="bio"><button class="bio-ig apri-storia" type="button" aria-haspopup="dialog"><b>Carola Emanuela Godja</b><span>Designer &amp; researcher · Founder of Emi&nbsp;BioLab</span><span>TEDxVenezia · Ocean&nbsp;Space · Bevilacqua&nbsp;La&nbsp;Masa</span></button></div>
     </div>
     <a href="workshop.html?w=algi-yarn-live">Next live workshop · 5 December</a></footer>
   <div class="arte-vis" aria-hidden="true"><span></span></div>
@@ -120,11 +120,23 @@
     vis.classList.remove('su');void vis.offsetWidth;vis.classList.add('su');
   }
   function giro(){accendi(i);i=(i+1)%voci.length;}
-  setTimeout(function(){giro();if(!ridotto)setInterval(giro,3200);},1400);
+  window.emiAccendi=accendi;setTimeout(function(){if(window.emiScelta)return;giro();if(!ridotto)window.emiGiro=setInterval(giro,3200);},1400);
   addEventListener('scroll',function(){var a=document.querySelector('.arte-porte .voce.attiva');if(a){var r=a.querySelector('.parola').getBoundingClientRect();vis.style.top=(r.top+r.height/2-75)+'px';}},{passive:true});
 })();
 </script>
-</main>
+<script>
+/* telefono: primo tocco su una categoria = la sceglie (si accende + video), secondo tocco = entra. Così uno scroll o un tocco per sbaglio non porta via (Mattia 26/11) */
+(function(){
+  if(!matchMedia('(hover: none), (max-width: 760px)').matches)return;
+  var voci=[].slice.call(document.querySelectorAll('.arte-porte .voce'));
+  voci.forEach(function(a,k){a.addEventListener('click',function(e){
+    if(a.classList.contains('scelta'))return; /* secondo tocco: vai */
+    e.preventDefault();window.emiScelta=true;clearInterval(window.emiGiro);
+    voci.forEach(function(b){b.classList.remove('scelta')});a.classList.add('scelta');
+    if(window.emiAccendi)window.emiAccendi(k);
+  });});
+})();
+</script></main>
 <script src="js/animazioni.js?v=q7"></script><script src="js/vis-video.js?v=s1"></script>
-<script src="js/contenuti.js?v=q7"></script><script src="js/sito.js?v=q7"></script>
+<script src="js/contenuti.js?v=f1"></script><script src="js/sito.js?v=q7"></script>
 </body></html>
