@@ -1,0 +1,11 @@
+/* 26/11 sera (Mattia): effetto dietro al mouse ispirato a itscraft.com.
+   Fondo: foto del filato sfocata e scura; sotto il mouse si accende la versione rosa (Pink Orchid). */
+.fondo-mouse{position:fixed;inset:0;z-index:0;pointer-events:none;overflow:hidden}
+.fondo-mouse i{position:absolute;inset:-4%;background-size:cover;background-position:center}
+.fondo-mouse .base{background-image:url(../img/fondo-filo-scuro.jpg);opacity:.14}
+.fondo-mouse .rosa{background-image:url(../img/fondo-filo-rosa.jpg);opacity:1;filter:brightness(1.35) saturate(1.1);
+  -webkit-mask-image:radial-gradient(circle var(--r,140px) at var(--mx,50%) var(--my,50%),#000 0%,rgba(0,0,0,.55) 45%,transparent 100%);
+          mask-image:radial-gradient(circle var(--r,140px) at var(--mx,50%) var(--my,50%),#000 0%,rgba(0,0,0,.55) 45%,transparent 100%)}
+.fondo-mouse::after{content:"";position:absolute;inset:0;background:radial-gradient(ellipse at 30% 50%,rgba(10,10,9,.55),rgba(10,10,9,.15) 70%)}
+body>header,body>main,body>footer,.arte-testa,.arte-porte,.arte-piede{position:relative;z-index:1}
+@media (prefers-reduced-motion:reduce){.fondo-mouse .rosa{display:none}}

@@ -105,3 +105,9 @@ html.prova .arte-porte .voce,html.prova .arte-testa,html.prova .arte-piede{anima
 .arte-porte .voce .esplora:hover span{color:#E1B3D8}
 .menu .cta,.testa .cta{background:#D5D5D0!important;border-color:#D5D5D0!important;color:#0A0A09!important}
 .menu .cta:hover,.testa .cta:hover{background:#fff!important}
+/* 26/11 sera (Mattia): descrizione breve sempre visibile sotto Education / Research / Projects */
+.arte-porte .sotto{display:block!important;opacity:.75!important;transform:none!important;font-size:14px;line-height:1.4;margin-top:6px;color:var(--tenue)}
+.arte-porte .voce:hover .sotto{opacity:1!important;color:var(--testo)}
+@media (hover:none),(max-width:760px){.arte-porte .sotto{font-size:13px;margin-top:4px;max-width:62vw}}
+.arte-porte .voce{flex-direction:column;align-items:flex-start;gap:0}
+.arte-porte .esplora{margin-top:10px}

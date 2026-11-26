@@ -1,0 +1,5 @@
+/* 26/11 sera (Mattia): font dei titoli simile a itscraft.com (ABC Arizona Flare Condensed, a pagamento).
+   Per la prova: Fira Sans Extra Condensed Light, gratuito. Se si compra la licenza, si cambia solo --serif. */
+:root{--serif:"Fira Sans Extra Condensed","Arial Narrow",sans-serif}
+.intro-nome{font-family:var(--serif)!important;font-weight:300}
+h1,h2,h3,.arte-porte .parola,.arte-titolo h1{font-weight:300!important;letter-spacing:-.015em}
