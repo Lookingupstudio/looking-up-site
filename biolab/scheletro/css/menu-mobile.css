@@ -1,0 +1,28 @@
+/* Menu da telefono (Mattia 26/11): schermo intero, fondo pieno, voci grandi che entrano a cascata */
+@media (max-width:860px){
+  html body header.testa{z-index:450;backdrop-filter:none!important;-webkit-backdrop-filter:none!important;transform:none!important;filter:none!important;contain:none!important}
+  html body .testa .apri{position:relative;z-index:460;min-width:56px;text-align:right;padding:10px 0;font-size:15px;letter-spacing:.02em;color:#D5D5D0}
+  html body .testa .logo{position:relative;z-index:460}
+  html body .testa .menu{display:flex!important;position:fixed!important;inset:0!important;top:0!important;z-index:455;height:100vh;height:100dvh;
+    flex-direction:column;align-items:flex-start;justify-content:flex-start;gap:4px!important;
+    padding:150px 24px max(32px,env(safe-area-inset-bottom))!important;background:#0A0A09!important;border:0!important;
+    opacity:0;visibility:hidden;pointer-events:none;transition:opacity .35s ease,visibility 0s linear .35s;overflow-y:auto}
+  html body .testa .menu.aperto{opacity:1;visibility:visible;pointer-events:auto;transition:opacity .35s ease}
+  html body .testa .menu a{font-size:clamp(30px,9vw,40px)!important;line-height:1.25;letter-spacing:-.01em!important;text-transform:none!important;font-weight:400!important;color:#D5D5D0!important;text-decoration:none!important;padding:4px 0;
+    opacity:0;transform:translateY(14px);transition:opacity .5s ease,transform .6s cubic-bezier(.2,.7,.2,1),color .3s}
+  html body .testa .menu a.attivo{color:#fff!important}
+  html body .testa .menu a.attivo::after{content:"";display:inline-block;width:8px;height:8px;border-radius:50%;background:#E1B3D8;margin-left:12px;vertical-align:middle}
+  html body .testa .menu.aperto a{opacity:1;transform:none}
+  html body .testa .menu.aperto a:nth-child(1){transition-delay:.06s}html body .testa .menu.aperto a:nth-child(2){transition-delay:.12s}
+  html body .testa .menu.aperto a:nth-child(3){transition-delay:.18s}html body .testa .menu.aperto a:nth-child(4){transition-delay:.24s}
+  html body .testa .menu.aperto a:nth-child(5){transition-delay:.3s}html body .testa .menu.aperto a:nth-child(6){transition-delay:.36s}
+  html body .testa .menu a.cta{margin-top:auto;font-size:15px!important;line-height:1.2;padding:14px 22px!important;border-radius:999px!important;background:#D5D5D0!important;color:#0A0A09!important;border:0!important}
+  html.menu-aperto,html.menu-aperto body{overflow:hidden!important}
+  html.menu-aperto .arte-vis,html.menu-aperto .cambia-palette{opacity:0!important;visibility:hidden}
+  html.menu-aperto body header.testa::before{opacity:0!important}
+}
+/* barra in alto quando scorri, anche su computer: fondo scuro sfumato sotto logo e menu */
+html body header.testa::before{content:"";position:absolute;inset:0 0 -28px 0;z-index:-1;pointer-events:none;opacity:0;transition:opacity .4s ease;
+  background:linear-gradient(to bottom,rgba(10,10,9,.92) 0%,rgba(10,10,9,.78) 65%,rgba(10,10,9,0) 100%)}
+html.scorso body header.testa::before{opacity:1}
+html body header.testa{isolation:isolate}

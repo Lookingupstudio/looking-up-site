@@ -23,7 +23,17 @@
       ${prossimo ? `<a class="cta" href="workshop.html?w=${prossimo.slug}">Next workshop · ${giorno(prossimo.data)}</a>` : ''}
     </nav>
   </div></header>`);
-  $('.apri').addEventListener('click', e => { const m = $('.menu'); m.classList.toggle('aperto'); e.target.setAttribute('aria-expanded', m.classList.contains('aperto')); });
+  /* barra in alto: fondo scuro sfumato appena scorri, su tutte le pagine (Mattia 26/11) */
+  (function(){var h=document.documentElement;function f(){h.classList.toggle('scorso',scrollY>30)}addEventListener('scroll',f,{passive:true});f();})();
+  /* menu da telefono a schermo intero: "Menu" diventa "Close", pagina bloccata sotto, si chiude con un link o con Esc (Mattia 26/11) */
+  (function () {
+    const btn = $('.apri'), m = $('.menu'), h = document.documentElement;
+    const imposta = aperto => { m.classList.toggle('aperto', aperto); h.classList.toggle('menu-aperto', aperto); btn.setAttribute('aria-expanded', aperto); btn.textContent = aperto ? 'Close' : 'Menu'; };
+    btn.addEventListener('click', () => imposta(!m.classList.contains('aperto')));
+    m.querySelectorAll('a').forEach(a => a.addEventListener('click', () => imposta(false)));
+    addEventListener('keydown', e => { if (e.key === 'Escape' && m.classList.contains('aperto')) imposta(false); });
+    addEventListener('resize', () => { if (innerWidth > 860 && m.classList.contains('aperto')) imposta(false); });
+  })();
 
   /* footer */
   document.body.insertAdjacentHTML('beforeend', `

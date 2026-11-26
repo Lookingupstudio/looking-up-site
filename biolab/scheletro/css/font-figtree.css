@@ -96,3 +96,6 @@ html body .storia-volo .grande{position:absolute;left:50%;top:50%;font-size:96px
 html body .storia-volo .sale{position:absolute;bottom:60px;line-height:1;opacity:0;animation:reazSale 1.9s ease-out forwards}
 @keyframes reazSale{0%{opacity:0;transform:translate(0,0) scale(.5)}15%{opacity:1}100%{opacity:0;transform:translate(var(--dx),-420px) scale(1.1)}}
 html body .storia-card.in-pausa .storia-barre i{animation-play-state:paused!important}
+/* home: niente "Next live workshop" in fondo e niente bottone chiaro/scuro (Mattia 26/11): i social restano a destra / sotto il profilo */
+html body .arte-piede .piede-dx{justify-content:flex-end}
+html body .cambia-palette{display:none!important}
