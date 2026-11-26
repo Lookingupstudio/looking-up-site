@@ -1,12 +1,17 @@
 /* video di sfondo della home (Mattia 26/11): filo, acqua e Venezia, velo scuro per leggere le scritte */
 .hero-sfondo{position:fixed;inset:0;z-index:0;pointer-events:none;overflow:hidden;background:#0A0A09}
-.hero-sfondo video{width:100%;height:100%;object-fit:cover;display:block;opacity:0;transition:opacity 1.6s ease}
+.hero-sfondo video{position:absolute;inset:0;z-index:0;width:100%;height:100%;object-fit:cover;display:block;opacity:0;transition:opacity 1.6s ease}
 .hero-sfondo video.pronto{opacity:1}
-.hero-sfondo::after{content:"";position:absolute;inset:0;background:
+.hero-sfondo .velo{position:absolute;inset:0;z-index:1;background:
   linear-gradient(90deg,rgba(10,10,9,.78) 0%,rgba(10,10,9,.5) 55%,rgba(10,10,9,.35) 100%),
   linear-gradient(0deg,rgba(10,10,9,.6) 0%,rgba(10,10,9,0) 30%,rgba(10,10,9,0) 75%,rgba(10,10,9,.5) 100%)}
 body[data-pagina="home"] main{position:relative;z-index:1}
-@media (max-width:760px),(orientation:portrait){.hero-sfondo::after{background:rgba(10,10,9,.58)}}
+@media (max-width:760px),(orientation:portrait){.hero-sfondo .velo{background:rgba(10,10,9,.58)}}
 @media (prefers-reduced-motion:reduce){.hero-sfondo video{display:none}.hero-sfondo{background:#0A0A09 url(../video/hero-16x9.jpg) center/cover}}
 body[data-pagina="home"] .testa{background:transparent!important;border-bottom:0!important;backdrop-filter:none!important}
 @media (min-width:861px){body[data-pagina="home"] .menu{background:transparent!important}}
+/* video nel riquadro delle sezioni */
+.arte-vis.con-video{overflow:hidden;padding:0!important}
+.arte-vis video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity .45s ease}
+.arte-vis video.on{opacity:1}
+.arte-vis.con-video span{display:none!important}
