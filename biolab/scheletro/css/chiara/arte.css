@@ -1,0 +1,126 @@
+/* GENERATO da genera.py: variante palette chiara. Non modificare a mano. */
+/* Emi BioLab · home minimale e artistica (25/11/2026)
+   Solo tipografia e spazio: il nome, una frase, tre parole grandi che sono le porte.
+   Al passaggio su una parola compare una sola immagine morbida che segue il mouse. */
+body[data-pagina="home"] .piede{display:none}
+.arte{min-height:calc(100vh - 95px);display:grid;grid-template-rows:auto 1fr auto;padding-top:clamp(40px,9vh,110px);padding-bottom:clamp(24px,4vh,44px)}
+.arte-testa{display:flex;justify-content:space-between;align-items:flex-end;gap:40px;flex-wrap:wrap}
+.arte-testa h1{font-size:clamp(28px,2.6vw,40px)!important;letter-spacing:0;line-height:1}
+.arte-testa p{font-size:14px;line-height:1.6;color:var(--tenue);text-align:right;max-width:360px}
+.arte-porte{align-self:center;display:flex;flex-direction:column;gap:clamp(4px,1.2vh,14px);margin:clamp(30px,6vh,80px) 0}
+.arte-porte .voce{display:flex;align-items:baseline;gap:28px;text-decoration:none;width:max-content;max-width:100%}
+.arte-porte .parola{font-family:var(--serif);font-weight:400;font-size:clamp(64px,10.5vw,168px);line-height:.98;letter-spacing:-.005em;color:var(--testo);
+  transition:color .8s cubic-bezier(.2,.7,.2,1),font-style .3s,transform .9s cubic-bezier(.2,.7,.2,1)}
+.arte-porte .sotto{font-size:14px;color:var(--tenue);opacity:0;transform:translateX(-10px);transition:opacity .7s,transform .9s cubic-bezier(.2,.7,.2,1)}
+.arte-porte:hover .parola{color:rgba(241,242,243,.22)}
+.arte-porte .voce:hover .parola{color:var(--testo);font-style:italic;transform:translateX(18px)}
+.arte-porte .voce:hover .sotto{opacity:1;transform:none}
+.arte-piede{display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap;font-size:14px}
+.arte-piede a{text-decoration:none;color:var(--tenue);transition:color .4s}
+.arte-piede a:hover{color:var(--testo)}
+.arte-vis{position:fixed;left:0;top:0;width:260px;height:330px;pointer-events:none;z-index:-0;opacity:0;
+  border-radius:22px;background:linear-gradient(160deg,rgba(195,206,208,.20),rgba(47,47,45,.10) 50%,rgba(168,161,187,.16));
+  -webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);
+  transition:opacity .6s,clip-path .8s cubic-bezier(.2,.7,.2,1);clip-path:inset(40% 0 40% 0 round 22px);display:flex;align-items:flex-end;padding:14px}
+.arte-vis.su{opacity:1;clip-path:inset(0 0 0 0 round 22px)}
+.arte-vis span{font-size:11px;color:rgba(30,30,28,.55)}
+/* entrata */
+@keyframes arteSale{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:none}}
+.arte-testa,.arte-piede{animation:arteSale 1.2s cubic-bezier(.2,.7,.2,1) both}
+.arte-porte .voce{animation:arteSale 1.3s cubic-bezier(.2,.7,.2,1) both}
+.arte-porte .voce:nth-child(1){animation-delay:.15s}.arte-porte .voce:nth-child(2){animation-delay:.3s}.arte-porte .voce:nth-child(3){animation-delay:.45s}
+.arte-piede{animation-delay:.7s}
+@media (max-width:760px){
+  .arte-testa{flex-direction:column;align-items:flex-start}.arte-testa p{text-align:left}
+  .arte-porte .sotto{display:none}.arte-vis{display:none}
+}
+@media (prefers-reduced-motion:reduce){.arte-testa,.arte-piede,.arte-porte .voce{animation:none}}
+@media (max-width:760px){
+  .arte-porte .parola{font-size:18vw}
+  .arte-porte .voce::after{content:"→";font-size:18px;color:var(--tenue);align-self:center}
+  .arte-porte{margin:40px 0}
+}
+
+/* Founder come profilo Instagram in basso (Mattia 25/11) */
+.arte .profilo{display:flex;gap:14px;align-items:center;color:var(--testo)}
+.arte .profilo .avatar{flex:none;width:56px;height:56px;border-radius:50%;
+  background:linear-gradient(135deg,rgba(195,206,208,.35),rgba(168,161,187,.28));
+  box-shadow:0 0 0 2px #F3EFE6,0 0 0 3px rgba(30,30,28,.25)}
+.arte .profilo .bio{display:flex;flex-direction:column;gap:2px}
+.arte .profilo .bio b{font-family:var(--serif);font-weight:400;font-size:19px;line-height:1.15;color:var(--testo)}
+.arte .profilo .bio span{font-size:13px;line-height:1.45;color:var(--tenue)}
+.arte .profilo .bio .link{color:var(--testo);margin-top:3px}
+.arte .profilo:hover b{text-decoration:underline;text-underline-offset:5px;text-decoration-thickness:1px}
+
+.arte-titolo{display:flex;flex-direction:column;gap:22px}
+.arte-testa{align-items:flex-start}
+.arte .profilo{text-decoration:none}.arte .profilo .bio span{text-decoration:none}
+.arte-testa p.arte-frase{text-align:left;margin:0}
+/* con bio e frase in alto, le tre parole stanno comunque in una schermata */
+@media (min-width:861px){
+  .arte{padding-top:clamp(28px,6vh,80px)}
+  .arte-porte{margin:clamp(24px,4vh,56px) 0}
+  .arte-porte .parola{font-size:clamp(64px,min(10.5vw,13.5vh),168px)}
+}
+
+/* Profilo con "storia" stile Instagram (Mattia 25/11): anello colorato sulla foto, clic = scegli dove andare */
+.arte .profilo{display:flex;gap:16px;align-items:center}
+.arte .profilo .bio{text-decoration:none;color:var(--testo)}
+.arte .profilo .bio:hover b{text-decoration:underline;text-underline-offset:5px;text-decoration-thickness:1px}
+.avatar.storia{all:unset;cursor:pointer;flex:none;width:64px;height:64px;border-radius:50%;padding:3px;position:relative;
+  background:conic-gradient(from 200deg,#B7C6C3,#A8A1BB,#C3CED0,#7fa9ad,#B7C6C3);box-shadow:none!important;
+  transition:transform .4s cubic-bezier(.2,.7,.2,1)}
+.avatar.storia::after{content:"";position:absolute;inset:3px;border-radius:50%;border:2px solid #14202a;pointer-events:none}
+.avatar.storia img{width:100%;height:100%;border-radius:50%;object-fit:cover;display:block}
+.avatar.storia:hover{transform:scale(1.06)}
+.avatar.storia:focus-visible{outline:2px solid var(--testo);outline-offset:4px}
+.avatar.storia.vista{background:rgba(30,30,28,.28)}
+@media (prefers-reduced-motion:no-preference){
+  .avatar.storia:not(.vista){animation:anello 3.5s ease-in-out infinite}
+  @keyframes anello{50%{filter:brightness(1.25) saturate(1.2)}}
+}
+.storia-vista{position:fixed;inset:0;z-index:100;display:flex;align-items:center;justify-content:center;padding:16px;
+  background:rgba(8,14,18,.55);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);opacity:0;transition:opacity .35s}
+.storia-vista.aperta{opacity:1}
+.storia-card{width:min(400px,100%);height:min(700px,calc(100vh - 32px));border-radius:22px;padding:14px 18px 26px;display:flex;flex-direction:column;
+  background:linear-gradient(170deg,rgba(120,160,165,.35),rgba(168,161,187,.22) 55%,rgba(20,32,42,.6));border:1px solid rgba(30,30,28,.14);
+  box-shadow:0 30px 80px rgba(0,0,0,.45);transform:scale(.94) translateY(14px);transition:transform .45s cubic-bezier(.2,.7,.2,1)}
+.storia-vista.aperta .storia-card{transform:none}
+.storia-barre{height:3px;border-radius:3px;background:rgba(30,30,28,.25);overflow:hidden}
+.storia-barre i{display:block;height:100%;width:0;background:#1E1E1C;border-radius:3px}
+.storia-vista.aperta .storia-barre i{animation:barra 15s linear forwards}
+@keyframes barra{to{width:100%}}
+.storia-testa{display:flex;align-items:center;gap:10px;margin-top:14px;font-size:14px}
+.storia-testa img{width:34px;height:34px;border-radius:50%;object-fit:cover}
+.storia-testa b{font-weight:500}
+.storia-chiudi{all:unset;cursor:pointer;margin-left:auto;font-size:28px;line-height:1;padding:0 4px;color:#1E1E1C}
+.storia-domanda{margin:auto 0 22px;font-family:var(--serif);font-size:32px;line-height:1.1;color:#1E1E1C}
+.storia-scelte{display:flex;flex-direction:column;gap:10px}
+.storia-scelte a{display:flex;flex-direction:column;gap:2px;text-decoration:none;color:#1E1E1C;padding:14px 20px;border-radius:999px;
+  background:rgba(30,30,28,.12);border:1px solid rgba(30,30,28,.22);font-size:16px;transition:background .3s,transform .3s}
+.storia-scelte a small{font-size:12px;color:rgba(30,30,28,.65)}
+.storia-scelte a:hover,.storia-scelte a:focus-visible{background:rgba(30,30,28,.24);transform:translateX(4px);outline:none}
+
+/* 25/11 notte (Mattia): fondo nero pieno, bio sotto "Emi BioLab", frase a destra, prossimo workshop in basso a destra */
+html,body{background:#F3EFE6!important}
+.testa,.menu{background:rgba(0,0,0,.8)!important}
+.avatar.storia::after{border-color:#F3EFE6}
+.arte{grid-template-rows:auto 1fr auto!important}
+.arte-testa{display:flex!important;justify-content:space-between!important;align-items:flex-start!important;gap:40px;flex-wrap:wrap}
+.arte-testa p.arte-destra{font-size:14px;line-height:1.6;color:var(--tenue);text-align:right;max-width:360px;margin:6px 0 0}
+.arte-piede{display:flex;justify-content:space-between;gap:24px;font-size:14px}
+.arte-piede a{text-decoration:none;color:var(--tenue);transition:color .4s}.arte-piede a:hover{color:var(--testo)}
+@media (max-width:860px){.arte-testa p.arte-destra{text-align:left}}
+/* Mattia 25/11 notte: a sinistra titolo, frase, bio; a destra i profili social */
+.arte-testa p.arte-frase{font-size:14px!important;line-height:1.6!important;color:var(--tenue)!important;text-align:left!important;max-width:420px;margin:0!important;font-family:inherit!important}
+.arte-titolo{gap:20px!important}
+.arte-social{display:flex;gap:10px;flex-wrap:wrap;margin-top:6px}
+.arte-social a{font-size:13px;text-decoration:none;color:var(--testo);padding:9px 16px;border-radius:999px;border:1px solid rgba(30,30,28,.2);background:rgba(30,30,28,.04);transition:background .3s,border-color .3s}
+.arte-social a:hover{background:rgba(30,30,28,.12);border-color:rgba(30,30,28,.4)}
+/* finestra che appare al passaggio sulle parole: più visibile sul nero */
+.arte-vis{background:linear-gradient(160deg,rgba(195,206,208,.28),rgba(47,47,45,.16) 50%,rgba(168,161,187,.24))!important;border:1px solid rgba(30,30,28,.12)}
+@media (max-width:860px){.arte-social{margin-top:0}}
+/* bio di Carola in fondo a sinistra, prossimo workshop a destra (Mattia 25/11 notte) */
+.arte-piede{align-items:flex-end!important}
+.arte-piede .profilo .bio{color:var(--testo)}
+@media (max-width:860px){.arte-piede{flex-direction:column;align-items:flex-start!important;gap:22px}}

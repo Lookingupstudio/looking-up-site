@@ -1,0 +1,17 @@
+/* GENERATO da genera.py: variante palette chiara. Non modificare a mano. */
+/* Caricamento iniziale: nero, il nome affiora dall'acqua (sfocato -> nitido), una goccia di luce si allarga e la pagina si svela */
+.intro{position:fixed;inset:0;z-index:200;background:#F3EFE6;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:28px;
+  transition:clip-path 1.1s cubic-bezier(.7,0,.2,1);clip-path:inset(0 0 0 0)}
+.intro.via{clip-path:inset(0 0 100% 0)}
+.intro-nome{font-family:"Instrument Serif",Georgia,serif;font-size:clamp(44px,7vw,96px);color:#2F2F2D;letter-spacing:-.01em;line-height:1}
+.intro-nome span{display:inline-block;opacity:0;filter:blur(14px);transform:translateY(14px);animation:introNome 1.4s cubic-bezier(.2,.7,.2,1) forwards}
+.intro-nome span+span{animation-delay:.25s}
+.intro-goccia{width:6px;height:6px;border-radius:50%;background:#1E1E1C;opacity:0;animation:introGoccia 1.8s .6s cubic-bezier(.2,.7,.2,1) forwards}
+@keyframes introNome{to{opacity:1;filter:blur(0);transform:none}}
+@keyframes introGoccia{0%{opacity:0;transform:scale(.4);box-shadow:0 0 0 0 rgba(47,47,45,.5)}30%{opacity:1}100%{opacity:0;transform:scale(1);box-shadow:0 0 0 46px rgba(47,47,45,0)}}
+html.con-intro body{overflow:hidden}
+/* filo di caricamento da sinistra a destra con la percentuale (Mattia 26/11) */
+.intro-goccia{display:none}
+.intro-barra{width:min(320px,60vw);height:1px;background:rgba(47,47,45,.18);overflow:hidden}
+.intro-barra i{display:block;height:100%;width:100%;background:#E1B3D8;transform:scaleX(0);transform-origin:left center}
+.intro-perc{font-family:"Inter Tight",system-ui,sans-serif;font-size:12px;letter-spacing:.16em;color:#8E8A80;font-variant-numeric:tabular-nums;margin-top:-14px}

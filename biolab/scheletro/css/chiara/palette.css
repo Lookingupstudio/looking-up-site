@@ -1,0 +1,119 @@
+/* GENERATO da genera.py: variante palette chiara. Non modificare a mano. */
+/* Palette del sito (Mattia 26/11, coolors 0a0a09-d5d5d0-e1b3d8)
+   Onyx #F3EFE6 fondo · Dust Grey #2F2F2D testo · Pink Orchid #E1B3D8 solo accento soft in pochissimi punti */
+:root{--fondo:#F3EFE6;--fondo2:#EDE8DD;--testo:#2F2F2D;--tenue:#8E8A80;--slate:#A8A398;--linea:rgba(47,47,45,.16);--accento:#1E1E1C}
+html,body{background:#F3EFE6!important;color:var(--testo)}
+.testa,.menu{background:rgba(243,239,230,.85)!important}
+.testa a,.menu a{color:var(--testo)}
+.menu .cta,.testa .cta{background:#1E1E1C!important;border-color:#1E1E1C!important;color:#F3EFE6!important}
+.menu .cta:hover,.testa .cta:hover{background:#2F2F2D!important}
+.logo.logo-segnaposto{border-color:rgba(47,47,45,.35)!important;color:var(--testo)!important}
+a:hover{color:inherit}
+/* home */
+.arte-porte .parola{color:var(--testo)!important}
+.arte-porte:hover .parola{color:rgba(47,47,45,.2)!important}
+.arte-porte .voce:hover .parola{color:#1E1E1C!important}
+.arte-porte .voce:hover .sotto{color:var(--testo)}
+.arte-vis{background:linear-gradient(160deg,rgba(30,30,28,.28),rgba(47,47,45,.14))!important}
+.arte .profilo .bio b,.arte-testa h1{color:var(--testo)!important}
+.arte .profilo .bio .link,.arte-piede a:hover{color:#1E1E1C!important}
+.avatar.storia{background:conic-gradient(from 200deg,#1E1E1C,#2F2F2D,#1E1E1C)!important;box-shadow:0 0 16px rgba(30,30,28,.45)!important}
+.avatar.storia::after{border-color:#F3EFE6!important}
+.arte-social a{color:var(--testo)!important;border-color:rgba(47,47,45,.25)!important}
+.arte-social a:hover{border-color:#1E1E1C!important;background:rgba(30,30,28,.15)!important}
+.storia-card{background:linear-gradient(170deg,rgba(30,30,28,.35),rgba(243,239,230,.85))!important}
+.storia-scelte a:hover{background:rgba(30,30,28,.35)!important}
+/* social solo icone */
+.arte-social{gap:6px!important}
+.arte-social a{width:42px;height:42px;padding:0!important;display:inline-flex;align-items:center;justify-content:center;border-color:transparent!important;background:none!important}
+.arte-social a:hover{color:#1E1E1C!important;border-color:transparent!important;background:none!important}
+/* bio cliccabile verso Instagram, senza cambiare l'aspetto */
+.arte .profilo .bio{display:flex;flex-direction:column}
+.arte .profilo .bio-ig{display:flex;flex-direction:column;gap:2px;text-decoration:none;color:inherit}
+.arte .profilo .bio-ig:hover b{text-decoration:underline;text-underline-offset:5px;text-decoration-thickness:1px}
+.arte .profilo .bio .link{text-decoration:none;margin-top:6px}
+.arte .profilo button.bio-ig{all:unset;cursor:pointer;display:flex;flex-direction:column;gap:2px}.arte .profilo button.bio-ig:focus-visible{outline:2px solid #1E1E1C;outline-offset:4px}
+/* storia: fondo nero con video verticale della laguna che scorre, opacizzato (Mattia 25/11 notte) */
+.storia-vista{background:rgba(0,0,0,.72)!important}
+.storia-card{position:relative;overflow:hidden;background:#F3EFE6!important;border-color:rgba(30,30,28,.12)!important}
+.storia-video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.42;z-index:0;pointer-events:none;filter:saturate(.85)}
+.storia-card::before{content:"";position:absolute;inset:0;z-index:1;pointer-events:none;background:linear-gradient(180deg,rgba(0,0,0,.45),rgba(0,0,0,.15) 40%,rgba(0,0,0,.65))}
+.storia-card>*:not(.storia-video){position:relative;z-index:2}
+.storia-scelte a{background:rgba(0,0,0,.35)!important;border-color:rgba(30,30,28,.22)!important;-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px)}
+.storia-scelte a:hover{background:rgba(30,30,28,.18)!important}
+@media (prefers-reduced-motion:reduce){.storia-video{opacity:.3}}
+/* FIX: la storia chiusa restava sopra la pagina (trasparente) e bloccava clic e passaggio del mouse */
+.storia-vista[hidden]{display:none!important}
+.storia-vista:not(.aperta){pointer-events:none}
+/* niente corsivo al passaggio: la parola resta dritta e "ondeggia" come vista nell'acqua */
+.arte-porte .voce:hover .parola{font-style:normal!important;transform:translateX(10px)!important}
+.arte-porte .parola{display:inline-block}.arte-porte .voce.prova-acqua .parola{color:#1E1E1C!important;transform:translateX(10px)}.arte-porte .voce.prova-acqua .sotto{opacity:1;transform:none}
+.arte-porte .voce.prova-acqua .parola{color:#1E1E1C!important}
+/* effetto onda: al passaggio le lettere salgono e scendono una dopo l'altra, come un'onda che scorre */
+
+.arte-porte .lettera{display:inline-block;transform:translateY(0);transition:transform .6s cubic-bezier(.2,.7,.2,1)}
+@media (prefers-reduced-motion:no-preference){
+  .arte-porte .voce:hover .lettera,.arte-porte .voce.prova-acqua .lettera{animation:onda 1.8s ease-in-out infinite;animation-delay:calc(var(--i) * .09s)}
+}
+@keyframes onda{0%,100%{transform:translateY(0)}50%{transform:translateY(-.09em)}}
+/* onda più morbida: lenta, bassa, e dove passa la cresta la lettera si opacizza e sfuma un poco (Mattia 25/11) */
+@media (prefers-reduced-motion:no-preference){
+  .arte-porte .voce:hover .lettera,.arte-porte .voce.prova-acqua .lettera{animation:ondaMorbida 2.8s cubic-bezier(.45,0,.55,1) infinite!important;animation-delay:calc(var(--i) * .14s)!important}
+}
+@keyframes ondaMorbida{
+  0%,100%{transform:translateY(0);opacity:1;filter:blur(0)}
+  50%{transform:translateY(-.06em);opacity:.38;filter:blur(1.2px)}
+}
+/* via le lettere che saltano: l'onda ora piega tutta la parola, una sola volta, poi la parola si posa velata */
+.arte-porte .lettera{animation:none!important}
+.arte-porte .parola{transition:color .8s cubic-bezier(.2,.7,.2,1),opacity 1.2s ease,transform .9s cubic-bezier(.2,.7,.2,1)!important}
+.arte-porte .parola.posata{opacity:.72}
+html.prova .arte-porte .voce,html.prova .arte-testa,html.prova .arte-piede{animation:none!important;opacity:1!important}html.prova .arte-porte .parola{color:rgba(47,47,45,.2)!important}html.prova .arte-porte .voce.prova-acqua .parola{color:#1E1E1C!important}html.prova .arte-porte .voce.prova-acqua .sotto{opacity:1;transform:none}html.prova .arte-vis{display:none}
+.arte-porte .parola.posata{opacity:.55}
+/* telefono: parola accesa a turno + immagine accanto (al posto del passaggio del mouse) */
+@media (hover:none),(max-width:760px){
+  .arte-porte.cicla .parola{color:rgba(47,47,45,.28)!important;transition:color .9s ease!important}
+  .arte-porte.cicla .voce.attiva .parola{color:#1E1E1C!important}
+  .arte-porte.cicla .voce::after{transition:opacity .6s}
+  .arte-porte.cicla .voce.attiva::after{opacity:0}
+  .arte-vis{display:flex!important;position:fixed!important;left:auto!important;right:16px;transform:none!important;width:112px!important;height:150px!important;padding:10px!important;border-radius:18px!important}
+  .arte-vis span{font-size:9px!important;line-height:1.3}
+}
+/* 26/11: via l'onda, passaggio classico (parola bianca, le altre si spengono, niente corsivo) */
+.arte-porte .parola.posata{opacity:1!important}
+/* telefono: niente scritta nei riquadri immagine, più spazio tra le tre parole */
+@media (hover:none),(max-width:760px){
+  .arte-vis span{display:none!important}
+  .arte-porte{gap:clamp(14px,3.2vh,28px)!important}
+  .arte-porte .parola{line-height:1.08!important}
+}
+/* 26/11: le parole non sono più link, si clicca solo "Explore ... →" sotto ciascuna */
+.arte-porte .voce{flex-wrap:wrap;cursor:default}
+.arte-porte .voce .esplora{flex-basis:100%;order:3;margin-top:6px;font-size:13px;letter-spacing:.04em;color:var(--tenue);text-decoration:none;width:max-content;transition:color .4s}
+.arte-porte .voce .esplora span{display:inline-block;transition:transform .4s cubic-bezier(.2,.7,.2,1)}
+.arte-porte .voce .esplora:hover{color:#1E1E1C}.arte-porte .voce .esplora:hover span{transform:translateX(6px)}
+.arte-porte .voce::after{content:none!important}
+.arte-porte .voce:hover .esplora,.arte-porte .voce.attiva .esplora{color:#1E1E1C}
+.arte-porte .voce .esplora{margin-top:-2px!important;padding:4px 0}
+@media (min-width:761px){
+  .arte-porte .parola{font-size:clamp(56px,min(9vw,11vh),150px)!important;line-height:.92!important}
+  .arte-porte{gap:clamp(6px,1.6vh,18px)!important;margin:clamp(20px,4vh,48px) 0!important}
+}
+.arte-porte .voce .esplora{margin-top:4px!important}
+/* Pink Orchid: solo accento soft (anello della storia, freccia di Explore al passaggio, filo del caricamento) */
+:root{--accento:#E1B3D8}
+.avatar.storia{background:conic-gradient(from 200deg,#E1B3D8,#2F2F2D,#E1B3D8)!important;box-shadow:0 0 16px rgba(225,179,216,.28)!important}
+.arte-porte .voce .esplora:hover span{color:#E1B3D8}
+.menu .cta,.testa .cta{background:#2F2F2D!important;border-color:#2F2F2D!important;color:#F3EFE6!important}
+.menu .cta:hover,.testa .cta:hover{background:#1E1E1C!important}
+/* 26/11 sera (Mattia): descrizione breve sempre visibile sotto Education / Research / Projects */
+.arte-porte .sotto{display:block!important;opacity:.75!important;transform:none!important;font-size:14px;line-height:1.4;margin-top:6px;color:var(--tenue)}
+.arte-porte .voce:hover .sotto{opacity:1!important;color:var(--testo)}
+@media (hover:none),(max-width:760px){.arte-porte .sotto{font-size:13px;margin-top:4px;max-width:62vw}}
+.arte-porte .voce{flex-direction:column;align-items:flex-start;gap:0}
+.arte-porte .esplora{margin-top:10px}
+/* bottone per provare la palette chiara/scura dal vivo (solo home, 26/11) */
+.cambia-palette{position:fixed;right:18px;bottom:18px;z-index:120;width:44px;height:44px;border-radius:50%;border:1px solid rgba(47,47,45,.28);background:rgba(243,239,230,.55);color:#2F2F2D;display:grid;place-items:center;cursor:pointer;backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);transition:transform .4s cubic-bezier(.2,.7,.2,1),border-color .3s}
+.cambia-palette:hover{transform:rotate(180deg);border-color:#E1B3D8}
+
+:root{--parola-attiva:#1E1E1C;--parola-spenta:rgba(47,47,45,.28)}

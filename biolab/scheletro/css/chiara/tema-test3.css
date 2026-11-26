@@ -1,0 +1,215 @@
+/* GENERATO da genera.py: variante palette chiara. Non modificare a mano. */
+/* Emi BioLab · scheletro vestito con lo stile di test3 (25/11/2026)
+   Fondo scuro, Instrument Serif per i titoli, Inter Tight per il testo,
+   IBM Plex Mono per etichette e codici. Foto: sempre riquadri segnaposto. */
+:root{--fondo:#F3EFE6;--fondo2:#FFFFFF;--testo:#2F2F2D;--tenue:#8E8A80;--slate:#8E8A80;--linea:rgba(30,30,28,.16);--iri:#E1B3D8;
+  --serif:"Instrument Serif",Georgia,serif;--mono:"IBM Plex Mono",ui-monospace,monospace}
+html,body{background:var(--fondo)}
+body{color:var(--testo);font-size:15px}
+a{color:inherit}
+
+/* striscia bozza come in test3 */
+.bozza-barra{background:rgba(47,47,45,.92);color:#F3EFE6;font-size:10px;letter-spacing:.06em;text-transform:uppercase;font-family:var(--mono)}
+.bozza{color:var(--iri);font-style:normal;font-family:var(--mono);font-size:11px}
+
+/* header */
+.testa{background:rgba(243,239,230,.88);border-bottom:1px solid var(--linea)}
+.logo{font-family:var(--serif);font-weight:400;font-size:26px;text-transform:uppercase;letter-spacing:0}
+.menu a{font-family:"Inter Tight",sans-serif;font-weight:400;font-size:11px;letter-spacing:.05em}
+.menu .cta{font-family:var(--mono);text-transform:none;letter-spacing:.02em;border:1px solid rgba(30,30,28,.7);border-radius:0;padding:8px 12px}
+.menu .cta:hover{background:var(--testo);color:var(--fondo)}
+@media (max-width:860px){.menu{background:var(--fondo)}}
+.briciole{font-family:var(--mono);text-transform:none;letter-spacing:.02em;color:var(--tenue)}
+
+/* tipografia */
+.occhiello,.num,.porta .meta,.anno,.info small,.dati small,.modulo label{font-family:var(--mono);text-transform:none;letter-spacing:.02em;font-weight:400;color:var(--tenue);font-size:11px}
+h1,.h1{font-family:var(--serif);font-weight:400;text-transform:none;letter-spacing:-.03em;line-height:.9;font-size:clamp(64px,9vw,160px)}
+h2{font-family:var(--serif);font-weight:400;text-transform:none;letter-spacing:-.015em;line-height:1;font-size:clamp(36px,4vw,64px)}
+h3{font-family:var(--mono);font-weight:400;text-transform:none;letter-spacing:.02em;font-size:12px;color:var(--tenue)}
+.lead{color:#2F2F2D;font-size:clamp(18px,1.7vw,24px)}
+.muto{color:var(--tenue)}
+.macchia::before{display:none}
+
+/* sezioni e righe */
+.sez{border-top:1px solid var(--linea)}
+.righe{border-top:1px solid var(--linea)}
+.righe li{border-bottom:1px solid var(--linea)}
+.righe li b{font-family:var(--serif);font-weight:400;font-size:22px;line-height:1.15}
+.punti li{border-bottom:1px solid var(--linea)}
+.punti li::before{border-color:var(--tenue)}
+.percorso span{font-family:var(--serif);font-weight:400;text-transform:none;font-size:clamp(22px,2.2vw,32px)}
+.percorso span::after{background:var(--linea)}
+.percorso span::before{border-color:var(--tenue)}
+
+/* voci di griglia */
+.porta .riga{border-top:1px solid var(--linea)}
+.porta .titolo{font-family:var(--serif);font-weight:400;text-transform:none;font-size:clamp(24px,2.2vw,34px);line-height:1}
+.porta p{color:var(--tenue)}
+.vai{font-family:var(--mono);font-weight:400;text-transform:none;letter-spacing:.02em;font-size:11px}
+.codice{font-family:var(--mono);color:var(--tenue)}
+.stato{border-color:rgba(30,30,28,.5);border-radius:0;font-family:var(--mono);text-transform:none}
+
+/* bottoni come in test3: bordo bianco sottile, mono */
+.btn,.btn.linea,.btn.rosa{background:none;color:var(--testo);border:1px solid rgba(30,30,28,.7);border-radius:0;font-family:var(--mono);font-weight:400;text-transform:none;letter-spacing:.02em;font-size:12px;padding:11px 16px}
+.btn:hover{background:var(--testo);color:var(--fondo)}
+
+/* blocchi dati */
+.info{border-top:1px solid rgba(30,30,28,.5);border-bottom:1px solid var(--linea)}
+.info div+div{border-left:1px solid var(--linea)}
+.info b{font-family:var(--serif);font-weight:400;font-size:clamp(22px,2vw,30px)}
+.dati{border-top:1px solid rgba(30,30,28,.5)}
+.dati div{border-bottom:1px solid var(--linea)}
+.blocco{border-bottom:1px solid var(--linea)}
+details.faq{border-bottom:1px solid var(--linea)}
+details.faq summary{font-family:var(--serif);font-weight:400;font-size:23px}
+details.faq p{color:var(--tenue)}
+
+/* filtri */
+.filtri button,.filtri select,.filtri input{background:none;color:var(--testo);border:1px solid var(--linea);border-radius:0;font-family:var(--mono);text-transform:none;letter-spacing:.02em}
+.filtri select option{background:var(--fondo)}
+.filtri button.attivo{background:var(--testo);color:var(--fondo)}
+
+/* modulo */
+.modulo input,.modulo select,.modulo textarea{color:var(--testo);border-bottom:1px solid rgba(30,30,28,.5)}
+.modulo select option{background:var(--fondo)}
+
+/* footer */
+.piede{border-top:1px solid var(--linea)}
+.news{border-bottom:1px solid rgba(30,30,28,.5)}
+.news input{color:var(--testo)}
+.news button{color:var(--testo);font-family:var(--mono);font-weight:400;text-transform:none}
+
+/* segnaposto foto su fondo scuro */
+.segnaposto{background:var(--fondo2);color:var(--slate);font-family:var(--mono);text-transform:none;letter-spacing:.02em;font-size:11px;border:1px solid var(--linea)}
+.segnaposto::before{background:linear-gradient(to top right,transparent calc(50% - .5px),rgba(30,30,28,.08) 50%,transparent calc(50% + .5px)),linear-gradient(to top left,transparent calc(50% - .5px),rgba(30,30,28,.08) 50%,transparent calc(50% + .5px))}
+.segnaposto span{background:var(--fondo2)}
+.hero-foto,.porta .foto,.fondatrice .ritratto{background:var(--fondo2)}
+.nomi span.logo-box{background:var(--fondo2);color:var(--slate);font-family:var(--mono);border:1px solid var(--linea)}
+.prossimo{font-family:var(--mono);font-size:12px}
+.prossimo b{font-weight:400}
+.prossimo .pallino{background:var(--iri)}
+
+/* home a una schermata, tema scuro */
+.home-alto h1{font-size:clamp(72px,9vw,150px)}
+.striscia-fondatrice b,.striscia-voce b{font-family:var(--serif);font-weight:400;font-size:20px}
+.striscia-fondatrice span:not(.vai),.nomi-riga{color:var(--tenue);font-family:var(--mono);font-size:11px}
+.striscia-fondatrice .mini .segnaposto{min-height:0;padding:0;font-size:0}
+.striscia-fondatrice .mini .segnaposto span{display:none}
+.home-alto h1{font-size:clamp(56px,min(9vw,15vh),150px)}
+.home-alto .hero-foto{height:clamp(160px,27vh,320px)}
+.home-porte .foto{height:clamp(90px,14vh,190px)}
+.apri{color:var(--testo);font-family:var(--mono);font-weight:400;text-transform:none}
+@media (max-width:860px){
+  .home-alto .hero-foto{height:200px}
+  .home-porte{gap:0}
+  .home-porte .foto{display:none}
+  .home-porte .porta .riga{padding:16px 0}
+}
+
+/* sfondo a gradienti (js/sfondo.js): le parti della pagina lasciano vedere il colore dietro */
+.testa{background:rgba(243,239,230,.55)}
+.sez,.piede,.hero{background:transparent}
+.segnaposto{background:rgba(243,239,230,.55)}
+
+/* ===== Less is more (Mattia 25/11) =====
+   via righe che separano le sezioni, via numeri, più aria, font meno stretto,
+   home senza immagine principale: titolo, 3 schede e la striscia sotto che entrano piano. */
+.testa,.sez,.piede,.home-striscia,.porta .riga,.home-porte .porta .riga{border:0!important}
+.sez{padding:clamp(80px,11vw,170px) 0}
+.righe,.righe li,.punti li,details.faq,.blocco,.dati,.dati div,.info,.info div+div{border-color:rgba(30,30,28,.07)!important}
+.porta .num,.num{display:none!important}
+
+/* font: meno compresso, più respiro */
+body{line-height:1.65;letter-spacing:.005em}
+h1,.h1{letter-spacing:-.01em;line-height:.98}
+h2{letter-spacing:0;line-height:1.08}
+.porta .titolo{letter-spacing:.005em;line-height:1.1}
+.lead{line-height:1.55}
+.occhiello,.vai,.menu a{letter-spacing:.06em}
+.menu{gap:36px}
+.porta p{margin-top:10px;line-height:1.55}
+
+/* home: niente immagine principale, solo identità + 3 schede + striscia */
+.home{gap:clamp(36px,6vh,72px);padding-top:clamp(40px,8vh,96px)}
+.home-alto{grid-template-columns:1fr}
+.home-alto .lead{max-width:640px}
+.home-porte{gap:clamp(24px,3vw,48px)}
+.home-porte .foto{height:clamp(150px,24vh,260px);margin-bottom:22px}
+.home-striscia{padding-top:8px;gap:40px}
+
+/* entrata animata delle schede e della striscia */
+@keyframes sale{from{opacity:0;transform:translateY(26px);filter:blur(6px)}to{opacity:1;transform:none;filter:none}}
+.home-alto > *{animation:sale 1.1s cubic-bezier(.2,.7,.2,1) both}
+.home-alto > :nth-child(2){animation-delay:.08s}.home-alto > :nth-child(3){animation-delay:.16s}.home-alto > :nth-child(4){animation-delay:.24s}
+.home-porte .porta{animation:sale 1.2s cubic-bezier(.2,.7,.2,1) both}
+.home-porte .porta:nth-child(1){animation-delay:.35s}.home-porte .porta:nth-child(2){animation-delay:.5s}.home-porte .porta:nth-child(3){animation-delay:.65s}
+.home-striscia > *{animation:sale 1.2s cubic-bezier(.2,.7,.2,1) both}
+.home-striscia > :nth-child(1){animation-delay:.85s}.home-striscia > :nth-child(2){animation-delay:.95s}.home-striscia > :nth-child(3){animation-delay:1.05s}
+.home-porte .foto{transition:transform 1s cubic-bezier(.2,.7,.2,1)}
+.home-porte .porta:hover .foto{transform:translateY(-6px)}
+@media (prefers-reduced-motion:reduce){.home-alto > *,.home-porte .porta,.home-striscia > *{animation:none}}
+.home{gap:clamp(28px,4.5vh,56px);padding-top:clamp(28px,6vh,72px);min-height:calc(100vh - 95px)}
+.home-porte .foto{height:clamp(120px,19vh,220px);margin-bottom:16px}
+.home-alto h1{font-size:clamp(56px,min(8vw,14vh),130px)}
+
+/* ===== Mattia 25/11: via il font "macchina da scrivere", bottoni e riquadri tondi e leggeri, come vetro iPhone ===== */
+:root{--mono:"Inter Tight",Helvetica,Arial,sans-serif;--vetro:rgba(30,30,28,.07);--vetro-bordo:rgba(30,30,28,.16)}
+.occhiello,.num,.porta .meta,.anno,.info small,.dati small,.modulo label,.briciole,.codice,.c-sotto,
+.bozza,.prossimo,.vai,.menu .cta,.btn,.filtri button,.filtri select,.filtri input,.stato,h3,.news button,.segnaposto{font-family:var(--mono)!important}
+.occhiello,.anno,.info small,.dati small{font-size:12px;letter-spacing:.04em}
+.bozza-barra{font-family:"Inter Tight",sans-serif;letter-spacing:.08em}
+
+/* bottoni: pillole di vetro */
+.btn,.btn.linea,.btn.rosa,.menu .cta,.vai,.stato,.filtri button,.filtri select,.filtri input{
+  border-radius:999px!important;background:var(--vetro)!important;border:1px solid var(--vetro-bordo)!important;color:#2F2F2D!important;
+  -webkit-backdrop-filter:blur(14px) saturate(140%);backdrop-filter:blur(14px) saturate(140%);
+  box-shadow:inset 0 1px 0 rgba(30,30,28,.12),0 6px 24px rgba(0,0,0,.18);
+  font-size:13px!important;font-weight:500!important;letter-spacing:.01em!important;text-transform:none!important;text-decoration:none!important;
+  transition:background .4s,border-color .4s,transform .4s}
+.btn,.menu .cta{padding:11px 20px!important}
+.vai{display:inline-flex;align-items:center;gap:6px;padding:8px 16px;white-space:nowrap}
+.btn:hover,.menu .cta:hover,.vai:hover,.porta:hover .vai{background:rgba(30,30,28,.16)!important;border-color:rgba(30,30,28,.3)!important;color:#1E1E1C!important}
+.filtri button.attivo{background:rgba(30,30,28,.85)!important;color:#F3EFE6!important}
+.filtri select option{background:#F3EFE6}
+
+/* nelle schede il bottone va sotto al testo, non a caso di fianco al titolo */
+.porta .riga{flex-direction:column;align-items:flex-start;gap:14px}
+.porta .riga .vai{order:2}
+.striscia-fondatrice{flex-wrap:wrap}
+.striscia-fondatrice .vai{margin-left:0}
+.striscia-voce .vai{align-self:flex-start;margin-top:8px}
+.c-piede a,.prossimo a.vai{padding:6px 14px}
+
+/* riquadri (segnaposto e foto): angoli tondi, vetro leggerissimo */
+.segnaposto,.porta .foto,.hero-foto,.fondatrice .ritratto,.striscia-fondatrice .mini,.nomi span.logo-box{border-radius:22px!important;overflow:hidden}
+.segnaposto{background:var(--vetro)!important;border:1px solid var(--vetro-bordo)!important;
+  -webkit-backdrop-filter:blur(18px);backdrop-filter:blur(18px);box-shadow:inset 0 1px 0 rgba(30,30,28,.1)}
+.segnaposto::before{display:none!important}
+.segnaposto span{background:none!important;color:rgba(30,30,28,.45)!important;font-size:12px}
+.striscia-fondatrice .mini,.striscia-fondatrice .mini .segnaposto{border-radius:50%!important}
+.home{gap:clamp(22px,3.6vh,44px);padding-top:clamp(24px,5vh,60px)}
+.home-porte .foto{height:clamp(100px,15.5vh,200px);margin-bottom:14px}
+.home-porte .porta .riga{gap:10px}
+.home-porte .porta p{margin-top:4px}
+.home-alto .lead{margin-top:10px}
+.home-striscia{align-items:center}
+.striscia-fondatrice{flex-wrap:nowrap}
+.striscia-fondatrice .vai{margin-left:auto}
+
+/* bottoni sempre allineati (Mattia 25/11): nelle griglie il bottone sta in fondo alla scheda, alla stessa altezza */
+.porta{display:flex;flex-direction:column;height:100%}
+.porta .riga{flex:1;display:flex;flex-direction:column;justify-content:flex-start}
+.porta .riga .vai{margin-top:auto;align-self:flex-start}
+.porta .riga > div{margin-bottom:16px}
+/* striscia della home: tre colonne con il bottone in basso, sulla stessa riga */
+.home-striscia{align-items:stretch}
+.striscia-fondatrice{display:grid!important;grid-template-columns:52px 1fr;column-gap:14px;row-gap:12px;align-items:center}
+.striscia-fondatrice .mini{grid-row:1}
+.striscia-fondatrice .vai{grid-column:1/3;justify-self:start;margin:auto 0 0 0!important}
+.striscia-voce{display:flex;flex-direction:column}
+.striscia-voce .vai{margin-top:auto!important}
+.striscia-voce b,.striscia-fondatrice b{margin-bottom:2px}
+
+/* Logo in header: segnaposto finché non c'è il logo vero (Mattia 25/11) */
+.testa .logo-segnaposto,.logo.logo-segnaposto{display:inline-flex;align-items:center;justify-content:center;width:112px;height:38px;border-radius:999px;
+  border:1px dashed rgba(30,30,28,.35);font-family:var(--sans,inherit);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:rgba(30,30,28,.6)}

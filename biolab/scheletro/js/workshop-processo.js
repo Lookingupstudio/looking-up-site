@@ -15,6 +15,7 @@
   var proc=document.querySelector('.processo'),passi=[].slice.call(document.querySelectorAll('.passi li')),foto=[].slice.call(document.querySelectorAll('.processo-foto .segnaposto'));
   var vetro=document.querySelector('.vetro'),vpasso=document.querySelector('.vetro-passo');
   var nera=document.querySelector('.nera[data-scena]'),ruota=document.querySelector('.ruota'),righe=[].slice.call(document.querySelectorAll('.frase-grande span'));
+  var viaggio=document.querySelector('.viaggio'),vimg=[].slice.call(document.querySelectorAll('.viaggio-strati img')),vtxt=[].slice.call(document.querySelectorAll('.viaggio-testi li')),vbar=document.querySelector('.viaggio-barra'),vt=0;
   var chiara=document.querySelector('.chiara'),barra=document.querySelector('.barra');
   var mx=0,my=0,cx=0,cy=0,attuale=-1;
 
@@ -29,6 +30,15 @@
     if(zoom){var p=prog(zoom),s=lerp(.32,1,tra(p,0,.55));zf.style.setProperty('--s',s.toFixed(4));
       neb.style.setProperty('--n',tra(p,.45,.7).toFixed(3));
       var f=tra(p,.55,.75);zfr.style.setProperty('--f',f.toFixed(3));zfr.style.setProperty('--fy',((1-f)*40).toFixed(1)+'px');}
+    /* viaggio: un unico piano sequenza, ogni immagine si apre nella successiva */
+    if(viaggio){var pv=prog(viaggio),N=vimg.length,meta=pv*(N-1)*1.0;vt+=(meta-vt)*.12;
+      vimg.forEach(function(im,i){var d=vt-i,o,sc,bl;
+        if(d<-1||d>1){im.style.opacity=0;return;}
+        sc=Math.pow(1.45,d+1);if(d<=0){o=1+d;bl=-d*14;}else{o=1-d;bl=d*6;}
+        o=o*o*(3-2*o);
+        im.style.opacity=o.toFixed(3);im.style.transform='scale('+sc.toFixed(4)+') rotate('+(vt*4).toFixed(2)+'deg)';im.style.filter='blur('+bl.toFixed(2)+'px)';});
+      var k=Math.min(N-1,Math.max(0,Math.round(vt)));vtxt.forEach(function(l,i){l.classList.toggle('su',i===k);});
+      if(vbar)vbar.style.setProperty('--p',pv.toFixed(3));}
     /* processo: passo attivo in base allo scroll */
     if(proc){var pp=prog(proc),n=Math.min(passi.length-1,Math.floor(pp*passi.length*0.999));
       if(n!==attuale){attuale=n;passi.forEach(function(l,i){l.classList.toggle('attivo',i===n);});foto.forEach(function(f,i){f.classList.toggle('attiva',i===n);});if(vpasso)vpasso.textContent='0'+(n+1);}
