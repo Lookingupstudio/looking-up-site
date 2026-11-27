@@ -1,0 +1,29 @@
+/* Education "classica" (Mattia 27/11 sera): stessa struttura della pagina online, con il nuovo stile
+   (Figtree, Lagoon black #202326, foto vere, percorso dell'approccio che si accende). */
+body.edc .hero h1{font-weight:400!important;letter-spacing:-.03em;line-height:1}
+body.edc .hero h1 .macchia{background:none!important;padding:0!important}
+body.edc .hero-foto{border-radius:18px;overflow:hidden;aspect-ratio:16/8}
+body.edc .hero-foto img{width:100%;height:100%;object-fit:cover;display:block;transform:scale(1.04);transition:transform 2.2s cubic-bezier(.2,.7,.2,1)}
+html.edc-pronto body.edc .hero-foto img{transform:none}
+body.edc .porta .foto{border-radius:16px;overflow:hidden}
+body.edc .porta .foto img{transition:transform 1.4s cubic-bezier(.2,.7,.2,1)}
+body.edc .porta:hover .foto img{transform:scale(1.05)}
+/* approccio: il percorso in riga, ogni tappa si accende una dopo l'altra */
+body.edc .percorso{margin-top:40px;row-gap:18px}
+body.edc .percorso span{font-family:"Figtree",sans-serif!important;font-weight:400!important;font-size:clamp(22px,2.2vw,34px)!important;letter-spacing:-.02em;color:#D5D5D0;opacity:.25;transition:opacity .8s ease}
+body.edc .percorso span::before{width:11px;height:11px;border-color:#777F7F!important;transition:background .6s,border-color .6s,box-shadow .6s}
+body.edc .percorso span::after{width:clamp(24px,4vw,64px);background:linear-gradient(90deg,#E1B3D8 var(--l,0%),rgba(213,213,208,.18) var(--l,0%))!important;transition:--l 1s}
+body.edc .percorso span.su{opacity:1}
+body.edc .percorso span.su::before{background:#E1B3D8;border-color:#E1B3D8!important;box-shadow:0 0 12px rgba(225,179,216,.5)}
+body.edc .percorso span.su::after{--l:100%}
+@property --l{syntax:'<percentage>';inherits:false;initial-value:0%}
+@media (prefers-reduced-motion:reduce){body.edc .percorso span{opacity:1}}
+@media (max-width:760px){body.edc .hero-foto{aspect-ratio:4/3}body.edc .percorso span::after{display:none}body.edc .percorso{flex-direction:column;align-items:flex-start}}
+/* misure allineate alla home (Mattia 27/11): titolo come le parole grandi della home, testi a 17px */
+html body.edc .hero h1{font-size:clamp(48px,min(7vw,11vh),96px)!important}
+html body.edc .hero .lead{font-size:17px!important;line-height:1.5!important;font-weight:450!important;max-width:520px}
+html body.edc .sez h2{font-size:clamp(28px,2.6vw,38px)!important;font-weight:500!important;letter-spacing:-.02em}
+html body.edc .percorso span{font-size:clamp(18px,1.7vw,24px)!important}
+html body.edc .porta .titolo{font-size:22px!important;font-weight:500!important}
+html body.edc .porta p,html body.edc .sez p:not(.occhiello):not(.bozza){font-size:17px!important;line-height:1.5}
+@media (max-width:760px){html body.edc .hero h1{font-size:13vw!important}}

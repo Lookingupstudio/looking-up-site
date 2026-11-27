@@ -187,6 +187,7 @@
 
   /* BOZZA DI STRUTTURA: ogni foto diventa un riquadro grigio con la descrizione */
   function segnaposti() {
+    if (document.body.dataset.fotoVere) return; /* pagine con foto vere (Education, Mattia 27/11) */
     document.querySelectorAll('main img:not([data-vera])').forEach(img => {
       const d = document.createElement('div');
       d.className = 'segnaposto';
