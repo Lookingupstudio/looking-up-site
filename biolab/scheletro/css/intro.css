@@ -1,5 +1,5 @@
 /* Caricamento iniziale: nero, il nome affiora dall'acqua (sfocato -> nitido), una goccia di luce si allarga e la pagina si svela */
-.intro{position:fixed;inset:0;z-index:200;background:#0A0A09;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:28px;
+.intro{position:fixed;inset:0;z-index:200;background:#202326;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:28px;
   transition:clip-path 1.1s cubic-bezier(.7,0,.2,1);clip-path:inset(0 0 0 0)}
 .intro.via{clip-path:inset(0 0 100% 0)}
 .intro-nome{font-family:"Instrument Serif",Georgia,serif;font-size:clamp(44px,7vw,96px);color:#D5D5D0;letter-spacing:-.01em;line-height:1}

@@ -1,19 +1,19 @@
 /* PROVA Education (Mattia 27/11): stile della pagina workshop, riferimento la home (Figtree, scuro, video).
-   Palette: Onyx #0A0A09, Dust Grey #D5D5D0, Pink Orchid #E1B3D8 come accento soft. */
-body.ed{background:#0A0A09;color:#D5D5D0}
+   Palette: Onyx rgb(var(--ed-f)), Dust Grey var(--ed-t), Pink Orchid #E1B3D8 come accento soft. */
+body.ed{--ed-f:32,35,38;--ed-c:#2a2e32;--ed-h:#F2F1EE;--ed-t:#D5D5D0;--ed-m:#8a8a85;--ed-l:213,213,208;background:rgb(var(--ed-f));color:var(--ed-t)}
 body.ed main{padding:0!important;max-width:none!important}
 .ed-kicker{font-size:13px;letter-spacing:.08em;text-transform:uppercase;color:#E1B3D8;margin:0 0 14px;font-weight:500}
-.ed h1,.ed h2,.ed h3{font-weight:400;letter-spacing:-.03em;line-height:1;color:#F2F1EE;margin:0}
-.ed-velo{position:absolute;inset:0;background:linear-gradient(90deg,rgba(10,10,9,.78),rgba(10,10,9,.25) 60%,rgba(10,10,9,.5)),linear-gradient(0deg,rgba(10,10,9,.85),transparent 45%);pointer-events:none}
-.ed-bottone,.ed-vai{display:inline-flex;align-items:center;gap:10px;font-size:15px;font-weight:500;color:#F2F1EE}
-.ed-bottone{background:#D5D5D0;color:#0A0A09;padding:14px 22px;border-radius:999px;margin-top:26px;transition:background .3s}
+.ed h1,.ed h2,.ed h3{font-weight:400;letter-spacing:-.03em;line-height:1;color:var(--ed-h);margin:0}
+.ed-velo{position:absolute;inset:0;background:linear-gradient(90deg,rgba(var(--ed-f),.78),rgba(var(--ed-f),.25) 60%,rgba(var(--ed-f),.5)),linear-gradient(0deg,rgba(var(--ed-f),.85),transparent 45%);pointer-events:none}
+.ed-bottone,.ed-vai{display:inline-flex;align-items:center;gap:10px;font-size:15px;font-weight:500;color:var(--ed-h)}
+.ed-bottone{background:var(--ed-t);color:rgb(var(--ed-f));padding:14px 22px;border-radius:999px;margin-top:26px;transition:background .3s}
 .ed-bottone i,.ed-vai i{font-style:normal;transition:transform .4s cubic-bezier(.2,.7,.2,1)}
 .ed-bottone:hover{background:#fff}.ed-bottone:hover i,a:hover .ed-vai i{transform:translateX(4px);color:#E1B3D8}
 .ed-intesta{display:flex;flex-wrap:wrap;align-items:flex-end;gap:12px 28px;margin-bottom:clamp(32px,5vh,56px)}
 .ed-intesta .ed-kicker{flex-basis:100%;margin:0}
 .ed-intesta h2{font-size:clamp(40px,5.4vw,84px)}
-.ed-tutti{margin-left:auto;font-size:15px;color:#D5D5D0;opacity:.8}.ed-tutti:hover{opacity:1;color:#fff}
-.ed-esempio{font-size:13px;color:#8a8a85;margin-top:18px}
+.ed-tutti{margin-left:auto;font-size:15px;color:var(--ed-t);opacity:.8}.ed-tutti:hover{opacity:1;color:#fff}
+.ed-esempio{font-size:13px;color:var(--ed-m);margin-top:18px}
 .ed-modi,.ed-corsi{padding:clamp(90px,14vh,160px) clamp(16px,6vw,96px)}
 
 /* 1. apertura */
@@ -25,60 +25,60 @@ body.ed main{padding:0!important;max-width:none!important}
 .ed-sale span{transform:translateY(105%);transition:transform 1.2s cubic-bezier(.2,.75,.15,1)}
 .ed-sale span:nth-child(2){transition-delay:.12s}
 html.ed-pronto .ed-sale span{transform:none}
-.ed-lead{font-size:clamp(18px,1.6vw,22px);line-height:1.45;max-width:560px;color:#D5D5D0;opacity:0;transform:translateY(16px);transition:opacity 1s ease .5s,transform 1.2s cubic-bezier(.2,.7,.2,1) .5s}
+.ed-lead{font-size:clamp(18px,1.6vw,22px);line-height:1.45;max-width:560px;color:var(--ed-t);opacity:0;transform:translateY(16px);transition:opacity 1s ease .5s,transform 1.2s cubic-bezier(.2,.7,.2,1) .5s}
 html.ed-pronto .ed-lead{opacity:1;transform:none}
-.ed-scorri{position:absolute;right:clamp(16px,6vw,96px);bottom:clamp(70px,12vh,120px);z-index:2;font-size:13px;letter-spacing:.1em;text-transform:uppercase;color:#8a8a85;animation:edScorri 2s ease-in-out infinite}
+.ed-scorri{position:absolute;right:clamp(16px,6vw,96px);bottom:clamp(70px,12vh,120px);z-index:2;font-size:13px;letter-spacing:.1em;text-transform:uppercase;color:var(--ed-m);animation:edScorri 2s ease-in-out infinite}
 @keyframes edScorri{50%{opacity:.35;transform:translateY(6px)}}
 
 /* 2. metodo: scena fissa, i passaggi si accendono */
 .ed-metodo{height:360vh;position:relative}
 .ed-metodo-fisso{position:sticky;top:0;height:100vh;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.2fr);align-items:center;gap:clamp(30px,6vw,110px);padding:0 clamp(16px,6vw,96px);overflow:hidden}
 .ed-metodo-titolo h2{font-size:clamp(38px,4.4vw,70px);margin-bottom:24px}
-.ed-nota{font-size:17px;line-height:1.5;color:#8a8a85;max-width:420px}
+.ed-nota{font-size:17px;line-height:1.5;color:var(--ed-m);max-width:420px}
 .ed-passi{list-style:none;margin:0;padding:0;display:flex;flex-direction:column}
-.ed-passi li{display:grid;grid-template-columns:48px 1fr;column-gap:10px;padding:clamp(14px,2.4vh,24px) 0;border-top:1px solid rgba(213,213,208,.14);opacity:.22;transition:opacity .7s ease}
-.ed-passi li:last-child{border-bottom:1px solid rgba(213,213,208,.14)}
-.ed-passi li span{font-size:14px;color:#8a8a85;padding-top:.9em}
-.ed-passi li b{font-weight:400;font-size:clamp(34px,4.2vw,68px);letter-spacing:-.03em;line-height:1.05;color:#F2F1EE}
-.ed-passi li p{grid-column:2;margin:0;max-height:0;overflow:hidden;font-size:17px;color:#D5D5D0;transition:max-height .7s ease,margin .7s ease}
+.ed-passi li{display:grid;grid-template-columns:48px 1fr;column-gap:10px;padding:clamp(14px,2.4vh,24px) 0;border-top:1px solid rgba(var(--ed-l),.14);opacity:.22;transition:opacity .7s ease}
+.ed-passi li:last-child{border-bottom:1px solid rgba(var(--ed-l),.14)}
+.ed-passi li span{font-size:14px;color:var(--ed-m);padding-top:.9em}
+.ed-passi li b{font-weight:400;font-size:clamp(34px,4.2vw,68px);letter-spacing:-.03em;line-height:1.05;color:var(--ed-h)}
+.ed-passi li p{grid-column:2;margin:0;max-height:0;overflow:hidden;font-size:17px;color:var(--ed-t);transition:max-height .7s ease,margin .7s ease}
 .ed-passi li.su{opacity:1}
 .ed-passi li.ora span{color:#E1B3D8}
 .ed-passi li.su{opacity:.55}.ed-passi li.ora{opacity:1}.ed-passi li.ora p{max-height:60px;margin-top:8px}
-.ed-metodo-barra{position:absolute;right:clamp(10px,2vw,28px);top:50%;transform:translateY(-50%);width:2px;height:min(240px,34vh);background:rgba(213,213,208,.14)}
+.ed-metodo-barra{position:absolute;right:clamp(10px,2vw,28px);top:50%;transform:translateY(-50%);width:2px;height:min(240px,34vh);background:rgba(var(--ed-l),.14)}
 .ed-metodo-barra i{display:block;width:100%;height:calc(var(--p,0)*100%);background:#E1B3D8}
 
 /* 3. due modi */
 .ed-carte{display:grid;grid-template-columns:1fr 1fr;gap:clamp(12px,1.6vw,22px)}
-.ed-carta{position:relative;display:block;min-height:clamp(420px,62vh,640px);border-radius:18px;overflow:hidden;background:#141413;color:inherit;text-decoration:none}
+.ed-carta{position:relative;display:block;min-height:clamp(420px,62vh,640px);border-radius:18px;overflow:hidden;background:var(--ed-c);color:inherit;text-decoration:none}
 .ed-carta img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transform:scale(1.04);transition:transform 1.4s cubic-bezier(.2,.7,.2,1),filter .8s;filter:brightness(.62) saturate(.9)}
 .ed-carta:hover img{transform:scale(1.1);filter:brightness(.8) saturate(1)}
-.ed-carta::after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(10,10,9,.88),rgba(10,10,9,0) 60%)}
+.ed-carta::after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(var(--ed-f),.88),rgba(var(--ed-f),0) 60%)}
 .ed-carta-testo{position:absolute;left:0;right:0;bottom:0;z-index:2;padding:clamp(22px,2.6vw,36px)}
 .ed-carta h3{font-size:clamp(36px,3.6vw,56px);margin-bottom:12px}
-.ed-carta-testo p:not(.ed-kicker){font-size:17px;line-height:1.45;color:#D5D5D0;margin:0 0 18px;max-width:380px}
+.ed-carta-testo p:not(.ed-kicker){font-size:17px;line-height:1.45;color:var(--ed-t);margin:0 0 18px;max-width:380px}
 
 /* 4. prossimo workshop */
 .ed-prossimo{padding:0 clamp(16px,6vw,96px)}
-.ed-prossimo-carta{position:relative;display:grid;grid-template-columns:1fr 1fr;min-height:clamp(440px,66vh,620px);border-radius:18px;overflow:hidden;background:#000;color:inherit;text-decoration:none}
+.ed-prossimo-carta{position:relative;display:grid;grid-template-columns:1fr 1fr;min-height:clamp(440px,66vh,620px);border-radius:18px;overflow:hidden;background:var(--ed-c);color:inherit;text-decoration:none}
 .ed-prossimo-carta img{width:100%;height:100%;object-fit:cover;transition:transform 1.6s cubic-bezier(.2,.7,.2,1)}
 .ed-prossimo-carta:hover img{transform:scale(1.05)}
-.ed-prossimo-testo{padding:clamp(28px,4vw,60px);display:flex;flex-direction:column;justify-content:center;background:linear-gradient(90deg,#000,#0A0A09)}
+.ed-prossimo-testo{padding:clamp(28px,4vw,60px);display:flex;flex-direction:column;justify-content:center;background:linear-gradient(90deg,var(--ed-c),rgb(var(--ed-f)))}
 .ed-prossimo-testo h2{font-size:clamp(48px,6vw,96px);margin-bottom:18px}
 .ed-prossimo-testo>p:not(.ed-kicker){font-size:18px;line-height:1.45;max-width:440px;margin:0 0 26px}
-.ed-prossimo-testo dl{display:grid;grid-template-columns:repeat(3,auto);justify-content:start;gap:12px 32px;margin:0;padding:18px 0;border-top:1px solid rgba(213,213,208,.16);border-bottom:1px solid rgba(213,213,208,.16)}
-.ed-prossimo-testo dt{font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:#8a8a85;margin-bottom:4px}
-.ed-prossimo-testo dd{margin:0;font-size:16px;color:#F2F1EE}
+.ed-prossimo-testo dl{display:grid;grid-template-columns:repeat(3,auto);justify-content:start;gap:12px 32px;margin:0;padding:18px 0;border-top:1px solid rgba(var(--ed-l),.16);border-bottom:1px solid rgba(var(--ed-l),.16)}
+.ed-prossimo-testo dt{font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--ed-m);margin-bottom:4px}
+.ed-prossimo-testo dd{margin:0;font-size:16px;color:var(--ed-h)}
 .ed-prossimo-testo .ed-bottone{align-self:flex-start}
 
 /* 5. corsi */
 .ed-lista{list-style:none;margin:0;padding:0}
-.ed-lista a{display:grid;grid-template-columns:60px minmax(0,1.2fr) minmax(0,1fr) 40px;align-items:baseline;gap:6px 24px;padding:clamp(20px,3vh,34px) 0;border-top:1px solid rgba(213,213,208,.14);color:inherit;text-decoration:none;transition:padding .5s cubic-bezier(.2,.7,.2,1)}
-.ed-lista li:last-child a{border-bottom:1px solid rgba(213,213,208,.14)}
+.ed-lista a{display:grid;grid-template-columns:60px minmax(0,1.2fr) minmax(0,1fr) 40px;align-items:baseline;gap:6px 24px;padding:clamp(20px,3vh,34px) 0;border-top:1px solid rgba(var(--ed-l),.14);color:inherit;text-decoration:none;transition:padding .5s cubic-bezier(.2,.7,.2,1)}
+.ed-lista li:last-child a{border-bottom:1px solid rgba(var(--ed-l),.14)}
 .ed-lista a:hover{padding-left:14px}
-.ed-num{font-size:14px;color:#8a8a85}
-.ed-lista b{font-weight:400;font-size:clamp(28px,3vw,46px);letter-spacing:-.02em;color:#F2F1EE}
-.ed-lista em{font-style:normal;font-size:14px;color:#8a8a85;grid-column:2}
-.ed-lista p{grid-column:3;grid-row:1;margin:0;font-size:17px;color:#D5D5D0}
+.ed-num{font-size:14px;color:var(--ed-m)}
+.ed-lista b{font-weight:400;font-size:clamp(28px,3vw,46px);letter-spacing:-.02em;color:var(--ed-h)}
+.ed-lista em{font-style:normal;font-size:14px;color:var(--ed-m);grid-column:2}
+.ed-lista p{grid-column:3;grid-row:1;margin:0;font-size:17px;color:var(--ed-t)}
 .ed-lista i{font-style:normal;grid-column:4;grid-row:1;justify-self:end;font-size:22px;transition:transform .4s,color .3s}
 .ed-lista a:hover i{transform:translateX(4px);color:#E1B3D8}
 
@@ -118,8 +118,34 @@ html.ed-pronto .ed-lead{opacity:1;transform:none}
 }
 
 /* 27/11 sera (Mattia): foto al posto dei video, più leggere */
-.ed-metodo-foto{position:relative;margin-top:28px;width:min(100%,420px);aspect-ratio:4/3;border-radius:14px;overflow:hidden;background:#141413}
+.ed-metodo-foto{position:relative;margin-top:28px;width:min(100%,420px);aspect-ratio:4/3;border-radius:14px;overflow:hidden;background:var(--ed-c)}
 .ed-metodo-foto img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transform:scale(1.06);transition:opacity .9s ease,transform 1.6s cubic-bezier(.2,.7,.2,1)}
 .ed-metodo-foto img.ora{opacity:1;transform:none}
 .ed-hero-video,.ed-scuola-video{display:block}
 @media (max-width:760px){.ed-metodo-foto{display:none}}
+
+/* === PROVE SFONDO (Mattia 27/11: a Emi il nero non piace) · ?fondo=antracite|carbone|grigio|panna === */
+body.ed.fondo-antracite{--ed-f:46,45,43;--ed-c:#3a3936}
+body.ed.fondo-carbone{--ed-f:32,35,38;--ed-c:#2a2e32}
+body.ed.fondo-grigio{--ed-f:88,87,83;--ed-c:#6a6964;--ed-m:#b4b2ab}
+body.ed.fondo-panna{--ed-f:243,239,230;--ed-c:#e7e1d5;--ed-h:#2F2F2D;--ed-t:#46453f;--ed-m:#8E8A80;--ed-l:47,47,45}
+body.ed.fondo-panna .ed-bottone{background:#2F2F2D;color:#F3EFE6}
+body.ed.fondo-panna .ed-carta-testo,body.ed.fondo-panna .ed-carta h3,body.ed.fondo-panna .ed-carta-testo p:not(.ed-kicker),body.ed.fondo-panna .ed-carta .ed-vai,
+body.ed.fondo-panna .ed-hero h1,body.ed.fondo-panna .ed-lead,body.ed.fondo-panna .ed-scuola h2,body.ed.fondo-panna .ed-scuola-testo>p{color:#F3EFE6}
+body.ed.fondo-panna .ed-velo,body.ed.fondo-panna .ed-carta::after{--ed-f:20,20,19}
+body.ed.fondo-panna .ed-kicker{color:#a4638f}
+body.ed.fondo-panna .ed-hero .ed-kicker,body.ed.fondo-panna .ed-carta .ed-kicker,body.ed.fondo-panna .ed-scuola .ed-kicker{color:#E1B3D8}
+body.ed.fondo-panna .ed-prossimo-testo{background:#FBF9F4}
+body.ed[class*="fondo-"] .testa,body.ed[class*="fondo-"] .piede{background:rgb(var(--ed-f))!important}
+body.ed.fondo-panna .testa,body.ed.fondo-panna .testa a,body.ed.fondo-panna .piede,body.ed.fondo-panna .piede a,body.ed.fondo-panna .piede p{color:#2F2F2D!important}
+body.ed.fondo-panna .testa .cta{background:#2F2F2D!important;color:#F3EFE6!important}
+html.ed-html,html.ed-html body.ed{background:rgb(var(--ed-f))!important}
+html.ed-html.fondo-antracite{--ed-f:46,45,43}html.ed-html.fondo-carbone{--ed-f:32,35,38}html.ed-html.fondo-grigio{--ed-f:88,87,83}html.ed-html.fondo-panna{--ed-f:243,239,230}
+html.ed-html{--ed-f:32,35,38}
+/* card del prossimo workshop e barra in alto seguono lo sfondo scelto */
+body.ed[class*="fondo-"] .ed-prossimo-carta{background:var(--ed-c)}
+body.ed[class*="fondo-"] .ed-prossimo-testo{background:linear-gradient(90deg,var(--ed-c),rgb(var(--ed-f)))}
+html.fondo-panna body header.testa::before{background:linear-gradient(180deg,rgba(243,239,230,.96),rgba(243,239,230,0))!important}
+html.fondo-antracite body header.testa::before{background:linear-gradient(180deg,rgba(46,45,43,.96),rgba(46,45,43,0))!important}
+html.fondo-carbone body header.testa::before{background:linear-gradient(180deg,rgba(32,35,38,.96),rgba(32,35,38,0))!important}
+html.fondo-grigio body header.testa::before{background:linear-gradient(180deg,rgba(88,87,83,.96),rgba(88,87,83,0))!important}

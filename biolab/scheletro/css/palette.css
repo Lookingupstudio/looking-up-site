@@ -1,10 +1,10 @@
-/* Palette del sito (Mattia 26/11, coolors 0a0a09-d5d5d0-e1b3d8)
-   Onyx #0A0A09 fondo · Dust Grey #D5D5D0 testo · Pink Orchid #E1B3D8 solo accento soft in pochissimi punti */
-:root{--fondo:#0A0A09;--fondo2:#0d0f10;--testo:#D5D5D0;--tenue:#8a8a85;--slate:#6f6f6b;--linea:rgba(213,213,208,.16);--accento:#FFFFFF}
-html,body{background:#0A0A09!important;color:var(--testo)}
-.testa,.menu{background:rgba(10,10,9,.85)!important}
+/* Palette del sito (Mattia 26/11, coolors 0a0a09-d5d5d0-e1b3d8; 27/11 fondo cambiato in carbone #202326: a Emi il nero non piace)
+   Onyx #202326 fondo · Dust Grey #D5D5D0 testo · Pink Orchid #E1B3D8 solo accento soft in pochissimi punti */
+:root{--fondo:#202326;--fondo2:#1a1d20;--testo:#D5D5D0;--tenue:#8a8a85;--slate:#6f6f6b;--linea:rgba(213,213,208,.16);--accento:#FFFFFF}
+html,body{background:#202326!important;color:var(--testo)}
+.testa,.menu{background:rgba(32,35,38,.85)!important}
 .testa a,.menu a{color:var(--testo)}
-.menu .cta,.testa .cta{background:#FFFFFF!important;border-color:#FFFFFF!important;color:#0A0A09!important}
+.menu .cta,.testa .cta{background:#FFFFFF!important;border-color:#FFFFFF!important;color:#202326!important}
 .menu .cta:hover,.testa .cta:hover{background:#D5D5D0!important}
 .logo.logo-segnaposto{border-color:rgba(213,213,208,.35)!important;color:var(--testo)!important}
 a:hover{color:inherit}
@@ -17,10 +17,10 @@ a:hover{color:inherit}
 .arte .profilo .bio b,.arte-testa h1{color:var(--testo)!important}
 .arte .profilo .bio .link,.arte-piede a:hover{color:#FFFFFF!important}
 .avatar.storia{background:conic-gradient(from 200deg,#FFFFFF,#D5D5D0,#FFFFFF)!important;box-shadow:0 0 16px rgba(255,255,255,.45)!important}
-.avatar.storia::after{border-color:#0A0A09!important}
+.avatar.storia::after{border-color:#202326!important}
 .arte-social a{color:var(--testo)!important;border-color:rgba(213,213,208,.25)!important}
 .arte-social a:hover{border-color:#FFFFFF!important;background:rgba(255,255,255,.15)!important}
-.storia-card{background:linear-gradient(170deg,rgba(255,255,255,.35),rgba(10,10,9,.85))!important}
+.storia-card{background:linear-gradient(170deg,rgba(255,255,255,.35),rgba(32,35,38,.85))!important}
 .storia-scelte a:hover{background:rgba(255,255,255,.35)!important}
 /* social solo icone */
 .arte-social{gap:6px!important}
@@ -34,7 +34,7 @@ a:hover{color:inherit}
 .arte .profilo button.bio-ig{all:unset;cursor:pointer;display:flex;flex-direction:column;gap:2px}.arte .profilo button.bio-ig:focus-visible{outline:2px solid #fff;outline-offset:4px}
 /* storia: fondo nero con video verticale della laguna che scorre, opacizzato (Mattia 25/11 notte) */
 .storia-vista{background:rgba(0,0,0,.72)!important}
-.storia-card{position:relative;overflow:hidden;background:#0A0A09!important;border-color:rgba(255,255,255,.12)!important}
+.storia-card{position:relative;overflow:hidden;background:#202326!important;border-color:rgba(255,255,255,.12)!important}
 .storia-video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.42;z-index:0;pointer-events:none;filter:saturate(.85)}
 .storia-card::before{content:"";position:absolute;inset:0;z-index:1;pointer-events:none;background:linear-gradient(180deg,rgba(0,0,0,.45),rgba(0,0,0,.15) 40%,rgba(0,0,0,.65))}
 .storia-card>*:not(.storia-video){position:relative;z-index:2}
@@ -103,7 +103,7 @@ html.prova .arte-porte .voce,html.prova .arte-testa,html.prova .arte-piede{anima
 :root{--accento:#E1B3D8}
 .avatar.storia{background:conic-gradient(from 200deg,#E1B3D8,#D5D5D0,#E1B3D8)!important;box-shadow:0 0 16px rgba(225,179,216,.28)!important}
 .arte-porte .voce .esplora:hover span{color:#E1B3D8}
-.menu .cta,.testa .cta{background:#D5D5D0!important;border-color:#D5D5D0!important;color:#0A0A09!important}
+.menu .cta,.testa .cta{background:#D5D5D0!important;border-color:#D5D5D0!important;color:#202326!important}
 .menu .cta:hover,.testa .cta:hover{background:#fff!important}
 /* 26/11 sera (Mattia): descrizione breve sempre visibile sotto Education / Research / Projects */
 .arte-porte .sotto{display:block!important;opacity:.75!important;transform:none!important;font-size:14px;line-height:1.4;margin-top:6px;color:var(--tenue)}
@@ -112,5 +112,5 @@ html.prova .arte-porte .voce,html.prova .arte-testa,html.prova .arte-piede{anima
 .arte-porte .voce{flex-direction:column;align-items:flex-start;gap:0}
 .arte-porte .esplora{margin-top:10px}
 /* bottone per provare la palette chiara/scura dal vivo (solo home, 26/11) */
-.cambia-palette{position:fixed;right:18px;bottom:18px;z-index:120;width:44px;height:44px;border-radius:50%;border:1px solid rgba(213,213,208,.28);background:rgba(10,10,9,.55);color:#D5D5D0;display:grid;place-items:center;cursor:pointer;backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);transition:transform .4s cubic-bezier(.2,.7,.2,1),border-color .3s}
+.cambia-palette{position:fixed;right:18px;bottom:18px;z-index:120;width:44px;height:44px;border-radius:50%;border:1px solid rgba(213,213,208,.28);background:rgba(32,35,38,.55);color:#D5D5D0;display:grid;place-items:center;cursor:pointer;backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);transition:transform .4s cubic-bezier(.2,.7,.2,1),border-color .3s}
 .cambia-palette:hover{transform:rotate(180deg);border-color:#E1B3D8}
