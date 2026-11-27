@@ -238,3 +238,9 @@ html.ed-pronto .ed-sale .l{color:#F2F1EE}
 .ed-riga:hover .ed-riga-vai i{transform:translateX(4px);color:#E1B3D8}
 @media (max-width:760px){.ed-riga{grid-template-columns:64px 1fr;row-gap:12px}.ed-riga img{width:64px;height:64px}.ed-riga-quando{grid-column:2}.ed-riga-vai{grid-column:2}}
 .ed-lista b{font-size:clamp(20px,1.8vw,26px)!important;font-weight:500!important}.ed-lista p{font-size:15px!important}
+/* telefono: il filo ondulato in verticale a sinistra delle tappe (Mattia 27/11) */
+@media (max-width:760px){
+  .ed-onda{display:block!important;top:0;left:0;width:12px;height:100%}
+  .ed-percorso li::after{display:none!important}
+  .ed-percorso li::before{top:5.5px}
+}

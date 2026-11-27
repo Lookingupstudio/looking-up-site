@@ -16,7 +16,7 @@
   const prossimo = prossimoWorkshop();
   $('.bozza-barra').insertAdjacentHTML('afterend', `
   <header class="testa"><div class="wrap">
-    <a class="logo logo-segnaposto" href="index.html" aria-label="Emi BioLab, home">Logo</a>
+    <a class="logo logo-testo" href="index.html" aria-label="Emi BioLab, home">Emi BioLab</a>
     <button class="apri" aria-expanded="false">Menu</button>
     <nav class="menu">
       ${voci.map(v => `<a href="${v[2]}" class="${sezione === v[0] ? 'attivo' : ''}">${v[1]}</a>`).join('')}

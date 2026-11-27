@@ -4,10 +4,10 @@
 <meta property="og:title" content="Emi BioLab · Independent Design & Research Practice"><meta property="og:description" content="Emi BioLab is an independent design and research practice in Venice exploring matter through experimentation."><meta property="og:image" content="../img/filato-ciotola-blu.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter+Tight:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&family=IBM+Plex+Mono:wght@400&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/style.css?v=c2"><link rel="stylesheet" href="css/tema-test3.css?v=c2"><link rel="stylesheet" href="css/arte.css?v=c2"><link rel="stylesheet" href="css/palette.css?v=c2"><link rel="stylesheet" href="css/animazioni.css?v=c2"><link rel="stylesheet" href="css/transizioni.css?v=c2"><link rel="stylesheet" href="css/intro.css?v=c2"><link rel="stylesheet" href="css/hero-video.css?v=c2"><script src="js/transizioni.js?v=c2" defer></script><link href="https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..700;1,400&display=swap" rel="stylesheet"><link rel="stylesheet" href="css/font-figtree.css?v=c2"><link rel="stylesheet" href="css/menu-mobile.css?v=c2"><link rel="stylesheet" href="css/modo-chiaro.css?v=c2"><script src="js/modo-chiaro.js?v=c2"></script>
+<link rel="stylesheet" href="css/style.css?v=c6"><link rel="stylesheet" href="css/tema-test3.css?v=c6"><link rel="stylesheet" href="css/arte.css?v=c6"><link rel="stylesheet" href="css/palette.css?v=c6"><link rel="stylesheet" href="css/animazioni.css?v=c6"><link rel="stylesheet" href="css/transizioni.css?v=c6"><link rel="stylesheet" href="css/intro.css?v=c6"><link rel="stylesheet" href="css/hero-video.css?v=c6"><script src="js/transizioni.js?v=c6" defer></script><link href="https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..700;1,400&display=swap" rel="stylesheet"><link rel="stylesheet" href="css/font-figtree.css?v=c6"><link rel="stylesheet" href="css/menu-mobile.css?v=c6"><link rel="stylesheet" href="css/modo-chiaro.css?v=c6"><script src="js/modo-chiaro.js?v=c6"></script>
 </head>
 <body data-pagina="home" data-sezione="">
-<div class="intro" aria-hidden="true"><div class="intro-nome"><span>Emi</span> <span>BioLab</span></div><div class="intro-barra"><i></i></div><div class="intro-perc">0%</div></div>
+<div class="intro" aria-hidden="true"><div class="intro-nome"><span>Emi</span> <span>BioLab</span></div><div class="intro-barra"><svg viewBox="0 0 320 24" preserveAspectRatio="none"><path class="base"/><path class="rosa"/></svg></div><div class="intro-perc">0%</div></div>
 <script>
 /* caricamento iniziale: solo alla prima visita della sessione (Mattia 26/11) */
 (function(){
@@ -15,12 +15,13 @@
   var visto=false;try{visto=sessionStorage.getItem('emi-intro')==='1';sessionStorage.setItem('emi-intro','1');}catch(e){}
   if(visto||matchMedia('(prefers-reduced-motion: reduce)').matches){el.remove();return;}
   document.documentElement.classList.add('con-intro');
-  var barra=el.querySelector('.intro-barra i'),perc=el.querySelector('.intro-perc'),t0=performance.now(),dur=2000,caricato=false;
+  var pb=el.querySelector('.intro-barra .base'),pr=el.querySelector('.intro-barra .rosa'),lun=0,perc=el.querySelector('.intro-perc'),t0=performance.now(),dur=2000,caricato=false;
   addEventListener('load',function(){caricato=true;});
   (function g(now){
     var t=Math.min(1,(now-t0)/dur);if(!caricato&&t>.9)t=.9; /* non arriva a 100 finché la pagina non è caricata */
     var e=1-Math.pow(1-t,3),v=Math.round(e*100);
-    barra.style.transform='scaleX('+e+')';perc.textContent=v+'%';
+    var s=(now-t0)/1000,d='';for(var x=2;x<=318;x+=4){var k=(x-2)/316,a=4*Math.sin(Math.PI*k);d+=(d?'L':'M')+x+' '+(12+a*Math.sin(x/26-s*2.2)+1.2*Math.sin(x/11+s*1.4)).toFixed(2);}
+    pb.setAttribute('d',d);pr.setAttribute('d',d);if(!lun){lun=pr.getTotalLength();pr.style.strokeDasharray=lun;}pr.style.strokeDashoffset=(lun*(1-e)).toFixed(1);perc.textContent=v+'%';
     if(v<100){requestAnimationFrame(g);}else{setTimeout(function(){el.classList.add('via');document.documentElement.classList.remove('con-intro');},350);setTimeout(function(){el.remove();},1600);}
   })(t0);
 })();
@@ -174,6 +175,6 @@
   });});
 })();
 </script></main>
-<script src="js/animazioni.js?v=c2"></script><script src="js/vis-video.js?v=c2"></script>
-<script src="js/contenuti.js?v=c2"></script><script src="js/sito.js?v=c2"></script>
+<script src="js/animazioni.js?v=c6"></script><script src="js/vis-video.js?v=c6"></script>
+<script src="js/contenuti.js?v=c6"></script><script src="js/sito.js?v=c6"></script>
 </body></html>
