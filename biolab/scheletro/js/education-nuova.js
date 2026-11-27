@@ -48,6 +48,9 @@
     addEventListener('resize',function(){lun=0;});
     requestAnimationFrame(giro);
   })();
+  /* la notifica del prossimo workshop scende quando entra nello schermo */
+  var nt=document.querySelector('.ed-notifica');
+  if(nt){var nio=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){setTimeout(function(){nt.classList.add('su');},150);nio.disconnect();}});},{threshold:.6});nio.observe(nt);}
   /* entrate allo scroll */
   var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('visto');io.unobserve(e.target);}});},{threshold:.15});
   document.querySelectorAll('.ed .entra').forEach(function(el,i){el.style.transitionDelay=(i%2*0.1)+'s';io.observe(el);});
