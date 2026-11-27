@@ -1,0 +1,125 @@
+/* PROVA Education (Mattia 27/11): stile della pagina workshop, riferimento la home (Figtree, scuro, video).
+   Palette: Onyx #0A0A09, Dust Grey #D5D5D0, Pink Orchid #E1B3D8 come accento soft. */
+body.ed{background:#0A0A09;color:#D5D5D0}
+body.ed main{padding:0!important;max-width:none!important}
+.ed-kicker{font-size:13px;letter-spacing:.08em;text-transform:uppercase;color:#E1B3D8;margin:0 0 14px;font-weight:500}
+.ed h1,.ed h2,.ed h3{font-weight:400;letter-spacing:-.03em;line-height:1;color:#F2F1EE;margin:0}
+.ed-velo{position:absolute;inset:0;background:linear-gradient(90deg,rgba(10,10,9,.78),rgba(10,10,9,.25) 60%,rgba(10,10,9,.5)),linear-gradient(0deg,rgba(10,10,9,.85),transparent 45%);pointer-events:none}
+.ed-bottone,.ed-vai{display:inline-flex;align-items:center;gap:10px;font-size:15px;font-weight:500;color:#F2F1EE}
+.ed-bottone{background:#D5D5D0;color:#0A0A09;padding:14px 22px;border-radius:999px;margin-top:26px;transition:background .3s}
+.ed-bottone i,.ed-vai i{font-style:normal;transition:transform .4s cubic-bezier(.2,.7,.2,1)}
+.ed-bottone:hover{background:#fff}.ed-bottone:hover i,a:hover .ed-vai i{transform:translateX(4px);color:#E1B3D8}
+.ed-intesta{display:flex;flex-wrap:wrap;align-items:flex-end;gap:12px 28px;margin-bottom:clamp(32px,5vh,56px)}
+.ed-intesta .ed-kicker{flex-basis:100%;margin:0}
+.ed-intesta h2{font-size:clamp(40px,5.4vw,84px)}
+.ed-tutti{margin-left:auto;font-size:15px;color:#D5D5D0;opacity:.8}.ed-tutti:hover{opacity:1;color:#fff}
+.ed-esempio{font-size:13px;color:#8a8a85;margin-top:18px}
+.ed-modi,.ed-corsi{padding:clamp(90px,14vh,160px) clamp(16px,6vw,96px)}
+
+/* 1. apertura */
+.ed-hero{position:relative;height:100vh;min-height:600px;overflow:hidden;display:flex;align-items:flex-end}
+.ed-hero-video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transform:scale(calc(1 + var(--z,0)*.12));transform-origin:50% 40%}
+.ed-hero-testo{position:relative;z-index:2;padding:0 clamp(16px,6vw,96px) clamp(70px,12vh,120px);max-width:980px}
+.ed-hero h1{font-size:clamp(56px,9vw,150px);margin-bottom:26px}
+.ed-sale span{display:block;overflow:hidden;padding-bottom:.08em}
+.ed-sale span{transform:translateY(105%);transition:transform 1.2s cubic-bezier(.2,.75,.15,1)}
+.ed-sale span:nth-child(2){transition-delay:.12s}
+html.ed-pronto .ed-sale span{transform:none}
+.ed-lead{font-size:clamp(18px,1.6vw,22px);line-height:1.45;max-width:560px;color:#D5D5D0;opacity:0;transform:translateY(16px);transition:opacity 1s ease .5s,transform 1.2s cubic-bezier(.2,.7,.2,1) .5s}
+html.ed-pronto .ed-lead{opacity:1;transform:none}
+.ed-scorri{position:absolute;right:clamp(16px,6vw,96px);bottom:clamp(70px,12vh,120px);z-index:2;font-size:13px;letter-spacing:.1em;text-transform:uppercase;color:#8a8a85;animation:edScorri 2s ease-in-out infinite}
+@keyframes edScorri{50%{opacity:.35;transform:translateY(6px)}}
+
+/* 2. metodo: scena fissa, i passaggi si accendono */
+.ed-metodo{height:360vh;position:relative}
+.ed-metodo-fisso{position:sticky;top:0;height:100vh;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.2fr);align-items:center;gap:clamp(30px,6vw,110px);padding:0 clamp(16px,6vw,96px);overflow:hidden}
+.ed-metodo-titolo h2{font-size:clamp(38px,4.4vw,70px);margin-bottom:24px}
+.ed-nota{font-size:17px;line-height:1.5;color:#8a8a85;max-width:420px}
+.ed-passi{list-style:none;margin:0;padding:0;display:flex;flex-direction:column}
+.ed-passi li{display:grid;grid-template-columns:48px 1fr;column-gap:10px;padding:clamp(14px,2.4vh,24px) 0;border-top:1px solid rgba(213,213,208,.14);opacity:.22;transition:opacity .7s ease}
+.ed-passi li:last-child{border-bottom:1px solid rgba(213,213,208,.14)}
+.ed-passi li span{font-size:14px;color:#8a8a85;padding-top:.9em}
+.ed-passi li b{font-weight:400;font-size:clamp(34px,4.2vw,68px);letter-spacing:-.03em;line-height:1.05;color:#F2F1EE}
+.ed-passi li p{grid-column:2;margin:0;max-height:0;overflow:hidden;font-size:17px;color:#D5D5D0;transition:max-height .7s ease,margin .7s ease}
+.ed-passi li.su{opacity:1}
+.ed-passi li.ora span{color:#E1B3D8}
+.ed-passi li.su{opacity:.55}.ed-passi li.ora{opacity:1}.ed-passi li.ora p{max-height:60px;margin-top:8px}
+.ed-metodo-barra{position:absolute;right:clamp(10px,2vw,28px);top:50%;transform:translateY(-50%);width:2px;height:min(240px,34vh);background:rgba(213,213,208,.14)}
+.ed-metodo-barra i{display:block;width:100%;height:calc(var(--p,0)*100%);background:#E1B3D8}
+
+/* 3. due modi */
+.ed-carte{display:grid;grid-template-columns:1fr 1fr;gap:clamp(12px,1.6vw,22px)}
+.ed-carta{position:relative;display:block;min-height:clamp(420px,62vh,640px);border-radius:18px;overflow:hidden;background:#141413;color:inherit;text-decoration:none}
+.ed-carta img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transform:scale(1.04);transition:transform 1.4s cubic-bezier(.2,.7,.2,1),filter .8s;filter:brightness(.62) saturate(.9)}
+.ed-carta:hover img{transform:scale(1.1);filter:brightness(.8) saturate(1)}
+.ed-carta::after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(10,10,9,.88),rgba(10,10,9,0) 60%)}
+.ed-carta-testo{position:absolute;left:0;right:0;bottom:0;z-index:2;padding:clamp(22px,2.6vw,36px)}
+.ed-carta h3{font-size:clamp(36px,3.6vw,56px);margin-bottom:12px}
+.ed-carta-testo p:not(.ed-kicker){font-size:17px;line-height:1.45;color:#D5D5D0;margin:0 0 18px;max-width:380px}
+
+/* 4. prossimo workshop */
+.ed-prossimo{padding:0 clamp(16px,6vw,96px)}
+.ed-prossimo-carta{position:relative;display:grid;grid-template-columns:1fr 1fr;min-height:clamp(440px,66vh,620px);border-radius:18px;overflow:hidden;background:#000;color:inherit;text-decoration:none}
+.ed-prossimo-carta img{width:100%;height:100%;object-fit:cover;transition:transform 1.6s cubic-bezier(.2,.7,.2,1)}
+.ed-prossimo-carta:hover img{transform:scale(1.05)}
+.ed-prossimo-testo{padding:clamp(28px,4vw,60px);display:flex;flex-direction:column;justify-content:center;background:linear-gradient(90deg,#000,#0A0A09)}
+.ed-prossimo-testo h2{font-size:clamp(48px,6vw,96px);margin-bottom:18px}
+.ed-prossimo-testo>p:not(.ed-kicker){font-size:18px;line-height:1.45;max-width:440px;margin:0 0 26px}
+.ed-prossimo-testo dl{display:grid;grid-template-columns:repeat(3,auto);justify-content:start;gap:12px 32px;margin:0;padding:18px 0;border-top:1px solid rgba(213,213,208,.16);border-bottom:1px solid rgba(213,213,208,.16)}
+.ed-prossimo-testo dt{font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:#8a8a85;margin-bottom:4px}
+.ed-prossimo-testo dd{margin:0;font-size:16px;color:#F2F1EE}
+.ed-prossimo-testo .ed-bottone{align-self:flex-start}
+
+/* 5. corsi */
+.ed-lista{list-style:none;margin:0;padding:0}
+.ed-lista a{display:grid;grid-template-columns:60px minmax(0,1.2fr) minmax(0,1fr) 40px;align-items:baseline;gap:6px 24px;padding:clamp(20px,3vh,34px) 0;border-top:1px solid rgba(213,213,208,.14);color:inherit;text-decoration:none;transition:padding .5s cubic-bezier(.2,.7,.2,1)}
+.ed-lista li:last-child a{border-bottom:1px solid rgba(213,213,208,.14)}
+.ed-lista a:hover{padding-left:14px}
+.ed-num{font-size:14px;color:#8a8a85}
+.ed-lista b{font-weight:400;font-size:clamp(28px,3vw,46px);letter-spacing:-.02em;color:#F2F1EE}
+.ed-lista em{font-style:normal;font-size:14px;color:#8a8a85;grid-column:2}
+.ed-lista p{grid-column:3;grid-row:1;margin:0;font-size:17px;color:#D5D5D0}
+.ed-lista i{font-style:normal;grid-column:4;grid-row:1;justify-self:end;font-size:22px;transition:transform .4s,color .3s}
+.ed-lista a:hover i{transform:translateX(4px);color:#E1B3D8}
+
+/* 6. scuola */
+.ed-scuola{position:relative;min-height:90vh;display:flex;align-items:center;overflow:hidden;margin-top:clamp(40px,8vh,100px)}
+.ed-scuola-video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:brightness(.7)}
+.ed-scuola-testo{position:relative;z-index:2;padding:0 clamp(16px,6vw,96px);max-width:820px}
+.ed-scuola h2{font-size:clamp(48px,7vw,120px);margin-bottom:22px}
+.ed-scuola-testo>p:not(.ed-kicker){font-size:clamp(18px,1.5vw,21px);line-height:1.45;max-width:520px}
+
+/* entrate allo scroll */
+.ed .entra{opacity:0;transform:translateY(40px);transition:opacity 1s ease,transform 1.2s cubic-bezier(.2,.7,.2,1)}
+.ed .entra.visto{opacity:1;transform:none}
+
+/* telefono */
+@media (max-width:760px){
+  .ed-hero-testo{padding-bottom:90px}
+  .ed-scorri{display:none}
+  .ed-metodo{height:300vh}
+  .ed-metodo-fisso{grid-template-columns:1fr;align-content:center;gap:28px}
+  .ed-nota{display:none}
+  .ed-passi li{grid-template-columns:34px 1fr}
+  .ed-carte{grid-template-columns:1fr}
+  .ed-carta{min-height:420px}
+  .ed-prossimo-carta{grid-template-columns:1fr}
+  .ed-prossimo-carta img{height:300px}
+  .ed-prossimo-testo dl{grid-template-columns:1fr 1fr}
+  .ed-lista a{grid-template-columns:36px 1fr 24px}
+  .ed-lista em{grid-column:2}
+  .ed-lista p{grid-column:2;grid-row:auto}
+  .ed-lista i{grid-column:3}
+}
+@media (prefers-reduced-motion:reduce){
+  .ed-sale span,.ed-lead,.ed .entra{transform:none!important;opacity:1!important;transition:none}
+  .ed-passi li{opacity:1}.ed-passi li p{max-height:60px;margin-top:8px}
+  .ed-scorri{animation:none}
+}
+
+/* 27/11 sera (Mattia): foto al posto dei video, più leggere */
+.ed-metodo-foto{position:relative;margin-top:28px;width:min(100%,420px);aspect-ratio:4/3;border-radius:14px;overflow:hidden;background:#141413}
+.ed-metodo-foto img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transform:scale(1.06);transition:opacity .9s ease,transform 1.6s cubic-bezier(.2,.7,.2,1)}
+.ed-metodo-foto img.ora{opacity:1;transform:none}
+.ed-hero-video,.ed-scuola-video{display:block}
+@media (max-width:760px){.ed-metodo-foto{display:none}}
