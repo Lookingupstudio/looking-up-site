@@ -1,0 +1,9 @@
+/* Modo chiaro (Mattia 27/11): bottone per passare dal Lagoon black a un bianco sporco.
+   Tutta la pagina viene "invertita" e foto, video e disegni vengono rimessi com'erano: così i colori restano coerenti senza riscrivere ogni stile. */
+html.modo-chiaro{filter:invert(1) hue-rotate(180deg);background:#202326}
+html.modo-chiaro img,html.modo-chiaro video,html.modo-chiaro canvas,html.modo-chiaro picture,html.modo-chiaro .avatar,html.modo-chiaro [style*="background-image"]{filter:invert(1) hue-rotate(180deg)}
+.cambia-modo{position:fixed;right:18px;bottom:18px;z-index:150;width:44px;height:44px;border-radius:50%;border:1px solid rgba(213,213,208,.3);background:rgba(32,35,38,.6);color:#D5D5D0;display:grid;place-items:center;cursor:pointer;-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);transition:transform .5s cubic-bezier(.2,.7,.2,1),border-color .3s}
+.cambia-modo:hover{transform:rotate(180deg);border-color:#E1B3D8}
+.cambia-modo svg{display:block}
+html.menu-aperto .cambia-modo{opacity:0;visibility:hidden}
+@media (max-width:760px){.cambia-modo{right:14px;bottom:14px;width:40px;height:40px}}
