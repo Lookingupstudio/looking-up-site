@@ -1,0 +1,51 @@
+/* Stile comune delle pagine interne (Mattia 27/11): stesso vibe di home ed Education.
+   Figtree e misure della home, foto o video dietro l'apertura che sfuma in un fondo morbido Lagoon black
+   con luci di palette, sezioni su vetro, titoli e blocchi che entrano piano, foto vere. */
+html.pg-html,html.pg-html body.pg{background:#202326!important}
+body.pg main,body.pg .piede{position:relative;z-index:1}
+body.pg .bozza-barra{position:relative;z-index:2}
+/* sfondo fisso */
+.pg-sfondo{position:fixed;inset:0;z-index:0;pointer-events:none;overflow:hidden;background:#202326}
+.pg-sfumato{position:absolute;inset:-20%;background:
+  radial-gradient(40% 35% at 22% 30%,rgba(225,179,216,.15),transparent 70%),
+  radial-gradient(45% 40% at 78% 65%,rgba(183,198,195,.13),transparent 70%),
+  radial-gradient(35% 30% at 55% 15%,rgba(168,161,187,.11),transparent 70%),#202326;animation:pgLuci 26s ease-in-out infinite alternate}
+@keyframes pgLuci{to{transform:translate3d(4%,-3%,0) rotate(6deg) scale(1.08)}}
+.pg-media{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:var(--vid,1);transform:scale(calc(1.04 + var(--z,0)*.08))}
+.pg-sfondo .velo{position:absolute;inset:0;opacity:var(--vid,1);background:
+  linear-gradient(90deg,rgba(32,35,38,.82) 0%,rgba(32,35,38,.55) 55%,rgba(32,35,38,.4) 100%),
+  linear-gradient(0deg,rgba(32,35,38,.7) 0%,rgba(32,35,38,0) 35%,rgba(32,35,38,0) 75%,rgba(32,35,38,.55) 100%)}
+/* apertura */
+body.pg .hero{min-height:min(88vh,820px);display:flex;align-items:flex-end;padding-bottom:clamp(50px,9vh,100px)!important}
+body.pg .hero .hero-foto{display:none}
+body.pg .hero h1{font-size:clamp(48px,min(7.5vw,11vh),110px)!important;font-weight:400!important;letter-spacing:-.03em;line-height:1!important;color:#F2F1EE}
+body.pg .hero h1 .macchia{background:none!important;padding:0!important}
+body.pg .hero .lead{font-size:17px!important;line-height:1.5!important;font-weight:450;max-width:540px;color:#D5D5D0;text-shadow:0 1px 14px rgba(32,35,38,.75)}
+body.pg .briciole{position:relative;z-index:1}
+body.pg .pg-l{display:inline-block;color:rgba(213,213,208,.25);transition:color .5s ease calc(var(--i)*30ms + .4s);font-style:inherit}
+html.pg-pronto body.pg .pg-l{color:#F2F1EE}
+/* sezioni su vetro */
+body.pg .sez{padding:clamp(28px,5vh,56px) 0!important;border:0!important}
+body.pg .sez>.wrap{background:rgba(32,35,38,.42);border:1px solid rgba(213,213,208,.12);border-radius:22px;-webkit-backdrop-filter:blur(18px) saturate(1.1);backdrop-filter:blur(18px) saturate(1.1);padding:clamp(26px,4vw,56px)!important;max-width:min(var(--max,1240px),calc(100% - 2*var(--gut,24px)))}
+body.pg .sez h2{font-size:clamp(28px,2.6vw,38px)!important;font-weight:500!important;letter-spacing:-.02em;color:#F2F1EE}
+body.pg .sez p,body.pg .porta p{font-size:16px;line-height:1.55}
+body.pg .sez .lead{font-size:18px!important;line-height:1.5!important}
+body.pg .occhiello{color:#E1B3D8!important;letter-spacing:.08em!important;text-transform:uppercase;font-size:12px!important}
+body.pg .porta .titolo{font-size:22px!important;font-weight:500!important;letter-spacing:-.01em}
+body.pg .porta .foto,body.pg .segnaposto{border-radius:16px!important;overflow:hidden}
+body.pg .porta .foto img{transition:transform 1.4s cubic-bezier(.2,.7,.2,1)}
+body.pg .porta:hover .foto img{transform:scale(1.05)}
+/* percorsi in riga (come l'approccio di Education) */
+body.pg .percorso span{font-family:"Figtree",sans-serif!important;font-weight:400!important;font-size:clamp(18px,1.7vw,24px)!important;opacity:.3;transition:opacity .8s}
+body.pg .percorso span::before{border-color:#777F7F!important;transition:background .6s,border-color .6s,box-shadow .6s}
+body.pg .percorso span::after{background:linear-gradient(90deg,#E1B3D8 var(--l,0%),rgba(213,213,208,.18) var(--l,0%))!important;transition:--l 1s}
+body.pg .percorso span.su{opacity:1}
+body.pg .percorso span.su::before{background:#E1B3D8;border-color:#E1B3D8!important;box-shadow:0 0 12px rgba(225,179,216,.5)}
+body.pg .percorso span.su::after{--l:100%}
+@property --l{syntax:'<percentage>';inherits:false;initial-value:0%}
+/* entrate */
+body.pg .pg-entra{opacity:0;transform:translateY(34px);transition:opacity 1s ease,transform 1.2s cubic-bezier(.2,.7,.2,1)}
+body.pg .pg-entra.visto{opacity:1;transform:none}
+body.pg .piede{background:rgba(32,35,38,.82)!important;-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px)}
+@media (max-width:760px){body.pg .hero{min-height:72vh}body.pg .sez>.wrap{padding:22px 18px!important;border-radius:18px}}
+@media (prefers-reduced-motion:reduce){.pg-sfumato{animation:none}.pg-media[src$=".mp4"],video.pg-media{display:none}body.pg .pg-entra{opacity:1;transform:none}body.pg .pg-l{color:#F2F1EE}body.pg .percorso span{opacity:1}}

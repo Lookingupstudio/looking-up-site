@@ -86,7 +86,7 @@
   const istruttrice = `<section class="sez"><div class="wrap"><p class="occhiello">Your instructor</p>
     <div class="fondatrice piccola"><div class="ritratto"><img src="../img/ritratto-berlino.jpg" alt="Carola Emanuela Godja" loading="lazy"></div>
     <div><h2>Carola Emanuela Godja</h2><p class="muto" style="margin-top:8px">Designer &amp; Researcher · Founder of Emi BioLab</p>
-    <p style="margin-top:16px;max-width:620px">MA in Fashion at Iuav University of Venice, with honours. Years of research on alginate yarn, taught at Kent State University, UIUC and Ocean Space, speaker at TEDxVenezia. Learners in 16+ countries.</p>
+    <p style="margin-top:16px;max-width:620px">MA in Fashion at Iuav University of Venice, with honours. Years of research on alginate yarn, taught at Kent State University, UIUC and Ocean Space. Learners in 16+ countries.</p>
     <div class="bottoni"><a class="btn linea" href="about.html">Full profile →</a></div></div></div></div></section>`;
 
   const vuota = (cosa, link, nome) => { $('main').innerHTML = `<div class="wrap hero"><h1>Not found</h1><p class="lead">This ${cosa} does not exist (yet).</p><div class="bottoni"><a class="btn" href="${link}">${nome}</a></div></div>`; };
