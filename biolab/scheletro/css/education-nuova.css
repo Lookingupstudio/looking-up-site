@@ -149,3 +149,68 @@ html.fondo-panna body header.testa::before{background:linear-gradient(180deg,rgb
 html.fondo-antracite body header.testa::before{background:linear-gradient(180deg,rgba(46,45,43,.96),rgba(46,45,43,0))!important}
 html.fondo-carbone body header.testa::before{background:linear-gradient(180deg,rgba(32,35,38,.96),rgba(32,35,38,0))!important}
 html.fondo-grigio body header.testa::before{background:linear-gradient(180deg,rgba(88,87,83,.96),rgba(88,87,83,0))!important}
+
+/* === 27/11 sera (Mattia): stesso "vibe" della home. Foto fissa dietro a tutta la pagina con il velo come la home,
+   trasparenze e vetro, misure della home, Educational approach in riga che si accende === */
+.ed-sfondo{position:fixed;inset:0;z-index:0;pointer-events:none;overflow:hidden;background:#202326}
+.ed-sfondo img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transform:scale(calc(1.04 + var(--z,0)*.08));transition:opacity 1.6s ease}
+.ed-sfondo .velo{position:absolute;inset:0;background:
+  linear-gradient(90deg,rgba(32,35,38,.78) 0%,rgba(32,35,38,.5) 55%,rgba(32,35,38,.35) 100%),
+  linear-gradient(0deg,rgba(32,35,38,.6) 0%,rgba(32,35,38,0) 30%,rgba(32,35,38,0) 75%,rgba(32,35,38,.5) 100%);
+  transition:background .4s}
+.ed-sfondo::after{content:"";position:absolute;inset:0;background:rgba(32,35,38,var(--scuro,0))}
+body.ed main,body.ed .piede{position:relative;z-index:1}
+body.ed .piede{background:rgba(32,35,38,.82)!important;-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px)}
+html.ed-html,html.ed-html body.ed{background:#202326!important}
+.ed-hero{background:transparent}
+.ed-hero-testo{padding-bottom:clamp(60px,10vh,110px)}
+html body.ed .ed-hero h1{font-size:clamp(56px,min(9vw,11vh),150px);font-weight:400;letter-spacing:-.03em}
+html body.ed .ed-lead{font-size:17px;line-height:1.5;font-weight:450;text-shadow:0 1px 14px rgba(32,35,38,.75)}
+html body.ed h2{font-size:clamp(30px,2.8vw,40px);font-weight:500;letter-spacing:-.02em}
+html body.ed .ed-intesta h2{font-size:clamp(30px,2.8vw,40px)}
+/* lettere del titolo che si accendono come in home */
+.ed-sale .l{display:inline-block;color:rgba(213,213,208,.25);transition:color .5s ease calc(var(--i)*35ms + .5s)}
+html.ed-pronto .ed-sale .l{color:#F2F1EE}
+/* vetro */
+.ed-vetro{background:rgba(32,35,38,.42);border:1px solid rgba(213,213,208,.12);border-radius:22px;-webkit-backdrop-filter:blur(18px) saturate(1.1);backdrop-filter:blur(18px) saturate(1.1);padding:clamp(28px,4vw,60px)}
+.ed-approccio{padding:clamp(60px,10vh,120px) clamp(16px,6vw,96px)}
+.ed-approccio h2{margin-bottom:clamp(28px,4vh,44px)}
+.ed-percorso{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(4,1fr);gap:0}
+.ed-percorso li{position:relative;padding:28px 24px 0 0;opacity:.3;transition:opacity .8s ease}
+.ed-percorso li::before{content:"";position:absolute;left:0;top:0;width:11px;height:11px;border-radius:50%;border:1.5px solid #777F7F;box-sizing:border-box;transition:background .6s,border-color .6s,box-shadow .6s;z-index:1}
+.ed-percorso li::after{content:"";position:absolute;left:18px;right:6px;top:5px;height:1px;background:linear-gradient(90deg,#E1B3D8 var(--l,0%),rgba(213,213,208,.18) var(--l,0%));transition:--l 1s ease}
+.ed-percorso li:last-child::after{display:none}
+.ed-percorso b{display:block;font-weight:400;font-size:clamp(20px,2vw,28px);letter-spacing:-.02em;color:#F2F1EE;margin-bottom:10px}
+.ed-percorso p{margin:0;font-size:15px;line-height:1.45;color:#D5D5D0;max-width:230px}
+.ed-percorso li.su{opacity:1}
+.ed-percorso li.su::before{background:#E1B3D8;border-color:#E1B3D8;box-shadow:0 0 14px rgba(225,179,216,.55)}
+.ed-percorso li.su::after{--l:100%}
+@property --l{syntax:'<percentage>';inherits:false;initial-value:0%}
+.ed-approccio .ed-nota{display:block;margin-top:36px;font-size:15px;color:#a9aca8}
+/* sezioni trasparenti, card e lista sul vetro */
+.ed-modi,.ed-corsi{background:transparent}
+.ed-carta{border:1px solid rgba(213,213,208,.12);background:rgba(32,35,38,.4)}
+.ed-prossimo-carta{background:rgba(32,35,38,.45)!important;border:1px solid rgba(213,213,208,.12);-webkit-backdrop-filter:blur(18px);backdrop-filter:blur(18px)}
+.ed-prossimo-testo{background:transparent!important}
+.ed-corsi .ed-lista{background:rgba(32,35,38,.42);border:1px solid rgba(213,213,208,.12);border-radius:22px;padding:6px clamp(20px,3vw,40px);-webkit-backdrop-filter:blur(18px);backdrop-filter:blur(18px)}
+.ed-lista li:first-child a{border-top:0}.ed-lista li:last-child a{border-bottom:0}
+.ed-scuola{background:transparent}
+@media (max-width:760px){
+  .ed-percorso{grid-template-columns:1fr;gap:22px}
+  .ed-percorso li{padding:0 0 0 26px}
+  .ed-percorso li::after{left:5px;right:auto;top:16px;bottom:-22px;width:1px;height:auto;background:rgba(213,213,208,.18)}
+  .ed-percorso li.su::after{background:#E1B3D8}
+  .ed-vetro{padding:26px 20px}
+}
+@media (prefers-reduced-motion:reduce){.ed-percorso li{opacity:1}.ed-sale .l{color:#F2F1EE;transition:none}}
+
+/* 27/11 sera (Mattia): video di Education dietro l'apertura, poi sfuma in un fondo morbido Lagoon black con luci di palette */
+.ed-sfondo-video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:var(--vid,1);transform:scale(calc(1.04 + var(--z,0)*.08))}
+.ed-sfumato{position:absolute;inset:-20%;background:
+  radial-gradient(40% 35% at 22% 30%,rgba(225,179,216,.16),transparent 70%),
+  radial-gradient(45% 40% at 78% 65%,rgba(183,198,195,.14),transparent 70%),
+  radial-gradient(35% 30% at 55% 15%,rgba(168,161,187,.12),transparent 70%),#202326;
+  animation:edLuci 26s ease-in-out infinite alternate}
+@keyframes edLuci{to{transform:translate3d(4%,-3%,0) rotate(6deg) scale(1.08)}}
+.ed-sfondo .velo{opacity:var(--vid,1)}
+@media (prefers-reduced-motion:reduce){.ed-sfumato{animation:none}.ed-sfondo-video{display:none}}
