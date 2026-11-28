@@ -130,8 +130,9 @@ h3{font-size:22px;font-weight:700;letter-spacing:.12em;text-transform:uppercase}
 }
 @media (prefers-reduced-motion:reduce){.float,.track,.rule{animation:none}.rv{opacity:1;transform:none}}
 
-.vol{display:inline-flex;gap:0;margin-top:26px;border:1px solid var(--oro);border-radius:99px;overflow:hidden}
-.vol button{background:none;border:0;color:var(--oro);font:600 14px/1 var(--sans);letter-spacing:.14em;text-transform:uppercase;padding:14px 24px;cursor:pointer;transition:background .3s,color .3s}
+.vols{display:flex;gap:40px;flex-wrap:wrap;margin-top:26px}.vl{font-size:12px;letter-spacing:.3em;text-transform:uppercase;color:var(--muto);margin-bottom:10px}
+.vol{display:inline-flex;gap:0;border:1px solid var(--oro);border-radius:99px;overflow:hidden}
+.vol button{background:none;border:0;color:var(--oro);font:600 14px/1 var(--sans);letter-spacing:.14em;text-transform:uppercase;padding:14px 26px;cursor:pointer;transition:background .3s,color .3s}
 .vol button.on{background:var(--oro);color:var(--nero)}
 .price span{display:inline-block;transition:transform .3s,opacity .3s}
 .price span.flip{transform:translateY(-8px);opacity:0}
@@ -244,17 +245,20 @@ h3{font-size:22px;font-weight:700;letter-spacing:.12em;text-transform:uppercase}
   <div class="wrap">
     <div class="eyebrow">La proposta</div>
     <h2>Due formule. <em>Scegliete chi pubblica.</em></h2>
-    <p>E scegliete quanti contenuti al mese: 4, 8 o 12 per OCM, e altrettanti per OCM News.</p>
-    <div class="vol" role="group" aria-label="Contenuti al mese"><button data-n="4">4 al mese</button><button data-n="8" class="on">8 al mese</button><button data-n="12">12 al mese</button></div>
+    <p>E scegliete quanti contenuti al mese per ciascun profilo.</p>
+    <div class="vols">
+      <div><div class="vl">Profilo OCM</div><div class="vol" data-k="o"><button data-v="4">4</button><button data-v="8" class="on">8</button><button data-v="12">12</button></div></div>
+      <div><div class="vl">Profilo OCM News</div><div class="vol" data-k="n"><button data-v="4">4</button><button data-v="8" class="on">8</button><button data-v="12">12</button></div></div>
+    </div>
     <div class="grid g2" style="margin-top:36px">
       <div class="pk">
         <h3>Contenuti</h3>
         <div class="price"><span data-a>3.500</span> € <small>al mese</small></div>
         <ul class="clean">
-          <li>Contenuti OCM: <b data-n>8</b> al mese, su tutti i canali</li>
+          <li>Profilo OCM: <b data-o>8</b> contenuti al mese, su tutti i canali</li>
           <li>Sito OCM: partner, brand e B2B</li>
           <li>OCM News: pubblicazione articoli e Google</li>
-          <li>OCM News: Instagram e Facebook, <b data-n>8</b> post al mese</li>
+          <li>Profilo OCM News: <b data-nn>8</b> post al mese, Instagram e Facebook</li>
           <li>Gestione campagne Meta</li>
           <li>Piano editoriale e report mensile</li>
           <li>I contenuti OCM li pubblicate voi</li>
@@ -347,12 +351,12 @@ var io=new IntersectionObserver(function(en){en.forEach(function(x){if(x.isInter
 els.forEach(function(e){io.observe(e)});})();
 </script>
 <script>
-(function(){var P={4:['2.800','3.800'],8:['3.500','4.500'],12:['4.200','5.200']};
-var bs=document.querySelectorAll('.vol button');
-bs.forEach(function(b){b.addEventListener('click',function(){var n=b.getAttribute('data-n');
-bs.forEach(function(x){x.classList.toggle('on',x===b)});
-document.querySelectorAll('[data-n]:not(button)').forEach(function(e){e.textContent=n});
-[['[data-a]',0],['[data-b]',1]].forEach(function(q){var e=document.querySelector(q[0]);e.classList.add('flip');setTimeout(function(){e.textContent=P[n][q[1]];e.classList.remove('flip')},200)});});});})();
+(function(){var st={o:8,n:8};
+function fmt(x){return String(x).replace(/\B(?=(\d{3})+(?!\d))/g,'.')}
+function calc(){var a=3500+(st.o-8)/4*600+(st.n-8)/4*150;a=Math.round(a/50)*50;var b=a+1000;
+[['[data-a]',a],['[data-b]',b]].forEach(function(q){var e=document.querySelector(q[0]);e.classList.add('flip');setTimeout(function(){e.textContent=fmt(q[1]);e.classList.remove('flip')},200)});
+document.querySelectorAll('[data-o]').forEach(function(e){e.textContent=st.o});document.querySelectorAll('[data-nn]').forEach(function(e){e.textContent=st.n});}
+document.querySelectorAll('.vol').forEach(function(g){var k=g.getAttribute('data-k');g.querySelectorAll('button').forEach(function(b){b.addEventListener('click',function(){st[k]=+b.getAttribute('data-v');g.querySelectorAll('button').forEach(function(x){x.classList.toggle('on',x===b)});calc()})})});})();
 </script>
 </body>
 </html>
