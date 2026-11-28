@@ -129,6 +129,12 @@ h3{font-size:22px;font-weight:700;letter-spacing:.12em;text-transform:uppercase}
  .track img{height:150px}.track{gap:40px}
 }
 @media (prefers-reduced-motion:reduce){.float,.track,.rule{animation:none}.rv{opacity:1;transform:none}}
+
+.vol{display:inline-flex;gap:0;margin-top:26px;border:1px solid var(--oro);border-radius:99px;overflow:hidden}
+.vol button{background:none;border:0;color:var(--oro);font:600 14px/1 var(--sans);letter-spacing:.14em;text-transform:uppercase;padding:14px 24px;cursor:pointer;transition:background .3s,color .3s}
+.vol button.on{background:var(--oro);color:var(--nero)}
+.price span{display:inline-block;transition:transform .3s,opacity .3s}
+.price span.flip{transform:translateY(-8px);opacity:0}
 </style>
 </head>
 <body>
@@ -152,7 +158,7 @@ h3{font-size:22px;font-weight:700;letter-spacing:.12em;text-transform:uppercase}
     <p>A novembre abbiamo costruito insieme il linguaggio di OCM: Mr. The Wake, i reel action, gli eventi istituzionali. Ora il passo successivo è dare la stessa cura a tutto.</p>
     <div class="grid g4 steps" style="margin-top:48px">
       <div class="card"><div class="k"></div><h3>Sito OCM</h3><p>Partner, brand e clienti B2B sempre aggiornati.</p></div>
-      <div class="card"><div class="k"></div><h3>Comunicazione</h3><p>8 reel al mese su Instagram, Facebook, TikTok e YouTube.</p></div>
+      <div class="card"><div class="k"></div><h3>Comunicazione</h3><p>Contenuti video su Instagram, Facebook, TikTok e YouTube, al ritmo che scegliete.</p></div>
       <div class="card"><div class="k"></div><h3>OCM News</h3><p>Articoli online, trovati da Google, con i loro social.</p></div>
       <div class="card"><div class="k"></div><h3>Campagne</h3><p>Budget Meta con obiettivi veri, non solo visualizzazioni.</p></div>
     </div>
@@ -181,11 +187,11 @@ h3{font-size:22px;font-weight:700;letter-spacing:.12em;text-transform:uppercase}
 <section class="slide withm alt">
   <div class="wrap">
     <div class="eyebrow">02 · Comunicazione</div>
-    <h2>8 reel al mese, <em>su ogni canale.</em></h2>
+    <h2>Un linguaggio, <em>su ogni canale.</em></h2>
     <ul class="clean" style="max-width:640px">
-      <li><b>Instagram e Facebook</b>: 2 reel a settimana, martedì e venerdì.</li>
-      <li><b>TikTok</b>: versioni più brevi e veloci.</li>
-      <li><b>YouTube</b>: shorts e archivio dei video.</li>
+      <li><b>Instagram e Facebook</b>: i canali principali di OCM.</li>
+      <li><b>TikTok</b>: gestito da noi, insieme agli altri.</li>
+      <li><b>YouTube</b>: gestito da noi, insieme agli altri.</li>
       <li><b>LinkedIn</b>: partner e B2B, nella gestione completa.</li>
     </ul>
     <p class="note">Mr. The Wake, sport, eventi e partner. Voce in inglese, sottotitoli italiano e francese.</p>
@@ -213,7 +219,7 @@ h3{font-size:22px;font-weight:700;letter-spacing:.12em;text-transform:uppercase}
     <div class="grid g3 steps" style="margin-top:40px">
       <div class="card"><div class="k"></div><h3>7 giorni prima</h3><p>Profilo pronto con 9 post e storie in evidenza. Annuncio dai canali OCM e dal sito.</p></div>
       <div class="card"><div class="k"></div><h3>Il lancio</h3><p>Reel di Mr. The Wake che presenta la testata, campagna Meta dedicata, link nelle bio di OCM.</p></div>
-      <div class="card"><div class="k"></div><h3>Primi 30 giorni</h3><p>3 post a settimana dagli articoli, Facebook in parallelo. Poi valutiamo newsletter, LinkedIn e TikTok.</p></div>
+      <div class="card"><div class="k"></div><h3>Primi 30 giorni</h3><p>I post dagli articoli, al ritmo scelto da voi, con Facebook in parallelo. Poi valutiamo newsletter, LinkedIn e TikTok.</p></div>
     </div>
   </div>
   <img class="mascot float" src="media/mascotte-smoking-2.png" alt="" style="height:74%">
@@ -238,15 +244,17 @@ h3{font-size:22px;font-weight:700;letter-spacing:.12em;text-transform:uppercase}
   <div class="wrap">
     <div class="eyebrow">La proposta</div>
     <h2>Due formule. <em>Scegliete chi pubblica.</em></h2>
+    <p>E scegliete quanti contenuti al mese: 4, 8 o 12 per OCM, e altrettanti per OCM News.</p>
+    <div class="vol" role="group" aria-label="Contenuti al mese"><button data-n="4">4 al mese</button><button data-n="8" class="on">8 al mese</button><button data-n="12">12 al mese</button></div>
     <div class="grid g2" style="margin-top:36px">
       <div class="pk">
         <h3>Contenuti</h3>
-        <div class="price">3.500 € <small>al mese</small></div>
+        <div class="price"><span data-a>3.500</span> € <small>al mese</small></div>
         <ul class="clean">
-          <li>8 reel al mese + versioni TikTok e YouTube</li>
+          <li>Contenuti OCM: <b data-n>8</b> al mese, su tutti i canali</li>
           <li>Sito OCM: partner, brand e B2B</li>
           <li>OCM News: pubblicazione articoli e Google</li>
-          <li>OCM News: Instagram e Facebook, 12 post al mese</li>
+          <li>OCM News: Instagram e Facebook, <b data-n>8</b> post al mese</li>
           <li>Gestione campagne Meta</li>
           <li>Piano editoriale e report mensile</li>
           <li>I contenuti OCM li pubblicate voi</li>
@@ -254,7 +262,7 @@ h3{font-size:22px;font-weight:700;letter-spacing:.12em;text-transform:uppercase}
       </div>
       <div class="pk hi">
         <h3>Gestione completa <span class="badge">consigliata</span></h3>
-        <div class="price">4.500 € <small>al mese</small></div>
+        <div class="price"><span data-b>4.500</span> € <small>al mese</small></div>
         <ul class="clean">
           <li>Tutto quello della formula Contenuti</li>
           <li><b>Pubblichiamo noi</b> su tutti i canali, ogni mese</li>
@@ -274,8 +282,8 @@ h3{font-size:22px;font-weight:700;letter-spacing:.12em;text-transform:uppercase}
     <p>Per chi sceglie la formula Contenuti, o per aggiungere canali alla testata.</p>
     <div class="grid g3" style="margin-top:36px">
       <div class="card"><h3>Substack OCM News</h3><p>La newsletter della testata: una selezione degli articoli ogni settimana. Inclusa nella Gestione completa.</p><div class="pk" style="border:0;padding:0;background:none"><div class="price" style="font-size:34px">300 € <small>al mese</small></div></div></div>
-      <div class="card"><h3>LinkedIn OCM</h3><p>8 contenuti al mese per partner, aziende e B2B. Incluso nella Gestione completa.</p><div class="pk" style="border:0;padding:0;background:none"><div class="price" style="font-size:34px">300 € <small>al mese</small></div></div></div>
-      <div class="card"><h3>OCM News su altri canali</h3><p>TikTok, YouTube o LinkedIn per la testata, 8 contenuti al mese.</p><div class="pk" style="border:0;padding:0;background:none"><div class="price" style="font-size:34px">200 € <small>a canale</small></div></div></div>
+      <div class="card"><h3>LinkedIn OCM</h3><p>Contenuti per partner, aziende e B2B. Incluso nella Gestione completa.</p><div class="pk" style="border:0;padding:0;background:none"><div class="price" style="font-size:34px">300 € <small>al mese</small></div></div></div>
+      <div class="card"><h3>OCM News su altri canali</h3><p>TikTok, YouTube o LinkedIn anche per la testata.</p><div class="pk" style="border:0;padding:0;background:none"><div class="price" style="font-size:34px">200 € <small>a canale</small></div></div></div>
     </div>
   </div>
   <img class="mascot float" src="media/mascotte-astronauta.png" alt="" style="height:62%">
@@ -337,6 +345,14 @@ var els=[].filter.call(document.querySelectorAll('.slide h2,.slide p,.card,.pk,u
 els.forEach(function(e,i){e.classList.add('rv');e.style.transitionDelay=((i%4)*0.08)+'s'});
 var io=new IntersectionObserver(function(en){en.forEach(function(x){if(x.isIntersecting){x.target.classList.add('in');io.unobserve(x.target)}})},{threshold:.12});
 els.forEach(function(e){io.observe(e)});})();
+</script>
+<script>
+(function(){var P={4:['2.800','3.800'],8:['3.500','4.500'],12:['4.200','5.200']};
+var bs=document.querySelectorAll('.vol button');
+bs.forEach(function(b){b.addEventListener('click',function(){var n=b.getAttribute('data-n');
+bs.forEach(function(x){x.classList.toggle('on',x===b)});
+document.querySelectorAll('[data-n]:not(button)').forEach(function(e){e.textContent=n});
+[['[data-a]',0],['[data-b]',1]].forEach(function(q){var e=document.querySelector(q[0]);e.classList.add('flip');setTimeout(function(){e.textContent=P[n][q[1]];e.classList.remove('flip')},200)});});});})();
 </script>
 </body>
 </html>
