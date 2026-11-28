@@ -333,7 +333,7 @@ h3{font-size:22px;font-weight:700;letter-spacing:.12em;text-transform:uppercase}
 
 <script>
 (function(){if(!('IntersectionObserver' in window))return;
-var els=document.querySelectorAll('.slide h2,.slide h1,.slide .lead,.slide p,.card,.pk,ul.clean li,.slide .eyebrow');
+var els=[].filter.call(document.querySelectorAll('.slide h2,.slide p,.card,.pk,ul.clean li,.slide .eyebrow'),function(e){return !e.closest('.cover')});
 els.forEach(function(e,i){e.classList.add('rv');e.style.transitionDelay=((i%4)*0.08)+'s'});
 var io=new IntersectionObserver(function(en){en.forEach(function(x){if(x.isIntersecting){x.target.classList.add('in');io.unobserve(x.target)}})},{threshold:.12});
 els.forEach(function(e){io.observe(e)});})();
