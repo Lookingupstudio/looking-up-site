@@ -4,9 +4,9 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex, nofollow">
-<title>The Wake · Offroad Club Monaco</title>
+<title>Proposta di gestione · Offroad Club Monaco</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;700;800&display=swap" rel="stylesheet">
 <style>
 :root{
   --nero:#0f0e0c; --nero2:#171512; --oro:#c9a961; --oro-chiaro:#e3cf9f;
@@ -80,163 +80,263 @@ td.d{font-family:var(--serif);font-size:20px;color:var(--crema);white-space:nowr
 }
 .hint{font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--muto);margin-top:12px;text-align:center}
 .card .k.kw{font-family:var(--serif);font-weight:500;font-size:44px;letter-spacing:0}
+
+.pk{border:1px solid rgba(201,169,97,.3);padding:34px 30px;background:var(--nero2)}
+.pk.hi{border-color:var(--oro)}
+.pk .price{font-family:var(--serif);font-size:56px;color:var(--oro);line-height:1;margin:14px 0 4px}
+.pk .price small{font-family:var(--sans);font-size:14px;color:var(--muto);letter-spacing:.1em}
+.pk h3{margin-bottom:0}
+.badge{display:inline-block;font-size:10px;letter-spacing:.24em;text-transform:uppercase;background:var(--oro);color:var(--nero);padding:5px 10px;border-radius:99px;margin-left:10px;vertical-align:middle}
+.mascot{position:absolute;right:4vw;bottom:0;height:88%;max-height:820px;opacity:.95;pointer-events:none}
+
+
+:root{--serif:"Avenir Next","Avenir","Figtree",Helvetica,sans-serif;--sans:"Avenir Next","Avenir","Figtree",Helvetica,sans-serif}
+h1,h2,h3{font-weight:800;letter-spacing:-.01em}
+h1 em,h2 em{font-style:normal;color:var(--oro)}
+h3{font-size:22px;font-weight:700;letter-spacing:.12em;text-transform:uppercase}
+.lead{font-style:normal;font-weight:400;color:#cfcfcf}
+.card .k{font-weight:800;opacity:.45}
+.pk .price{font-weight:800}
+.statement h2{color:var(--nero)}
+.cover h1{font-size:clamp(52px,6.6vw,100px)}
+.cover .mascot{height:80%;right:3vw}
+.reels{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;margin-top:48px;max-width:900px}
+.reels .phone{max-width:none}
+@media (max-width:860px){.reels{grid-template-columns:1fr 1fr}.reels>div:last-child{display:none}}
+
+.withm .wrap{padding-right:30%}
+.mascot{filter:drop-shadow(0 30px 60px rgba(0,0,0,.6)) drop-shadow(0 0 70px rgba(212,188,140,.12))}
+.float{animation:float 6s ease-in-out infinite}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-14px)}}
+.strip{padding:80px 0 90px;background:linear-gradient(180deg,var(--nero2),var(--nero));overflow:hidden}
+.marquee{overflow:hidden;margin-top:30px;-webkit-mask:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent);mask:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent)}
+.track{display:flex;gap:70px;width:max-content;animation:scroll 40s linear infinite;align-items:flex-end}
+.track img{height:240px;width:auto;transition:transform .4s}
+.track img:hover{transform:translateY(-10px) scale(1.05)}
+@keyframes scroll{to{transform:translateX(-50%)}}
+.rv{opacity:0;transform:translateY(34px);transition:opacity .9s ease,transform .9s ease}
+.rv.in{opacity:1;transform:none}
+.card{transition:transform .35s,border-color .35s}
+.card:hover{transform:translateY(-6px)}
+.pk{transition:transform .35s,box-shadow .35s}
+.pk:hover{transform:translateY(-8px);box-shadow:0 30px 60px rgba(0,0,0,.5),0 0 0 1px var(--oro)}
+.rule{animation:grow 1.4s ease forwards;transform-origin:left}
+@keyframes grow{from{transform:scaleX(0)}to{transform:scaleX(1)}}
+@media (max-width:860px){
+ .withm .wrap{padding-right:0}
+ .slide .mascot{display:block;position:static;height:auto!important;width:58%;max-width:250px;margin:36px auto 0}
+ .slide{flex-direction:column}
+ .track img{height:150px}.track{gap:40px}
+}
+@media (prefers-reduced-motion:reduce){.float,.track,.rule{animation:none}.rv{opacity:1;transform:none}}
 </style>
 </head>
 <body>
 
-<nav class="dots" id="dots"></nav>
-
-<!-- 1 copertina -->
-<section class="slide cover" id="s1">
+<section class="slide cover">
   <div class="wrap">
-    <img class="logo" src="media/logo.jpg" alt="Logo Offroad Club Monaco">
-    <div class="eyebrow">Offroad Club Monaco · Proposta contenuti</div>
-    <h1>The Wake</h1>
+    <img class="logo" src="media/logo.jpg" alt="Offroad Club Monaco">
+    <div class="eyebrow">Proposta di gestione · Dicembre 2026</div>
+    <h1>Un solo team<br><em>per tutto OCM.</em></h1>
     <div class="rule"></div>
-    <p class="lead">Ogni contenuto lascia una traccia. Come il club.</p>
-    <div class="x">Looking Up Studio · Novembre 2026</div>
+    <p class="lead">Sito, contenuti, social, OCM News e campagne. Un piano unico, con obiettivi chiari.</p>
+    <div class="x">Looking Up</div>
   </div>
+  <img class="mascot float" src="media/mascotte-smoking.png" alt="">
 </section>
 
-<!-- 2 cosa abbiamo capito -->
-<section class="slide alt" id="s2">
+<section class="slide alt">
   <div class="wrap">
     <div class="eyebrow">Il punto di partenza</div>
-    <h2>Cosa abbiamo capito di OCM</h2>
-    <div class="grid g3" style="margin-top:20px">
-      <div class="card"><div class="k kw">Club</div><p>Un club privato internazionale nato a Monaco: sport outdoor, viaggi, cultura, tecnologia. Esclusivo, ma con una missione.</p></div>
-      <div class="card"><div class="k kw">Missione</div><p>Avventura e responsabilità insieme: il record in moto d'acqua a bioetanolo, il legame con la Fondazione Principe Alberto II, il comitato accademico.</p></div>
-      <div class="card"><div class="k kw">Volto</div><p>I fondatori non appaiono mai. A parlare sono Mr. The Wake, i mezzi, i luoghi e gli eventi del club.</p></div>
-    </div>
-    <p class="lead" style="margin-top:56px">«The Wake of Monaco» è già il vostro claim. Noi lo trasformiamo in un linguaggio visivo.</p>
-  </div>
-  <div class="num">02</div>
-</section>
-
-<!-- 5 Mr The Wake -->
-<section class="slide" id="s3">
-  <div class="wrap ex">
-    <div><div class="phone"><video src="media/v-mrthewake.mp4" poster="media/s-mrthewake.jpg" autoplay muted loop playsinline controls preload="metadata"></video></div><p class="hint">Tocca l'altoparlante per l'audio</p></div>
-    <div>
-      <span class="tag">Esempio 1 · AI</span>
-      <h2>Mr. The Wake presenta l'universo OCM</h2>
-      <p>La mascotte del club, nel suo studio a Monaco di notte, apre il sito e fa nascere l'ologramma della galassia OCM. Un format a episodi: stesso set, stessa luce, ogni volta una sezione diversa.</p>
-      <ul class="clean">
-        <li><b>Ep. 1</b> Cos'è OCM</li>
-        <li><b>Ep. 2</b> OCM Sport · Mind. Motion. Mission.</li>
-        <li><b>Ep. 3</b> OCM Travel · Leave a wake, not a footprint.</li>
-        <li><b>Ep. 4</b> OCM Culture</li>
-      </ul>
-      
+    <h2>Dai primi reel <em>a una regia unica.</em></h2>
+    <p>A novembre abbiamo costruito insieme il linguaggio di OCM: Mr. The Wake, i reel action, gli eventi istituzionali. Ora il passo successivo è dare la stessa cura a tutto.</p>
+    <div class="grid g4 steps" style="margin-top:48px">
+      <div class="card"><div class="k"></div><h3>Sito OCM</h3><p>Partner, brand e clienti B2B sempre aggiornati.</p></div>
+      <div class="card"><div class="k"></div><h3>Comunicazione</h3><p>8 reel al mese su Instagram, Facebook, TikTok e YouTube.</p></div>
+      <div class="card"><div class="k"></div><h3>OCM News</h3><p>Articoli online, trovati da Google, con i loro social.</p></div>
+      <div class="card"><div class="k"></div><h3>Campagne</h3><p>Budget Meta con obiettivi veri, non solo visualizzazioni.</p></div>
     </div>
   </div>
-  <div class="num">03</div>
 </section>
 
-<!-- 6 Sport -->
-<section class="slide alt" id="s4">
-  <div class="wrap ex">
-    <div><div class="phone"><video src="media/v-sport.mp4" poster="media/s-sport.jpg" autoplay muted loop playsinline controls preload="metadata"></video></div><p class="hint">Tocca l'altoparlante per l'audio</p></div>
-    <div>
-      <span class="tag">Esempio 2 · AI</span>
-      <h2>Sport action</h2>
-      <p>Trekking, parapendio, sci, enduro, vetta. Ritmo veloce, transizioni dentro la scena: la neve dello sci diventa la polvere dell'enduro, lo scarpone sale fino alla bandiera OCM sopra le nuvole.</p>
-      <ul class="clean">
-        <li><b>Logo discreto</b> su ogni sport: toppa, casco, zaino</li>
-        <li><b>Nessun volto</b>, solo gesti e movimento</li>
-        <li><b>Chiusura</b> sulla bandiera del club</li>
-      </ul>
-      
-    </div>
-  </div>
-  <div class="num">04</div>
+<section class="strip">
+  <div class="eyebrow" style="text-align:center">Mr. The Wake · in ogni forma</div>
+  <div class="marquee"><div class="track"><img src="media/mascotte-ocm-ai-pilot-standard.png" alt=""><img src="media/mascotte-bici.png" alt=""><img src="media/mascotte-chef.png" alt=""><img src="media/mascotte-tshirt-jeans.png" alt=""><img src="media/mascotte-sub-pinne.png" alt=""><img src="media/mascotte-viaggio-valigia.png" alt=""><img src="media/mascotte-astronauta.png" alt=""><img src="media/mascotte-fuoristrada.png" alt=""><img src="media/mascotte-smoking-2.png" alt=""><img src="media/mascotte-cameriere-laptop.png" alt=""><img src="media/mascotte-moto-acqua.png" alt=""><img src="media/mascotte-razzo.png" alt=""><img src="media/mascotte-ocm-ai-pilot-standard.png" alt=""><img src="media/mascotte-bici.png" alt=""><img src="media/mascotte-chef.png" alt=""><img src="media/mascotte-tshirt-jeans.png" alt=""><img src="media/mascotte-sub-pinne.png" alt=""><img src="media/mascotte-viaggio-valigia.png" alt=""><img src="media/mascotte-astronauta.png" alt=""><img src="media/mascotte-fuoristrada.png" alt=""><img src="media/mascotte-smoking-2.png" alt=""><img src="media/mascotte-cameriere-laptop.png" alt=""><img src="media/mascotte-moto-acqua.png" alt=""><img src="media/mascotte-razzo.png" alt=""></div></div>
 </section>
 
-<!-- 7 Motoslitta -->
-<section class="slide" id="s5">
-  <div class="wrap ex">
-    <div><div class="phone"><video src="media/v-motoslitta.mp4" poster="media/s-motoslitta.jpg" autoplay muted loop playsinline controls preload="metadata"></video></div><p class="hint">Tocca l'altoparlante per l'audio</p></div>
-    <div>
-      <span class="tag">Esempio 3 · AI</span>
-      <h2>OCM nella neve</h2>
-      <p>La motoslitta Taiga all'alba in una valle intatta. Dal drone, le sue tracce scrivono OCM nella neve. È il concept della scia nella forma più pura.</p>
-      <ul class="clean">
-        <li><b>Mezzo vero</b>: la Taiga ricostruita dalle foto reali</li>
-        <li><b>Drone lento</b>, luce d'alba, silenzio e vento</li>
-        <li><b>Il logo</b> ricamato sulla schiena del pilota</li>
-      </ul>
-      
-    </div>
-  </div>
-  <div class="num">05</div>
-</section>
-
-<!-- 8 Taiga fiera reale -->
-<section class="slide alt" id="s6">
-  <div class="wrap ex">
-    <div><div class="phone"><video src="media/v-taiga-fiera.mp4" poster="media/s-taiga-fiera.jpg" autoplay muted loop playsinline controls preload="metadata"></video></div><p class="hint">Tocca l'altoparlante per l'audio</p></div>
-    <div>
-      <span class="tag real">Esempio 4 · Girato reale</span>
-      <h2>Taiga in fiera</h2>
-      <p>Lo stand Taiga in fiera, girato e montato dal vero: dettagli, materiali, display. Non solo AI: montiamo anche il vostro girato di eventi, fiere e uscite del club, con lo stesso stile. E possiamo unire i due mondi: dallo stand in fiera alla neve vera, con una transizione AI.</p>
-      <ul class="clean">
-        <li><b>Reale</b>: eventi e fiere montati in stile «La scia»</li>
-        <li><b>Ibrido</b>: dallo stand alla realtà, stesso mezzo</li>
-        <li><b>Archivio</b>: il record in moto d'acqua a bioetanolo, rimontato</li>
-      </ul>
-    </div>
-  </div>
-  <div class="num">06</div>
-</section>
-
-<!-- 11 Come lavoriamo -->
-<section class="slide" id="s7">
+<section class="slide withm">
   <div class="wrap">
-    <div class="eyebrow">Il metodo</div>
-    <h2>Come lavoriamo</h2>
-    <div class="grid g4 steps" style="margin-top:12px">
-      <div class="card"><div class="k"></div><h3>Le vostre idee</h3><p>Ci dite quali contenuti volete raccontare: eventi, sezioni del club, partner, appuntamenti.</p></div>
-      <div class="card"><div class="k"></div><h3>Piano editoriale</h3><p>Li organizziamo in un piano con le date, due contenuti a settimana. Lo approvate o lo correggete.</p></div>
-      <div class="card"><div class="k"></div><h3>Produzione</h3><p>Realizziamo i contenuti approvati: AI, girato reale o ibridi, con controllo fotogramma per fotogramma.</p></div>
-      <div class="card"><div class="k"></div><h3>Consegna</h3><p>Tutto pronto qualche giorno prima dell'uscita. Pubblicate voi.</p></div>
-    </div>
+    <div class="eyebrow">01 · Sito OCM</div>
+    <h2>Il sito che cresce <em>con il club.</em></h2>
+    <ul class="clean" style="max-width:760px">
+      <li>Nuovi <b>partner, brand e clienti B2B</b> inseriti con testi e immagini.</li>
+      <li>Aggiornamenti ordinari dei contenuti, nello stile del sito.</li>
+      <li>Un referente dedicato, tempi di inserimento rapidi.</li>
+      <li>Restyling o nuove sezioni grafiche: su richiesta, a parte.</li>
+    </ul>
   </div>
-  <div class="num">07</div>
+  <img class="mascot float" src="media/mascotte-fuoristrada.png" alt="" style="height:52%">
 </section>
 
-<!-- 12 prossimi passi -->
-<section class="slide statement" id="s8">
+<section class="slide withm alt">
   <div class="wrap">
-    <div class="eyebrow">Prossimi passi</div>
-    <h2>Se gli esempi vi convincono, si parte.</h2>
+    <div class="eyebrow">02 · Comunicazione</div>
+    <h2>8 reel al mese, <em>su ogni canale.</em></h2>
+    <ul class="clean" style="max-width:640px">
+      <li><b>Instagram e Facebook</b>: 2 reel a settimana, martedì e venerdì.</li>
+      <li><b>TikTok</b>: versioni più brevi e veloci.</li>
+      <li><b>YouTube</b>: shorts e archivio dei video.</li>
+      <li><b>LinkedIn</b>: partner e B2B, nella gestione completa.</li>
+    </ul>
+    <p class="note">Mr. The Wake, sport, eventi e partner. Voce in inglese, sottotitoli italiano e francese.</p>
+  </div>
+  <img class="mascot float" src="media/mascotte-moto-acqua.png" alt="" style="height:64%">
+</section>
+
+<section class="slide withm">
+  <div class="wrap">
+    <div class="eyebrow">03 · OCM News</div>
+    <h2>Gli articoli della redazione, <em>trovati da Google.</em></h2>
+    <div class="grid g2 steps" style="margin-top:40px">
+      <div class="card"><div class="k"></div><h3>Pubblicazione</h3><p>La redazione invia gli articoli già scritti: li pubblichiamo con immagini, categorie e titoli curati.</p></div>
+      <div class="card"><div class="k"></div><h3>Google</h3><p>Il sito non blocca Google, ma non risulta ancora registrato: lo colleghiamo a Search Console e inviamo le mappe del sito.</p></div>
+    </div>
+  </div>
+  <img class="mascot float" src="media/mascotte-cameriere-laptop.png" alt="" style="height:72%">
+</section>
+
+<section class="slide withm alt">
+  <div class="wrap">
+    <div class="eyebrow">03 · OCM News sui social</div>
+    <h2>OCM News arriva <em>su Instagram, prima di Natale.</em></h2>
+    <p>Partiamo da zero, quindi il profilo deve nascere già pieno e riconoscibile. Il lancio in tre momenti.</p>
+    <div class="grid g3 steps" style="margin-top:40px">
+      <div class="card"><div class="k"></div><h3>7 giorni prima</h3><p>Profilo pronto con 9 post e storie in evidenza. Annuncio dai canali OCM e dal sito.</p></div>
+      <div class="card"><div class="k"></div><h3>Il lancio</h3><p>Reel di Mr. The Wake che presenta la testata, campagna Meta dedicata, link nelle bio di OCM.</p></div>
+      <div class="card"><div class="k"></div><h3>Primi 30 giorni</h3><p>3 post a settimana dagli articoli, Facebook in parallelo. Poi valutiamo newsletter, LinkedIn e TikTok.</p></div>
+    </div>
+  </div>
+  <img class="mascot float" src="media/mascotte-smoking-2.png" alt="" style="height:74%">
+</section>
+
+<section class="slide withm">
+  <div class="wrap">
+    <div class="eyebrow">04 · Campagne Meta</div>
+    <h2>Dalle visualizzazioni <em>agli obiettivi.</em></h2>
+    <p>Oggi il budget va su campagne a interazione: tante visualizzazioni, poco altro. Proponiamo di dividerlo su tre obiettivi chiari, misurati ogni mese.</p>
+    <div class="grid g3 steps" style="margin-top:40px">
+      <div class="card"><div class="k"></div><h3>Notorietà</h3><p>I reel migliori a un pubblico nuovo: Monaco, Costa Azzurra, Italia del nord.</p></div>
+      <div class="card"><div class="k"></div><h3>Lettori</h3><p>Traffico verso gli articoli di OCM News, per far crescere la testata.</p></div>
+      <div class="card"><div class="k"></div><h3>Partner e B2B</h3><p>Contatti da aziende e brand interessati al club.</p></div>
+    </div>
+    <p class="note">Il budget delle campagne resta vostro e lo concordiamo insieme. Google Ads: da valutare in un secondo momento.</p>
+  </div>
+  <img class="mascot float" src="media/mascotte-razzo.png" alt="" style="height:30%">
+</section>
+
+<section class="slide alt" id="formule">
+  <div class="wrap">
+    <div class="eyebrow">La proposta</div>
+    <h2>Due formule. <em>Scegliete chi pubblica.</em></h2>
+    <div class="grid g2" style="margin-top:36px">
+      <div class="pk">
+        <h3>Contenuti</h3>
+        <div class="price">3.500 € <small>al mese</small></div>
+        <ul class="clean">
+          <li>8 reel al mese + versioni TikTok e YouTube</li>
+          <li>Sito OCM: partner, brand e B2B</li>
+          <li>OCM News: pubblicazione articoli e Google</li>
+          <li>OCM News: Instagram e Facebook, 12 post al mese</li>
+          <li>Gestione campagne Meta</li>
+          <li>Piano editoriale e report mensile</li>
+          <li>I contenuti OCM li pubblicate voi</li>
+        </ul>
+      </div>
+      <div class="pk hi">
+        <h3>Gestione completa <span class="badge">consigliata</span></h3>
+        <div class="price">4.500 € <small>al mese</small></div>
+        <ul class="clean">
+          <li>Tutto quello della formula Contenuti</li>
+          <li><b>Pubblichiamo noi</b> su tutti i canali, ogni mese</li>
+          <li>Storie e risposte ai messaggi</li>
+          <li>LinkedIn OCM per partner e B2B</li>
+          <li>Newsletter di OCM News</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide withm">
+  <div class="wrap">
+    <div class="eyebrow">Opzioni in più</div>
+    <h2>Altri canali, <em>quando vorrete.</em></h2>
+    <p>Per chi sceglie la formula Contenuti, o per aggiungere canali alla testata.</p>
     <div class="grid g3" style="margin-top:36px">
-      <div class="card" style="border-color:#3a3020"><div class="k" style="color:var(--nero)">01</div><p>Ci dite quali contenuti volete per il primo mese.</p></div>
-      <div class="card" style="border-color:#3a3020"><div class="k" style="color:var(--nero)">02</div><p>Vi mandiamo il piano editoriale e il preventivo.</p></div>
-      <div class="card" style="border-color:#3a3020"><div class="k" style="color:var(--nero)">03</div><p>Dopo il vostro ok, partiamo con la produzione.</p></div>
+      <div class="card"><h3>Substack OCM News</h3><p>La newsletter della testata: una selezione degli articoli ogni settimana. Inclusa nella Gestione completa.</p><div class="pk" style="border:0;padding:0;background:none"><div class="price" style="font-size:34px">300 € <small>al mese</small></div></div></div>
+      <div class="card"><h3>LinkedIn OCM</h3><p>8 contenuti al mese per partner, aziende e B2B. Incluso nella Gestione completa.</p><div class="pk" style="border:0;padding:0;background:none"><div class="price" style="font-size:34px">300 € <small>al mese</small></div></div></div>
+      <div class="card"><h3>OCM News su altri canali</h3><p>TikTok, YouTube o LinkedIn per la testata, 8 contenuti al mese.</p><div class="pk" style="border:0;padding:0;background:none"><div class="price" style="font-size:34px">200 € <small>a canale</small></div></div></div>
     </div>
-    <p style="margin-top:56px;font-family:var(--serif);font-size:26px;font-style:italic">The Wake of Monaco.</p>
   </div>
-  <div class="num" style="color:#3a3020">08</div>
+  <img class="mascot float" src="media/mascotte-astronauta.png" alt="" style="height:62%">
+</section>
+
+<section class="slide">
+  <div class="wrap">
+    <div class="eyebrow">Avvio · una tantum a dicembre</div>
+    <h2>L'avvio: <em>1.300 €.</em></h2>
+    <div class="grid g3" style="margin-top:36px">
+      <div class="card"><h3>Lancio OCM News</h3><p>Profili Instagram e Facebook, linea grafica, 9 post di lancio, piano dei primi 30 giorni.</p></div>
+      <div class="card"><h3>TikTok e YouTube</h3><p>Apertura dei canali OCM con copertine, banner e descrizioni.</p></div>
+      <div class="card"><h3>Google</h3><p>Search Console e indicizzazione di OCM News.</p></div>
+    </div>
+    <ul class="clean" style="max-width:760px;margin-top:40px">
+      <li>Budget delle campagne Meta: a parte, concordato insieme.</li>
+      <li>Riprese a Monaco ed eventi speciali: su preventivo.</li>
+      <li>Formule mensili con un impegno minimo di 3 mesi.</li>
+    </ul>
+  </div>
+</section>
+
+<section class="slide alt">
+  <div class="wrap">
+    <div class="eyebrow">Come lavoriamo · Il metodo</div>
+    <h2>Due referenti, <em>un solo piano.</em></h2>
+    <div class="grid g3" style="margin-top:36px">
+      <div class="card"><h3>Comunicazione</h3><p>Contenuti video, strategia e social: un referente per tutto ciò che si vede sui canali.</p></div>
+      <div class="card"><h3>Siti e News</h3><p>Sito OCM e OCM News: pubblicazioni, aggiornamenti, Google e social della testata.</p></div>
+      <div class="card"><h3>Insieme</h3><p>Piano editoriale mensile condiviso, campagne Meta e report a fine mese.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide">
+  <div class="wrap">
+    <div class="eyebrow">Prossimi passi · Per partire a dicembre</div>
+    <h2>Pronti a <em>partire.</em></h2>
+    <div class="grid g4 steps" style="margin-top:36px">
+      <div class="card"><div class="k"></div><h3>La formula</h3><p>Contenuti o Gestione completa.</p></div>
+      <div class="card"><div class="k"></div><h3>Gli accessi</h3><p>WordPress di OCM e di OCM News, Meta Business, TikTok, YouTube.</p></div>
+      <div class="card"><div class="k"></div><h3>Budget e date</h3><p>Il budget delle campagne e la data di lancio di OCM News.</p></div>
+      <div class="card"><div class="k"></div><h3>La call di avvio</h3><p>E il piano del primo mese.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide statement">
+  <div class="wrap">
+    <div class="eyebrow">Offroad Club Monaco</div>
+    <h2>Leave a wake, not a footprint.</h2>
+    <p>Looking Up · lookingupstudio.com</p>
+  </div>
 </section>
 
 <script>
-(function(){
-  var slides=[].slice.call(document.querySelectorAll('.slide'));
-  var dots=document.getElementById('dots');
-  slides.forEach(function(s){var a=document.createElement('a');a.href='#'+s.id;a.setAttribute('aria-label','Vai alla slide '+s.id.slice(1));dots.appendChild(a);});
-  var links=dots.querySelectorAll('a');
-  var io=new IntersectionObserver(function(es){es.forEach(function(e){
-    var i=slides.indexOf(e.target);
-    if(e.isIntersecting&&e.intersectionRatio>.5){links.forEach(function(l,j){l.classList.toggle('on',i===j)});}
-    var v=e.target.querySelector('video'); if(v){ if(e.isIntersecting){v.play().catch(function(){});} else {v.pause();} }
-  });},{threshold:[0,.5]});
-  slides.forEach(function(s){io.observe(s)});
-  document.addEventListener('keydown',function(ev){
-    var cur=Math.round(window.scrollY/window.innerHeight);
-    if(['ArrowDown','PageDown',' '].indexOf(ev.key)>-1){ev.preventDefault();var n=slides[Math.min(cur+1,slides.length-1)];n.scrollIntoView();}
-    if(['ArrowUp','PageUp'].indexOf(ev.key)>-1){ev.preventDefault();var p=slides[Math.max(cur-1,0)];p.scrollIntoView();}
-  });
-})();
+(function(){if(!('IntersectionObserver' in window))return;
+var els=document.querySelectorAll('.slide h2,.slide h1,.slide .lead,.slide p,.card,.pk,ul.clean li,.slide .eyebrow');
+els.forEach(function(e,i){e.classList.add('rv');e.style.transitionDelay=((i%4)*0.08)+'s'});
+var io=new IntersectionObserver(function(en){en.forEach(function(x){if(x.isIntersecting){x.target.classList.add('in');io.unobserve(x.target)}})},{threshold:.12});
+els.forEach(function(e){io.observe(e)});})();
 </script>
 </body>
 </html>
